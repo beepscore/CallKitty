@@ -33,6 +33,7 @@
 		DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */; };
 		DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */; };
 		DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3A1FB2301300F9936D /* Localizable.strings */; };
+		DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3E1FB2354B00F9936D /* Ringtone.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallDurationFormatter.swift; sourceTree = "<group>"; };
 		DE842F3B1FB2301300F9936D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DE842F3E1FB2354B00F9936D /* Ringtone.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.aif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,11 +142,12 @@
 		DE7AF8F31FB2207A00C2D29C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DE83C9901FB218B20078CD01 /* Assets.xcassets */,
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
 				DE842F341FB22EAF00F9936D /* Views */,
+				DE83C9901FB218B20078CD01 /* Assets.xcassets */,
+				DE842F3D1FB234F300F9936D /* Sounds */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -284,6 +287,14 @@
 			name = "Data Formatters";
 			sourceTree = "<group>";
 		};
+		DE842F3D1FB234F300F9936D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F3E1FB2354B00F9936D /* Ringtone.aif */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
+				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
 				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
 				DE83C9911FB218B20078CD01 /* Assets.xcassets in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
