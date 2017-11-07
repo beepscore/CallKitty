@@ -22,7 +22,7 @@ https://www.raywenderlich.com/150015/callkit-tutorial-ios
 CallKit requires an iPhone, doesn't work on simulator.
 
 ## How to use CallKittyDirectoryExtension
-Might need to run scheme CallKittyDirectoryExtension first to update block and id lists, I'm not sure yet.
+Shouldn't need to run scheme CallKittyDirectoryExtension first to update block and id lists, normal user is not going to do this.
 
 Run scheme CallKitty on phone.
 
