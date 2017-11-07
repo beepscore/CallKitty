@@ -15,10 +15,6 @@
 		DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */; };
 		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE7B961A1FB23DD5009D7CD2 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */; };
-		DE7B96231FB23DD5009D7CD2 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7B96221FB23DD5009D7CD2 /* IntentsUI.framework */; };
-		DE7B96261FB23DD5009D7CD2 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B96251FB23DD5009D7CD2 /* IntentViewController.swift */; };
-		DE7B96291FB23DD5009D7CD2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7B96271FB23DD5009D7CD2 /* MainInterface.storyboard */; };
-		DE7B962E1FB23DD5009D7CD2 /* IntentsExtensionUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE7B96201FB23DD5009D7CD2 /* IntentsExtensionUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE7B96311FB23DD5009D7CD2 /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9891FB218B20078CD01 /* AppDelegate.swift */; };
 		DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C98D1FB218B20078CD01 /* Main.storyboard */; };
@@ -42,13 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DE7B962B1FB23DD5009D7CD2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE7B961F1FB23DD5009D7CD2;
-			remoteInfo = IntentsExtensionUI;
-		};
 		DE7B962F1FB23DD5009D7CD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
@@ -80,7 +69,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				DE7B96311FB23DD5009D7CD2 /* IntentsExtension.appex in Embed App Extensions */,
-				DE7B962E1FB23DD5009D7CD2 /* IntentsExtensionUI.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,11 +88,7 @@
 		DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		DE7B961B1FB23DD5009D7CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE7B96201FB23DD5009D7CD2 /* IntentsExtensionUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtensionUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7B96221FB23DD5009D7CD2 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		DE7B96251FB23DD5009D7CD2 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
-		DE7B96281FB23DD5009D7CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		DE7B962A1FB23DD5009D7CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,14 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE7B961D1FB23DD5009D7CD2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE7B96231FB23DD5009D7CD2 /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,16 +242,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DE7B96241FB23DD5009D7CD2 /* IntentsExtensionUI */ = {
-			isa = PBXGroup;
-			children = (
-				DE7B96251FB23DD5009D7CD2 /* IntentViewController.swift */,
-				DE7B96271FB23DD5009D7CD2 /* MainInterface.storyboard */,
-				DE7B962A1FB23DD5009D7CD2 /* Info.plist */,
-			);
-			path = IntentsExtensionUI;
-			sourceTree = "<group>";
-		};
 		DE83C97D1FB218B20078CD01 = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +250,6 @@
 				DE83C99D1FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A81FB218B20078CD01 /* CallKittyUITests */,
 				DE7B96181FB23DD5009D7CD2 /* IntentsExtension */,
-				DE7B96241FB23DD5009D7CD2 /* IntentsExtensionUI */,
 				DE7B96211FB23DD5009D7CD2 /* Frameworks */,
 				DE83C9871FB218B20078CD01 /* Products */,
 			);
@@ -297,7 +262,6 @@
 				DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */,
 				DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */,
 				DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */,
-				DE7B96201FB23DD5009D7CD2 /* IntentsExtensionUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -402,23 +366,6 @@
 			productReference = DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		DE7B961F1FB23DD5009D7CD2 /* IntentsExtensionUI */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE7B96321FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtensionUI" */;
-			buildPhases = (
-				DE7B961C1FB23DD5009D7CD2 /* Sources */,
-				DE7B961D1FB23DD5009D7CD2 /* Frameworks */,
-				DE7B961E1FB23DD5009D7CD2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IntentsExtensionUI;
-			productName = IntentsExtensionUI;
-			productReference = DE7B96201FB23DD5009D7CD2 /* IntentsExtensionUI.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		DE83C9851FB218B20078CD01 /* CallKitty */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE83C9AE1FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKitty" */;
@@ -431,7 +378,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DE7B962C1FB23DD5009D7CD2 /* PBXTargetDependency */,
 				DE7B96301FB23DD5009D7CD2 /* PBXTargetDependency */,
 			);
 			name = CallKitty;
@@ -489,10 +435,6 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					DE7B961F1FB23DD5009D7CD2 = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-					};
 					DE83C9851FB218B20078CD01 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
@@ -527,7 +469,6 @@
 				DE83C9991FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A41FB218B20078CD01 /* CallKittyUITests */,
 				DE7B96161FB23DD5009D7CD2 /* IntentsExtension */,
-				DE7B961F1FB23DD5009D7CD2 /* IntentsExtensionUI */,
 			);
 		};
 /* End PBXProject section */
@@ -537,14 +478,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE7B961E1FB23DD5009D7CD2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE7B96291FB23DD5009D7CD2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,14 +515,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7B961A1FB23DD5009D7CD2 /* IntentHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE7B961C1FB23DD5009D7CD2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE7B96261FB23DD5009D7CD2 /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,11 +563,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DE7B962C1FB23DD5009D7CD2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE7B961F1FB23DD5009D7CD2 /* IntentsExtensionUI */;
-			targetProxy = DE7B962B1FB23DD5009D7CD2 /* PBXContainerItemProxy */;
-		};
 		DE7B96301FB23DD5009D7CD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE7B96161FB23DD5009D7CD2 /* IntentsExtension */;
@@ -661,14 +581,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DE7B96271FB23DD5009D7CD2 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE7B96281FB23DD5009D7CD2 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		DE83C98D1FB218B20078CD01 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -696,36 +608,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DE7B96331FB23DD5009D7CD2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2LXK9FK3W;
-				INFOPLIST_FILE = IntentsExtensionUI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.IntentsExtensionUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DE7B96341FB23DD5009D7CD2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2LXK9FK3W;
-				INFOPLIST_FILE = IntentsExtensionUI/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.IntentsExtensionUI;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DE7B96361FB23DD5009D7CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -971,15 +853,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE7B96321FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtensionUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE7B96331FB23DD5009D7CD2 /* Debug */,
-				DE7B96341FB23DD5009D7CD2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DE7B96351FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
