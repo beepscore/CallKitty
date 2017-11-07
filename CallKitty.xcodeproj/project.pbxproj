@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */; };
+		DE3373521FB2531400F220BB /* CallKittyDirectoryExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
 		DE7AF8F71FB221F400C2D29C /* SpeakerboxCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */; };
 		DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */; };
@@ -38,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DE3373501FB2531400F220BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE33734A1FB2531400F220BB;
+			remoteInfo = CallKittyDirectoryExtension;
+		};
 		DE7B962F1FB23DD5009D7CD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
@@ -68,6 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				DE3373521FB2531400F220BB /* CallKittyDirectoryExtension.appex in Embed App Extensions */,
 				DE7B96311FB23DD5009D7CD2 /* IntentsExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -76,6 +86,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallKittyDirectoryExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		DE33734F1FB2531400F220BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7AF8E81FB21BE100C2D29C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerboxCallManager.swift; sourceTree = "<group>"; };
@@ -121,6 +134,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DE3373481FB2531400F220BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE7B96141FB23DD5009D7CD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +172,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE33734C1FB2531400F220BB /* CallKittyDirectoryExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */,
+				DE33734F1FB2531400F220BB /* Info.plist */,
+			);
+			path = CallKittyDirectoryExtension;
+			sourceTree = "<group>";
+		};
 		DE7AF8EF1FB21F7300C2D29C /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +270,7 @@
 				DE83C99D1FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A81FB218B20078CD01 /* CallKittyUITests */,
 				DE7B96181FB23DD5009D7CD2 /* IntentsExtension */,
+				DE33734C1FB2531400F220BB /* CallKittyDirectoryExtension */,
 				DE83C9871FB218B20078CD01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -252,6 +282,7 @@
 				DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */,
 				DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */,
 				DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */,
+				DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,6 +370,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DE33734A1FB2531400F220BB /* CallKittyDirectoryExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE3373551FB2531400F220BB /* Build configuration list for PBXNativeTarget "CallKittyDirectoryExtension" */;
+			buildPhases = (
+				DE3373471FB2531400F220BB /* Sources */,
+				DE3373481FB2531400F220BB /* Frameworks */,
+				DE3373491FB2531400F220BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CallKittyDirectoryExtension;
+			productName = CallKittyDirectoryExtension;
+			productReference = DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		DE7B96161FB23DD5009D7CD2 /* IntentsExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE7B96351FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtension" */;
@@ -369,6 +417,7 @@
 			);
 			dependencies = (
 				DE7B96301FB23DD5009D7CD2 /* PBXTargetDependency */,
+				DE3373511FB2531400F220BB /* PBXTargetDependency */,
 			);
 			name = CallKitty;
 			productName = CallKitty;
@@ -421,6 +470,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Beepscore LLC";
 				TargetAttributes = {
+					DE33734A1FB2531400F220BB = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					DE7B96161FB23DD5009D7CD2 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -459,11 +512,19 @@
 				DE83C9991FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A41FB218B20078CD01 /* CallKittyUITests */,
 				DE7B96161FB23DD5009D7CD2 /* IntentsExtension */,
+				DE33734A1FB2531400F220BB /* CallKittyDirectoryExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DE3373491FB2531400F220BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE7B96151FB23DD5009D7CD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +561,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DE3373471FB2531400F220BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE7B96131FB23DD5009D7CD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,6 +622,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DE3373511FB2531400F220BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE33734A1FB2531400F220BB /* CallKittyDirectoryExtension */;
+			targetProxy = DE3373501FB2531400F220BB /* PBXContainerItemProxy */;
+		};
 		DE7B96301FB23DD5009D7CD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE7B96161FB23DD5009D7CD2 /* IntentsExtension */;
@@ -598,6 +672,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DE3373531FB2531400F220BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKittyDirectoryExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.CallKittyDirectoryExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE3373541FB2531400F220BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKittyDirectoryExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.CallKittyDirectoryExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DE7B96361FB23DD5009D7CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -843,6 +949,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DE3373551FB2531400F220BB /* Build configuration list for PBXNativeTarget "CallKittyDirectoryExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE3373531FB2531400F220BB /* Debug */,
+				DE3373541FB2531400F220BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DE7B96351FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
