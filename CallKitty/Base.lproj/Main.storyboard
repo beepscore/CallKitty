@@ -48,9 +48,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="GUA-zC-aW3" firstAttribute="baseline" secondItem="bn5-bz-Olj" secondAttribute="baseline" id="Rtv-dR-jyl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DHt-mk-1Ff" secondAttribute="trailing" constant="220" id="XY3-be-ptw"/>
                                         <constraint firstItem="bn5-bz-Olj" firstAttribute="top" secondItem="DHt-mk-1Ff" secondAttribute="bottom" constant="2" id="a9W-GW-sEH"/>
                                         <constraint firstItem="bn5-bz-Olj" firstAttribute="leading" secondItem="DHt-mk-1Ff" secondAttribute="leading" id="bfx-jz-249"/>
                                         <constraint firstItem="DHt-mk-1Ff" firstAttribute="leading" secondItem="vtB-OU-8NY" secondAttribute="leadingMargin" constant="7" id="hWP-xB-TdF"/>
+                                        <constraint firstItem="GUA-zC-aW3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bn5-bz-Olj" secondAttribute="trailing" symbolic="YES" id="oRv-bQ-5Cf"/>
                                         <constraint firstItem="DHt-mk-1Ff" firstAttribute="top" secondItem="vtB-OU-8NY" secondAttribute="topMargin" constant="3" id="tbM-hd-q5H"/>
                                         <constraint firstItem="GUA-zC-aW3" firstAttribute="trailing" secondItem="vtB-OU-8NY" secondAttribute="trailingMargin" constant="-7" id="zyC-Q5-jpy"/>
                                     </constraints>
