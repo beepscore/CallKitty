@@ -31,6 +31,8 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         context.completeRequest()
     }
 
+    // MARK: - blocking
+
     private func addAllBlockingPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
         // Retrieve all phone numbers to block from data store.
         // For optimal performance and memory usage when there are many phone numbers,
@@ -59,6 +61,8 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
         // Record the most-recently loaded set of blocking entries in data store for the next incremental load...
     }
+
+    // MARK: - caller identification
 
     private func addAllIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
         // Retrieve phone numbers to identify and their identification labels from data store.
