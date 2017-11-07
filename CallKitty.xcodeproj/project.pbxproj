@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9891FB218B20078CD01 /* AppDelegate.swift */; };
+		DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C98B1FB218B20078CD01 /* ViewController.swift */; };
+		DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C98D1FB218B20078CD01 /* Main.storyboard */; };
+		DE83C9911FB218B20078CD01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9901FB218B20078CD01 /* Assets.xcassets */; };
+		DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */; };
+		DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */; };
+		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE83C99B1FB218B20078CD01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE83C9851FB218B20078CD01;
+			remoteInfo = CallKitty;
+		};
+		DE83C9A61FB218B20078CD01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE83C9851FB218B20078CD01;
+			remoteInfo = CallKitty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE83C98B1FB218B20078CD01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE83C9901FB218B20078CD01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE83C9931FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE83C9951FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallKittyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyTests.swift; sourceTree = "<group>"; };
+		DE83C9A01FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallKittyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyUITests.swift; sourceTree = "<group>"; };
+		DE83C9AB1FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE83C9831FB218B20078CD01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE83C9971FB218B20078CD01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE83C9A21FB218B20078CD01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE83C97D1FB218B20078CD01 = {
+			isa = PBXGroup;
+			children = (
+				DE83C9881FB218B20078CD01 /* CallKitty */,
+				DE83C99D1FB218B20078CD01 /* CallKittyTests */,
+				DE83C9A81FB218B20078CD01 /* CallKittyUITests */,
+				DE83C9871FB218B20078CD01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE83C9871FB218B20078CD01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C9861FB218B20078CD01 /* CallKitty.app */,
+				DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */,
+				DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE83C9881FB218B20078CD01 /* CallKitty */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
+				DE83C98B1FB218B20078CD01 /* ViewController.swift */,
+				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
+				DE83C9901FB218B20078CD01 /* Assets.xcassets */,
+				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
+				DE83C9951FB218B20078CD01 /* Info.plist */,
+			);
+			path = CallKitty;
+			sourceTree = "<group>";
+		};
+		DE83C99D1FB218B20078CD01 /* CallKittyTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */,
+				DE83C9A01FB218B20078CD01 /* Info.plist */,
+			);
+			path = CallKittyTests;
+			sourceTree = "<group>";
+		};
+		DE83C9A81FB218B20078CD01 /* CallKittyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */,
+				DE83C9AB1FB218B20078CD01 /* Info.plist */,
+			);
+			path = CallKittyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE83C9851FB218B20078CD01 /* CallKitty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE83C9AE1FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKitty" */;
+			buildPhases = (
+				DE83C9821FB218B20078CD01 /* Sources */,
+				DE83C9831FB218B20078CD01 /* Frameworks */,
+				DE83C9841FB218B20078CD01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CallKitty;
+			productName = CallKitty;
+			productReference = DE83C9861FB218B20078CD01 /* CallKitty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE83C9991FB218B20078CD01 /* CallKittyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE83C9B11FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKittyTests" */;
+			buildPhases = (
+				DE83C9961FB218B20078CD01 /* Sources */,
+				DE83C9971FB218B20078CD01 /* Frameworks */,
+				DE83C9981FB218B20078CD01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE83C99C1FB218B20078CD01 /* PBXTargetDependency */,
+			);
+			name = CallKittyTests;
+			productName = CallKittyTests;
+			productReference = DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE83C9A41FB218B20078CD01 /* CallKittyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE83C9B41FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKittyUITests" */;
+			buildPhases = (
+				DE83C9A11FB218B20078CD01 /* Sources */,
+				DE83C9A21FB218B20078CD01 /* Frameworks */,
+				DE83C9A31FB218B20078CD01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE83C9A71FB218B20078CD01 /* PBXTargetDependency */,
+			);
+			name = CallKittyUITests;
+			productName = CallKittyUITests;
+			productReference = DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE83C97E1FB218B20078CD01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Beepscore LLC";
+				TargetAttributes = {
+					DE83C9851FB218B20078CD01 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					DE83C9991FB218B20078CD01 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DE83C9851FB218B20078CD01;
+					};
+					DE83C9A41FB218B20078CD01 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DE83C9851FB218B20078CD01;
+					};
+				};
+			};
+			buildConfigurationList = DE83C9811FB218B20078CD01 /* Build configuration list for PBXProject "CallKitty" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE83C97D1FB218B20078CD01;
+			productRefGroup = DE83C9871FB218B20078CD01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE83C9851FB218B20078CD01 /* CallKitty */,
+				DE83C9991FB218B20078CD01 /* CallKittyTests */,
+				DE83C9A41FB218B20078CD01 /* CallKittyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE83C9841FB218B20078CD01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
+				DE83C9911FB218B20078CD01 /* Assets.xcassets in Resources */,
+				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE83C9981FB218B20078CD01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE83C9A31FB218B20078CD01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE83C9821FB218B20078CD01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */,
+				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE83C9961FB218B20078CD01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE83C9A11FB218B20078CD01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE83C99C1FB218B20078CD01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE83C9851FB218B20078CD01 /* CallKitty */;
+			targetProxy = DE83C99B1FB218B20078CD01 /* PBXContainerItemProxy */;
+		};
+		DE83C9A71FB218B20078CD01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE83C9851FB218B20078CD01 /* CallKitty */;
+			targetProxy = DE83C9A61FB218B20078CD01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE83C98D1FB218B20078CD01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE83C98E1FB218B20078CD01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE83C9931FB218B20078CD01 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE83C9AC1FB218B20078CD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE83C9AD1FB218B20078CD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE83C9AF1FB218B20078CD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKitty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE83C9B01FB218B20078CD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKitty/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE83C9B21FB218B20078CD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKittyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKittyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CallKitty.app/CallKitty";
+			};
+			name = Debug;
+		};
+		DE83C9B31FB218B20078CD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKittyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKittyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CallKitty.app/CallKitty";
+			};
+			name = Release;
+		};
+		DE83C9B51FB218B20078CD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKittyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKittyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CallKitty;
+			};
+			name = Debug;
+		};
+		DE83C9B61FB218B20078CD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				INFOPLIST_FILE = CallKittyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKittyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CallKitty;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE83C9811FB218B20078CD01 /* Build configuration list for PBXProject "CallKitty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE83C9AC1FB218B20078CD01 /* Debug */,
+				DE83C9AD1FB218B20078CD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE83C9AE1FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKitty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE83C9AF1FB218B20078CD01 /* Debug */,
+				DE83C9B01FB218B20078CD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE83C9B11FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKittyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE83C9B21FB218B20078CD01 /* Debug */,
+				DE83C9B31FB218B20078CD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE83C9B41FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKittyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE83C9B51FB218B20078CD01 /* Debug */,
+				DE83C9B61FB218B20078CD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE83C97E1FB218B20078CD01 /* Project object */;
+}
