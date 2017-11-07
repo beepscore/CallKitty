@@ -22,6 +22,8 @@
 		DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */; };
 		DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */; };
 		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
+		DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */; };
+		DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyUITests.swift; sourceTree = "<group>"; };
 		DE83C9AB1FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallKitty-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Speakerbox.swift"; sourceTree = "<group>"; };
+		DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Speakerbox.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 				DE7AF8F21FB2204E00C2D29C /* Call Management */,
 				DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */,
 				DE7AF9041FB2237D00C2D29C /* Audio */,
+				DE842F1E1FB228B500F9936D /* Extensions */,
 				DE7AF8F51FB2210C00C2D29C /* Supporting Files */,
 			);
 			path = CallKitty;
@@ -209,6 +214,15 @@
 				DE83C9AB1FB218B20078CD01 /* Info.plist */,
 			);
 			path = CallKittyUITests;
+			sourceTree = "<group>";
+		};
+		DE842F1E1FB228B500F9936D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */,
+				DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,11 +360,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
 				DE7AF8F71FB221F400C2D29C /* SpeakerboxCallManager.swift in Sources */,
 				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
 				DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */,
+				DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */,
 				DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
