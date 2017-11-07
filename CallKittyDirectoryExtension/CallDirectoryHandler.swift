@@ -109,6 +109,9 @@ extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
         // This may be used to store the error details in a location accessible by the extension's containing app, so that the
         // app may be notified about errors which occured while loading data even if the request to load data was initiated by
         // the user in Settings instead of via the app itself.
+
+        // TODO: consider if we want to pass error info to the containing app
+        print(error.localizedDescription)
     }
 
 }
