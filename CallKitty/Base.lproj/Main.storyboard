@@ -14,13 +14,13 @@
         <!--Calls View Controller-->
         <scene sceneID="Bdp-Ps-APd">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="5Z0-xO-QjA" userLabel="Calls View Controller" customClass="CallsViewController" customModule="Speakerbox" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="5Z0-xO-QjA" userLabel="Calls View Controller" customClass="CallsViewController" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="aZP-Mj-OK2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CallSummary" id="kEQ-KI-KOz" customClass="CallSummaryTableViewCell" customModule="Speakerbox" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CallSummary" id="kEQ-KI-KOz" customClass="CallSummaryTableViewCell" customModule="CallKitty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kEQ-KI-KOz" id="vtB-OU-8NY">
@@ -78,7 +78,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Obw-Yl-qg0"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Speakerbox" id="cUJ-2Z-zhF">
+                    <navigationItem key="navigationItem" title="CallKitty" id="cUJ-2Z-zhF">
                         <barButtonItem key="rightBarButtonItem" title="Dial" id="r3u-1f-nBT">
                             <connections>
                                 <segue destination="luk-hz-Qkk" kind="presentation" modalPresentationStyle="formSheet" id="Kgn-k7-WAk"/>
@@ -110,7 +110,7 @@
         <!--Simulate Incoming Call Scene-->
         <scene sceneID="kuv-VO-yx5">
             <objects>
-                <viewController title="Simulate Incoming Call" id="R6a-ZT-ght" userLabel="Simulate Incoming Call Scene" customClass="SimulateIncomingCallViewController" customModule="Speakerbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Simulate Incoming Call" id="R6a-ZT-ght" userLabel="Simulate Incoming Call Scene" customClass="SimulateIncomingCallViewController" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wEh-yB-6ta"/>
                         <viewControllerLayoutGuide type="bottom" id="9mg-2H-Xd6"/>
@@ -239,7 +239,7 @@
         <!--Dial Call-->
         <scene sceneID="mQY-s5-aw7">
             <objects>
-                <viewController id="oeD-0l-BgP" customClass="DialOptionsViewController" customModule="Speakerbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oeD-0l-BgP" customClass="DialOptionsViewController" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rO2-mL-YjN"/>
                         <viewControllerLayoutGuide type="bottom" id="UrS-mp-ZG1"/>
