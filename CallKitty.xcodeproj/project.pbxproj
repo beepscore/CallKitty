@@ -17,7 +17,6 @@
 		DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9891FB218B20078CD01 /* AppDelegate.swift */; };
 		DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C98B1FB218B20078CD01 /* ViewController.swift */; };
 		DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C98D1FB218B20078CD01 /* Main.storyboard */; };
-		DE83C9911FB218B20078CD01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9901FB218B20078CD01 /* Assets.xcassets */; };
 		DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */; };
 		DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */; };
 		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
@@ -34,6 +33,7 @@
 		DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3A1FB2301300F9936D /* Localizable.strings */; };
 		DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3E1FB2354B00F9936D /* Ringtone.aif */; };
 		DE842F411FB236C500F9936D /* CallAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F401FB236C500F9936D /* CallAudio.swift */; };
+		DE842F431FB239A100F9936D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE842F421FB239A100F9936D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE83C98B1FB218B20078CD01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE83C9901FB218B20078CD01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE83C9931FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE83C9951FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallKittyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +93,7 @@
 		DE842F3B1FB2301300F9936D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DE842F3E1FB2354B00F9936D /* Ringtone.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.aif; sourceTree = "<group>"; };
 		DE842F401FB236C500F9936D /* CallAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CallAudio.swift; path = CallKitty/CallAudio.swift; sourceTree = SOURCE_ROOT; };
+		DE842F421FB239A100F9936D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
 				DE842F341FB22EAF00F9936D /* Views */,
-				DE83C9901FB218B20078CD01 /* Assets.xcassets */,
+				DE842F421FB239A100F9936D /* Assets.xcassets */,
 				DE842F3D1FB234F300F9936D /* Sounds */,
 			);
 			name = UI;
@@ -406,8 +406,8 @@
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
 				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
 				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
-				DE83C9911FB218B20078CD01 /* Assets.xcassets in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
+				DE842F431FB239A100F9936D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
