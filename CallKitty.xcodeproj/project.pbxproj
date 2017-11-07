@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
+		DE7AF8F71FB221F400C2D29C /* SpeakerboxCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */; };
+		DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */; };
+		DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */; };
+		DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */; };
+		DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */; };
+		DE7AF9031FB2235300C2D29C /* CallAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9021FB2235300C2D29C /* CallAudio.swift */; };
+		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; };
 		DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9891FB218B20078CD01 /* AppDelegate.swift */; };
 		DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C98B1FB218B20078CD01 /* ViewController.swift */; };
 		DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C98D1FB218B20078CD01 /* Main.storyboard */; };
@@ -35,6 +43,15 @@
 
 /* Begin PBXFileReference section */
 		DE7AF8E81FB21BE100C2D29C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerboxCallManager.swift; sourceTree = "<group>"; };
+		DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerboxCall.swift; sourceTree = "<group>"; };
+		DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCallConvertible.swift; sourceTree = "<group>"; };
+		DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertible.swift"; sourceTree = "<group>"; };
+		DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+StartCallConvertible.swift"; sourceTree = "<group>"; };
+		DE7AF9021FB2235300C2D29C /* CallAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallAudio.swift; sourceTree = "<group>"; };
+		DE7AF9051FB2243F00C2D29C /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		DE7AF9071FB2246700C2D29C /* AudioController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioController.mm; sourceTree = "<group>"; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE83C98B1FB218B20078CD01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +65,7 @@
 		DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallKittyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyUITests.swift; sourceTree = "<group>"; };
 		DE83C9AB1FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallKitty-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +93,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE7AF8EF1FB21F7300C2D29C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
+				DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		DE7AF8F21FB2204E00C2D29C /* Call Management */ = {
+			isa = PBXGroup;
+			children = (
+				DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */,
+				DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */,
+			);
+			name = "Call Management";
+			sourceTree = "<group>";
+		};
+		DE7AF8F31FB2207A00C2D29C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C9901FB218B20078CD01 /* Assets.xcassets */,
+				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
+				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
+				DE7AF8F41FB220B400C2D29C /* View Controllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		DE7AF8F41FB220B400C2D29C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE83C98B1FB218B20078CD01 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DE7AF8F51FB2210C00C2D29C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */,
+				DE83C9951FB218B20078CD01 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */ = {
+			isa = PBXGroup;
+			children = (
+				DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */,
+				DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */,
+				DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */,
+			);
+			name = "Start Call Handling";
+			sourceTree = "<group>";
+		};
+		DE7AF9041FB2237D00C2D29C /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				DE7AF9021FB2235300C2D29C /* CallAudio.swift */,
+				DE7AF9051FB2243F00C2D29C /* AudioController.h */,
+				DE7AF9071FB2246700C2D29C /* AudioController.mm */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		DE83C97D1FB218B20078CD01 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +183,12 @@
 		DE83C9881FB218B20078CD01 /* CallKitty */ = {
 			isa = PBXGroup;
 			children = (
-				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
-				DE83C98B1FB218B20078CD01 /* ViewController.swift */,
-				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
-				DE83C9901FB218B20078CD01 /* Assets.xcassets */,
-				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
-				DE83C9951FB218B20078CD01 /* Info.plist */,
+				DE7AF8EF1FB21F7300C2D29C /* App */,
+				DE7AF8F31FB2207A00C2D29C /* UI */,
+				DE7AF8F21FB2204E00C2D29C /* Call Management */,
+				DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */,
+				DE7AF9041FB2237D00C2D29C /* Audio */,
+				DE7AF8F51FB2210C00C2D29C /* Supporting Files */,
 			);
 			path = CallKitty;
 			sourceTree = "<group>";
@@ -195,6 +279,7 @@
 				TargetAttributes = {
 					DE83C9851FB218B20078CD01 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					DE83C9991FB218B20078CD01 = {
@@ -261,8 +346,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
+				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
+				DE7AF8F71FB221F400C2D29C /* SpeakerboxCallManager.swift in Sources */,
+				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
+				DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */,
 				DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
+				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
+				DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */,
+				DE7AF9031FB2235300C2D29C /* CallAudio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
 				INFOPLIST_FILE = CallKitty/Info.plist;
@@ -435,6 +529,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CallKitty/CallKitty-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
 				INFOPLIST_FILE = CallKitty/Info.plist;
@@ -451,6 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CallKitty/CallKitty-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
