@@ -32,6 +32,7 @@
 		DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */; };
 		DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */; };
 		DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */; };
+		DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3A1FB2301300F9936D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateIncomingCallViewController.swift; sourceTree = "<group>"; };
 		DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallDurationFormatter.swift; sourceTree = "<group>"; };
+		DE842F3B1FB2301300F9936D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */,
 				DE83C9951FB218B20078CD01 /* Info.plist */,
+				DE842F3A1FB2301300F9936D /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
+				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
 				DE83C9911FB218B20078CD01 /* Assets.xcassets in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
 			);
@@ -485,6 +489,14 @@
 				DE83C9931FB218B20078CD01 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DE842F3A1FB2301300F9936D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE842F3B1FB2301300F9936D /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
