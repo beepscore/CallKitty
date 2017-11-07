@@ -24,6 +24,9 @@
 		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
 		DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */; };
 		DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */; };
+		DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */; };
+		DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */; };
+		DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2A1FB22B4800F9936D /* CAXException.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,13 @@
 		DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallKitty-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Speakerbox.swift"; sourceTree = "<group>"; };
 		DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Speakerbox.swift"; sourceTree = "<group>"; };
+		DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		DE842F251FB22B1C00F9936D /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		DE842F271FB22B4800F9936D /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		DE842F291FB22B4800F9936D /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		DE842F2A1FB22B4800F9936D /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		DE842F2B1FB22B4800F9936D /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +169,7 @@
 				DE7AF9021FB2235300C2D29C /* CallAudio.swift */,
 				DE7AF9051FB2243F00C2D29C /* AudioController.h */,
 				DE7AF9071FB2246700C2D29C /* AudioController.mm */,
+				DE842F231FB22AC000F9936D /* Utility */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -223,6 +234,20 @@
 				DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		DE842F231FB22AC000F9936D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F251FB22B1C00F9936D /* CADebugMacros.h */,
+				DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */,
+				DE842F2B1FB22B4800F9936D /* CAMath.h */,
+				DE842F291FB22B4800F9936D /* CAStreamBasicDescription.h */,
+				DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */,
+				DE842F271FB22B4800F9936D /* CAXException.h */,
+				DE842F2A1FB22B4800F9936D /* CAXException.cpp */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
 				DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
@@ -367,11 +393,13 @@
 				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
 				DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */,
 				DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */,
+				DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */,
 				DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
 				DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */,
 				DE7AF9031FB2235300C2D29C /* CallAudio.swift in Sources */,
+				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
