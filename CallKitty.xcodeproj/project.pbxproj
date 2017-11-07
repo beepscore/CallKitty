@@ -24,9 +24,9 @@
 		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
 		DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */; };
 		DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */; };
-		DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */; };
-		DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */; };
-		DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2A1FB22B4800F9936D /* CAXException.cpp */; };
+		DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2A1FB22B4800F9936D /* CAXException.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
