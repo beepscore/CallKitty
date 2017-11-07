@@ -15,7 +15,6 @@
 		DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */; };
 		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9891FB218B20078CD01 /* AppDelegate.swift */; };
-		DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C98B1FB218B20078CD01 /* ViewController.swift */; };
 		DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C98D1FB218B20078CD01 /* Main.storyboard */; };
 		DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */; };
 		DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */; };
@@ -65,7 +64,6 @@
 		DE7AF9071FB2246700C2D29C /* AudioController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioController.mm; sourceTree = "<group>"; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE83C98B1FB218B20078CD01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE83C9931FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE83C9951FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
 				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
-				DE83C98B1FB218B20078CD01 /* ViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
 				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
-				DE83C98C1FB218B20078CD01 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
