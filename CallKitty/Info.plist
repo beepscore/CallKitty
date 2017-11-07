@@ -39,6 +39,10 @@
 	<array>
 		<string>INStartAudioCallIntent</string>
 	</array>
+	<key>SBIconVisibilityDefaultVisible</key>
+	<true/>
+	<key>SBIconVisibilitySetByAppPreference</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
