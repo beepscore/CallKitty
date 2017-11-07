@@ -27,6 +27,11 @@
 		DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2A1FB22B4800F9936D /* CAXException.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2E1FB22E3500F9936D /* CallsViewController.swift */; };
+		DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */; };
+		DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */; };
+		DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */; };
+		DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		DE842F291FB22B4800F9936D /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
 		DE842F2A1FB22B4800F9936D /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
 		DE842F2B1FB22B4800F9936D /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		DE842F2E1FB22E3500F9936D /* CallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
+		DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialOptionsViewController.swift; sourceTree = "<group>"; };
+		DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateIncomingCallViewController.swift; sourceTree = "<group>"; };
+		DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallDurationFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +142,7 @@
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
+				DE842F341FB22EAF00F9936D /* Views */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -139,6 +150,9 @@
 		DE7AF8F41FB220B400C2D29C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
+				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
+				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
 				DE83C98B1FB218B20078CD01 /* ViewController.swift */,
 			);
 			name = "View Controllers";
@@ -203,6 +217,7 @@
 				DE7AF8F21FB2204E00C2D29C /* Call Management */,
 				DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */,
 				DE7AF9041FB2237D00C2D29C /* Audio */,
+				DE842F371FB22F1600F9936D /* Data Formatters */,
 				DE842F1E1FB228B500F9936D /* Extensions */,
 				DE7AF8F51FB2210C00C2D29C /* Supporting Files */,
 			);
@@ -248,6 +263,22 @@
 				DE842F2A1FB22B4800F9936D /* CAXException.cpp */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		DE842F341FB22EAF00F9936D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DE842F371FB22F1600F9936D /* Data Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */,
+			);
+			name = "Data Formatters";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +417,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */,
+				DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
+				DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */,
+				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
+				DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */,
 				DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */,
@@ -395,6 +430,7 @@
 				DE7AF9031FB2235300C2D29C /* CallAudio.swift in Sources */,
 				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
 				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
+				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
 				DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */,
 				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
 				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
