@@ -88,7 +88,6 @@
 		DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		DE7B961B1FB23DD5009D7CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE7B96221FB23DD5009D7CD2 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -234,14 +233,6 @@
 			path = IntentsExtension;
 			sourceTree = "<group>";
 		};
-		DE7B96211FB23DD5009D7CD2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DE7B96221FB23DD5009D7CD2 /* IntentsUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DE83C97D1FB218B20078CD01 = {
 			isa = PBXGroup;
 			children = (
@@ -250,7 +241,6 @@
 				DE83C99D1FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A81FB218B20078CD01 /* CallKittyUITests */,
 				DE7B96181FB23DD5009D7CD2 /* IntentsExtension */,
-				DE7B96211FB23DD5009D7CD2 /* Frameworks */,
 				DE83C9871FB218B20078CD01 /* Products */,
 			);
 			sourceTree = "<group>";
