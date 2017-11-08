@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE83C9991FB218B20078CD01"
-               BuildableName = "CallKittyTests.xctest"
-               BlueprintName = "CallKittyTests"
+               BlueprintIdentifier = "DE83C9A41FB218B20078CD01"
+               BuildableName = "CallKittyUITests.xctest"
+               BlueprintName = "CallKittyUITests"
                ReferencedContainer = "container:CallKitty.xcodeproj">
             </BuildableReference>
          </TestableReference>
