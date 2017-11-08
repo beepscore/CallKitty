@@ -1,11 +1,11 @@
 /* 
   Localizable.strings
-  Speakerbox
+  CallKitty
 
   Copyright © 2017 Apple. All rights reserved.
 */
 
-"APPLICATION_NAME" = "Speakerbox";
+"APPLICATION_NAME" = "CallKitty";
 
 "CALL_STATUS_SENDING" = "Dialing…";
 "CALL_STATUS_RINGING" = "Ringing";
