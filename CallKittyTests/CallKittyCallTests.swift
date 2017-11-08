@@ -15,10 +15,14 @@ class CallKittyCallTests: XCTestCase {
         let uuid = UUID()
         let call = CallKittyCall(uuid: uuid, isOutgoing: false)
         XCTAssertEqual(call.uuid, uuid)
-        XCTAssertEqual(call.isOutgoing, false)
-        XCTAssertEqual(call.isOnHold, false)
+
+        XCTAssertNil(call.connectDate)
         XCTAssertNil(call.connectingDate)
         XCTAssertEqual(call.duration, 0)
+        XCTAssertNil(call.endDate)
+        XCTAssertEqual(call.isOnHold, false)
+        XCTAssertEqual(call.isOutgoing, false)
+        XCTAssertNil(call.handle)
     }
 
 }
