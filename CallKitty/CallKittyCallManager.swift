@@ -92,7 +92,7 @@ final class CallKittyCallManager: NSObject {
 
     // MARK: - CallKittyCallDelegate
 
-    func speakerboxCallDidChangeState(_ call: CallKittyCall) {
+    func callKittyCallDidChangeState(_ call: CallKittyCall) {
         postCallsChangedNotification()
     }
 
