@@ -27,7 +27,7 @@
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER).url-scheme.dial</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>speakerbox</string>
+				<string>callkitty</string>
 			</array>
 		</dict>
 	</array>
