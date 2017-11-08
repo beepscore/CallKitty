@@ -3,13 +3,13 @@
 	See LICENSE.txt for this sample’s licensing information
 	
 	Abstract:
-	Manager of SpeakerboxCalls, which demonstrates using a CallKit CXCallController to request actions on calls
+	Manager of CallKittyCalls, which demonstrates using a CallKit CXCallController to request actions on calls
 */
 
 import UIKit
 import CallKit
 
-final class SpeakerboxCallManager: NSObject {
+final class CallKittyCallManager: NSObject {
 
     let callController = CXCallController()
 
@@ -27,7 +27,7 @@ final class SpeakerboxCallManager: NSObject {
         requestTransaction(transaction)
     }
 
-    func end(call: SpeakerboxCall) {
+    func end(call: CallKittyCall) {
         let endCallAction = CXEndCallAction(call: call.uuid)
         let transaction = CXTransaction()
         transaction.addAction(endCallAction)
@@ -35,7 +35,7 @@ final class SpeakerboxCallManager: NSObject {
         requestTransaction(transaction)
     }
 
-    func setHeld(call: SpeakerboxCall, onHold: Bool) {
+    func setHeld(call: CallKittyCall, onHold: Bool) {
         let setHeldCallAction = CXSetHeldCallAction(call: call.uuid, onHold: onHold)
         let transaction = CXTransaction()
         transaction.addAction(setHeldCallAction)
@@ -57,16 +57,16 @@ final class SpeakerboxCallManager: NSObject {
 
     static let CallsChangedNotification = Notification.Name("CallManagerCallsChangedNotification") 
 
-    private(set) var calls = [SpeakerboxCall]()
+    private(set) var calls = [CallKittyCall]()
 
-    func callWithUUID(uuid: UUID) -> SpeakerboxCall? {
+    func callWithUUID(uuid: UUID) -> CallKittyCall? {
         guard let index = calls.index(where: { $0.uuid == uuid }) else {
             return nil
         }
         return calls[index]
     }
 
-    func addCall(_ call: SpeakerboxCall) {
+    func addCall(_ call: CallKittyCall) {
         calls.append(call)
 
         call.stateDidChange = { [weak self] in
@@ -76,7 +76,7 @@ final class SpeakerboxCallManager: NSObject {
         postCallsChangedNotification()
     }
 
-    func removeCall(_ call: SpeakerboxCall) {
+    func removeCall(_ call: CallKittyCall) {
         calls.removeFirst(where: { $0 === call })
         postCallsChangedNotification()
     }
@@ -90,9 +90,9 @@ final class SpeakerboxCallManager: NSObject {
         NotificationCenter.default.post(name: type(of: self).CallsChangedNotification, object: self)
     }
 
-    // MARK: - SpeakerboxCallDelegate
+    // MARK: - CallKittyCallDelegate
 
-    func speakerboxCallDidChangeState(_ call: SpeakerboxCall) {
+    func speakerboxCallDidChangeState(_ call: CallKittyCall) {
         postCallsChangedNotification()
     }
 

@@ -12,10 +12,10 @@ import CallKit
 
 final class ProviderDelegate: NSObject, CXProviderDelegate {
 
-    let callManager: SpeakerboxCallManager
+    let callManager: CallKittyCallManager
     private let provider: CXProvider
 
-    init(callManager: SpeakerboxCallManager) {
+    init(callManager: CallKittyCallManager) {
         self.callManager = callManager
         provider = CXProvider(configuration: type(of: self).providerConfiguration)
 
@@ -60,7 +60,7 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
                 since calls may be "denied" for various legitimate reasons. See CXErrorCodeIncomingCallError.
              */
             if error == nil {
-                let call = SpeakerboxCall(uuid: uuid)
+                let call = CallKittyCall(uuid: uuid)
                 call.handle = handle
 
                 self.callManager.addCall(call)
@@ -82,7 +82,7 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
             since they are no longer valid.
          */
         for call in callManager.calls {
-            call.endSpeakerboxCall()
+            call.endCallKittyCall()
         }
 
         // Remove all calls from the app's list of calls.
@@ -90,8 +90,8 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
-        // Create & configure an instance of SpeakerboxCall, the app's model class representing the new outgoing call.
-        let call = SpeakerboxCall(uuid: action.callUUID, isOutgoing: true)
+        // Create & configure an instance of CallKittyCall, the app's model class representing the new outgoing call.
+        let call = CallKittyCall(uuid: action.callUUID, isOutgoing: true)
         call.handle = action.handle.value
 
         /*
@@ -112,7 +112,7 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
         }
 
         // Trigger the call to be started via the underlying network service.
-        call.startSpeakerboxCall { success in
+        call.startCallKittyCall { success in
             if success {
                 // Signal to the system that the action has been successfully performed.
                 action.fulfill()
@@ -127,7 +127,7 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-        // Retrieve the SpeakerboxCall instance corresponding to the action's call UUID
+        // Retrieve the CallKittyCall instance corresponding to the action's call UUID
         guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
             action.fail()
             return
@@ -140,14 +140,14 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
         configureAudioSession()
 
         // Trigger the call to be answered via the underlying network service.
-        call.answerSpeakerboxCall()
+        call.answerCallKittyCall()
 
         // Signal to the system that the action has been successfully performed.
         action.fulfill()
     }
 
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        // Retrieve the SpeakerboxCall instance corresponding to the action's call UUID
+        // Retrieve the CallKittyCall instance corresponding to the action's call UUID
         guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
             action.fail()
             return
@@ -157,7 +157,7 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
         stopAudio()
 
         // Trigger the call to be ended via the underlying network service.
-        call.endSpeakerboxCall()
+        call.endCallKittyCall()
 
         // Signal to the system that the action has been successfully performed.
         action.fulfill()
@@ -167,13 +167,13 @@ final class ProviderDelegate: NSObject, CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {
-        // Retrieve the SpeakerboxCall instance corresponding to the action's call UUID
+        // Retrieve the CallKittyCall instance corresponding to the action's call UUID
         guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
             action.fail()
             return
         }
 
-        // Update the SpeakerboxCall's underlying hold state.
+        // Update the CallKittyCall's underlying hold state.
         call.isOnHold = action.isOnHold
 
         // Stop or start audio in response to holding or unholding the call.

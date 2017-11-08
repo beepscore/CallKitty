@@ -10,8 +10,8 @@
 		DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */; };
 		DE3373521FB2531400F220BB /* CallKittyDirectoryExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
-		DE7AF8F71FB221F400C2D29C /* SpeakerboxCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */; };
-		DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */; };
+		DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */; };
+		DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */; };
 		DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */; };
 		DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */; };
 		DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */; };
@@ -23,8 +23,8 @@
 		DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */; };
 		DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */; };
 		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
-		DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */; };
-		DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */; };
+		DE842F201FB2290000F9936D /* Array+CallKitty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F1F1FB2290000F9936D /* Array+CallKitty.swift */; };
+		DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F211FB2292200F9936D /* UIFont+CallKitty.swift */; };
 		DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2A1FB22B4800F9936D /* CAXException.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -91,8 +91,8 @@
 		DE33734F1FB2531400F220BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7AF8E81FB21BE100C2D29C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
-		DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerboxCallManager.swift; sourceTree = "<group>"; };
-		DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerboxCall.swift; sourceTree = "<group>"; };
+		DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCallManager.swift; sourceTree = "<group>"; };
+		DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCall.swift; sourceTree = "<group>"; };
 		DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCallConvertible.swift; sourceTree = "<group>"; };
 		DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertible.swift"; sourceTree = "<group>"; };
 		DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+StartCallConvertible.swift"; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyUITests.swift; sourceTree = "<group>"; };
 		DE83C9AB1FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallKitty-Bridging-Header.h"; sourceTree = "<group>"; };
-		DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Speakerbox.swift"; sourceTree = "<group>"; };
-		DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Speakerbox.swift"; sourceTree = "<group>"; };
+		DE842F1F1FB2290000F9936D /* Array+CallKitty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+CallKitty.swift"; sourceTree = "<group>"; };
+		DE842F211FB2292200F9936D /* UIFont+CallKitty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CallKitty.swift"; sourceTree = "<group>"; };
 		DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
 		DE842F251FB22B1C00F9936D /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
 		DE842F271FB22B4800F9936D /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 		DE7AF8F21FB2204E00C2D29C /* Call Management */ = {
 			isa = PBXGroup;
 			children = (
-				DE7AF8F61FB221F400C2D29C /* SpeakerboxCallManager.swift */,
-				DE7AF8F81FB221FF00C2D29C /* SpeakerboxCall.swift */,
+				DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */,
+				DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */,
 			);
 			name = "Call Management";
 			sourceTree = "<group>";
@@ -323,8 +323,8 @@
 		DE842F1E1FB228B500F9936D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DE842F1F1FB2290000F9936D /* Array+Speakerbox.swift */,
-				DE842F211FB2292200F9936D /* UIFont+Speakerbox.swift */,
+				DE842F1F1FB2290000F9936D /* Array+CallKitty.swift */,
+				DE842F211FB2292200F9936D /* UIFont+CallKitty.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -581,7 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE842F221FB2292300F9936D /* UIFont+Speakerbox.swift in Sources */,
+				DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
@@ -590,12 +590,12 @@
 				DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */,
 				DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */,
 				DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */,
-				DE7AF8F71FB221F400C2D29C /* SpeakerboxCallManager.swift in Sources */,
-				DE842F201FB2290000F9936D /* Array+Speakerbox.swift in Sources */,
+				DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */,
+				DE842F201FB2290000F9936D /* Array+CallKitty.swift in Sources */,
 				DE842F411FB236C500F9936D /* CallAudio.swift in Sources */,
 				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
 				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
-				DE7AF8F91FB221FF00C2D29C /* SpeakerboxCall.swift in Sources */,
+				DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */,
 				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
 				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
 				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,

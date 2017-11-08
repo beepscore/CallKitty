@@ -10,7 +10,7 @@ import UIKit
 
 final class CallsViewController: UITableViewController {
 
-    var callManager: SpeakerboxCallManager?
+    var callManager: CallKittyCallManager?
 
     var callDurationTimer: Timer?
     lazy var callDurationFormatter = CallDurationFormatter()
@@ -51,7 +51,7 @@ final class CallsViewController: UITableViewController {
         updateCallDurationTimer()
     }
 
-    private func call(at indexPath: IndexPath) -> SpeakerboxCall? {
+    private func call(at indexPath: IndexPath) -> CallKittyCall? {
         return callManager?.calls[indexPath.row]
     }
 
@@ -100,7 +100,7 @@ final class CallsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(handleCallsChangedNotification(notification:)), name: SpeakerboxCallManager.CallsChangedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCallsChangedNotification(notification:)), name: CallKittyCallManager.CallsChangedNotification, object: nil)
 
         updateCallsDependentUI(animated: animated)
     }
@@ -108,7 +108,7 @@ final class CallsViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        NotificationCenter.default.removeObserver(self, name: SpeakerboxCallManager.CallsChangedNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: CallKittyCallManager.CallsChangedNotification, object: nil)
 
         callDurationTimer?.invalidate()
         callDurationTimer = nil
@@ -152,7 +152,7 @@ final class CallsViewController: UITableViewController {
         return cell
     }
 
-    private func durationLabelText(forCall call: SpeakerboxCall) -> String? {
+    private func durationLabelText(forCall call: CallKittyCall) -> String? {
         return call.hasConnected ? callDurationFormatter.format(timeInterval: call.duration) : nil
     }
 

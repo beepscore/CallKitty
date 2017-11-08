@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SpeakerboxCall {
+final class CallKittyCall {
 
     // MARK: - Metadata Properties
 
@@ -92,7 +92,7 @@ final class SpeakerboxCall {
 
     // MARK: - Actions
 
-    func startSpeakerboxCall(completion: ((_ success: Bool) -> Void)?) {
+    func startCallKittyCall(completion: ((_ success: Bool) -> Void)?) {
         // Simulate the call starting successfully
         completion?(true)
 
@@ -109,7 +109,7 @@ final class SpeakerboxCall {
         }
     }
 
-    func answerSpeakerboxCall() {
+    func answerCallKittyCall() {
         /*
             Simulate the answer becoming connected immediately, since
             the example app is not backed by a real network service
@@ -117,7 +117,7 @@ final class SpeakerboxCall {
         hasConnected = true
     }
 
-    func endSpeakerboxCall() {
+    func endCallKittyCall() {
         /*
             Simulate the end taking effect immediately, since
             the example app is not backed by a real network service

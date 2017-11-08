@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
 
     var window: UIWindow?
     let pushRegistry = PKPushRegistry(queue: DispatchQueue.main)
-    let callManager = SpeakerboxCallManager()
+    let callManager = CallKittyCallManager()
     var providerDelegate: ProviderDelegate?
 
     // MARK: - UIApplicationDelegate
