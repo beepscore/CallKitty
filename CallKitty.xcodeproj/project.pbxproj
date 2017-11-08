@@ -37,6 +37,7 @@
 		DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3E1FB2354B00F9936D /* Ringtone.aif */; };
 		DE842F411FB236C500F9936D /* CallAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F401FB236C500F9936D /* CallAudio.swift */; };
 		DE842F431FB239A100F9936D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE842F421FB239A100F9936D /* Assets.xcassets */; };
+		DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		DE842F3E1FB2354B00F9936D /* Ringtone.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.aif; sourceTree = "<group>"; };
 		DE842F401FB236C500F9936D /* CallAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CallAudio.swift; path = CallKitty/CallAudio.swift; sourceTree = SOURCE_ROOT; };
 		DE842F421FB239A100F9936D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertibleTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			children = (
 				DE83C99E1FB218B20078CD01 /* CallKittyTests.swift */,
 				DE83C9A01FB218B20078CD01 /* Info.plist */,
+				DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */,
 			);
 			path = CallKittyTests;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */,
 				DE83C99F1FB218B20078CD01 /* CallKittyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
