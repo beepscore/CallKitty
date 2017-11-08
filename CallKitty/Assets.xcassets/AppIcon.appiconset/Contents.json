@@ -13,19 +13,19 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Speakerbox-58.png",
+      "filename" : "beepscoreIcon58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Speakerbox-87.png",
+      "filename" : "beepscoreIcon87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Speakerbox-80.png",
+      "filename" : "beepscoreIcon80.png",
       "scale" : "2x"
     },
     {
@@ -59,31 +59,31 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Speakerbox-29.png",
+      "filename" : "beepscoreIcon29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Speakerbox-58.png",
+      "filename" : "beepscoreIcon58-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Speakerbox-40.png",
+      "filename" : "beepscoreIcon40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Speakerbox-80.png",
+      "filename" : "beepscoreIcon80-1.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Speakerbox-76.png",
+      "filename" : "beepscoreIcon76.png",
       "scale" : "1x"
     },
     {
