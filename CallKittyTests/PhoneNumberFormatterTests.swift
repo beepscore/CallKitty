@@ -43,5 +43,8 @@ class PhoneNumberFormatterTests: XCTestCase {
         XCTAssertEqual(actual, "12345678901234")
     }
 
+    func testSanitizedPhoneNumberStringNoDigits() {
+        XCTAssertEqual(PhoneNumberFormatter.sanitizedPhoneNumberString(phoneNumberString: "abcsdaffEEEBIAFBM DSF"), "")
+    }
 
 }
