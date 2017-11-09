@@ -15,13 +15,13 @@ import RealmSwift
 // Object is a Realm class
 class PhoneCaller: Object {
 
-    // objects must be available at runtime, so generally set default value
+    /// objects must be available at runtime, so generally set default value
     @objc dynamic var phoneNumberString: String = ""
 
-    // optional String, used for blocking entry
+    /// optional String, used for caller identification entry, not required for blocking entry
     @objc dynamic var label: String? = nil
 
-    // convenience initializer
+    /// convenience initializer
     convenience init(phoneNumberString: String, label: String?) {
         // must call designated initializer
         self.init()
