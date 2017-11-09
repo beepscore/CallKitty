@@ -21,6 +21,10 @@ https://www.raywenderlich.com/150015/callkit-tutorial-ios
 ## RealmSwiftExamples
 https://github.com/beepscore/RealmSwiftExamples.git
 
+## RealmService
+Add a class similar to Realm: CRUD | Swift 4, Xcode 9
+https://www.youtube.com/watch?v=hC6dLLbfUXc
+
 # Results
 CallKit requires an iPhone, doesn't work on simulator.
 
