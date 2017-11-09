@@ -29,17 +29,22 @@ class PhoneCaller: Object {
     /// used for caller identification entry, not required for blocking entry
     @objc dynamic var label: String = labelPlaceholder
 
+    /// set true to block
+    @objc dynamic var isBlocked: Bool = false
+
     /// convenience initializer
     ///
     /// - Parameters:
     ///   - phoneNumber: a phone number, can be used to identify and/or block phone calls
-    ///   - label: used to identify a caller. default value labelPlaceholder, e.g. empty string
-    convenience init(phoneNumber: CXCallDirectoryPhoneNumber, label: String = labelPlaceholder) {
+    ///   - label: used to identify a caller. default is labelPlaceholder, e.g. empty string
+    ///   - isBlocked: set true to block calls from phoneNumber. default is false
+    convenience init(phoneNumber: CXCallDirectoryPhoneNumber, label: String = labelPlaceholder, isBlocked: Bool = false) {
         // must call designated initializer
         self.init()
 
         self.phoneNumber = phoneNumber
         self.label = label
+        self.isBlocked = isBlocked
     }
 
 }
