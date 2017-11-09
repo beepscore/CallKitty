@@ -22,13 +22,22 @@ class RealmServiceTests: XCTestCase {
         let initialCount = phoneCallers.count
 
         let phoneCaller = PhoneCaller(phoneNumber: 123, label: "dog")
+        XCTAssertEqual(phoneCaller.phoneNumber, 123)
         XCTAssertEqual(phoneCaller.label, "dog")
+        XCTAssertFalse(phoneCaller.isBlocked)
 
         realmService.add(phoneCaller)
         XCTAssertEqual(phoneCallers.count, initialCount + 1)
 
-        realmService.update(phoneCaller, with: ["label" : "cat"])
+        realmService.update(phoneCaller, with: ["phoneNumber" : 456])
+        XCTAssertEqual(phoneCaller.phoneNumber, 456)
+        XCTAssertEqual(phoneCaller.label, "dog")
+        XCTAssertFalse(phoneCaller.isBlocked)
+
+        realmService.update(phoneCaller, with: ["label" : "cat", "isBlocked" : true])
+        XCTAssertEqual(phoneCaller.phoneNumber, 456)
         XCTAssertEqual(phoneCaller.label, "cat")
+        XCTAssertTrue(phoneCaller.isBlocked)
 
         realmService.delete(phoneCaller)
         XCTAssertEqual(phoneCallers.count, initialCount)
