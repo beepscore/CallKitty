@@ -18,10 +18,13 @@ class RealmServiceTests: XCTestCase {
     func testReadAddUpdateDelete() {
 
         let realmService = RealmService.shared
-        let phoneCallers = realmService.realm.objects(PhoneCaller.self).sorted(byKeyPath: "phoneNumber")
+        let phoneCallers = realmService.realm.objects(PhoneCaller.self)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+
         let initialCount = phoneCallers.count
 
         let phoneCaller = PhoneCaller(phoneNumber: 123, label: "dog")
+
         XCTAssertEqual(phoneCaller.phoneNumber, 123)
         XCTAssertEqual(phoneCaller.label, "dog")
         XCTAssertFalse(phoneCaller.isBlocked)
@@ -29,12 +32,16 @@ class RealmServiceTests: XCTestCase {
         realmService.add(phoneCaller)
         XCTAssertEqual(phoneCallers.count, initialCount + 1)
 
-        realmService.update(phoneCaller, with: ["phoneNumber" : 456])
+        // use enum PhoneCaller.PropertyStrings to reduce risk of misspelling a "stringly typed" key
+        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.phoneNumber.rawValue : 456])
+
         XCTAssertEqual(phoneCaller.phoneNumber, 456)
         XCTAssertEqual(phoneCaller.label, "dog")
         XCTAssertFalse(phoneCaller.isBlocked)
 
-        realmService.update(phoneCaller, with: ["label" : "cat", "isBlocked" : true])
+        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.label.rawValue : "cat",
+                                                PhoneCaller.PropertyStrings.isBlocked.rawValue : true])
+
         XCTAssertEqual(phoneCaller.phoneNumber, 456)
         XCTAssertEqual(phoneCaller.label, "cat")
         XCTAssertTrue(phoneCaller.isBlocked)

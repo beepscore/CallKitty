@@ -15,6 +15,14 @@ import RealmSwift
 // Object is a Realm class
 class PhoneCaller: Object {
 
+    // use enum to reduce risk of misspelling a "stringly typed" key
+    // https://spin.atomicobject.com/2016/08/04/swift-enums-hard-coded-strings/
+    enum PropertyStrings: String {
+        case phoneNumber = "phoneNumber"
+        case label = "label"
+        case isBlocked = "isBlocked"
+    }
+
     static let phoneNumberPlaceholder: CXCallDirectoryPhoneNumber = -1
     static let labelPlaceholder = ""
 
