@@ -56,6 +56,7 @@
 		DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */; };
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
+		DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE066911FB577B400B1C11F /* AddBlocksVC.swift */; };
 		DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +169,7 @@
 		DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertibleTests.swift"; sourceTree = "<group>"; };
 		DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyCallTests.swift; sourceTree = "<group>"; };
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
+		DEE066911FB577B400B1C11F /* AddBlocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlocksVC.swift; sourceTree = "<group>"; };
 		DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyProviderDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -279,6 +281,7 @@
 		DE7AF8F41FB220B400C2D29C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DEE066911FB577B400B1C11F /* AddBlocksVC.swift */,
 				DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */,
 				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
@@ -680,6 +683,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */,
 				DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */,
 				DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */,
 				DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */,
