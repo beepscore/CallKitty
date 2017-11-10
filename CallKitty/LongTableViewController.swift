@@ -99,10 +99,10 @@ class LongTableViewController: UITableViewController {
         let phoneCaller = results[index]
 
         cell.phoneNumberLabel.text = String(phoneCaller.phoneNumber)
-        cell.noteField.text = phoneCaller.label
+        cell.phoneCallerLabel.text = phoneCaller.label
 
         // use tag to enable textField delegate methods to know row
-        cell.noteField.tag = index
+        cell.phoneCallerLabel.tag = index
 
         // set background color for diagnostics during development
         if phoneCaller.shouldBlock {
