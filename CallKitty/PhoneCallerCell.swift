@@ -1,6 +1,6 @@
 //
-//  ItemCell.swift
-//  LongTable
+//  PhoneCallerCell.swift
+//  CallKitty
 //
 //  Created by Steve Baker on 7/22/17.
 //  Copyright © 2017 Beepscore LLC. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+class PhoneCallerCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var noteField: UITextField!
