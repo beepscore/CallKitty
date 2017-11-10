@@ -23,6 +23,7 @@ class SummaryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         blockingCountLabel.text = String(RealmService.shared.blockedCount())
+        identifyingCountLabel.text = String(RealmService.shared.identifiedCount())
     }
 
     override func didReceiveMemoryWarning() {
