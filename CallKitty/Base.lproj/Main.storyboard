@@ -230,7 +230,7 @@
         <scene sceneID="9a4-go-V0W">
             <objects>
                 <navigationController toolbarHidden="NO" id="Rhg-KA-b2d" userLabel="Calls Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="L0u-Hb-sG7"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="arrow-right" id="L0u-Hb-sG7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6A6-Ss-Qbd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -331,4 +331,7 @@
             <point key="canvasLocation" x="106" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-right" width="30" height="17"/>
+    </resources>
 </document>
