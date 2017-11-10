@@ -28,6 +28,9 @@ https://www.youtube.com/watch?v=hC6dLLbfUXc
 # Results
 CallKit requires an iPhone, doesn't work on simulator.
 
+## Call directory doesn't expose blocked list, app must maintain its own database
+https://stackoverflow.com/questions/43125835/callkit-where-are-numbers-loaded-for-blocking-or-id-stored?rq=1
+
 ## How to use CallKittyDirectoryExtension
 Shouldn't need to run scheme CallKittyDirectoryExtension first to update block and id lists, normal user is not going to do this.
 
