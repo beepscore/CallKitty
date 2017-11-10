@@ -131,42 +131,4 @@ class LongTableViewController: UITableViewController {
         return index
     }
 
-    // MARK: - Navigation
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if activeTextField != nil {
-//            // finish activeTextField editing, even if not in selected row
-//            let _ = textFieldShouldReturn(activeTextField!)
-//        }
-//
-//        let indexPath = self.tableView.indexPathForSelectedRow!
-//        let index = itemIndex(indexPath: indexPath)
-//        let detailVC = segue.destination as? DetailVC
-//        detailVC?.item = items[index]
-//    }
-
 }
-
-// MARK: - UITextFieldDelegate
-// extension LongTableViewController: UITextFieldDelegate {
-//
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        activeTextField = textField
-//        return true
-//    }
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        items[textField.tag].note = textField.text
-//
-//        // dismiss keyboard
-//        textField.resignFirstResponder()
-//
-//        return true
-//    }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        activeTextField = nil
-//    }
-//
-// }
