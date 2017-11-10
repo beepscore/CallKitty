@@ -16,7 +16,7 @@ class LongTableViewController: UITableViewController {
     var results: Results<PhoneCaller>?
     var notificationToken: NotificationToken?
 
-    let numSections = 50
+    var numSections = 1
 
     /// activeTextField may be in any row, not necessarily the currently selected row
     //var activeTextField: UITextField?
