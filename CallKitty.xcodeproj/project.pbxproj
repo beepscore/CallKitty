@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1CA99E1FB547D700B711EE /* Summary.storyboard */; };
+		DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */; };
 		DE22F7221FB3F66D0054E29D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
 		DE22F7241FB3F6760054E29D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7231FB3F6760054E29D /* RealmSwift.framework */; };
 		DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */; };
@@ -99,6 +101,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE1CA99E1FB547D700B711EE /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
+		DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		DE22F7211FB3F66D0054E29D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		DE22F7231FB3F6760054E29D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallKittyDirectoryExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
+				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
 				DE842F341FB22EAF00F9936D /* Views */,
@@ -264,6 +269,7 @@
 				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
 				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
+				DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -593,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
+				DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */,
 				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
 				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
@@ -675,6 +682,7 @@
 				DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */,
 				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
 				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
+				DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */,
 				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
 			);
