@@ -127,8 +127,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="B2d-VQ-GI7" id="kwK-2n-cPV"/>
                                     <outlet property="noteField" destination="WUP-L7-EIa" id="2Fu-UB-gUh"/>
+                                    <outlet property="phoneNumberLabel" destination="B2d-VQ-GI7" id="kwK-2n-cPV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

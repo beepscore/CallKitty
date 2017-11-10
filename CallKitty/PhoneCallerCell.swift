@@ -10,7 +10,7 @@ import UIKit
 
 class PhoneCallerCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var noteField: UITextField!
 
     override func awakeFromNib() {

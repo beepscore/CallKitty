@@ -98,7 +98,7 @@ class LongTableViewController: UITableViewController {
         let index = itemIndex(indexPath: indexPath)
         let phoneCaller = results[index]
 
-        cell.nameLabel.text = String(phoneCaller.phoneNumber)
+        cell.phoneNumberLabel.text = String(phoneCaller.phoneNumber)
         cell.noteField.text = phoneCaller.label
 
         // use tag to enable textField delegate methods to know row
