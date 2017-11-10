@@ -15,11 +15,11 @@ class RealmServiceTests: XCTestCase {
 //    func testAddPhoneCallers() {
 //        let realmService = RealmService.shared
 //
-//        let phoneCaller0 = PhoneCaller(phoneNumber: 123, label: "dog", shouldBlock: true)
+//        let phoneCaller0 = PhoneCaller(phoneNumber: 200, label: "dog", shouldBlock: true)
 //        realmService.add(phoneCaller0)
-//        let phoneCaller1 = PhoneCaller(phoneNumber: 111, label: "cat", shouldBlock: true)
+//        let phoneCaller1 = PhoneCaller(phoneNumber: 201, label: "cat", shouldBlock: true)
 //        realmService.add(phoneCaller1)
-//        let phoneCaller2 = PhoneCaller(phoneNumber: 111, label: "civet", shouldBlock: false)
+//        let phoneCaller2 = PhoneCaller(phoneNumber: 202, label: "civet", shouldBlock: false)
 //        realmService.add(phoneCaller2)
 //    }
 
@@ -35,9 +35,9 @@ class RealmServiceTests: XCTestCase {
 
         let initialCount = phoneCallers.count
 
-        let phoneCaller = PhoneCaller(phoneNumber: 123, label: "dog")
+        let phoneCaller = PhoneCaller(phoneNumber: 100, label: "dog")
 
-        XCTAssertEqual(phoneCaller.phoneNumber, 123)
+        XCTAssertEqual(phoneCaller.phoneNumber, 100)
         XCTAssertEqual(phoneCaller.label, "dog")
         XCTAssertFalse(phoneCaller.shouldBlock)
 
@@ -45,16 +45,11 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(phoneCallers.count, initialCount + 1)
 
         // use enum PhoneCaller.PropertyStrings to reduce risk of misspelling a "stringly typed" key
-        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.phoneNumber.rawValue : 456])
-
-        XCTAssertEqual(phoneCaller.phoneNumber, 456)
-        XCTAssertEqual(phoneCaller.label, "dog")
-        XCTAssertFalse(phoneCaller.shouldBlock)
-
+        // can't change phoneNumber because it is a primary key
         realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.label.rawValue : "cat",
                                                 PhoneCaller.PropertyStrings.shouldBlock.rawValue : true])
 
-        XCTAssertEqual(phoneCaller.phoneNumber, 456)
+        XCTAssertEqual(phoneCaller.phoneNumber, 100)
         XCTAssertEqual(phoneCaller.label, "cat")
         XCTAssertTrue(phoneCaller.shouldBlock)
 
@@ -66,8 +61,13 @@ class RealmServiceTests: XCTestCase {
         let realmService = RealmService.shared
         let initialCount = realmService.blockedCount()
 
-        let phoneCaller = PhoneCaller(phoneNumber: 123, label: "dog", shouldBlock: true)
+        let phoneCaller = PhoneCaller(phoneNumber: 101, label: "dog", shouldBlock: true)
+
+        // TODO:
+        // FIXME: if PhoneCaller with this primary key exists, throws error
+        // attempting to create an object of type phonecaller with an existing primary key
         realmService.add(phoneCaller)
+
         XCTAssertEqual(realmService.blockedCount(), initialCount + 1)
 
         realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.shouldBlock.rawValue : false])
@@ -82,11 +82,11 @@ class RealmServiceTests: XCTestCase {
         let realmService = RealmService.shared
         let initialCount = realmService.identifiedCount()
 
-        let phoneCaller0 = PhoneCaller(phoneNumber: 123, label: "dog", shouldBlock: true)
+        let phoneCaller0 = PhoneCaller(phoneNumber: 102, label: "dog", shouldBlock: true)
         realmService.add(phoneCaller0)
         XCTAssertEqual(realmService.identifiedCount(), initialCount + 1)
 
-        let phoneCaller1 = PhoneCaller(phoneNumber: 123)
+        let phoneCaller1 = PhoneCaller(phoneNumber: 103)
         realmService.add(phoneCaller1)
         XCTAssertEqual(realmService.identifiedCount(), initialCount + 1)
 

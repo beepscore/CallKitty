@@ -34,6 +34,14 @@ class PhoneCaller: Object {
     /// https://stackoverflow.com/questions/723587/whats-the-longest-possible-worldwide-phone-number-i-should-consider-in-sql-varc#4729239
     @objc dynamic var phoneNumber: CXCallDirectoryPhoneNumber = phoneNumberPlaceholder
 
+    // enforce phoneNumber is unique
+    // example query
+    //    let specificPerson = realm.object(ofType: Person.self, forPrimaryKey: myPrimaryKey)
+    // https://academy.realm.io/posts/realm-primary-keys-tutorial/
+    override static func primaryKey() -> String? {
+        return PropertyStrings.phoneNumber.rawValue
+    }
+
     /// used for caller identification entry, not required for blocking entry
     /// phoneNumber won't be identified unless it is added to call directory as an identificationEntry
     @objc dynamic var label: String = labelPlaceholder

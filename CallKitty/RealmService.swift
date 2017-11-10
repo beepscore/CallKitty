@@ -23,6 +23,10 @@ class RealmService {
 
     static let realmErrorNotificationName = NSNotification.Name("RealmError")
 
+    // TODO: add/revise methods to use object with primary key?
+    // Update 'object' if it already exists, add it if not.
+    // https://academy.realm.io/posts/realm-primary-keys-tutorial/
+
     /// generic function to add an object to a realm
     /// - Parameter object: a generic type that subclasses Realm class Object
     func add<T: Object>(_ object: T) {
