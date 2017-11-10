@@ -14,6 +14,8 @@ class BlockingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // when view loads, tab bar item displays this variable "title"
+        title = NSLocalizedString("BLOCKING_VC_TITLE", comment: "BlockingViewController title")
     }
 
     override func didReceiveMemoryWarning() {

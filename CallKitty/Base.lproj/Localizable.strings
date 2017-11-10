@@ -7,13 +7,11 @@
 
 "APPLICATION_NAME" = "CallKitty";
 
-"TAB_BAR_SUMMARY" = "Summary";
-"TAB_BAR_CALLS" = "Calls";
-
-"SUMMARY_VC_TITLE" = "Summary";
+"BLOCKING_VC_TITLE" = "Block";
 "CALLS_VC_TITLE" = "Calls";
 "DIAL_OPTIONS_VC_TITLE" = "Dial Call";
 "SIMULATE_INCOMING_VC_TITLE" = "Simulate Incoming Call";
+"SUMMARY_VC_TITLE" = "Summary";
 
 "CALL_STATUS_SENDING" = "Dialing…";
 "CALL_STATUS_RINGING" = "Ringing";
