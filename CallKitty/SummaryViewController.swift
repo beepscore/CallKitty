@@ -10,6 +10,9 @@ import UIKit
 
 class SummaryViewController: UIViewController {
 
+    @IBOutlet private weak var blockingCountLabel: UILabel!
+    @IBOutlet private weak var identifyingCountLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
