@@ -33,6 +33,7 @@
                         <segue destination="C2s-3S-Wm2" kind="relationship" relationship="viewControllers" id="8PC-1f-D2o"/>
                         <segue destination="Zuj-cS-95Z" kind="relationship" relationship="viewControllers" id="cUJ-ZB-cqz"/>
                         <segue destination="gsb-Yh-cgR" kind="relationship" relationship="viewControllers" id="5lY-Z1-ukC"/>
+                        <segue destination="8rd-F5-d1B" kind="relationship" relationship="viewControllers" id="3Bm-ZP-96W"/>
                         <segue destination="kD9-jC-2ss" kind="relationship" relationship="viewControllers" id="g1Z-LC-HVu"/>
                     </connections>
                 </tabBarController>
@@ -68,7 +69,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qev-U5-ziJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="288" y="650"/>
+            <point key="canvasLocation" x="584" y="649"/>
+        </scene>
+        <!--AddBlocks-->
+        <scene sceneID="kvJ-ol-UNg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddBlocks" id="8rd-F5-d1B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="add" id="nJg-yy-qbH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyN-xw-0pX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="649"/>
         </scene>
     </scenes>
 </document>

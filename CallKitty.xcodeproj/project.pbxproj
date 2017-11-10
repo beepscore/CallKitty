@@ -57,6 +57,7 @@
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
 		DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE066911FB577B400B1C11F /* AddBlocksVC.swift */; };
+		DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */; };
 		DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +171,7 @@
 		DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyCallTests.swift; sourceTree = "<group>"; };
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
 		DEE066911FB577B400B1C11F /* AddBlocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlocksVC.swift; sourceTree = "<group>"; };
+		DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddBlocks.storyboard; sourceTree = "<group>"; };
 		DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyProviderDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,10 +266,11 @@
 		DE7AF8F31FB2207A00C2D29C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
+				DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */,
 				DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */,
 				DE16C48A1FB55E1C005ADCAF /* Calls.storyboard */,
 				DEC4A06D1FB571EF00E5A290 /* ID.storyboard */,
+				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
@@ -616,6 +619,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */,
 				DEC4A06E1FB571EF00E5A290 /* ID.storyboard in Resources */,
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
 				DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */,
