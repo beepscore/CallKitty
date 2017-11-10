@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
 
         providerDelegate = ProviderDelegate(callManager: callManager)
 
+        if let tabBarController = window?.rootViewController as? UITabBarController,
+            var tabBarItems = tabBarController.tabBar.items {
+            tabBarItems[0].title = NSLocalizedString("TAB_BAR_SUMMARY", comment: "tab bar title for Summary")
+            tabBarItems[1].title = NSLocalizedString("TAB_BAR_CALLS", comment: "tab bar title for Calls")
+        }
         return true
     }
 
