@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE16C48C1FB55E1C005ADCAF /* Calls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE16C48A1FB55E1C005ADCAF /* Calls.storyboard */; };
 		DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1CA99E1FB547D700B711EE /* Summary.storyboard */; };
 		DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */; };
 		DE22F7221FB3F66D0054E29D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
@@ -101,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE16C48B1FB55E1C005ADCAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CallKitty/Base.lproj/Calls.storyboard; sourceTree = "<group>"; };
 		DE1CA99E1FB547D700B711EE /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
 		DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		DE22F7211FB3F66D0054E29D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
+				DE16C48A1FB55E1C005ADCAF /* Calls.storyboard */,
 				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
@@ -603,6 +606,7 @@
 				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
 				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
+				DE16C48C1FB55E1C005ADCAF /* Calls.storyboard in Resources */,
 				DE842F431FB239A100F9936D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +740,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DE16C48A1FB55E1C005ADCAF /* Calls.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE16C48B1FB55E1C005ADCAF /* Base */,
+			);
+			name = Calls.storyboard;
+			sourceTree = "<group>";
+		};
 		DE83C98D1FB218B20078CD01 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
