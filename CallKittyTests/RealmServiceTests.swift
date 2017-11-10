@@ -11,6 +11,18 @@ import XCTest
 
 class RealmServiceTests: XCTestCase {
 
+    /// helper method to populate realm with some objects for testing
+//    func testAddPhoneCallers() {
+//        let realmService = RealmService.shared
+//
+//        let phoneCaller0 = PhoneCaller(phoneNumber: 123, label: "dog", shouldBlock: true)
+//        realmService.add(phoneCaller0)
+//        let phoneCaller1 = PhoneCaller(phoneNumber: 111, label: "cat", shouldBlock: true)
+//        realmService.add(phoneCaller1)
+//        let phoneCaller2 = PhoneCaller(phoneNumber: 111, label: "civet", shouldBlock: false)
+//        realmService.add(phoneCaller2)
+//    }
+    
     func testShared() {
         XCTAssertNotNil(RealmService.shared)
     }
