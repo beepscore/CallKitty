@@ -20,6 +20,11 @@ class SummaryViewController: UIViewController {
         title = NSLocalizedString("SUMMARY_VC_TITLE", comment: "SummaryViewController title")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        blockingCountLabel.text = String(RealmService.shared.blockedCount())
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
