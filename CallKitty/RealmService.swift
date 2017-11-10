@@ -68,9 +68,22 @@ class RealmService {
         }
     }
 
+    /// Note this method queries realm database, not call directory
+    /// If call directory has not been synced to realm, returned result could be misleading
     /// - Returns: count of phoneCallers with shouldBlock true
     func blockedCount() -> Int {
         let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
+        let results = realm.objects(PhoneCaller.self).filter(filterString)
+        return results.count
+    }
+
+    /// Note this method queries realm database, not call directory
+    /// If call directory has not been synced to realm, returned result could be misleading
+    /// - Returns: count of phoneCallers with label not equal to placeholder (empty string)
+    func identifiedCount() -> Int {
+        // e.g. "label != ''"
+        let filterString = PhoneCaller.PropertyStrings.label.rawValue
+            + " != '" + PhoneCaller.labelPlaceholder + "'"
         let results = realm.objects(PhoneCaller.self).filter(filterString)
         return results.count
     }
