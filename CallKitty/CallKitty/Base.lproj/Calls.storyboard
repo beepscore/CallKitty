@@ -78,7 +78,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Obw-Yl-qg0"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="CallKitty" id="cUJ-2Z-zhF">
+                    <navigationItem key="navigationItem" title="Calls" id="cUJ-2Z-zhF">
                         <barButtonItem key="rightBarButtonItem" title="Dial" id="r3u-1f-nBT">
                             <connections>
                                 <segue destination="luk-hz-Qkk" kind="presentation" modalPresentationStyle="formSheet" id="Kgn-k7-WAk"/>
@@ -89,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3h-Ne-Xpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="117.39130434782609"/>
+            <point key="canvasLocation" x="828" y="116"/>
         </scene>
         <!--Simulate Incoming Call Navigation Scene-->
         <scene sceneID="unh-0F-XHG">
@@ -105,7 +105,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MV-VM-MdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="883"/>
+            <point key="canvasLocation" x="1863" y="916"/>
         </scene>
         <!--Simulate Incoming Call Scene-->
         <scene sceneID="kuv-VO-yx5">
@@ -198,7 +198,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDb-ls-nKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="s09-Y7-LBa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2645.5999999999999" y="882.90854572713647"/>
+            <point key="canvasLocation" x="2644" y="916"/>
         </scene>
         <!--Dial Call Navigation-->
         <scene sceneID="dXP-lm-NRK">
@@ -220,7 +220,7 @@
         <scene sceneID="9a4-go-V0W">
             <objects>
                 <navigationController toolbarHidden="NO" id="Rhg-KA-b2d" userLabel="Calls Navigation Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="arrow-right" id="L0u-Hb-sG7"/>
+                    <tabBarItem key="tabBarItem" title="Calls" image="arrow-right" id="L0u-Hb-sG7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6A6-Ss-Qbd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -235,7 +235,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lC-Qx-j2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319.2" y="117.39130434782609"/>
+            <point key="canvasLocation" x="14" y="117"/>
         </scene>
         <!--Dial Call-->
         <scene sceneID="mQY-s5-aw7">
