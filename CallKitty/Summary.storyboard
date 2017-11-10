@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="m0T-oP-AKw" customClass="ItemCell" customModule="LongTable" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="m0T-oP-AKw" customClass="ItemCell" customModule="CallKitty" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0T-oP-AKw" id="ijq-s8-dlA">
@@ -104,7 +104,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2d-VQ-GI7">
-                                            <rect key="frame" x="16" y="12" width="167.5" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="167.5" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -117,8 +117,9 @@
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="B2d-VQ-GI7" firstAttribute="centerY" secondItem="ijq-s8-dlA" secondAttribute="centerY" id="ExR-a4-cnX"/>
                                         <constraint firstItem="WUP-L7-EIa" firstAttribute="leading" secondItem="B2d-VQ-GI7" secondAttribute="trailing" constant="16" id="SUI-0N-vXx"/>
+                                        <constraint firstItem="B2d-VQ-GI7" firstAttribute="bottom" secondItem="ijq-s8-dlA" secondAttribute="bottomMargin" id="Va4-4T-OVO"/>
+                                        <constraint firstItem="B2d-VQ-GI7" firstAttribute="top" secondItem="ijq-s8-dlA" secondAttribute="topMargin" id="XSu-K1-LIG"/>
                                         <constraint firstItem="WUP-L7-EIa" firstAttribute="centerY" secondItem="ijq-s8-dlA" secondAttribute="centerY" id="drm-CP-6zQ"/>
                                         <constraint firstAttribute="trailing" secondItem="WUP-L7-EIa" secondAttribute="trailing" constant="8" id="h95-Xt-ASG"/>
                                         <constraint firstItem="B2d-VQ-GI7" firstAttribute="leading" secondItem="ijq-s8-dlA" secondAttribute="leadingMargin" id="nZg-js-OeE"/>
@@ -139,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIc-zX-o9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="61"/>
+            <point key="canvasLocation" x="575" y="49"/>
         </scene>
     </scenes>
     <resources>
