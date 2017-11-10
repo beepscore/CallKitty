@@ -18,9 +18,6 @@ class LongTableViewController: UITableViewController {
 
     var numSections = 1
 
-    /// activeTextField may be in any row, not necessarily the currently selected row
-    //var activeTextField: UITextField?
-
     // MARK: - view lifecycle
 
     override func viewDidLoad() {
@@ -100,9 +97,6 @@ class LongTableViewController: UITableViewController {
 
         cell.phoneNumberLabel.text = String(phoneCaller.phoneNumber)
         cell.phoneCallerLabel.text = phoneCaller.label
-
-        // use tag to enable textField delegate methods to know row
-        cell.phoneCallerLabel.tag = index
 
         // set background color for diagnostics during development
         if phoneCaller.shouldBlock {

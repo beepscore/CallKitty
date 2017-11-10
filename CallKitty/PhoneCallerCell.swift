@@ -11,7 +11,7 @@ import UIKit
 class PhoneCallerCell: UITableViewCell {
 
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var phoneCallerLabel: UITextField!
+    @IBOutlet weak var phoneCallerLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
