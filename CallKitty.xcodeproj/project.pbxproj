@@ -58,6 +58,8 @@
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
 		DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE066911FB577B400B1C11F /* AddBlocksVC.swift */; };
 		DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */; };
+		DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */; };
+		DEEABD6E1FB6533200767C24 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEABD6D1FB6533200767C24 /* ItemCell.swift */; };
 		DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +174,8 @@
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
 		DEE066911FB577B400B1C11F /* AddBlocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlocksVC.swift; sourceTree = "<group>"; };
 		DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddBlocks.storyboard; sourceTree = "<group>"; };
+		DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTableViewController.swift; sourceTree = "<group>"; };
+		DEEABD6D1FB6533200767C24 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyProviderDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,6 +293,7 @@
 				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
 				DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */,
+				DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */,
 				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
 				DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */,
 			);
@@ -428,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */,
+				DEEABD6D1FB6533200767C24 /* ItemCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */,
 				DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */,
 				DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */,
+				DEEABD6E1FB6533200767C24 /* ItemCell.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
@@ -711,6 +718,7 @@
 				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
 				DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */,
 				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
+				DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
 				DEC4A0661FB5637F00E5A290 /* BlockingViewController.swift in Sources */,
 			);
