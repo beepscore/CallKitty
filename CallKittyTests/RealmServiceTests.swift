@@ -27,7 +27,7 @@ class RealmServiceTests: XCTestCase {
 
         XCTAssertEqual(phoneCaller.phoneNumber, 123)
         XCTAssertEqual(phoneCaller.label, "dog")
-        XCTAssertFalse(phoneCaller.isBlocked)
+        XCTAssertFalse(phoneCaller.shouldBlock)
 
         realmService.add(phoneCaller)
         XCTAssertEqual(phoneCallers.count, initialCount + 1)
@@ -37,14 +37,14 @@ class RealmServiceTests: XCTestCase {
 
         XCTAssertEqual(phoneCaller.phoneNumber, 456)
         XCTAssertEqual(phoneCaller.label, "dog")
-        XCTAssertFalse(phoneCaller.isBlocked)
+        XCTAssertFalse(phoneCaller.shouldBlock)
 
         realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.label.rawValue : "cat",
-                                                PhoneCaller.PropertyStrings.isBlocked.rawValue : true])
+                                                PhoneCaller.PropertyStrings.shouldBlock.rawValue : true])
 
         XCTAssertEqual(phoneCaller.phoneNumber, 456)
         XCTAssertEqual(phoneCaller.label, "cat")
-        XCTAssertTrue(phoneCaller.isBlocked)
+        XCTAssertTrue(phoneCaller.shouldBlock)
 
         realmService.delete(phoneCaller)
         XCTAssertEqual(phoneCallers.count, initialCount)

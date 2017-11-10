@@ -25,13 +25,13 @@ class PhoneCallerTests: XCTestCase {
 
         let phoneNumber: CXCallDirectoryPhoneNumber = 1234567890
         let label = "foo"
-        let isBlocked = true
+        let shouldBlock = true
 
-        let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, label: label, isBlocked: isBlocked)
+        let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, label: label, shouldBlock: shouldBlock)
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, label)
-        XCTAssertEqual(phoneCaller.isBlocked, isBlocked)
+        XCTAssertEqual(phoneCaller.shouldBlock, shouldBlock)
     }
 
     func testConvenienceInitLabelDefault() {
@@ -40,27 +40,27 @@ class PhoneCallerTests: XCTestCase {
         let phoneNumber: CXCallDirectoryPhoneNumber = 802_745_6859
 
         // omit label:
-        let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, isBlocked: true)
+        let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, shouldBlock: true)
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, PhoneCaller.labelPlaceholder)
-        XCTAssertEqual(phoneCaller.isBlocked, true)
+        XCTAssertEqual(phoneCaller.shouldBlock, true)
     }
 
-    func testConvenienceInitIsBlockedDefault() {
+    func testConvenienceInitShouldBlockDefault() {
 
         // Swift numeric literal can contain underscores to increase readability
         let phoneNumber: CXCallDirectoryPhoneNumber = 802_745_6859
 
-        // omit isBlocked:
+        // omit shouldBlock:
         let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, label: "foo")
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, "foo")
-        XCTAssertEqual(phoneCaller.isBlocked, false)
+        XCTAssertEqual(phoneCaller.shouldBlock, false)
     }
 
-    func testConvenienceInitLabelEmptyStringIsBlockedDefault() {
+    func testConvenienceInitLabelEmptyStringShouldBlockDefault() {
 
         // Swift numeric literal can contain underscores to increase readability
         let phoneNumber: CXCallDirectoryPhoneNumber = 01_802_745_6859
@@ -70,20 +70,20 @@ class PhoneCallerTests: XCTestCase {
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, label)
-        XCTAssertEqual(phoneCaller.isBlocked, false)
+        XCTAssertEqual(phoneCaller.shouldBlock, false)
     }
 
-    func testConvenienceInitLabelDefaultIsBlockedDefault() {
+    func testConvenienceInitLabelDefaultShouldBlockDefault() {
 
         // Swift numeric literal can contain underscores to increase readability
         let phoneNumber: CXCallDirectoryPhoneNumber = 802_745_6859
 
-        // omit label: and isBlocked:
+        // omit label: and shouldBlock:
         let phoneCaller = PhoneCaller(phoneNumber: phoneNumber)
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, PhoneCaller.labelPlaceholder)
-        XCTAssertEqual(phoneCaller.isBlocked, false)
+        XCTAssertEqual(phoneCaller.shouldBlock, false)
     }
 
 
@@ -92,11 +92,11 @@ class PhoneCallerTests: XCTestCase {
         // Swift numeric literal can contain underscores to increase readability
         let phoneNumber: CXCallDirectoryPhoneNumber = 99999_99999_99999
 
-        let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, isBlocked: true)
+        let phoneCaller = PhoneCaller(phoneNumber: phoneNumber, shouldBlock: true)
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, PhoneCaller.labelPlaceholder)
-        XCTAssertEqual(phoneCaller.isBlocked, true)
+        XCTAssertEqual(phoneCaller.shouldBlock, true)
     }
     
 }

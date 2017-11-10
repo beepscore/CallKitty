@@ -20,7 +20,7 @@ class PhoneCaller: Object {
     enum PropertyStrings: String {
         case phoneNumber = "phoneNumber"
         case label = "label"
-        case isBlocked = "isBlocked"
+        case shouldBlock = "shouldBlock"
     }
 
     static let phoneNumberPlaceholder: CXCallDirectoryPhoneNumber = -1
@@ -35,24 +35,26 @@ class PhoneCaller: Object {
     @objc dynamic var phoneNumber: CXCallDirectoryPhoneNumber = phoneNumberPlaceholder
 
     /// used for caller identification entry, not required for blocking entry
+    /// phoneNumber won't be identified unless it is added to call directory as an identificationEntry
     @objc dynamic var label: String = labelPlaceholder
 
-    /// set true to block
-    @objc dynamic var isBlocked: Bool = false
+    /// set true to indicate phone should block calls from phoneNumber.
+    /// phoneNumber won't be blocked unless it is added to call directory as a blockingEntry
+    @objc dynamic var shouldBlock: Bool = false
 
     /// convenience initializer
     ///
     /// - Parameters:
     ///   - phoneNumber: a phone number, can be used to identify and/or block phone calls
     ///   - label: used to identify a caller. default is labelPlaceholder, e.g. empty string
-    ///   - isBlocked: set true to block calls from phoneNumber. default is false
-    convenience init(phoneNumber: CXCallDirectoryPhoneNumber, label: String = labelPlaceholder, isBlocked: Bool = false) {
+    ///   - shouldBlock: set true to block calls from phoneNumber. default is false
+    convenience init(phoneNumber: CXCallDirectoryPhoneNumber, label: String = labelPlaceholder, shouldBlock: Bool = false) {
         // must call designated initializer
         self.init()
 
         self.phoneNumber = phoneNumber
         self.label = label
-        self.isBlocked = isBlocked
+        self.shouldBlock = shouldBlock
     }
 
 }
