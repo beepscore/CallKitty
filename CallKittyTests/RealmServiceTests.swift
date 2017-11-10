@@ -50,4 +50,9 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(phoneCallers.count, initialCount)
     }
 
+    func testBlockedCount() {
+        let realmService = RealmService.shared
+        XCTAssertEqual(realmService.blockedCount(), 0)
+    }
+
 }

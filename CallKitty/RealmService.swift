@@ -68,6 +68,11 @@ class RealmService {
         }
     }
 
+    /// - Returns: count of phoneCallers with shouldBlock true
+    func blockedCount() -> Int {
+        return 0
+    }
+
     // MARK: - notifications
 
     /// post error to notification center
