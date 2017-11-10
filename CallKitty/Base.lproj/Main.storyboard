@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rhg-KA-b2d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GFa-Y5-pt3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -89,7 +89,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3h-Ne-Xpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="118"/>
+            <point key="canvasLocation" x="2140" y="117.39130434782609"/>
         </scene>
         <!--Simulate Incoming Call Navigation Scene-->
         <scene sceneID="unh-0F-XHG">
@@ -220,12 +220,13 @@
         <scene sceneID="9a4-go-V0W">
             <objects>
                 <navigationController toolbarHidden="NO" id="Rhg-KA-b2d" userLabel="Calls Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="L0u-Hb-sG7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6A6-Ss-Qbd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Y21-hR-B10">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -234,7 +235,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lC-Qx-j2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="118"/>
+            <point key="canvasLocation" x="1319.2" y="117.39130434782609"/>
         </scene>
         <!--Dial Call-->
         <scene sceneID="mQY-s5-aw7">
@@ -299,6 +300,23 @@
                 <exit id="LQx-1D-sIH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2556" y="-602.24887556221893"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="csa-Zp-UHh">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="GFa-Y5-pt3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fOW-Jx-eFt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Rhg-KA-b2d" kind="relationship" relationship="viewControllers" id="g1Z-LC-HVu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xf7-58-Bzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="540" y="117"/>
         </scene>
     </scenes>
 </document>
