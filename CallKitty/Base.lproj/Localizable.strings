@@ -10,6 +10,7 @@
 "BLOCKING_VC_TITLE" = "Block";
 "CALLS_VC_TITLE" = "Calls";
 "DIAL_OPTIONS_VC_TITLE" = "Dial Call";
+"ID_VC_TITLE" = "ID";
 "SIMULATE_INCOMING_VC_TITLE" = "Simulate Incoming Call";
 "SUMMARY_VC_TITLE" = "Summary";
 
