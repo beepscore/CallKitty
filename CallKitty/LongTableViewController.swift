@@ -105,10 +105,8 @@ class LongTableViewController: UITableViewController {
         cell.noteField.tag = index
 
         // set background color for diagnostics during development
-        if indexPath.section == 0 {
-            cell.backgroundColor = .lightGray
-        } else if indexPath.section == 1 {
-            cell.backgroundColor = .yellow
+        if phoneCaller.shouldBlock {
+            cell.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
         } else {
             cell.backgroundColor = .white
         }
