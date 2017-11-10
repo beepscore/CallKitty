@@ -70,7 +70,9 @@ class RealmService {
 
     /// - Returns: count of phoneCallers with shouldBlock true
     func blockedCount() -> Int {
-        return 0
+        let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
+        let results = realm.objects(PhoneCaller.self).filter(filterString)
+        return results.count
     }
 
     // MARK: - notifications

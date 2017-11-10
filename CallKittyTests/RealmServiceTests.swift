@@ -52,7 +52,20 @@ class RealmServiceTests: XCTestCase {
 
     func testBlockedCount() {
         let realmService = RealmService.shared
-        XCTAssertEqual(realmService.blockedCount(), 0)
+        let initialCount = realmService.blockedCount()
+
+        let phoneCaller = PhoneCaller(phoneNumber: 123, label: "dog", shouldBlock: true)
+        realmService.add(phoneCaller)
+        XCTAssertEqual(realmService.blockedCount(), initialCount + 1)
+
+        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.shouldBlock.rawValue : false])
+
+        XCTAssertEqual(realmService.blockedCount(), initialCount)
+
+        // clean up
+        // can only delete an object from the realm it belongs to
+        // the realm is already in a write transaction
+        realmService.delete(phoneCaller)
     }
 
 }
