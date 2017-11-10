@@ -98,6 +98,8 @@ class SimulateIncomingCallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = NSLocalizedString("SIMULATE_INCOMING_VC_TITLE", comment: "SimulateIncomingCallViewController title")
+
         navigationItem.prompt = NSLocalizedString("SIMULATE_INCOMING_CALL_NAVIGATION_PROMPT", comment: "Navigation item prompt for Incoming call options UI")
         videoSwitchLabel.text = NSLocalizedString("CALL_VIDEO_SWITCH_LABEL", comment: "Label for simulating incoming video call switch")
         delayExplanationLabel.text = NSLocalizedString("DELAY_EXPLANATION_LABEL", comment: "Label for explaining delay stepper usage")

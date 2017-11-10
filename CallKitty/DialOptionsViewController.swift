@@ -72,6 +72,8 @@ class DialOptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = NSLocalizedString("DIAL_OPTIONS_VC_TITLE", comment: "DialOptionsViewController title")
+
         navigationItem.prompt = NSLocalizedString("DIAL_OPTIONS_NAVIGATION_PROMPT", comment: "Navigation item prompt for Dial options UI")
         videoSwitchLabel.text = NSLocalizedString("CALL_VIDEO_SWITCH_LABEL", comment: "Label for simulating outgoing video call switch")
 

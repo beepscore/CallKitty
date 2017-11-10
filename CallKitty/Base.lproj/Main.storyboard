@@ -71,7 +71,7 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="axe-rD-xpE"/>
-                        <barButtonItem title="Simulate Incoming Call…" id="NKc-3m-BLT">
+                        <barButtonItem title="Simulate Incoming Call" id="NKc-3m-BLT">
                             <connections>
                                 <segue destination="xlI-xj-Zch" kind="presentation" id="p0H-Ye-qF7"/>
                             </connections>

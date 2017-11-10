@@ -22,3 +22,8 @@
 "CALL_VIDEO_SWITCH_LABEL" = "Video Call";
 "CALL_DELAY_STEPPER_LABEL" = "Delay Call %.0lf second(s)";
 "DELAY_EXPLANATION_LABEL" = "Delay the call and lock your device to experience an incoming call on the lock screen.";
+
+"CALLS_VC_TITLE" = "CallKitty";
+"DIAL_OPTIONS_VC_TITLE" = "Dial Call";
+"SIMULATE_INCOMING_VC_TITLE" = "Simulate Incoming Call";
+

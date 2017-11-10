@@ -95,6 +95,8 @@ final class CallsViewController: UITableViewController {
         super.viewDidLoad()
 
         callManager = AppDelegate.shared.callManager
+
+        title = NSLocalizedString("CALLS_VC_TITLE", comment: "CallsViewController title")
     }
 
     override func viewWillAppear(_ animated: Bool) {
