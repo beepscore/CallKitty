@@ -52,6 +52,7 @@
 		DEC4A0661FB5637F00E5A290 /* BlockingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */; };
 		DEC4A0681FB5640D00E5A290 /* Blocking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */; };
 		DEC4A06C1FB5712B00E5A290 /* IdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */; };
+		DEC4A06E1FB571EF00E5A290 /* ID.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A06D1FB571EF00E5A290 /* ID.storyboard */; };
 		DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */; };
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
@@ -163,6 +164,7 @@
 		DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingViewController.swift; sourceTree = "<group>"; };
 		DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Blocking.storyboard; sourceTree = "<group>"; };
 		DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdViewController.swift; sourceTree = "<group>"; };
+		DEC4A06D1FB571EF00E5A290 /* ID.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ID.storyboard; sourceTree = "<group>"; };
 		DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertibleTests.swift"; sourceTree = "<group>"; };
 		DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyCallTests.swift; sourceTree = "<group>"; };
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */,
 				DE16C48A1FB55E1C005ADCAF /* Calls.storyboard */,
+				DEC4A06D1FB571EF00E5A290 /* ID.storyboard */,
 				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DE7AF8F41FB220B400C2D29C /* View Controllers */,
@@ -610,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC4A06E1FB571EF00E5A290 /* ID.storyboard in Resources */,
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
 				DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */,
 				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
