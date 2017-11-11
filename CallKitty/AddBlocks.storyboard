@@ -17,11 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="Of4-j4-ePV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FEM-gw-tdk">
+                                <rect key="frame" x="0.0" y="84" width="375" height="103"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of callers to add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94M-IP-ss7">
+                                        <rect key="frame" x="93" y="0.0" width="189" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXc-Lb-hAF">
+                                        <rect key="frame" x="183.5" y="36.5" width="8" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="DuV-Yf-qgj">
+                                        <rect key="frame" x="62" y="73" width="251" height="31"/>
+                                        <connections>
+                                            <action selector="sliderChangedWithSender:" destination="Iga-3r-g3b" eventType="valueChanged" id="WBf-6I-XbT"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DuV-Yf-qgj" firstAttribute="leading" secondItem="FEM-gw-tdk" secondAttribute="leading" constant="64" id="H4G-07-HgC"/>
+                                    <constraint firstAttribute="trailing" secondItem="DuV-Yf-qgj" secondAttribute="trailing" constant="64" id="MAA-sx-IZL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FEM-gw-tdk" firstAttribute="leading" secondItem="pPT-M5-mNg" secondAttribute="leading" id="5YE-gM-6uQ"/>
+                            <constraint firstItem="FEM-gw-tdk" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="KUC-cR-is4"/>
+                            <constraint firstItem="FEM-gw-tdk" firstAttribute="top" secondItem="pPT-M5-mNg" secondAttribute="top" constant="64" id="eIb-HJ-VEM"/>
+                            <constraint firstItem="pPT-M5-mNg" firstAttribute="trailing" secondItem="FEM-gw-tdk" secondAttribute="trailing" id="rKi-hW-c1H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pPT-M5-mNg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" id="GFx-CM-Ofn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="numberToGenerateLabel" destination="rXc-Lb-hAF" id="xzk-1o-oMQ"/>
+                        <outlet property="slider" destination="DuV-Yf-qgj" id="IfR-8m-pRb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyN-oO-h42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
