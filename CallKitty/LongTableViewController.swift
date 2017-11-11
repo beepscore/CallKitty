@@ -53,6 +53,7 @@ class LongTableViewController: UITableViewController {
         // block is called every time the realm collection changes
         // use capture list [weak self] to avoid potential retain cycles
         notificationToken = results?.observe { [weak self] (changes: RealmCollectionChange) in
+
             // Swift switch cases don't implicitly fall through, don't need break
             // https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html
             switch changes {
@@ -71,18 +72,44 @@ class LongTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return numSections
+        return sectionsCount(results: results)
+    }
+
+    func sectionsCount(results: Results<PhoneCaller>?) -> Int {
+        guard let results = results else { return 1 }
+
+        var sections = 1
+
+        switch results.count {
+        case 0...100:
+            sections = 10
+        case 101...1000:
+            sections = 20
+        default:
+            sections = 50
+        }
+        return sections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let results = results else { return 0 }
-        return results.count / numSections
+        guard let results = results else { return 1 }
+        return results.count / sectionsCount(results: results)
     }
 
+    /// - Returns: array of phone number strings approximately in each section
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         var titles = [String]()
-        for section in 0..<numSections {
-            titles.append("\(self.tableView(tableView, numberOfRowsInSection: section) * section)")
+        let secCount = sectionsCount(results: results)
+        for section in 0..<secCount {
+            let approximateRow = Int(Double(section) / Double(secCount) * Double((results?.count)!))
+
+            let approximatePhoneNumber = results![approximateRow].phoneNumber
+            let approximatePhoneString = String(approximatePhoneNumber)
+
+            titles.append(approximatePhoneString)
+            // alternatively can show prefix
+            //let phoneStart = String(approximatePhoneString.prefix(6))
+            //titles.append(phoneStart)
         }
         return titles
     }
