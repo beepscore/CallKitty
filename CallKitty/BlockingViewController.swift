@@ -24,6 +24,9 @@ class BlockingViewController: UIViewController {
         title = NSLocalizedString("BLOCKING_VC_TITLE", comment: "BlockingViewController title")
 
         searchBar.delegate = self
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +48,13 @@ class BlockingViewController: UIViewController {
             view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
         } else {
             view.backgroundColor = .white
+        }
+    }
+
+    @IBAction func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            // dismiss keyboard
+            searchBar.endEditing(true)
         }
     }
 }
