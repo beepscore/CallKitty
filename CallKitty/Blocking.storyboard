@@ -73,6 +73,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXg-VC-QGI">
                                                 <rect key="frame" x="294" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="shouldBlockSwitchChanged:" destination="nUi-Xh-OKe" eventType="valueChanged" id="glA-g2-8h1"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>

@@ -15,6 +15,8 @@ class BlockingViewController: UIViewController {
     @IBOutlet weak var phoneCallerPhoneNumberLabel: UILabel!
     @IBOutlet weak var phoneCallerLabelTextField: UITextField!
 
+    var phoneCaller: PhoneCaller? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,15 @@ class BlockingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func shouldBlockSwitchChanged(_ sender: UISwitch) {
+
+        guard let unwrappedPhoneCaller = phoneCaller else { return }
+
+        RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
+                                          label: unwrappedPhoneCaller.label,
+                                          shouldBlock: sender.isOn,
+                                          realm: RealmService.shared.realm)
+    }
 }
 
 extension BlockingViewController: UISearchBarDelegate {
@@ -41,12 +52,12 @@ extension BlockingViewController: UISearchBarDelegate {
         guard let searchBarText = searchBar.text else { return }
         guard let phoneNumber = CXCallDirectoryPhoneNumber(searchBarText) else { return }
 
-        let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
+        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
 
-        if let phoneCaller = phoneCaller {
+        if let unwrappedPhoneCaller = phoneCaller {
             // show phone number text fields for editing
-            phoneCallerPhoneNumberLabel.text = String(describing: phoneCaller.phoneNumber)
-            phoneCallerLabelTextField.text = phoneCaller.label
+            phoneCallerPhoneNumberLabel.text = String(describing: unwrappedPhoneCaller.phoneNumber)
+            phoneCallerLabelTextField.text = unwrappedPhoneCaller.label
         } else {
             phoneCallerPhoneNumberLabel.text = "not found"
             phoneCallerLabelTextField.text = ""
