@@ -11,7 +11,9 @@ import UIKit
 class AddBlocksVC: UIViewController {
 
     @IBOutlet private weak var slider: UISlider!
+    @IBOutlet private weak var sliderTitleLabel: UILabel!
     @IBOutlet private weak var numberToGenerateLabel: UILabel!
+    @IBOutlet private weak var addButton: UIButton!
 
     var numberDesired = 0
 
@@ -20,8 +22,10 @@ class AddBlocksVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         title = NSLocalizedString("ADD_BLOCKS_VC_TITLE", comment: "AddBlocksVC title")
+        addButton.setTitle(NSLocalizedString("ADD_BUTTON_TITLE", comment: "AddBlocksVC addButton title"),
+                           for: .normal)
+        sliderTitleLabel.text = NSLocalizedString("SLIDER_TITLE_LABEL_TEXT", comment: "AddBlocksVC sliderTitleLabel text")
     }
 
     override func didReceiveMemoryWarning() {

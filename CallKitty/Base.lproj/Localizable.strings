@@ -7,13 +7,17 @@
 
 "APPLICATION_NAME" = "CallKitty";
 
-"ADD_BLOCKS_VC_TITLE" = "Add";
 "BLOCKING_VC_TITLE" = "Block";
 "CALLS_VC_TITLE" = "Calls";
 "DIAL_OPTIONS_VC_TITLE" = "Dial Call";
 "ID_VC_TITLE" = "ID";
 "SIMULATE_INCOMING_VC_TITLE" = "Simulate Incoming Call";
 "SUMMARY_VC_TITLE" = "Summary";
+
+// AddBlocksVC
+"ADD_BLOCKS_VC_TITLE" = "Add";
+"ADD_BUTTON_TITLE" = "Add blocked callers";
+"SLIDER_TITLE_LABEL_TEXT" = "Number of callers to block";
 
 "CALL_STATUS_SENDING" = "Dialing…";
 "CALL_STATUS_RINGING" = "Ringing";
