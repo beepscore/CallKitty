@@ -10,6 +10,8 @@ import UIKit
 
 class BlockingViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,14 @@ class BlockingViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+}
+
+extension BlockingViewController: UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("searchBarSearchButtonClicked \(searchBar.text ?? "")")
     }
 
 }

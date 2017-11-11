@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Anm-8r-yG0">
+                            <searchBar contentMode="redraw" placeholder="phone number" translatesAutoresizingMaskIntoConstraints="NO" id="Anm-8r-yG0">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nUi-Xh-OKe" id="rYh-Vh-t8a"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.86135184716599189" blue="0.86157325404858298" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,6 +36,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Block" image="crook" id="PtP-zs-3CB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Anm-8r-yG0" id="f2w-Ws-aHv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goh-ZX-jUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
