@@ -38,8 +38,10 @@ class BlockingViewController: UIViewController {
 
         guard let unwrappedPhoneCaller = phoneCaller else { return }
 
+        let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
+
         RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
-                                          label: unwrappedPhoneCaller.label,
+                                          label: desiredPhoneCallerLabel,
                                           shouldBlock: sender.isOn,
                                           realm: RealmService.shared.realm)
 
