@@ -101,6 +101,8 @@
                     <tabBarItem key="tabBarItem" title="Block" image="crook" id="PtP-zs-3CB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="phoneCallerLabelTextField" destination="EiD-H1-kim" id="GRS-3S-QAL"/>
+                        <outlet property="phoneCallerPhoneNumberLabel" destination="IN3-FY-RAP" id="XS9-Yx-Ma2"/>
                         <outlet property="searchBar" destination="Anm-8r-yG0" id="f2w-Ws-aHv"/>
                     </connections>
                 </viewController>
