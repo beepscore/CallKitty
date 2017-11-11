@@ -39,6 +39,13 @@ class BlockingViewController: UIViewController {
                                           label: unwrappedPhoneCaller.label,
                                           shouldBlock: sender.isOn,
                                           realm: RealmService.shared.realm)
+
+        if unwrappedPhoneCaller.shouldBlock {
+            // TODO: Consider define a theme constant for this color
+            view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
+        } else {
+            view.backgroundColor = .white
+        }
     }
 }
 
