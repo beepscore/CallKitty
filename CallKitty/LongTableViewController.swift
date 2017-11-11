@@ -82,7 +82,7 @@ class LongTableViewController: UITableViewController {
 
         switch results.count {
         case 0...100:
-            sections = 10
+            sections = 1
         case 101...1000:
             sections = 20
         default:
@@ -92,16 +92,20 @@ class LongTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let results = results else { return 1 }
-        return results.count / sectionsCount(results: results)
+        guard let results = results else { return 0 }
+        let numRows = results.count / sectionsCount(results: results)
+        return numRows
     }
 
     /// - Returns: array of phone number strings approximately in each section
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         var titles = [String]()
+        if results == nil || results?.count == 0 {
+            return titles
+        }
         let secCount = sectionsCount(results: results)
         for section in 0..<secCount {
-            let approximateRow = Int(Double(section) / Double(secCount) * Double((results?.count)!))
+            let approximateRow = Int((Double(section) / Double(secCount)) * Double((results?.count)!))
 
             let approximatePhoneNumber = results![approximateRow].phoneNumber
             let approximatePhoneString = String(approximatePhoneNumber)
