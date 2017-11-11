@@ -14,6 +14,7 @@ class BlockingViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var phoneCallerPhoneNumberLabel: UILabel!
     @IBOutlet weak var phoneCallerLabelTextField: UITextField!
+    @IBOutlet weak var phoneCallerShouldBlockSwitch: UISwitch!
 
     var phoneCaller: PhoneCaller? = nil
 
@@ -42,7 +43,7 @@ class BlockingViewController: UIViewController {
 
         RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
                                           label: desiredPhoneCallerLabel,
-                                          shouldBlock: sender.isOn,
+                                          shouldBlock: phoneCallerShouldBlockSwitch.isOn,
                                           realm: RealmService.shared.realm)
 
         if unwrappedPhoneCaller.shouldBlock {
