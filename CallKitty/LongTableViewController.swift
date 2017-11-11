@@ -119,15 +119,15 @@ class LongTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PhoneCallerCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         guard let results = results else { return cell }
 
         let index = itemIndex(indexPath: indexPath)
         let phoneCaller = results[index]
 
-        cell.phoneNumberLabel.text = String(phoneCaller.phoneNumber)
-        cell.phoneCallerLabel.text = phoneCaller.label
+        cell.textLabel?.text = String(phoneCaller.phoneNumber)
+        cell.detailTextLabel?.text = phoneCaller.label
 
         // set background color for diagnostics during development
         if phoneCaller.shouldBlock {

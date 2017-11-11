@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,40 +95,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="m0T-oP-AKw" customClass="PhoneCallerCell" customModule="CallKitty" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Etn-dE-fzn" detailTextLabel="jcg-NI-zIP" style="IBUITableViewCellStyleSubtitle" id="m0T-oP-AKw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0T-oP-AKw" id="ijq-s8-dlA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2d-VQ-GI7">
-                                            <rect key="frame" x="16" y="11" width="42" height="22"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Etn-dE-fzn">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DU-oC-sna">
-                                            <rect key="frame" x="317" y="11" width="42" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jcg-NI-zIP">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="1DU-oC-sna" secondAttribute="bottom" id="3WI-vi-gKq"/>
-                                        <constraint firstItem="1DU-oC-sna" firstAttribute="width" secondItem="B2d-VQ-GI7" secondAttribute="width" id="MUh-KG-2H6"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="1DU-oC-sna" secondAttribute="trailing" id="No6-RV-IHs"/>
-                                        <constraint firstItem="B2d-VQ-GI7" firstAttribute="bottom" secondItem="ijq-s8-dlA" secondAttribute="bottomMargin" id="Va4-4T-OVO"/>
-                                        <constraint firstItem="B2d-VQ-GI7" firstAttribute="top" secondItem="ijq-s8-dlA" secondAttribute="topMargin" id="XSu-K1-LIG"/>
-                                        <constraint firstItem="B2d-VQ-GI7" firstAttribute="leading" secondItem="ijq-s8-dlA" secondAttribute="leadingMargin" id="nZg-js-OeE"/>
-                                        <constraint firstItem="1DU-oC-sna" firstAttribute="top" secondItem="ijq-s8-dlA" secondAttribute="topMargin" id="pYr-i8-DKp"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="phoneCallerLabel" destination="1DU-oC-sna" id="cbr-Dx-N0X"/>
-                                    <outlet property="phoneNumberLabel" destination="B2d-VQ-GI7" id="kwK-2n-cPV"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

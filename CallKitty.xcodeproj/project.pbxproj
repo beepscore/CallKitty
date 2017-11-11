@@ -60,7 +60,6 @@
 		DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE066911FB577B400B1C11F /* AddBlocksVC.swift */; };
 		DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */; };
 		DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */; };
-		DEEABD6E1FB6533200767C24 /* PhoneCallerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEABD6D1FB6533200767C24 /* PhoneCallerCell.swift */; };
 		DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -177,7 +176,6 @@
 		DEE066911FB577B400B1C11F /* AddBlocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlocksVC.swift; sourceTree = "<group>"; };
 		DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddBlocks.storyboard; sourceTree = "<group>"; };
 		DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTableViewController.swift; sourceTree = "<group>"; };
-		DEEABD6D1FB6533200767C24 /* PhoneCallerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCallerCell.swift; sourceTree = "<group>"; };
 		DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyProviderDelegateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -436,7 +434,6 @@
 			isa = PBXGroup;
 			children = (
 				DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */,
-				DEEABD6D1FB6533200767C24 /* PhoneCallerCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -700,7 +697,6 @@
 				DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */,
 				DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */,
 				DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */,
-				DEEABD6E1FB6533200767C24 /* PhoneCallerCell.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
