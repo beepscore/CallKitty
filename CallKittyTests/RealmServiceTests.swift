@@ -47,29 +47,29 @@ class RealmServiceTests: XCTestCase {
 
         let initialCount = phoneCallers.count
 
-        RealmService.addUpdatePhoneCaller(phoneNumber: 200,
+        RealmService.addUpdatePhoneCaller(phoneNumber: 201,
                                          label: "dog",
                                          realm: realm)
 
-        var fetchedPhoneCaller = RealmService.getPhoneCaller(phoneNumber: 200, realm: realm)
-        XCTAssertEqual(fetchedPhoneCaller?.phoneNumber, 200)
+        var fetchedPhoneCaller = RealmService.getPhoneCaller(phoneNumber: 201, realm: realm)
+        XCTAssertEqual(fetchedPhoneCaller?.phoneNumber, 201)
         XCTAssertEqual(fetchedPhoneCaller?.label, "dog")
         XCTAssertFalse((fetchedPhoneCaller?.shouldBlock)!)
 
         XCTAssertEqual(phoneCallers.count, initialCount + 1)
 
         // can't change phoneNumber because it is a primary key
-        RealmService.addUpdatePhoneCaller(phoneNumber: 200,
+        RealmService.addUpdatePhoneCaller(phoneNumber: 201,
                                           label: "cat",
                                           shouldBlock: true,
                                           realm: realm)
 
-        fetchedPhoneCaller = RealmService.getPhoneCaller(phoneNumber: 200, realm: realm)
-        XCTAssertEqual(fetchedPhoneCaller?.phoneNumber, 200)
+        fetchedPhoneCaller = RealmService.getPhoneCaller(phoneNumber: 201, realm: realm)
+        XCTAssertEqual(fetchedPhoneCaller?.phoneNumber, 201)
         XCTAssertEqual(fetchedPhoneCaller?.label, "cat")
         XCTAssertTrue((fetchedPhoneCaller?.shouldBlock)!)
 
-        let _ = RealmService.deletePhoneCaller(phoneNumber: 200, realm: realm)
+        let _ = RealmService.deletePhoneCaller(phoneNumber: 201, realm: realm)
         XCTAssertEqual(phoneCallers.count, initialCount)
     }
 
@@ -107,7 +107,7 @@ class RealmServiceTests: XCTestCase {
 
     func testBlockedCount() {
         let realmService = RealmService.shared
-        let initialCount = realmService.blockedCount()
+        let initialCount = RealmService.blockedCount(realm: realmService.realm)
 
         let phoneCaller = PhoneCaller(phoneNumber: 301, label: "dog", shouldBlock: true)
 
@@ -116,11 +116,11 @@ class RealmServiceTests: XCTestCase {
         // attempting to create an object of type phonecaller with an existing primary key
         realmService.add(phoneCaller)
 
-        XCTAssertEqual(realmService.blockedCount(), initialCount + 1)
+        XCTAssertEqual(RealmService.blockedCount(realm: realmService.realm), initialCount + 1)
 
         realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.shouldBlock.rawValue : false])
 
-        XCTAssertEqual(realmService.blockedCount(), initialCount)
+        XCTAssertEqual(RealmService.blockedCount(realm: realmService.realm), initialCount)
 
         // clean up
         realmService.delete(phoneCaller)
@@ -128,20 +128,20 @@ class RealmServiceTests: XCTestCase {
 
     func testIdentifiedCount() {
         let realmService = RealmService.shared
-        let initialCount = realmService.identifiedCount()
+        let initialCount = RealmService.identifiedCount(realm: realmService.realm)
 
         let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true)
         realmService.add(phoneCaller0)
-        XCTAssertEqual(realmService.identifiedCount(), initialCount + 1)
+        XCTAssertEqual(RealmService.identifiedCount(realm: realmService.realm), initialCount + 1)
 
         let phoneCaller1 = PhoneCaller(phoneNumber: 303)
         realmService.add(phoneCaller1)
-        XCTAssertEqual(realmService.identifiedCount(), initialCount + 1)
+        XCTAssertEqual(RealmService.identifiedCount(realm: realmService.realm), initialCount + 1)
 
         realmService.update(phoneCaller0,
                             with: [PhoneCaller.PropertyStrings.label.rawValue: PhoneCaller.labelPlaceholder])
 
-        XCTAssertEqual(realmService.identifiedCount(), initialCount)
+        XCTAssertEqual(RealmService.identifiedCount(realm: realmService.realm), initialCount)
 
         // clean up
         realmService.delete(phoneCaller0)
