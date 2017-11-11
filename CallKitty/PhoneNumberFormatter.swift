@@ -36,19 +36,27 @@ class PhoneNumberFormatter {
 
     /// a random uniform distribution of integers
     /// randomDistribution.nextInt() returns the next random integer
-    /// GameKit GKRandomDistribution returns Int, might be 32 bit or 64 bit depending upon machine
-    /// Assume test will run on 64 bit macOS or iPhone
-    /// https://developer.apple.com/library/tvos/documentation/GameplayKit/Reference/GKShuffledDistribution_Class/index.html
-    /// https://stackoverflow.com/questions/24007129/how-does-one-generate-a-random-number-in-apples-swift-language#24098445
-    /// setting highestValue to Int.max didn't work. Int.max -1 seems to work.
-    let randomDistribution = GKRandomDistribution(randomSource: GKARC4RandomSource(),
+    let randomDistribution1000 = GKRandomDistribution(randomSource: GKARC4RandomSource(),
                                                   lowestValue: 0,
-                                                  highestValue: Int.max - 1)
+                                                  highestValue: 1000)
 
-     /// - returns: the next random integer from a random uniform distribution of integers
-    func nextRandomPhoneNumber() -> CXCallDirectoryPhoneNumber {
-        let nextInt = randomDistribution.nextInt()
+    /// - returns: the next random integer from a random uniform distribution of integers
+    func nextRandomThousand() -> CXCallDirectoryPhoneNumber {
+        let nextInt = randomDistribution1000.nextInt()
         return CXCallDirectoryPhoneNumber(nextInt)
+    }
+
+    /// to simplify generating large numbers > Int32.max,
+    /// concatenate string then convert to CXCallDirectoryPhoneNumber (alias for Int64)
+    func nextRandomPhoneNumber() -> CXCallDirectoryPhoneNumber {
+        let numberOfDecimalDigits = 15
+        let numberOfGroupsOf3 = numberOfDecimalDigits / 3
+        var digitString = ""
+        for _ in 0..<numberOfGroupsOf3 {
+            let nextThousand = nextRandomThousand()
+            digitString = digitString + String(nextThousand)
+        }
+        return CXCallDirectoryPhoneNumber(digitString)!
     }
 
 }
