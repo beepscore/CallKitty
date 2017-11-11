@@ -22,14 +22,13 @@ class PhoneNumberFormatter {
         return CXCallDirectoryPhoneNumber(sanitized)
     }
 
-    // TODO: consider using Formatter, ValueTransformer or NSDataDetector to validate world phone numbers
-    // Deletes characters that aren't decimal digits, trims to max length 14 digits
+    // Deletes characters that aren't decimal digits, trims to max length 15 digits
     class func sanitizedPhoneNumberString(phoneNumberString: String?) -> String? {
 
         guard let phoneNumberString = phoneNumberString else { return nil }
 
         let phoneNumberDigits = String(phoneNumberString.filter { String($0).rangeOfCharacter(from: CharacterSet.decimalDigits) != nil })
-        let digitsMax = 14
+        let digitsMax = 15
         let phoneNumberDigitsPrefix = String(phoneNumberDigits.prefix(digitsMax))
         return phoneNumberDigitsPrefix
     }
@@ -46,9 +45,16 @@ class PhoneNumberFormatter {
         return CXCallDirectoryPhoneNumber(nextInt)
     }
 
+    // TODO: consider generate some phone numbers as US typical with length 7, 10, 11 digits and valid US area codes.
+    // https://en.wikipedia.org/wiki/List_of_North_American_Numbering_Plan_area_codes
+
+    // TODO: consider using Formatter, ValueTransformer or NSDataDetector to validate world phone numbers
+    /// Most world phone numbers are <= 15 digits
+    /// http://www.itu.int/ITU-T/recommendations/rec.aspx?rec=E.164
     /// to simplify generating large numbers > Int32.max,
     /// concatenate string then convert to CXCallDirectoryPhoneNumber (alias for Int64)
     func nextRandomPhoneNumber() -> CXCallDirectoryPhoneNumber {
+        // https://stackoverflow.com/questions/723587/whats-the-longest-possible-worldwide-phone-number-i-should-consider-in-sql-varc#4729239
         let numberOfDecimalDigits = 15
         let numberOfGroupsOf3 = numberOfDecimalDigits / 3
         var digitString = ""

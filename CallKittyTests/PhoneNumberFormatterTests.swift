@@ -27,7 +27,7 @@ class PhoneNumberFormatterTests: XCTestCase {
 
     func testPhoneNumberAllDigits() {
         let actual = PhoneNumberFormatter.phoneNumber(phoneNumberString: "12345678901234567890")
-        XCTAssertEqual(actual, 12345678901234)
+        XCTAssertEqual(actual, 123456789012345)
     }
 
     func testPhoneNumberMixedString() {
@@ -39,8 +39,8 @@ class PhoneNumberFormatterTests: XCTestCase {
 
     func testSanitizedPhoneNumberString() {
         let actual = PhoneNumberFormatter.sanitizedPhoneNumberString(phoneNumberString: "12345678901234567890")
-        XCTAssertEqual(actual!.count, 14)
-        XCTAssertEqual(actual, "12345678901234")
+        XCTAssertEqual(actual!.count, 15)
+        XCTAssertEqual(actual, "123456789012345")
     }
 
     func testSanitizedPhoneNumberStringNoDigits() {
