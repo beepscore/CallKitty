@@ -15,7 +15,7 @@ class AddBlocksVC: UIViewController {
     @IBOutlet private weak var numberToGenerateLabel: UILabel!
     @IBOutlet private weak var addButton: UIButton!
 
-    var numberDesired = 0
+    var numberDesired = 1
 
     // MARK: - view lifecycle
 
@@ -23,9 +23,10 @@ class AddBlocksVC: UIViewController {
         super.viewDidLoad()
 
         title = NSLocalizedString("ADD_BLOCKS_VC_TITLE", comment: "AddBlocksVC title")
+        sliderTitleLabel.text = NSLocalizedString("SLIDER_TITLE_LABEL_TEXT", comment: "AddBlocksVC sliderTitleLabel text")
+        numberToGenerateLabel.text = String(numberDesired)
         addButton.setTitle(NSLocalizedString("ADD_BUTTON_TITLE", comment: "AddBlocksVC addButton title"),
                            for: .normal)
-        sliderTitleLabel.text = NSLocalizedString("SLIDER_TITLE_LABEL_TEXT", comment: "AddBlocksVC sliderTitleLabel text")
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,4 +68,10 @@ class AddBlocksVC: UIViewController {
         return numberDesired
     }
 
+    // TODO: Consider addBlockingPhoneCallers in background to avoid blocking UI
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        let realm = RealmService.shared.realm
+        RealmService.addBlockingPhoneCallers(count: numberDesired, realm: realm)
+    }
 }
