@@ -53,8 +53,10 @@ class BlockingViewController: UIViewController {
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            // dismiss keyboard
+            // dismiss keyboard presented by searchBar
             searchBar.endEditing(true)
+            // dismiss keyboard presented by text field
+            phoneCallerLabelTextField.endEditing(true)
         }
     }
 }
