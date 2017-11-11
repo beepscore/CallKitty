@@ -12,15 +12,11 @@ import XCTest
 class RealmServiceTests: XCTestCase {
 
     /// helper method to populate realm with some objects for testing
-//    func testAddPhoneCallers() {
-//        let realmService = RealmService.shared
-//
-//        let phoneCaller0 = PhoneCaller(phoneNumber: 100, label: "dog", shouldBlock: true)
-//        realmService.add(phoneCaller0)
-//        let phoneCaller1 = PhoneCaller(phoneNumber: 101, label: "cat", shouldBlock: true)
-//        realmService.add(phoneCaller1)
-//        let phoneCaller2 = PhoneCaller(phoneNumber: 102, label: "civet", shouldBlock: false)
-//        realmService.add(phoneCaller2)
+//    func testAddUpdatePhoneCallers() {
+//        let realm = RealmService.shared.realm
+//        RealmService.addUpdatePhoneCaller(phoneNumber: 100, label: "dog", shouldBlock: true, realm: realm)
+//        RealmService.addUpdatePhoneCaller(phoneNumber: 101, label: "cat", shouldBlock: true, realm: realm)
+//        RealmService.addUpdatePhoneCaller(phoneNumber: 102, label: "civet", shouldBlock: false, realm: realm)
 //    }
 
     // can comment out to avoid altering realm database
