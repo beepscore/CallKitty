@@ -8,7 +8,9 @@
 
 import Foundation
 import RealmSwift
-// import for UIViewController
+// import CallKit for CXCallDirectoryPhoneNumber
+import CallKit
+// import UIKit for UIViewController
 import UIKit
 
 class RealmService {
@@ -23,9 +25,76 @@ class RealmService {
 
     static let realmErrorNotificationName = NSNotification.Name("RealmError")
 
-    // TODO: add/revise methods to use object with primary key?
-    // Update 'object' if it already exists, add it if not.
-    // https://academy.realm.io/posts/realm-primary-keys-tutorial/
+    // MARK: - PhoneCaller specific methods, use primary key phoneNumber
+
+    /// If phoneCaller for unique primary key PhoneNumber already exists, update it
+    /// If phoneCaller doesn't already exist, add it with supplied properties
+    /// https://academy.realm.io/posts/realm-primary-keys-tutorial/
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: a CallKit CXCallDirectoryPhoneNumber, unique primary key
+    ///   - label: label for new PhoneCaller
+    ///   - shouldBlock: shouldBlock for new PhoneCaller
+    ///   - realm: Realm context
+    static func addUpdatePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber,
+                                     label: String = PhoneCaller.labelPlaceholder,
+                                     shouldBlock: Bool = false,
+                                     realm: Realm) {
+        do {
+            try realm.write() {
+                var phoneCaller: PhoneCaller
+                let fetchedPhoneCaller = getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
+
+                if fetchedPhoneCaller != nil {
+                    phoneCaller = fetchedPhoneCaller!
+                    phoneCaller.label = label
+                    phoneCaller.shouldBlock = shouldBlock
+
+                } else {
+                    phoneCaller = PhoneCaller(phoneNumber: phoneNumber,
+                                              label: label,
+                                              shouldBlock: shouldBlock)
+                }
+                realm.add(phoneCaller, update: true)
+            }
+        } catch {
+            RealmService.post(error)
+        }
+    }
+
+    /// Gets specified PhoneCaller via unique primary key phoneNumber
+    /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
+    /// - Returns: phoneCaller or nil
+    static func getPhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber, realm: Realm) -> PhoneCaller? {
+        let phoneCaller = realm.object(ofType: PhoneCaller.self,
+                                       forPrimaryKey: phoneNumber)
+        return phoneCaller
+    }
+
+    /// Gets all PhoneCallers
+    /// - Returns: realm Result of phoneCallers
+    static func getAllPhoneCallers(realm: Realm) -> Results<PhoneCaller> {
+        let phoneCallers = realm.objects(PhoneCaller.self)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return phoneCallers
+    }
+
+    /// Deletes phone number if it exists.
+    /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
+    /// - Returns: deleted phoneCaller. returns nil if not found
+    static func deletePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber, realm: Realm) -> PhoneCaller? {
+        guard let phoneCaller = getPhoneCaller(phoneNumber: phoneNumber, realm: realm) else { return nil }
+        do {
+            try realm.write() {
+                realm.delete(phoneCaller)
+            }
+        } catch {
+            RealmService.post(error)
+        }
+        return phoneCaller
+    }
+
+    // MARK: - generic functions
 
     /// generic function to add an object to a realm
     /// - Parameter object: a generic type that subclasses Realm class Object
@@ -35,11 +104,9 @@ class RealmService {
                 realm.add(object)
             }
         } catch {
-            post(error)
+            RealmService.post(error)
         }
     }
-
-    // tutorial author prefers to not wrap read()
 
     /// generic function to update an object
     ///
@@ -58,7 +125,7 @@ class RealmService {
                 }
             }
         } catch {
-            post(error)
+            RealmService.post(error)
         }
     }
 
@@ -68,7 +135,7 @@ class RealmService {
                 realm.delete(object)
             }
         } catch {
-            post(error)
+            RealmService.post(error)
         }
     }
 
@@ -95,7 +162,7 @@ class RealmService {
     // MARK: - notifications
 
     /// post error to notification center
-    func post(_ error: Error) {
+    static func post(_ error: Error) {
         // post on main queue to avoid potential crash in observers like view controllers.
         // Can specify queue in addObserver or in post, either one should suffice.
         // Do it both places for "belt and suspenders" goof proofing.
