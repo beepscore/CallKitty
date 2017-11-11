@@ -111,9 +111,6 @@ class RealmServiceTests: XCTestCase {
 
         let phoneCaller = PhoneCaller(phoneNumber: 301, label: "dog", shouldBlock: true)
 
-        // TODO:
-        // FIXME: if PhoneCaller with this primary key exists, throws error
-        // attempting to create an object of type phonecaller with an existing primary key
         realmService.add(phoneCaller)
 
         XCTAssertEqual(RealmService.blockedCount(realm: realmService.realm), initialCount + 1)

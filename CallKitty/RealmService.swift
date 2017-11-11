@@ -97,6 +97,8 @@ class RealmService {
     // MARK: - generic functions
 
     /// generic function to add an object to a realm
+    /// Caution: if object with this primary key exists, throws error.
+    /// For object of type PhoneCaller, generally prefer method addUpdatePhoneCaller()
     /// - Parameter object: a generic type that subclasses Realm class Object
     func add<T: Object>(_ object: T) {
         do {
@@ -109,6 +111,7 @@ class RealmService {
     }
 
     /// generic function to update an object
+    /// For object of type PhoneCaller, generally prefer method addUpdatePhoneCaller()
     ///
     /// - Parameters:
     ///   - object: object to update
