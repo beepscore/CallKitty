@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="eVA-h9-rNR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Anm-8r-yG0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.86135184716599189" blue="0.86157325404858298" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Anm-8r-yG0" firstAttribute="top" secondItem="BP6-9H-l0Q" secondAttribute="top" id="4ZW-u9-XZL"/>
+                            <constraint firstItem="Anm-8r-yG0" firstAttribute="leading" secondItem="eVA-h9-rNR" secondAttribute="leading" id="FlS-TQ-l0c"/>
+                            <constraint firstAttribute="trailing" secondItem="Anm-8r-yG0" secondAttribute="trailing" id="z4V-rJ-hTN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BP6-9H-l0Q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Block" image="crook" id="PtP-zs-3CB"/>
