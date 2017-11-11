@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CallKit
 
 class BlockingViewController: UIViewController {
 
@@ -30,7 +31,20 @@ class BlockingViewController: UIViewController {
 extension BlockingViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("searchBarSearchButtonClicked \(searchBar.text ?? "")")
+
+        // dismiss keyboard
+        searchBar.endEditing(true)
+
+        guard let searchBarText = searchBar.text else { return }
+        guard let phoneNumber = CXCallDirectoryPhoneNumber(searchBarText) else { return }
+
+        let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
+
+        if phoneCaller == nil {
+            print("not found")
+        } else {
+            // show phone number text fields for editing
+        }
     }
 
 }
