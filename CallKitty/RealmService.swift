@@ -27,7 +27,7 @@ class RealmService {
 
     // MARK: - PhoneCaller specific methods, use primary key phoneNumber
 
-    /// If phoneCaller for unique primary key PhoneNumber already exists, update it
+    /// If phoneCaller for unique primary key PhoneNumber already exists, update it.
     /// If phoneCaller doesn't already exist, add it with supplied properties
     /// https://academy.realm.io/posts/realm-primary-keys-tutorial/
     ///
