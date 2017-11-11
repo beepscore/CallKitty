@@ -23,6 +23,12 @@ class RealmServiceTests: XCTestCase {
 //        realmService.add(phoneCaller2)
 //    }
 
+    // can comment out to avoid altering realm database
+//    func testAddBlockingPhoneCallers() {
+//        let realm = RealmService.shared.realm
+//        RealmService.addBlockingPhoneCallers(count: 10, realm: realm)
+//    }
+
     func testShared() {
         XCTAssertNotNil(RealmService.shared)
     }

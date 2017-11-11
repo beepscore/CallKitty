@@ -62,6 +62,45 @@ class RealmService {
         }
     }
 
+    // TODO: consider do this on a background thread and observe for completion
+    
+    /// - Parameters:
+    ///   - count: approximate number of PhoneCallers to add.
+    ///   If random generates a duplicate phoneNumber, it will update previous entry
+    ///   and number will be less than count
+    ///   - realm: Realm context
+    static func addBlockingPhoneCallers(count: Int, realm: Realm) {
+        do {
+            let phoneNumberFormatter = PhoneNumberFormatter()
+
+            try realm.write() {
+
+                // for efficiency, "batch" loop inside a single write
+                for _ in 0..<count {
+
+                    let phoneNumber = phoneNumberFormatter.nextRandomPhoneNumber()
+
+                    var phoneCaller: PhoneCaller
+                    let fetchedPhoneCaller = getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
+
+                    if fetchedPhoneCaller != nil {
+                        phoneCaller = fetchedPhoneCaller!
+                        phoneCaller.label = "dog"
+                        phoneCaller.shouldBlock = true
+
+                    } else {
+                        phoneCaller = PhoneCaller(phoneNumber: phoneNumber,
+                                                  label: "dog",
+                                                  shouldBlock: true)
+                    }
+                    realm.add(phoneCaller, update: true)
+                }
+            }
+        } catch {
+            RealmService.post(error)
+        }
+    }
+
     /// Gets specified PhoneCaller via unique primary key phoneNumber
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
     /// - Returns: phoneCaller or nil

@@ -10,6 +10,7 @@
 
 import Foundation
 import CallKit
+import GameKit
 
 class PhoneNumberFormatter {
 
@@ -31,6 +32,23 @@ class PhoneNumberFormatter {
         let digitsMax = 14
         let phoneNumberDigitsPrefix = String(phoneNumberDigits.prefix(digitsMax))
         return phoneNumberDigitsPrefix
+    }
+
+    /// a random uniform distribution of integers
+    /// randomDistribution.nextInt() returns the next random integer
+    /// GameKit GKRandomDistribution returns Int, might be 32 bit or 64 bit depending upon machine
+    /// Assume test will run on 64 bit macOS or iPhone
+    /// https://developer.apple.com/library/tvos/documentation/GameplayKit/Reference/GKShuffledDistribution_Class/index.html
+    /// https://stackoverflow.com/questions/24007129/how-does-one-generate-a-random-number-in-apples-swift-language#24098445
+    /// setting highestValue to Int.max didn't work. Int.max -1 seems to work.
+    let randomDistribution = GKRandomDistribution(randomSource: GKARC4RandomSource(),
+                                                  lowestValue: 0,
+                                                  highestValue: Int.max - 1)
+
+     /// - returns: the next random integer from a random uniform distribution of integers
+    func nextRandomPhoneNumber() -> CXCallDirectoryPhoneNumber {
+        let nextInt = randomDistribution.nextInt()
+        return CXCallDirectoryPhoneNumber(nextInt)
     }
 
 }
