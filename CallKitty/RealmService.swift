@@ -62,7 +62,25 @@ class RealmService {
         }
     }
 
-    // TODO: consider do this on a background thread and observe for completion
+    /// Add blocking callers on a background thread. Interested objects can observe realm for changes/completion
+    /// - Parameters:
+    ///   - count: approximate number of PhoneCallers to add.
+    ///   If random generates a duplicate phoneNumber, it will update previous entry
+    ///   and number will be less than count
+    static func backgroundAddBlockingPhoneCallers(count: Int) {
+        DispatchQueue.global().async {
+            // Get new realm and table since we are in a new thread.
+
+            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
+            // You must construct a new instance for each thread in which a Realm will be accessed.
+            // For dispatch queues, this means that you must construct a new instance
+            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
+            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
+            let realm = try! Realm()
+
+            RealmService.addBlockingPhoneCallers(count: count, realm: realm)
+        }
+    }
     
     /// - Parameters:
     ///   - count: approximate number of PhoneCallers to add.

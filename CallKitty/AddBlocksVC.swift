@@ -68,10 +68,8 @@ class AddBlocksVC: UIViewController {
         return numberDesired
     }
 
-    // TODO: Consider addBlockingPhoneCallers in background to avoid blocking UI
-    
     @IBAction func addButtonTapped(_ sender: Any) {
-        let realm = RealmService.shared.realm
-        RealmService.addBlockingPhoneCallers(count: numberDesired, realm: realm)
+        // add in background to avoid blocking UI
+        RealmService.backgroundAddBlockingPhoneCallers(count: numberDesired)
     }
 }
