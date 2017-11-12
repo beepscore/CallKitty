@@ -143,7 +143,12 @@ class LongTableViewController: UITableViewController {
 
         if editingStyle == .delete {
             guard let phoneCaller = results?[indexPath.row] else { return }
-            RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneCaller.phoneNumber)
+            //RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneCaller.phoneNumber)
+
+            // TODO: call addUpdatePhoneCaller with shouldDelete true
+            
+
+
         }
     }
 
