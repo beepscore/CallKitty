@@ -25,6 +25,9 @@ class RealmService {
 
     static let realmErrorNotificationName = NSNotification.Name("RealmError")
 
+    // TODO: make background versions for more methods, for use with large or remote data
+    // e.g. similar to backgroundAddBlockingPhoneCallers
+
     // MARK: - PhoneCaller specific methods, use primary key phoneNumber
 
     /// If phoneCaller for unique primary key PhoneNumber already exists, update it.
@@ -136,6 +139,36 @@ class RealmService {
         return phoneCallers
     }
 
+    /// Gets all PhoneCallers with shouldBlock true
+    /// - Returns: realm Result of all blocked phoneCallers, sorted by phone number
+    static func getAllPhoneCallersBlockedSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
+        let allPhoneCallersBlockedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return allPhoneCallersBlockedSorted
+    }
+
+    /// Note this method queries realm database, not call directory
+    /// If call directory has not been synced to realm, returned result could be misleading
+    /// - Returns: count of phoneCallers with shouldBlock true
+    static func getAllPhoneCallersBlockedSortedCount(realm: Realm) -> Int {
+        let allPhoneCallersBlockedSorted = RealmService.getAllPhoneCallersBlockedSorted(realm: realm)
+        return allPhoneCallersBlockedSorted.count
+    }
+
+    /// - Returns: array of all blocked phone numbers,
+    /// sorted by phone number as required by CallKit call directory addBlockingEntry
+    static func getAllPhoneNumbersBlockedSorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
+        let allPhoneCallersBlockedSorted = RealmService.getAllPhoneCallersBlockedSorted(realm: realm)
+
+        // type is Realm LazyMapRandomAccessCollection
+        // TODO: see if can return this instead
+        let allPhoneNumbersBlockedSorted = allPhoneCallersBlockedSorted.map { phoneCaller in phoneCaller.phoneNumber }
+
+        let allPhoneNumbersBlockedSortedArray = Array(allPhoneNumbersBlockedSorted)
+        return allPhoneNumbersBlockedSortedArray
+    }
+
     /// Deletes phone number if it exists.
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
     /// - Returns: deleted phoneCaller. returns nil if not found
@@ -197,15 +230,6 @@ class RealmService {
         } catch {
             RealmService.post(error)
         }
-    }
-
-    /// Note this method queries realm database, not call directory
-    /// If call directory has not been synced to realm, returned result could be misleading
-    /// - Returns: count of phoneCallers with shouldBlock true
-    static func blockedCount(realm: Realm) -> Int {
-        let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
-        let results = realm.objects(PhoneCaller.self).filter(filterString)
-        return results.count
     }
 
     /// Note this method queries realm database, not call directory
