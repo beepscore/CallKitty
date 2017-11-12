@@ -31,7 +31,17 @@ class PhoneCallerTests: XCTestCase {
 
         XCTAssertEqual(phoneCaller.phoneNumber, phoneNumber)
         XCTAssertEqual(phoneCaller.label, label)
+
+        XCTAssertTrue(phoneCaller.hasChanges)
+
         XCTAssertEqual(phoneCaller.shouldBlock, shouldBlock)
+        XCTAssertFalse(phoneCaller.isBlocked)
+
+        // Note non-empty label should automatically set shouldIdentify
+        XCTAssertTrue(phoneCaller.shouldIdentify)
+        XCTAssertFalse(phoneCaller.isIdentified)
+
+        XCTAssertFalse(phoneCaller.shouldDelete)
     }
 
     func testConvenienceInitLabelDefault() {

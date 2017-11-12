@@ -50,8 +50,14 @@ class RealmServiceTests: XCTestCase {
         let initialCount = phoneCallers.count
 
         RealmService.addUpdatePhoneCaller(phoneNumber: 201,
-                                         label: "dog",
-                                         realm: realm)
+                                          label: "dog",
+                                          hasChanges: true,
+                                          shouldBlock: false,
+                                          isBlocked: false,
+                                          shouldIdentify: true,
+                                          isIdentified: false,
+                                          shouldDelete: false,
+                                          realm: realm)
 
         var fetchedPhoneCaller = RealmService.getPhoneCaller(phoneNumber: 201, realm: realm)
         XCTAssertEqual(fetchedPhoneCaller?.phoneNumber, 201)
@@ -63,7 +69,12 @@ class RealmServiceTests: XCTestCase {
         // can't change phoneNumber because it is a primary key
         RealmService.addUpdatePhoneCaller(phoneNumber: 201,
                                           label: "cat",
+                                          hasChanges: true,
                                           shouldBlock: true,
+                                          isBlocked: false,
+                                          shouldIdentify: true,
+                                          isIdentified: false,
+                                          shouldDelete: false,
                                           realm: realm)
 
         fetchedPhoneCaller = RealmService.getPhoneCaller(phoneNumber: 201, realm: realm)

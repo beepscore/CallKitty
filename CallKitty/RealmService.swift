@@ -51,18 +51,23 @@ class RealmService {
         do {
             try realm.write() {
                 var phoneCaller: PhoneCaller
+
                 let fetchedPhoneCaller = getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
 
                 if fetchedPhoneCaller != nil {
                     phoneCaller = fetchedPhoneCaller!
-                    phoneCaller.label = label
-                    phoneCaller.shouldBlock = shouldBlock
-
                 } else {
-                    phoneCaller = PhoneCaller(phoneNumber: phoneNumber,
-                                              label: label,
-                                              shouldBlock: shouldBlock)
+                    phoneCaller = PhoneCaller(phoneNumber: phoneNumber)
                 }
+
+                phoneCaller.label = label
+                phoneCaller.hasChanges = hasChanges
+                phoneCaller.shouldBlock = shouldBlock
+                phoneCaller.isBlocked = isBlocked
+                phoneCaller.shouldIdentify = shouldIdentify
+                phoneCaller.isIdentified = isIdentified
+                phoneCaller.shouldDelete = shouldDelete
+
                 realm.add(phoneCaller, update: true)
             }
         } catch {

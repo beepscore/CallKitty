@@ -79,27 +79,40 @@ class BlockingViewController: UIViewController {
         phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
 
         let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
+        let shouldIdentify = desiredPhoneCallerLabel != ""
 
         if let unwrappedPhoneCaller = phoneCaller {
 
+            // Note user setting shouldDelete false might overwrite a previously set true.
+            // Because user tapped addUpdate button, assume they don't want to delete phoneCaller.
             RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
                                               label: desiredPhoneCallerLabel,
+                                              hasChanges: true,
                                               shouldBlock: phoneCallerShouldBlockSwitch.isOn,
+                                              isBlocked: unwrappedPhoneCaller.isBlocked,
+                                              shouldIdentify: shouldIdentify,
+                                              isIdentified: unwrappedPhoneCaller.isIdentified,
+                                              shouldDelete: false,
                                               realm: RealmService.shared.realm)
+
         } else {
+            // this is a new PhoneCaller
 
             RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
                                               label: desiredPhoneCallerLabel,
+                                              hasChanges: true,
                                               shouldBlock: phoneCallerShouldBlockSwitch.isOn,
+                                              isBlocked: false,
+                                              shouldIdentify: shouldIdentify,
+                                              isIdentified: false,
+                                              shouldDelete: false,
                                               realm: RealmService.shared.realm)
         }
 
-        if phoneCallerShouldBlockSwitch.isOn {
-            // TODO: Consider define a theme constant for this color
-            view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
-        } else {
-            view.backgroundColor = .white
-        }
+        // TODO: Consider define a theme constant for this color
+        // view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
+        // yellow to indicate hasChanges
+        view.backgroundColor = UIColor( red: 1.0, green: 1.0, blue: CGFloat(220/255.0), alpha: 1.0 )
     }
 
     @IBAction func deleteButtonTapped(_ sender: Any) {
