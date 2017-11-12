@@ -28,6 +28,8 @@ class BlockingViewController: UIViewController {
         phoneCallerPhoneNumberTextField.text = ""
 
         searchBar.delegate = self
+        phoneCallerPhoneNumberTextField.delegate = self
+        phoneCallerLabelTextField.delegate = self
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         view.addGestureRecognizer(tapGestureRecognizer)
@@ -124,5 +126,26 @@ extension BlockingViewController: UISearchBarDelegate {
             clearUI()
         }
     }
+
+}
+
+extension BlockingViewController: UITextFieldDelegate {
+
+    // called when user taps return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // dismiss keyboard
+        textField.resignFirstResponder()
+        return true
+    }
+
+    // // called after resignFirstResponder
+    // func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    //     return true
+    // }
+
+    // // called after textFieldShouldEndEditing
+    // func textFieldDidEndEditing(_ textField: UITextField) {
+    // }
+
 
 }
