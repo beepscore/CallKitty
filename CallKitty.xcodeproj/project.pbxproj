@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE061B541FB7F2340033B914 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5D1FB50C4300A0178C /* RealmService.swift */; };
 		DE0B510E1FB58008005A2465 /* Calls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0B510D1FB58008005A2465 /* Calls.storyboard */; };
 		DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1CA99E1FB547D700B711EE /* Summary.storyboard */; };
 		DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */; };
@@ -29,6 +30,10 @@
 		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE7B961A1FB23DD5009D7CD2 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */; };
 		DE7B96311FB23DD5009D7CD2 /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE813CE51FB7F2F900952BE2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7231FB3F6760054E29D /* RealmSwift.framework */; };
+		DE813CE61FB7F30100952BE2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
+		DE813CE71FB7F33F00952BE2 /* PhoneCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4705771FB3FBFA000FC02D /* PhoneCaller.swift */; };
+		DE813CE81FB7F36000952BE2 /* PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4705791FB40AD3000FC02D /* PhoneNumberFormatter.swift */; };
 		DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9891FB218B20078CD01 /* AppDelegate.swift */; };
 		DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C98D1FB218B20078CD01 /* Main.storyboard */; };
 		DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */; };
@@ -184,6 +189,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE813CE61FB7F30100952BE2 /* Realm.framework in Frameworks */,
+				DE813CE51FB7F2F900952BE2 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +684,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE813CE81FB7F36000952BE2 /* PhoneNumberFormatter.swift in Sources */,
 				DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */,
+				DE813CE71FB7F33F00952BE2 /* PhoneCaller.swift in Sources */,
+				DE061B541FB7F2340033B914 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,6 +815,10 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CallKittyDirectoryExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.CallKittyDirectoryExtension;
@@ -821,6 +835,10 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CallKittyDirectoryExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.CallKittyDirectoryExtension;
