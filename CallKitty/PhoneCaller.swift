@@ -27,14 +27,14 @@ class PhoneCaller: Object {
     static let labelPlaceholder = ""
 
     /// objects must be available at runtime, so generally set default value
+    /// Most world phone numbers are <= 15 digits, CXCallDirectoryPhoneNumber must be big enough to hold a phone number.
     /// CXCallDirectoryPhoneNumber is an alias for Int64.
-    /// 2^64 ~ 10^19, so this type can hold ~ 19 decimal digits without overflow.
-    /// Most world phone numbers are <= 15 digits
+    /// 2^64 ~ 10^19, so Int64 can hold ~ 19 decimal digits without overflow.
     /// http://www.itu.int/ITU-T/recommendations/rec.aspx?rec=E.164
     /// https://stackoverflow.com/questions/723587/whats-the-longest-possible-worldwide-phone-number-i-should-consider-in-sql-varc#4729239
     @objc dynamic var phoneNumber: CXCallDirectoryPhoneNumber = phoneNumberPlaceholder
 
-    // enforce phoneNumber is unique
+    // primaryKey enforces phoneNumber is unique
     // example query
     //    let specificPerson = realm.object(ofType: Person.self, forPrimaryKey: myPrimaryKey)
     // https://academy.realm.io/posts/realm-primary-keys-tutorial/
@@ -46,9 +46,37 @@ class PhoneCaller: Object {
     /// phoneNumber won't be identified unless it is added to call directory as an identificationEntry
     @objc dynamic var label: String = labelPlaceholder
 
-    /// set true to indicate phone should block calls from phoneNumber.
+    // MARK: - flags for communication with CallKit CallDirectoryHandler: CXCallDirectoryProvider
+
+    /// set true to indicate CallDirectoryHandler should update CallKit blocking and/or identifying directories for this PhoneCaller phoneNumber.
+    /// default for a new PhoneCaller is true.
+    /// After CallDirectoryHandler updates the directory entries, it can clear the flag
+    /// This dedicated flag seems simpler and more reliable than attempting to compute a property based on
+    /// potentially multiple changes to shouldBlock, shouldIdentify, shouldDelete, label.
+    @objc dynamic var hasChanges: Bool = true
+
+    /// set true to indicate CallDirectoryHandler should update CallKit blocking directory for this PhoneCaller phoneNumber.
     /// phoneNumber won't be blocked unless it is added to call directory as a blockingEntry
     @objc dynamic var shouldBlock: Bool = false
+
+    /// set true to indicate CallKit is blocking calls from this PhoneCaller's phoneNumber.
+    /// After CallDirectoryHandler adds or removes the number from the blocking directory, it can update this flag appropriately
+    @objc dynamic var isBlocked: Bool = false
+
+    /// set true to indicate CallDirectoryHandler should update CallKit identifying directory for this PhoneCaller phoneNumber.
+    /// phoneNumber won't be identified unless it is added to call directory as an identifyingEntry
+    /// After CallDirectoryHandler adds or removes the number from the identifying directory, it can update this flag appropriately
+    @objc dynamic var shouldIdentify: Bool = false
+
+    /// set true to indicate CallKit is identifying calls from this PhoneCaller's phoneNumber.
+    /// After CallDirectoryHandler updates the identifiying directory entry, it can set the flag true
+    @objc dynamic var isIdentified: Bool = false
+
+    /// set true to indicate CallDirectoryHandler should delete any CallKit blocking and/or identifying entries for this PhoneCaller phoneNumber.
+    /// After CallDirectoryHandler deletes the directory entries, it can delete this PhoneCaller object
+    @objc dynamic var shouldDelete: Bool = false
+
+    // MARK: -
 
     /// convenience initializer
     ///
