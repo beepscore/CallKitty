@@ -57,9 +57,11 @@ class RealmService {
                 if fetchedPhoneCaller != nil {
                     phoneCaller = fetchedPhoneCaller!
                 } else {
+                    // new phone caller with default properties
                     phoneCaller = PhoneCaller(phoneNumber: phoneNumber)
                 }
 
+                // set realm object properties within a write() block
                 phoneCaller.label = label
                 phoneCaller.hasChanges = hasChanges
                 phoneCaller.shouldBlock = shouldBlock
