@@ -46,19 +46,19 @@ class BlockingViewController: UIViewController {
         phoneCallerShouldBlockSwitch.setOn(true, animated: true)
     }
 
+    /// dismiss any keyboard, whether presented by searchBar or text field
+    func dismissAnyKeyboard() {
+        searchBar.endEditing(true)
+        phoneCallerPhoneNumberTextField.endEditing(true)
+        phoneCallerLabelTextField.endEditing(true)
+    }
+
     @IBAction func shouldBlockSwitchChanged(_ sender: UISwitch) {
-        // do nothing
+        dismissAnyKeyboard()
     }
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         dismissAnyKeyboard()
-    }
-
-    /// dismiss any keyboard, whether presented by searchBar or text field
-    @IBAction func dismissAnyKeyboard() {
-        searchBar.endEditing(true)
-        phoneCallerPhoneNumberTextField.endEditing(true)
-        phoneCallerLabelTextField.endEditing(true)
     }
 
     @IBAction func addUpdateButtonTapped(_ sender: Any) {
