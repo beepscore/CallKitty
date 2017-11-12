@@ -93,9 +93,8 @@ class PhoneCaller: Object {
         self.label = label
         self.shouldBlock = shouldBlock
 
-        if label != PhoneCaller.labelPlaceholder && label != "" {
-            self.shouldIdentify = true
-        }
+        // this is a new instance, so init can calculate shouldIdentify
+        self.shouldIdentify = (label != PhoneCaller.labelPlaceholder && label != "")
     }
 
 }
