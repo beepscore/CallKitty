@@ -54,7 +54,12 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Retrieve any changes to the set of phone numbers to block from data store.
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
-        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_1234 ]
+        // let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_1234 ]
+
+        // TODO: Consider use realm, observe for changes??
+        
+        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = []
+
         for phoneNumber in phoneNumbersToAdd {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
