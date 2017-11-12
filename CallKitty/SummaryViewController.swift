@@ -71,7 +71,7 @@ class SummaryViewController: UIViewController {
 
     func updateUI() {
         blockingCountLabel.text = String(RealmService.getAllPhoneCallersBlockedSortedCount(realm: realmService.realm))
-        identifyingCountLabel.text = String(RealmService.identifiedCount(realm: realmService.realm))
+        identifyingCountLabel.text = String(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm))
     }
 
 }

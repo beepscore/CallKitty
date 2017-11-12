@@ -129,20 +129,22 @@ class RealmServiceTests: XCTestCase {
 
     func testIdentifiedCount() {
         let realmService = RealmService.shared
-        let initialCount = RealmService.identifiedCount(realm: realmService.realm)
+        let initialCount = RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm)
 
         let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true)
         realmService.add(phoneCaller0)
-        XCTAssertEqual(RealmService.identifiedCount(realm: realmService.realm), initialCount + 1)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm), initialCount + 1)
 
         let phoneCaller1 = PhoneCaller(phoneNumber: 303)
         realmService.add(phoneCaller1)
-        XCTAssertEqual(RealmService.identifiedCount(realm: realmService.realm), initialCount + 1)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm),
+                       initialCount + 1)
 
         realmService.update(phoneCaller0,
                             with: [PhoneCaller.PropertyStrings.label.rawValue: PhoneCaller.labelPlaceholder])
 
-        XCTAssertEqual(RealmService.identifiedCount(realm: realmService.realm), initialCount)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm),
+                       initialCount)
 
         // clean up
         realmService.delete(phoneCaller0)
