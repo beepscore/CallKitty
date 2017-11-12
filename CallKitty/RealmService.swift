@@ -206,9 +206,9 @@ class RealmService {
 
     // MARK: - delete
 
-    /// Deletes phone number if it exists.
+    /// Deletes phoneCaller in background if caller with phoneNumber exists.
+    /// Method is "safe", doesn't error if phoneCaller doesn't exist.
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
-    /// - Returns: deleted phoneCaller. returns nil if not found
     static func backgroundDeletePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber) {
         DispatchQueue.global().async {
             let realm = try! Realm()
@@ -216,9 +216,11 @@ class RealmService {
         }
     }
 
-    /// Deletes phone number if it exists.
+    /// Deletes phoneCaller if caller with phoneNumber exists.
+    /// Method is "safe", doesn't error if phoneCaller doesn't exist.
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
-    /// - Returns: deleted phoneCaller. returns nil if not found
+    /// - Returns: deleted phoneCaller (might be invalid after delete).
+    /// returns nil if not found
     static func deletePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber, realm: Realm) -> PhoneCaller? {
         guard let phoneCaller = getPhoneCaller(phoneNumber: phoneNumber, realm: realm) else { return nil }
         do {
