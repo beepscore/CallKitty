@@ -222,6 +222,24 @@ class RealmService {
         return phoneCaller
     }
 
+    /// Deletes all phone callers
+    /// https://stackoverflow.com/questions/26185679/how-can-i-easily-delete-all-objects-in-a-realm
+    static func backgroundDeleteAllObjects() {
+        DispatchQueue.global().async {
+            // Get new realm and table since we are in a new thread.
+
+            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
+            // You must construct a new instance for each thread in which a Realm will be accessed.
+            // For dispatch queues, this means that you must construct a new instance
+            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
+            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+            }
+        }
+    }
+
     // MARK: - generic functions
 
     /// generic function to add an object to a realm

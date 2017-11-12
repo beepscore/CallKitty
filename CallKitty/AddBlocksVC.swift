@@ -78,4 +78,16 @@ class AddBlocksVC: UIViewController {
         // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
         // (editor) Instead can CallDirectoryHandler simply observe realm for changes?
     }
+
+    @IBAction func deleteAllButtonTapped(_ sender: Any) {
+        // delete in background to avoid blocking UI
+        RealmService.backgroundDeleteAllObjects()
+
+        // TODO: Consider reloadExtension after background delete completes
+        // When you have updated blocking data you can refresh your blocking data by calling CXCallDirectory.sharedInstance.reloadExtension from your main app;
+        // you could do this in response to a silent push, when requested by the user or use background fetch.
+        // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
+        // (editor) Instead can CallDirectoryHandler simply observe realm for changes?
+    }
+
 }

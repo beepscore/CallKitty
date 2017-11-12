@@ -46,21 +46,30 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-NT-nnA">
-                                <rect key="frame" x="172" y="287" width="30" height="30"/>
+                                <rect key="frame" x="172" y="219" width="30" height="30"/>
                                 <state key="normal" title="add"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="Iga-3r-g3b" eventType="touchUpInside" id="FW3-LM-KwK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-tP-0oU">
+                                <rect key="frame" x="155" y="265" width="64" height="30"/>
+                                <state key="normal" title="Delete all"/>
+                                <connections>
+                                    <action selector="deleteAllButtonTapped:" destination="Iga-3r-g3b" eventType="touchUpInside" id="sp8-vt-hHG"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FEM-gw-tdk" firstAttribute="leading" secondItem="pPT-M5-mNg" secondAttribute="leading" id="5YE-gM-6uQ"/>
+                            <constraint firstItem="kaa-tP-0oU" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="60s-p7-6f4"/>
                             <constraint firstItem="FEM-gw-tdk" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="KUC-cR-is4"/>
                             <constraint firstItem="DOF-NT-nnA" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="VFG-9R-xay"/>
                             <constraint firstItem="FEM-gw-tdk" firstAttribute="top" secondItem="pPT-M5-mNg" secondAttribute="top" constant="64" id="eIb-HJ-VEM"/>
+                            <constraint firstItem="kaa-tP-0oU" firstAttribute="top" secondItem="DOF-NT-nnA" secondAttribute="bottom" constant="16" id="fdy-Tu-jvH"/>
                             <constraint firstItem="pPT-M5-mNg" firstAttribute="trailing" secondItem="FEM-gw-tdk" secondAttribute="trailing" id="rKi-hW-c1H"/>
-                            <constraint firstItem="DOF-NT-nnA" firstAttribute="top" secondItem="FEM-gw-tdk" secondAttribute="bottom" constant="100" id="rha-tU-DSO"/>
+                            <constraint firstItem="DOF-NT-nnA" firstAttribute="top" secondItem="FEM-gw-tdk" secondAttribute="bottom" constant="32" id="rha-tU-DSO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPT-M5-mNg"/>
                     </view>
