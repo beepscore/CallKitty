@@ -26,27 +26,27 @@
                                 </connections>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="fuN-GN-hDE">
-                                <rect key="frame" x="16" y="126" width="343" height="207.5"/>
+                                <rect key="frame" x="16" y="126" width="343" height="217"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FdI-tw-53P">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-FT-Zha">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFv-FT-Zha">
+                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN3-FY-RAP">
-                                                <rect key="frame" x="335" y="0.0" width="8" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search or type to enter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9U-Fg-qfB">
+                                                <rect key="frame" x="174.5" y="0.0" width="168.5" height="30"/>
                                                 <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="7VF-a3-ux7">
-                                        <rect key="frame" x="0.0" y="52.5" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="62" width="343" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBg-Aj-iqQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
@@ -63,7 +63,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ufq-Wx-Cyn">
-                                        <rect key="frame" x="0.0" y="114.5" width="343" height="31"/>
+                                        <rect key="frame" x="0.0" y="124" width="343" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shouldBlock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIf-rq-R8r">
                                                 <rect key="frame" x="0.0" y="0.0" width="278" height="31"/>
@@ -80,7 +80,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-g4-lcS">
-                                        <rect key="frame" x="0.0" y="177.5" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="187" width="343" height="30"/>
                                         <state key="normal" title="Add or Update"/>
                                         <connections>
                                             <action selector="addUpdateButtonTapped:" destination="nUi-Xh-OKe" eventType="touchUpInside" id="kPM-PY-Chh"/>
@@ -113,7 +113,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="phoneCallerLabelTextField" destination="EiD-H1-kim" id="GRS-3S-QAL"/>
-                        <outlet property="phoneCallerPhoneNumberLabel" destination="IN3-FY-RAP" id="XS9-Yx-Ma2"/>
+                        <outlet property="phoneCallerPhoneNumberTextField" destination="I9U-Fg-qfB" id="bs7-0T-fTH"/>
                         <outlet property="phoneCallerShouldBlockSwitch" destination="uXg-VC-QGI" id="Lsa-fh-1xe"/>
                         <outlet property="searchBar" destination="Anm-8r-yG0" id="f2w-Ws-aHv"/>
                     </connections>

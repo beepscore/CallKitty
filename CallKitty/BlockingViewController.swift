@@ -12,7 +12,7 @@ import CallKit
 class BlockingViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var phoneCallerPhoneNumberLabel: UILabel!
+    @IBOutlet weak var phoneCallerPhoneNumberTextField: UITextField!
     @IBOutlet weak var phoneCallerLabelTextField: UITextField!
     @IBOutlet weak var phoneCallerShouldBlockSwitch: UISwitch!
 
@@ -24,8 +24,8 @@ class BlockingViewController: UIViewController {
         // when view loads, tab bar item displays this variable "title"
         title = NSLocalizedString("BLOCKING_VC_TITLE", comment: "BlockingViewController title")
 
-        // In storyboard, leave text "-" to prevent interface builder view from jumping out of position
-        phoneCallerPhoneNumberLabel.text = ""
+        // In storyboard, may leave text "-" to prevent interface builder view from jumping out of position
+        phoneCallerPhoneNumberTextField.text = ""
 
         searchBar.delegate = self
 
@@ -39,7 +39,7 @@ class BlockingViewController: UIViewController {
     }
 
     func clearUI() {
-        phoneCallerPhoneNumberLabel.text = ""
+        phoneCallerPhoneNumberTextField.text = ""
         phoneCallerLabelTextField.text = ""
         phoneCallerShouldBlockSwitch.setOn(true, animated: true)
     }
@@ -50,16 +50,16 @@ class BlockingViewController: UIViewController {
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            // dismiss keyboard presented by searchBar
+            // dismiss any keyboard, whether presented by searchBar or text field
             searchBar.endEditing(true)
-            // dismiss keyboard presented by text field
+            phoneCallerPhoneNumberTextField.endEditing(true)
             phoneCallerLabelTextField.endEditing(true)
         }
     }
 
     @IBAction func addUpdateButtonTapped(_ sender: Any) {
 
-        guard let phoneNumberText = phoneCallerPhoneNumberLabel.text else {
+        guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else {
             clearUI()
             return
         }
@@ -118,7 +118,7 @@ extension BlockingViewController: UISearchBarDelegate {
 
         if let unwrappedPhoneCaller = phoneCaller {
             // show phone number text fields for editing
-            phoneCallerPhoneNumberLabel.text = String(describing: unwrappedPhoneCaller.phoneNumber)
+            phoneCallerPhoneNumberTextField.text = String(describing: unwrappedPhoneCaller.phoneNumber)
             phoneCallerLabelTextField.text = unwrappedPhoneCaller.label
         } else {
             clearUI()
