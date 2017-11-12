@@ -80,21 +80,31 @@ class PhoneCaller: Object {
 
     /// convenience initializer
     ///
+    /// for additional parameter documentation see property declarations
     /// - Parameters:
     ///   - phoneNumber: a phone number, can be used to identify and/or block phone calls
     ///   - label: used to identify a caller. default is labelPlaceholder, e.g. empty string
-    ///     Note non-empty label automatically sets shouldIdentify true
+    ///     Note non-empty label doesn't automatically set shouldIdentify true
     ///   - shouldBlock: set true to block calls from phoneNumber. default is false
-    convenience init(phoneNumber: CXCallDirectoryPhoneNumber, label: String = labelPlaceholder, shouldBlock: Bool = false) {
+    convenience init(phoneNumber: CXCallDirectoryPhoneNumber,
+                     label: String = labelPlaceholder,
+                     hasChanges: Bool = true,
+                     shouldBlock: Bool = false,
+                     isBlocked: Bool = false,
+                     shouldIdentify: Bool = false,
+                     isIdentified: Bool = false,
+                     shouldDelete: Bool = false) {
         // must call designated initializer
         self.init()
-
+        
         self.phoneNumber = phoneNumber
         self.label = label
+        self.hasChanges = hasChanges
         self.shouldBlock = shouldBlock
-
-        // this is a new instance, so init can calculate shouldIdentify
-        self.shouldIdentify = (label != PhoneCaller.labelPlaceholder && label != "")
+        self.isBlocked = isBlocked
+        self.shouldIdentify = shouldIdentify
+        self.isIdentified = isIdentified
+        self.shouldDelete = shouldDelete
     }
 
 }

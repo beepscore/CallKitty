@@ -37,8 +37,8 @@ class PhoneCallerTests: XCTestCase {
         XCTAssertEqual(phoneCaller.shouldBlock, shouldBlock)
         XCTAssertFalse(phoneCaller.isBlocked)
 
-        // Note non-empty label should automatically set shouldIdentify
-        XCTAssertTrue(phoneCaller.shouldIdentify)
+        // Note non-empty label doesn't automatically set shouldIdentify
+        XCTAssertFalse(phoneCaller.shouldIdentify)
         XCTAssertFalse(phoneCaller.isIdentified)
 
         XCTAssertFalse(phoneCaller.shouldDelete)
