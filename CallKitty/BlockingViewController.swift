@@ -35,6 +35,12 @@ class BlockingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func clearUI() {
+        phoneCallerPhoneNumberLabel.text = ""
+        phoneCallerLabelTextField.text = ""
+        phoneCallerShouldBlockSwitch.setOn(true, animated: true)
+    }
+
     @IBAction func shouldBlockSwitchChanged(_ sender: UISwitch) {
 
         guard let unwrappedPhoneCaller = phoneCaller else { return }
@@ -71,8 +77,15 @@ extension BlockingViewController: UISearchBarDelegate {
         // dismiss keyboard
         searchBar.endEditing(true)
 
-        guard let searchBarText = searchBar.text else { return }
-        guard let phoneNumber = CXCallDirectoryPhoneNumber(searchBarText) else { return }
+        guard let searchBarText = searchBar.text else {
+            clearUI()
+            return
+        }
+        // TODO: sanitize user input before converting to phone number
+        guard let phoneNumber = CXCallDirectoryPhoneNumber(searchBarText) else {
+            clearUI()
+            return
+        }
 
         phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
 
@@ -81,8 +94,7 @@ extension BlockingViewController: UISearchBarDelegate {
             phoneCallerPhoneNumberLabel.text = String(describing: unwrappedPhoneCaller.phoneNumber)
             phoneCallerLabelTextField.text = unwrappedPhoneCaller.label
         } else {
-            phoneCallerPhoneNumberLabel.text = "not found"
-            phoneCallerLabelTextField.text = ""
+            clearUI()
         }
     }
 
