@@ -14,6 +14,7 @@ class AddBlocksVC: UIViewController {
     @IBOutlet private weak var sliderTitleLabel: UILabel!
     @IBOutlet private weak var numberToGenerateLabel: UILabel!
     @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private weak var deleteButton: UIButton!
 
     var numberDesired = 1
 
@@ -26,6 +27,8 @@ class AddBlocksVC: UIViewController {
         sliderTitleLabel.text = NSLocalizedString("SLIDER_TITLE_LABEL_TEXT", comment: "AddBlocksVC sliderTitleLabel text")
         numberToGenerateLabel.text = String(numberDesired)
         addButton.setTitle(NSLocalizedString("ADD_BUTTON_TITLE", comment: "AddBlocksVC addButton title"),
+                           for: .normal)
+        deleteButton.setTitle(NSLocalizedString("DELETE_BUTTON_TITLE", comment: "AddBlocksVC delete button title"),
                            for: .normal)
     }
 
@@ -80,8 +83,10 @@ class AddBlocksVC: UIViewController {
     }
 
     @IBAction func deleteAllButtonTapped(_ sender: Any) {
-        // delete in background to avoid blocking UI
-        RealmService.backgroundDeleteAllObjects()
+        // use background method to avoid blocking UI
+
+        // RealmService.backgroundDeleteAllObjects()
+        // TODO: change to RealmService.backgroundShouldDeleteAllObjects()
 
         // TODO: Consider reloadExtension after background delete completes
         // When you have updated blocking data you can refresh your blocking data by calling CXCallDirectory.sharedInstance.reloadExtension from your main app;
