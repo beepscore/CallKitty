@@ -109,9 +109,6 @@ class BlockingViewController: UIViewController {
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else { return }
         guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else { return }
 
-        // guard let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm) else { return }
-        // RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneCaller.phoneNumber)
-
         RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneNumber)
     }
 
