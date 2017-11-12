@@ -51,15 +51,19 @@ class BlockingViewController: UIViewController {
     }
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .ended {
-            // dismiss any keyboard, whether presented by searchBar or text field
-            searchBar.endEditing(true)
-            phoneCallerPhoneNumberTextField.endEditing(true)
-            phoneCallerLabelTextField.endEditing(true)
-        }
+        dismissAnyKeyboard()
+    }
+
+    /// dismiss any keyboard, whether presented by searchBar or text field
+    @IBAction func dismissAnyKeyboard() {
+        searchBar.endEditing(true)
+        phoneCallerPhoneNumberTextField.endEditing(true)
+        phoneCallerLabelTextField.endEditing(true)
     }
 
     @IBAction func addUpdateButtonTapped(_ sender: Any) {
+
+        dismissAnyKeyboard()
 
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else {
             clearUI()
