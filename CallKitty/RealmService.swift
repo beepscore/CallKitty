@@ -32,16 +32,21 @@ class RealmService {
 
     /// If phoneCaller for unique primary key PhoneNumber already exists, update it.
     /// If phoneCaller doesn't already exist, add it with supplied properties
+    /// for additional parameter documentation see PhoneCaller
     /// https://academy.realm.io/posts/realm-primary-keys-tutorial/
     ///
     /// - Parameters:
     ///   - phoneNumber: a CallKit CXCallDirectoryPhoneNumber, unique primary key
     ///   - label: label for new PhoneCaller
-    ///   - shouldBlock: shouldBlock for new PhoneCaller
     ///   - realm: Realm context
     static func addUpdatePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber,
                                      label: String = PhoneCaller.labelPlaceholder,
+                                     hasChanges: Bool = true,
                                      shouldBlock: Bool = false,
+                                     isBlocked: Bool = false,
+                                     shouldIdentify: Bool = false,
+                                     isIdentified: Bool = false,
+                                     shouldDelete: Bool = false,
                                      realm: Realm) {
         do {
             try realm.write() {
