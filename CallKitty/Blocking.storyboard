@@ -26,7 +26,7 @@
                                 </connections>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="fuN-GN-hDE">
-                                <rect key="frame" x="16" y="126" width="343" height="145.5"/>
+                                <rect key="frame" x="16" y="126" width="343" height="207.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FdI-tw-53P">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -79,6 +79,13 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsg-g4-lcS">
+                                        <rect key="frame" x="0.0" y="177.5" width="343" height="30"/>
+                                        <state key="normal" title="Add or Update"/>
+                                        <connections>
+                                            <action selector="addUpdateButtonTapped:" destination="nUi-Xh-OKe" eventType="touchUpInside" id="kPM-PY-Chh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ufq-Wx-Cyn" secondAttribute="trailing" id="0Ch-Vk-80u"/>
@@ -86,6 +93,7 @@
                                     <constraint firstItem="7VF-a3-ux7" firstAttribute="leading" secondItem="fuN-GN-hDE" secondAttribute="leading" id="GoD-5X-AsA"/>
                                     <constraint firstAttribute="trailing" secondItem="7VF-a3-ux7" secondAttribute="trailing" id="g66-F2-2qy"/>
                                     <constraint firstItem="ufq-Wx-Cyn" firstAttribute="leading" secondItem="fuN-GN-hDE" secondAttribute="leading" id="hgS-gH-0Dq"/>
+                                    <constraint firstItem="Zsg-g4-lcS" firstAttribute="centerX" secondItem="fuN-GN-hDE" secondAttribute="centerX" id="so3-1r-gb7"/>
                                     <constraint firstItem="FdI-tw-53P" firstAttribute="leading" secondItem="fuN-GN-hDE" secondAttribute="leading" id="zcO-Ub-GRE"/>
                                 </constraints>
                             </stackView>

@@ -24,6 +24,9 @@ class BlockingViewController: UIViewController {
         // when view loads, tab bar item displays this variable "title"
         title = NSLocalizedString("BLOCKING_VC_TITLE", comment: "BlockingViewController title")
 
+        // In storyboard, leave text "-" to prevent interface builder view from jumping out of position
+        phoneCallerPhoneNumberLabel.text = ""
+
         searchBar.delegate = self
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
@@ -42,22 +45,7 @@ class BlockingViewController: UIViewController {
     }
 
     @IBAction func shouldBlockSwitchChanged(_ sender: UISwitch) {
-
-        guard let unwrappedPhoneCaller = phoneCaller else { return }
-
-        let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
-
-        RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
-                                          label: desiredPhoneCallerLabel,
-                                          shouldBlock: phoneCallerShouldBlockSwitch.isOn,
-                                          realm: RealmService.shared.realm)
-
-        if unwrappedPhoneCaller.shouldBlock {
-            // TODO: Consider define a theme constant for this color
-            view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
-        } else {
-            view.backgroundColor = .white
-        }
+        // do nothing
     }
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
@@ -66,6 +54,45 @@ class BlockingViewController: UIViewController {
             searchBar.endEditing(true)
             // dismiss keyboard presented by text field
             phoneCallerLabelTextField.endEditing(true)
+        }
+    }
+
+    @IBAction func addUpdateButtonTapped(_ sender: Any) {
+
+        guard let phoneNumberText = phoneCallerPhoneNumberLabel.text else {
+            clearUI()
+            return
+        }
+
+        // TODO: sanitize user input before converting to phone number
+        guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else {
+            clearUI()
+            return
+        }
+
+        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
+
+        let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
+
+        if let unwrappedPhoneCaller = phoneCaller {
+
+            RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
+                                              label: desiredPhoneCallerLabel,
+                                              shouldBlock: phoneCallerShouldBlockSwitch.isOn,
+                                              realm: RealmService.shared.realm)
+        } else {
+
+            RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
+                                              label: desiredPhoneCallerLabel,
+                                              shouldBlock: phoneCallerShouldBlockSwitch.isOn,
+                                              realm: RealmService.shared.realm)
+        }
+
+        if phoneCallerShouldBlockSwitch.isOn {
+            // TODO: Consider define a theme constant for this color
+            view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
+        } else {
+            view.backgroundColor = .white
         }
     }
 }
