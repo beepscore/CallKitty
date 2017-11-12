@@ -139,6 +139,14 @@ class LongTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+
+        if editingStyle == .delete {
+            guard let phoneCaller = results?[indexPath.row] else { return }
+            RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneCaller.phoneNumber)
+        }
+    }
+
     /// for generality, handles sections of differing lengths
     func itemIndex(indexPath: IndexPath) -> Int {
 
