@@ -80,7 +80,6 @@ class RealmService {
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
             let realm = try! Realm()
-
             RealmService.addBlockingPhoneCallers(count: count, realm: realm)
         }
     }
@@ -205,7 +204,17 @@ class RealmService {
         return allPhoneNumbersIdentifiedSortedArray
     }
 
-    // MARK: -
+    // MARK: - delete
+
+    /// Deletes phone number if it exists.
+    /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
+    /// - Returns: deleted phoneCaller. returns nil if not found
+    static func backgroundDeletePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber) {
+        DispatchQueue.global().async {
+            let realm = try! Realm()
+            let _ = RealmService.deletePhoneCaller(phoneNumber: phoneNumber, realm: realm)
+        }
+    }
 
     /// Deletes phone number if it exists.
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
@@ -222,7 +231,7 @@ class RealmService {
         return phoneCaller
     }
 
-    /// Deletes all phone callers
+    /// Delete all objects
     /// https://stackoverflow.com/questions/26185679/how-can-i-easily-delete-all-objects-in-a-realm
     static func backgroundDeleteAllObjects() {
         DispatchQueue.global().async {
