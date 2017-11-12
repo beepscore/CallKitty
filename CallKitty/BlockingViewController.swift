@@ -101,6 +101,20 @@ class BlockingViewController: UIViewController {
             view.backgroundColor = .white
         }
     }
+
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+
+        dismissAnyKeyboard()
+
+        guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else { return }
+        guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else { return }
+
+        // guard let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm) else { return }
+        // RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneCaller.phoneNumber)
+
+        RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneNumber)
+    }
+
 }
 
 extension BlockingViewController: UISearchBarDelegate {
