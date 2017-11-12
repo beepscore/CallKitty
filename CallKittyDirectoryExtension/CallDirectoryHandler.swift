@@ -8,8 +8,56 @@
 
 import Foundation
 import CallKit
+import RealmSwift
 
 class CallDirectoryHandler: CXCallDirectoryProvider {
+
+    let realmService = RealmService.shared
+    let realm = RealmService.shared.realm
+
+//    var results: Results<PhoneCaller>?
+//    var notificationToken: NotificationToken?
+
+    // TODO: where to call observeResults?? Use a CXCallDirectoryManager??
+//    func observeResults() {
+//        results = realmService.realm.objects(PhoneCaller.self)
+//
+//        // Set results notification block
+//        // block is called every time the realm collection changes
+//        // use capture list [weak self] to avoid potential retain cycles
+//        notificationToken = results?.observe { [weak self] (changes: RealmCollectionChange) in
+//            // Swift switch cases don't implicitly fall through, don't need break
+//            // https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html
+//            switch changes {
+//            case .initial:
+//                // Results are now populated and can be accessed without blocking the UI
+//                // self?.updateUI()
+//
+//                // TODO: consider/test call addAllBlockingPhoneNumbers, addAllIdentificationPhoneNumbers
+//                // or just rely on CallKit to do this
+//                break
+//
+//            case .update(_, _, _, _):
+//                // self?.updateUI()
+//
+//                // TODO: consider/test call incremental methods like
+//                // addOrRemoveIncrementalBlockingPhoneNumbers
+//                // addOrRemoveIncrementalIdentificationPhoneNumbers
+//                break
+//
+//            case .error(let err):
+//                // An error occurred while opening the Realm file on the background worker thread
+//                fatalError("\(err)")
+//            }
+//        }
+//    }
+
+    // TODO: where to call invalidate?? Use a CXCallDirectoryManager??
+    //func deinit() {
+    //    super.deinit()
+        // stop update notifications. stop was renamed to invalidate
+        // notificationToken?.invalidate()
+    //}
 
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
         context.delegate = self
@@ -42,7 +90,6 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Swift numeric literal can contain underscores to increase readability
         // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5555, 1_800_555_5555 ]
 
-        let realm = RealmService.shared.realm
         let allPhoneNumbersBlockedSorted: [CXCallDirectoryPhoneNumber] = RealmService.getAllPhoneNumbersBlockedSorted(realm: realm)
 
         for phoneNumber in allPhoneNumbersBlockedSorted {
@@ -87,7 +134,6 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         //    context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
         // }
 
-        let realm = RealmService.shared.realm
         let allPhoneCallersIdentifiedSorted = RealmService.getAllPhoneCallersIdentifiedSorted(realm: realm)
          for phoneCaller in allPhoneCallersIdentifiedSorted {
             context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
