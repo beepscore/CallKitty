@@ -43,9 +43,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5555, 1_800_555_5555 ]
 
         let realm = RealmService.shared.realm
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = RealmService.getAllPhoneNumbersBlockedSorted(realm: realm)
+        let allPhoneNumbersBlockedSorted: [CXCallDirectoryPhoneNumber] = RealmService.getAllPhoneNumbersBlockedSorted(realm: realm)
 
-        for phoneNumber in allPhoneNumbers {
+        for phoneNumber in allPhoneNumbersBlockedSorted {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
     }
@@ -54,17 +54,17 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Retrieve any changes to the set of phone numbers to block from data store.
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
-        // let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_1234 ]
 
         // TODO: Consider use realm, observe for changes??
-        
-        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = []
 
+        // let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_1234 ]
+        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = []
         for phoneNumber in phoneNumbersToAdd {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
 
-        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_800_555_5555 ]
+        // let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_800_555_5555 ]
+        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = []
         for phoneNumber in phoneNumbersToRemove {
             context.removeBlockingEntry(withPhoneNumber: phoneNumber)
         }
@@ -80,30 +80,42 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_877_555_5555, 1_888_555_5555 ]
-        let labels = [ "Telemarketer", "Local business" ]
 
-        for (phoneNumber, label) in zip(allPhoneNumbers, labels) {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
-        }
+        // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_877_555_5555, 1_888_555_5555 ]
+        // let labels = [ "Telemarketer", "Local business" ]
+        // for (phoneNumber, label) in zip(allPhoneNumbers, labels) {
+        //    context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
+        // }
+
+        let realm = RealmService.shared.realm
+        let allPhoneCallersIdentifiedSorted = RealmService.getAllPhoneCallersIdentifiedSorted(realm: realm)
+         for phoneCaller in allPhoneCallersIdentifiedSorted {
+            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
+                                           label: phoneCaller.label)
+         }
     }
 
     private func addOrRemoveIncrementalIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
         // Retrieve any changes to the set of phone numbers to identify (and their identification labels) from data store.
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
-        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5678 ]
-        let labelsToAdd = [ "New local business" ]
 
-        for (phoneNumber, label) in zip(phoneNumbersToAdd, labelsToAdd) {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
-        }
 
-        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_888_555_5555 ]
+//        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5678 ]
+//        let labelsToAdd = [ "New local business" ]
+//
+//        for (phoneNumber, label) in zip(phoneNumbersToAdd, labelsToAdd) {
+//            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
+//        }
+//
+//        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_888_555_5555 ]
+//
+//        for phoneNumber in phoneNumbersToRemove {
+//            context.removeIdentificationEntry(withPhoneNumber: phoneNumber)
+//        }
 
-        for phoneNumber in phoneNumbersToRemove {
-            context.removeIdentificationEntry(withPhoneNumber: phoneNumber)
-        }
+        // TODO: Consider use realm, observe for changes??
+
 
         // Record the most-recently loaded set of identification entries in data store for the next incremental load...
     }
