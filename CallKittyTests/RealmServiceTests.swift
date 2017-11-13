@@ -118,20 +118,20 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(phoneCallers.count, initialCount)
     }
 
-    func testBlockedCount() {
+    func testShouldBlockCount() {
         let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersBlockedSortedCount(realm: realmService.realm)
+        let initialCount = RealmService.getAllPhoneCallersShouldBlockSortedCount(realm: realmService.realm)
 
         let phoneCaller = PhoneCaller(phoneNumber: 301, label: "dog", shouldBlock: true)
 
         realmService.add(phoneCaller)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersBlockedSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockSortedCount(realm: realmService.realm),
                        initialCount + 1)
 
         realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.shouldBlock.rawValue : false])
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersBlockedSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockSortedCount(realm: realmService.realm),
                        initialCount)
 
         // clean up

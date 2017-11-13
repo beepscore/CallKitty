@@ -150,11 +150,10 @@ class RealmService {
         return phoneCallers
     }
 
-    // MARK: - blocked
+    // MARK: - shouldBlock
 
-    /// Gets all PhoneCallers with shouldBlock true
-    /// - Returns: realm Result of all blocked phoneCallers, sorted by phone number
-    static func getAllPhoneCallersBlockedSorted(realm: Realm) -> Results<PhoneCaller> {
+    /// - Returns: realm Result of all phoneCallers with shouldBlock true, sorted by phone number
+    static func getAllPhoneCallersShouldBlockSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
         let allPhoneCallersBlockedSorted = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
@@ -164,22 +163,22 @@ class RealmService {
     /// Note this method queries realm database, not call directory
     /// If call directory has not been synced to realm, returned result could be misleading
     /// - Returns: count of phoneCallers with shouldBlock true
-    static func getAllPhoneCallersBlockedSortedCount(realm: Realm) -> Int {
-        let allPhoneCallersBlockedSorted = RealmService.getAllPhoneCallersBlockedSorted(realm: realm)
+    static func getAllPhoneCallersShouldBlockSortedCount(realm: Realm) -> Int {
+        let allPhoneCallersBlockedSorted = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
         return allPhoneCallersBlockedSorted.count
     }
 
-    /// - Returns: array of all blocked phone numbers,
+    /// - Returns: array of all phone numbers with shouldBlock true,
     /// sorted by phone number as required by CallKit call directory addBlockingEntry
-    static func getAllPhoneNumbersBlockedSorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
-        let allPhoneCallersBlockedSorted = RealmService.getAllPhoneCallersBlockedSorted(realm: realm)
+    static func getAllPhoneNumbersShouldBlockSorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
+        let allPhoneCallersShouldBlockSorted = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
 
         // type is Realm LazyMapRandomAccessCollection
         // TODO: see if can return LazyMapRandomAccessCollection instead
-        let allPhoneNumbersBlockedSorted = allPhoneCallersBlockedSorted.map { phoneCaller in phoneCaller.phoneNumber }
+        let allPhoneNumbersShouldBlockSorted = allPhoneCallersShouldBlockSorted.map { phoneCaller in phoneCaller.phoneNumber }
 
-        let allPhoneNumbersBlockedSortedArray = Array(allPhoneNumbersBlockedSorted)
-        return allPhoneNumbersBlockedSortedArray
+        let allPhoneNumbersShouldBlockSortedArray = Array(allPhoneNumbersShouldBlockSorted)
+        return allPhoneNumbersShouldBlockSortedArray
     }
 
     // MARK: - identified
