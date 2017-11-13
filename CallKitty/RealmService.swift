@@ -178,19 +178,6 @@ class RealmService {
         return allPhoneCallersBlockedSorted.count
     }
 
-    /// - Returns: array of all phone numbers with shouldBlock true,
-    /// sorted by phone number as required by CallKit call directory addBlockingEntry
-    static func getAllPhoneNumbersShouldBlockSorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
-        let allPhoneCallersShouldBlockSorted = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
-
-        // type is Realm LazyMapRandomAccessCollection
-        // TODO: see if can return LazyMapRandomAccessCollection instead
-        let allPhoneNumbersShouldBlockSorted = allPhoneCallersShouldBlockSorted.map { phoneCaller in phoneCaller.phoneNumber }
-
-        let allPhoneNumbersShouldBlockSortedArray = Array(allPhoneNumbersShouldBlockSorted)
-        return allPhoneNumbersShouldBlockSortedArray
-    }
-
     // MARK: - shouldIdentify
 
     /// - Returns: realm Result of all phoneCallers with shouldIdentify true, sorted by phone number
