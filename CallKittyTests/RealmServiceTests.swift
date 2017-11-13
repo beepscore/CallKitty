@@ -140,23 +140,25 @@ class RealmServiceTests: XCTestCase {
         realmService.delete(phoneCaller)
     }
 
-    func testShouldIdentifyCount() {
+    func testIsIdentifiedCount() {
         let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm)
+        let initialCount = RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm)
 
-        let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true, shouldIdentify: true)
+        // normally a newly instantiated caller will have isIdentified false until it is added to call directory
+        // for this unit test, set it true
+        let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true, isIdentified: true)
         realmService.add(phoneCaller0)
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm), initialCount + 1)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm), initialCount + 1)
 
-        let phoneCaller1 = PhoneCaller(phoneNumber: 303, shouldIdentify: false)
+        let phoneCaller1 = PhoneCaller(phoneNumber: 303, isIdentified: false)
         realmService.add(phoneCaller1)
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm),
                        initialCount + 1)
 
         realmService.update(phoneCaller0,
-                            with: [PhoneCaller.PropertyStrings.shouldIdentify.rawValue: false])
+                            with: [PhoneCaller.PropertyStrings.isIdentified.rawValue: false])
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm),
                        initialCount)
 
         // clean up

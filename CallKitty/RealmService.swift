@@ -198,25 +198,22 @@ class RealmService {
         return allPhoneCallersShouldIdentifySorted
     }
 
-    /// Note this method queries realm database, not call directory
-    /// If call directory has not been synced to realm, returned result could be misleading
-    /// - Returns: count of phoneCallers with shouldIdentify true
-    static func getAllPhoneCallersShouldIdentifySortedCount(realm: Realm) -> Int {
-        let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
-        return allPhoneCallersShouldIdentifySorted.count
+    // MARK: - isIdentified
+
+    /// - Returns: realm Result of all phoneCallers with isIdentified true, sorted by phone number
+    static func getAllPhoneCallersIsIdentifiedSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.isIdentified.rawValue + " = true"
+        let allPhoneCallersIsIdentifiedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return allPhoneCallersIsIdentifiedSorted
     }
 
-    /// - Returns: array of all phone numbers with shouldIdentify true,
-    /// sorted by phone number as required by CallKit call directory addIdentificationEntry
-    static func getAllPhoneNumbersShouldIdentifySorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
-        let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
-
-        // type is Realm LazyMapRandomAccessCollection
-        // TODO: see if can return LazyMapRandomAccessCollection instead
-        let allPhoneNumbersShouldIdentifySorted = allPhoneCallersShouldIdentifySorted.map { phoneCaller in phoneCaller.phoneNumber }
-
-        let allPhoneNumbersShouldIdentifySortedArray = Array(allPhoneNumbersShouldIdentifySorted)
-        return allPhoneNumbersShouldIdentifySortedArray
+    /// Note this method queries realm database, not call directory
+    /// If call directory has not been synced to realm, returned result could be misleading
+    /// - Returns: count of phoneCallers with isIdentified true
+    static func getAllPhoneCallersIsIdentifiedSortedCount(realm: Realm) -> Int {
+        let allPhoneCallersIsIdentifiedSorted = RealmService.getAllPhoneCallersIsIdentifiedSorted(realm: realm)
+        return allPhoneCallersIsIdentifiedSorted.count
     }
 
     // MARK: - shouldDelete
