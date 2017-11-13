@@ -35,6 +35,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     }
 
     // TODO: implement
+    // How long will this take?
+    // wait for this to complete before continuing?
+    // run in a background queue?
     func deleteAllShouldDelete(context: CXCallDirectoryExtensionContext) {
         // get phoneCallers with shouldDelete true
         // for phoneCaller in phoneCallers
