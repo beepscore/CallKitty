@@ -170,22 +170,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
+        // TODO: incremental add, use hasChanges true and shouldIdentify true and isIdentified false
 
-//        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5678 ]
-//        let labelsToAdd = [ "New local business" ]
-//
-//        for (phoneNumber, label) in zip(phoneNumbersToAdd, labelsToAdd) {
-//            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
-//        }
-//
-//        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_888_555_5555 ]
-//
-//        for phoneNumber in phoneNumbersToRemove {
-//            context.removeIdentificationEntry(withPhoneNumber: phoneNumber)
-//        }
-
-        // TODO: Consider use realm, observe for changes??
-
+        // TODO: incremental remove, use hasChanges true and shouldIdentify false and isIdentified true
 
         // Record the most-recently loaded set of identification entries in data store for the next incremental load...
     }
