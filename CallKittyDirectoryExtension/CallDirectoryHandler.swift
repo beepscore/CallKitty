@@ -43,9 +43,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     func deleteAllShouldDelete(context: CXCallDirectoryExtensionContext) {
         // get phoneCallers with shouldDelete true
         // for phoneCaller in phoneCallers
-        //   remove from blocked directory
-        //   remove from identified directory
-        //   delete from realm
+        //     context.removeBlockingEntry from directory
+        //     context.removeIdentificationEntry from directory
+        //     delete from realm
     }
 
     // MARK: - blocking
