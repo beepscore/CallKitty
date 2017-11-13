@@ -130,12 +130,14 @@ class LongTableViewController: UITableViewController {
         cell.detailTextLabel?.text = phoneCaller.label
 
         // set background color for diagnostics during development
-        if phoneCaller.shouldBlock {
-            cell.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
+        if phoneCaller.shouldDelete {
+            cell.backgroundColor = UIColor( red: 1.0, green: (220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
+        } else if phoneCaller.hasChanges {
+            // yellow
+            cell.backgroundColor = UIColor( red: 1.0, green: 1.0, blue: CGFloat(220/255.0), alpha: 1.0 )
         } else {
             cell.backgroundColor = .white
         }
-
         return cell
     }
 
@@ -143,12 +145,18 @@ class LongTableViewController: UITableViewController {
 
         if editingStyle == .delete {
             guard let phoneCaller = results?[indexPath.row] else { return }
-            //RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneCaller.phoneNumber)
 
-            // TODO: call addUpdatePhoneCaller with shouldDelete true
-            
-
-
+            // call addUpdatePhoneCaller with shouldDelete true
+            // TODO: is it better to set hasChanges true, false, or don't care?
+            RealmService.addUpdatePhoneCaller(phoneNumber: phoneCaller.phoneNumber,
+                                              label: phoneCaller.label,
+                                              hasChanges: true,
+                                              shouldBlock: phoneCaller.shouldBlock,
+                                              isBlocked: phoneCaller.isBlocked,
+                                              shouldIdentify: phoneCaller.shouldIdentify,
+                                              isIdentified: phoneCaller.isIdentified,
+                                              shouldDelete: true,
+                                              realm: RealmService.shared.realm)
         }
     }
 
