@@ -90,8 +90,8 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         //    context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
         // }
 
-        let allPhoneCallersIdentifiedSorted = RealmService.getAllPhoneCallersIdentifiedSorted(realm: realm)
-         for phoneCaller in allPhoneCallersIdentifiedSorted {
+        let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
+         for phoneCaller in allPhoneCallersShouldIdentifySorted {
             context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
                                            label: phoneCaller.label)
          }

@@ -138,23 +138,23 @@ class RealmServiceTests: XCTestCase {
         realmService.delete(phoneCaller)
     }
 
-    func testIdentifiedCount() {
+    func testShouldIdentifyCount() {
         let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm)
+        let initialCount = RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm)
 
-        let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true)
+        let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true, shouldIdentify: true)
         realmService.add(phoneCaller0)
-        XCTAssertEqual(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm), initialCount + 1)
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm), initialCount + 1)
 
-        let phoneCaller1 = PhoneCaller(phoneNumber: 303)
+        let phoneCaller1 = PhoneCaller(phoneNumber: 303, shouldIdentify: false)
         realmService.add(phoneCaller1)
-        XCTAssertEqual(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm),
                        initialCount + 1)
 
         realmService.update(phoneCaller0,
-                            with: [PhoneCaller.PropertyStrings.label.rawValue: PhoneCaller.labelPlaceholder])
+                            with: [PhoneCaller.PropertyStrings.shouldIdentify.rawValue: false])
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersIdentifiedSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldIdentifySortedCount(realm: realmService.realm),
                        initialCount)
 
         // clean up

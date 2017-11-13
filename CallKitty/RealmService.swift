@@ -181,38 +181,35 @@ class RealmService {
         return allPhoneNumbersShouldBlockSortedArray
     }
 
-    // MARK: - identified
+    // MARK: - shouldIdentify
 
-    /// Gets all PhoneCallers with label not empty string
-    /// - Returns: phoneCallers with label not equal to placeholder (empty string)
-    static func getAllPhoneCallersIdentifiedSorted(realm: Realm) -> Results<PhoneCaller> {
-        // e.g. "label != ''"
-        let filterString = PhoneCaller.PropertyStrings.label.rawValue
-            + " != '" + PhoneCaller.labelPlaceholder + "'"
-        let allPhoneCallersIdentifiedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+    /// - Returns: realm Result of all phoneCallers with shouldIdentify true, sorted by phone number
+    static func getAllPhoneCallersShouldIdentifySorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
+        let allPhoneCallersShouldIdentifySorted = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersIdentifiedSorted
+        return allPhoneCallersShouldIdentifySorted
     }
 
     /// Note this method queries realm database, not call directory
     /// If call directory has not been synced to realm, returned result could be misleading
-    /// - Returns: count of identified phoneCallers
-    static func getAllPhoneCallersIdentifiedSortedCount(realm: Realm) -> Int {
-        let allPhoneCallersIdentifiedSorted = RealmService.getAllPhoneCallersIdentifiedSorted(realm: realm)
-        return allPhoneCallersIdentifiedSorted.count
+    /// - Returns: count of phoneCallers with shouldIdentify true
+    static func getAllPhoneCallersShouldIdentifySortedCount(realm: Realm) -> Int {
+        let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
+        return allPhoneCallersShouldIdentifySorted.count
     }
 
-    /// - Returns: array of all identified phone numbers,
-    /// sorted by phone number as required by CallKit call directory addBlockingEntry
-    static func getAllPhoneNumbersIdentifiedSorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
-        let allPhoneCallersIdentifiedSorted = RealmService.getAllPhoneCallersIdentifiedSorted(realm: realm)
+    /// - Returns: array of all phone numbers with shouldIdentify true,
+    /// sorted by phone number as required by CallKit call directory addIdentificationEntry
+    static func getAllPhoneNumbersShouldIdentifySorted(realm: Realm) -> [CXCallDirectoryPhoneNumber] {
+        let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
 
         // type is Realm LazyMapRandomAccessCollection
         // TODO: see if can return LazyMapRandomAccessCollection instead
-        let allPhoneNumbersIdentifiedSorted = allPhoneCallersIdentifiedSorted.map { phoneCaller in phoneCaller.phoneNumber }
+        let allPhoneNumbersShouldIdentifySorted = allPhoneCallersShouldIdentifySorted.map { phoneCaller in phoneCaller.phoneNumber }
 
-        let allPhoneNumbersIdentifiedSortedArray = Array(allPhoneNumbersIdentifiedSorted)
-        return allPhoneNumbersIdentifiedSortedArray
+        let allPhoneNumbersShouldIdentifySortedArray = Array(allPhoneNumbersShouldIdentifySorted)
+        return allPhoneNumbersShouldIdentifySortedArray
     }
 
     // MARK: - delete
