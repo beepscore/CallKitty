@@ -139,6 +139,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
             let realm = try! Realm()
 
+            // FIXME: use the union shouldIdentify true or isIdentified true
             let allPhoneCallersShouldIdentifySorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
 
             for phoneCaller in allPhoneCallersShouldIdentifySorted {
