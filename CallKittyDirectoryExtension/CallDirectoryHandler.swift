@@ -46,9 +46,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Swift numeric literal can contain underscores to increase readability
         // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5555, 1_800_555_5555 ]
 
-        let allPhoneNumbersBlockedSorted: [CXCallDirectoryPhoneNumber] = RealmService.getAllPhoneNumbersShouldBlockSorted(realm: realm)
+        let allPhoneNumbersShouldBlockSorted: [CXCallDirectoryPhoneNumber] = RealmService.getAllPhoneNumbersShouldBlockSorted(realm: realm)
 
-        for phoneNumber in allPhoneNumbersBlockedSorted {
+        for phoneNumber in allPhoneNumbersShouldBlockSorted {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
     }
