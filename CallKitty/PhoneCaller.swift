@@ -20,6 +20,7 @@ class PhoneCaller: Object {
     enum PropertyStrings: String {
         case phoneNumber = "phoneNumber"
         case label = "label"
+        case hasChanges = "hasChanges"
         case shouldBlock = "shouldBlock"
         case shouldIdentify = "shouldIdentify"
     }

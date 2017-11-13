@@ -150,6 +150,16 @@ class RealmService {
         return phoneCallers
     }
 
+    // MARK: - hasChanges
+
+    /// - Returns: realm Result of all phoneCallers with hasChanges true, sorted by phone number
+    static func getAllPhoneCallersHasChangesSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
+        let allPhoneCallersHasChangesSorted = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return allPhoneCallersHasChangesSorted
+    }
+
     // MARK: - shouldBlock
 
     /// - Returns: realm Result of all phoneCallers with shouldBlock true, sorted by phone number
