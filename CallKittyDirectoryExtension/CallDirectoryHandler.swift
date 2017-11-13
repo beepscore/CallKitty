@@ -34,6 +34,15 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         context.completeRequest()
     }
 
+    // TODO: implement
+    func deleteAllShouldDelete(context: CXCallDirectoryExtensionContext) {
+        // get phoneCallers with shouldDelete true
+        // for phoneCaller in phoneCallers
+        //   remove from blocked directory
+        //   remove from identified directory
+        //   delete from realm
+    }
+
     // MARK: - blocking
 
     private func addAllBlockingPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
@@ -156,14 +165,6 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Record the most-recently loaded set of identification entries in data store for the next incremental load...
     }
 
-    // TODO: implement
-    func deleteAllShouldDelete(realm: Realm) {
-        // get phoneCallers with shouldDelete true
-        // for phoneCaller in phoneCallers
-        //   remove from blocked directory
-        //   remove from identified directory
-        //   delete from realm
-    }
 }
 
 extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
