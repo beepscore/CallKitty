@@ -165,17 +165,27 @@ class RealmService {
     /// - Returns: realm Result of all phoneCallers with shouldBlock true, sorted by phone number
     static func getAllPhoneCallersShouldBlockSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
-        let allPhoneCallersBlockedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+        let allPhoneCallersShouldBlockSorted = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersBlockedSorted
+        return allPhoneCallersShouldBlockSorted
+    }
+
+    // MARK: - isBlocked
+
+    /// - Returns: realm Result of all phoneCallers with isBlocked true, sorted by phone number
+    static func getAllPhoneCallersIsBlockedSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.isBlocked.rawValue + " = true"
+        let allPhoneCallersIsBlockedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return allPhoneCallersIsBlockedSorted
     }
 
     /// Note this method queries realm database, not call directory
     /// If call directory has not been synced to realm, returned result could be misleading
-    /// - Returns: count of phoneCallers with shouldBlock true
-    static func getAllPhoneCallersShouldBlockSortedCount(realm: Realm) -> Int {
-        let allPhoneCallersBlockedSorted = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
-        return allPhoneCallersBlockedSorted.count
+    /// - Returns: count of phoneCallers with isBlocked true
+    static func getAllPhoneCallersIsBlockedSortedCount(realm: Realm) -> Int {
+        let allPhoneCallersIsBlockedSorted = RealmService.getAllPhoneCallersIsBlockedSorted(realm: realm)
+        return allPhoneCallersIsBlockedSorted.count
     }
 
     // MARK: - shouldIdentify

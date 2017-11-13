@@ -22,6 +22,7 @@ class PhoneCaller: Object {
         case label = "label"
         case hasChanges = "hasChanges"
         case shouldBlock = "shouldBlock"
+        case isBlocked = "isBlocked"
         case shouldIdentify = "shouldIdentify"
     }
 

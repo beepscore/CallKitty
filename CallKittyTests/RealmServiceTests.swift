@@ -118,20 +118,22 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(phoneCallers.count, initialCount)
     }
 
-    func testShouldBlockCount() {
+    func testIsBlockedCount() {
         let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersShouldBlockSortedCount(realm: realmService.realm)
+        let initialCount = RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm)
 
-        let phoneCaller = PhoneCaller(phoneNumber: 301, label: "dog", shouldBlock: true)
+        // normally a newly instantiated caller will have isBlocked false until it is added to call directory
+        // for this unit test, set it true
+        let phoneCaller = PhoneCaller(phoneNumber: 301, label: "dog", isBlocked: true)
 
         realmService.add(phoneCaller)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm),
                        initialCount + 1)
 
-        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.shouldBlock.rawValue : false])
+        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.isBlocked.rawValue : false])
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm),
                        initialCount)
 
         // clean up
