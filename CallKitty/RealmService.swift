@@ -219,6 +219,31 @@ class RealmService {
         return allPhoneNumbersShouldIdentifySortedArray
     }
 
+    // MARK: - shouldDelete
+
+    /// For all phone callers, set shouldDelete true
+    /// https://stackoverflow.com/questions/26185679/how-can-i-easily-delete-all-objects-in-a-realm
+    static func backgroundAllPhoneCallersShouldDelete() {
+        DispatchQueue.global().async {
+            // Get new realm and table since we are in a new thread.
+
+            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
+            // You must construct a new instance for each thread in which a Realm will be accessed.
+            // For dispatch queues, this means that you must construct a new instance
+            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
+            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
+            let realm = try! Realm()
+            let phoneCallers = RealmService.getAllPhoneCallers(realm: realm)
+
+            try! realm.write {
+
+                for phoneCaller in phoneCallers {
+                    phoneCaller.shouldDelete = true
+                }
+            }
+        }
+    }
+
     // MARK: - delete
 
     /// Deletes phoneCaller in background if caller with phoneNumber exists.

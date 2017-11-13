@@ -85,8 +85,7 @@ class AddBlocksVC: UIViewController {
     @IBAction func deleteAllButtonTapped(_ sender: Any) {
         // use background method to avoid blocking UI
 
-        // RealmService.backgroundDeleteAllObjects()
-        // TODO: change to RealmService.backgroundShouldDeleteAllObjects()
+        RealmService.backgroundAllPhoneCallersShouldDelete()
 
         // TODO: Consider reloadExtension after background delete completes
         // When you have updated blocking data you can refresh your blocking data by calling CXCallDirectory.sharedInstance.reloadExtension from your main app;
