@@ -90,18 +90,36 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
-        // TODO: use realm to get and update PhoneCaller
+        // TODO: may need to check if ok to use background queue here
+        DispatchQueue.global().async {
 
-        // let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_1234 ]
-        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = []
-        for phoneNumber in phoneNumbersToAdd {
-            context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
-        }
+            let realm = try! Realm()
 
-        // let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_800_555_5555 ]
-        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = []
-        for phoneNumber in phoneNumbersToRemove {
-            context.removeBlockingEntry(withPhoneNumber: phoneNumber)
+            // TODO: incremental add, use hasChanges true and shouldBlock true and isBlocked false
+            let allPhoneCallersShouldBlockSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
+
+            for phoneCaller in allPhoneCallersShouldBlockSorted {
+
+                // update call directory
+                context.addBlockingEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber)
+
+                // update realm
+                // writing to realm inside a loop is less efficient than a batched write,
+                // but has less risk of the realm getting out of sync with call directory
+                try! realm.write() {
+                    phoneCaller.isBlocked = true
+                    phoneCaller.shouldBlock = false
+
+                    if phoneCaller.shouldBlock == false
+                    && phoneCaller.shouldIdentify == false
+                    && phoneCaller.shouldDelete == false {
+                        phoneCaller.hasChanges = false
+                    }
+                }
+
+                // TODO: incremental remove, use hasChanges true and shouldBlock false and isBlocked true
+
+            }
         }
 
         // Record the most-recently loaded set of blocking entries in data store for the next incremental load...
