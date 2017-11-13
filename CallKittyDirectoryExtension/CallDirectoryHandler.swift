@@ -75,7 +75,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
-        // TODO: Consider use realm, observe for changes??
+        // TODO: use realm to get and update PhoneCaller
 
         // let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_1234 ]
         let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = []
@@ -98,22 +98,37 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Retrieve phone numbers to identify and their identification labels from data store.
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
-        //
+
         // Numbers must be provided in numerically ascending order.
 
-        // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_877_555_5555, 1_888_555_5555 ]
-        // let labels = [ "Telemarketer", "Local business" ]
-        // for (phoneNumber, label) in zip(allPhoneNumbers, labels) {
-        //    context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
-        // }
+        // TODO: may need to check if ok to use background queue here
+        DispatchQueue.global().async {
 
-        let realm = try! Realm()
+            let realm = try! Realm()
 
-        let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
-         for phoneCaller in allPhoneCallersShouldIdentifySorted {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
-                                           label: phoneCaller.label)
-         }
+            let allPhoneCallersShouldIdentifySorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
+
+            for phoneCaller in allPhoneCallersShouldIdentifySorted {
+
+                // update call directory
+                context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
+                    label: phoneCaller.label)
+
+                // update realm
+                // writing to realm inside a loop is less efficient than a batched write,
+                // but has less risk of the realm getting out of sync with call directory
+                try! realm.write() {
+                    phoneCaller.isIdentified = true
+                    phoneCaller.shouldIdentify = false
+
+                    if phoneCaller.shouldBlock == false
+                    && phoneCaller.shouldIdentify == false
+                    && phoneCaller.shouldDelete == false {
+                        phoneCaller.hasChanges = false
+                    }
+                }
+            }
+        }
     }
 
     private func addOrRemoveIncrementalIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
