@@ -13,7 +13,6 @@ import RealmSwift
 class CallDirectoryHandler: CXCallDirectoryProvider {
 
     let realmService = RealmService.shared
-    let realm = RealmService.shared.realm
 
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
         context.delegate = self
@@ -41,15 +40,33 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Retrieve all phone numbers to block from data store.
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
-        //
-        // Numbers must be provided in numerically ascending order.
-        // Swift numeric literal can contain underscores to increase readability
-        // let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5555, 1_800_555_5555 ]
 
-        let allPhoneNumbersShouldBlockSorted: [CXCallDirectoryPhoneNumber] = RealmService.getAllPhoneNumbersShouldBlockSorted(realm: realm)
+        // TODO: may need to check if ok to use background queue here
+        DispatchQueue.global().async {
 
-        for phoneNumber in allPhoneNumbersShouldBlockSorted {
-            context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
+            let realm = try! Realm()
+
+            let allPhoneCallersShouldBlockSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
+
+            for phoneCaller in allPhoneCallersShouldBlockSorted {
+
+                // update call directory
+                context.addBlockingEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber)
+
+                // update realm
+                // writing to realm inside a loop is less efficient than a batched write,
+                // but has less risk of the realm getting out of sync with call directory
+                try! realm.write() {
+                    phoneCaller.isBlocked = true
+                    phoneCaller.shouldBlock = false
+
+                    if phoneCaller.shouldBlock == false
+                        && phoneCaller.shouldIdentify == false
+                        && phoneCaller.shouldDelete == false {
+                        phoneCaller.hasChanges = false
+                    }
+                }
+            }
         }
     }
 
@@ -89,6 +106,8 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // for (phoneNumber, label) in zip(allPhoneNumbers, labels) {
         //    context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
         // }
+
+        let realm = try! Realm()
 
         let allPhoneCallersShouldIdentifySorted = RealmService.getAllPhoneCallersShouldIdentifySorted(realm: realm)
          for phoneCaller in allPhoneCallersShouldIdentifySorted {
