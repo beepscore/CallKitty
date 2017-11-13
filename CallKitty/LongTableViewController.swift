@@ -131,10 +131,9 @@ class LongTableViewController: UITableViewController {
 
         // set background color for diagnostics during development
         if phoneCaller.shouldDelete {
-            cell.backgroundColor = UIColor( red: 1.0, green: (220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
+            cell.backgroundColor = UIColor.callKittyPaleRed()
         } else if phoneCaller.hasChanges {
-            // yellow
-            cell.backgroundColor = UIColor( red: 1.0, green: 1.0, blue: CGFloat(220/255.0), alpha: 1.0 )
+            cell.backgroundColor = UIColor.callKittyPaleYellow()
         } else {
             cell.backgroundColor = .white
         }

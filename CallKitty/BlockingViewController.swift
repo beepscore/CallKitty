@@ -108,11 +108,8 @@ class BlockingViewController: UIViewController {
                                               shouldDelete: false,
                                               realm: RealmService.shared.realm)
         }
-
-        // TODO: Consider define a theme constant for this color
-        // view.backgroundColor = UIColor( red: 1.0, green: CGFloat(220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
         // yellow to indicate hasChanges
-        view.backgroundColor = UIColor( red: 1.0, green: 1.0, blue: CGFloat(220/255.0), alpha: 1.0 )
+        view.backgroundColor = UIColor.callKittyPaleYellow()
     }
 
     @IBAction func deleteButtonTapped(_ sender: Any) {
