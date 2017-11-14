@@ -60,10 +60,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
             let realm = try! Realm()
 
-            // FIXME: use the union shouldBlock true or isBlocked true
-            let allPhoneCallersShouldBlockSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
+            let allPhoneCallersShouldBlockOrIsBlockedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm)
 
-            for phoneCaller in allPhoneCallersShouldBlockSorted {
+            for phoneCaller in allPhoneCallersShouldBlockOrIsBlockedSorted {
 
                 // update call directory
                 context.addBlockingEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber)
