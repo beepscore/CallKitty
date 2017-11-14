@@ -127,7 +127,8 @@ class LongTableViewController: UITableViewController {
         let phoneCaller = results[index]
 
         cell.textLabel?.text = String(phoneCaller.phoneNumber)
-        cell.detailTextLabel?.text = phoneCaller.label + LongTableViewController.flagsString(phoneCaller: phoneCaller)
+        cell.detailTextLabel?.text = phoneCaller.label
+            + " " + LongTableViewController.flagsString(phoneCaller: phoneCaller)
 
         // set background color for diagnostics during development
         cell.backgroundColor = LongTableViewController.statusColor(phoneCaller: phoneCaller)
@@ -173,11 +174,11 @@ class LongTableViewController: UITableViewController {
 
     /// - Returns: a short representation of phoneCaller state
     static func flagsString(phoneCaller: PhoneCaller) -> String {
-        let flags = "c\(phoneCaller.hasChanges)"
-            + "sb\(phoneCaller.shouldBlock)"
-            + "sb\(phoneCaller.isBlocked)"
-            + "si\(phoneCaller.shouldIdentify)"
-            + "ii\(phoneCaller.isIdentified)"
+        let flags = "hc" + (phoneCaller.hasChanges ? "1" : "0")
+            + "sb" + (phoneCaller.shouldBlock ? "1" : "0")
+            + "ib" + (phoneCaller.isBlocked ? "1" : "0")
+            + "si" + (phoneCaller.shouldIdentify ? "1" : "0")
+            + "ii" + (phoneCaller.isIdentified ? "1" : "0")
         return flags
     }
 
