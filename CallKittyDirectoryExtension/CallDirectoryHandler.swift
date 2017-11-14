@@ -94,10 +94,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
             let realm = try! Realm()
 
-            // TODO: incremental add, use hasChanges true and shouldBlock true and isBlocked false
-            let allPhoneCallersShouldBlockSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockSorted(realm: realm)
+            let allPhoneCallersIncrementalAddBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddBlockingSorted(realm: realm)
 
-            for phoneCaller in allPhoneCallersShouldBlockSorted {
+            for phoneCaller in allPhoneCallersIncrementalAddBlockingSorted {
 
                 // update call directory
                 context.addBlockingEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber)

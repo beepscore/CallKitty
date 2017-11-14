@@ -173,12 +173,15 @@ class RealmService {
         return allPhoneCallersShouldBlockSorted
     }
 
-    /// - Returns: realm Result of all phoneCallers with shouldBlock true, sorted by phone number
-    static func getAllPhoneCallersShouldBlockSorted(realm: Realm) -> Results<PhoneCaller> {
-        let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
-        let allPhoneCallersShouldBlockSorted = realm.objects(PhoneCaller.self).filter(filterString)
+    /// - Returns: realm Result of all phoneCallers for incremental add.
+    /// hasChanges true and shouldBlock true and isBlocked false, sorted by phone number
+    static func getAllPhoneCallersIncrementalAddBlockingSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
+        + " && " + PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
+        + " && " + PhoneCaller.PropertyStrings.isBlocked.rawValue + " = false"
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersShouldBlockSorted
+        return phoneCallers
     }
 
     // MARK: - isBlocked
