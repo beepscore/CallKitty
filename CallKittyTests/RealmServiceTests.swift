@@ -86,7 +86,7 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(phoneCallers.count, initialCount)
     }
 
-    // MARK: - test generic functions
+    // MARK: -
 
     func testReadAddUpdateDelete() {
 
@@ -166,4 +166,46 @@ class RealmServiceTests: XCTestCase {
         realmService.delete(phoneCaller1)
     }
 
+    func testGetAllPhoneCallersShouldBlockOrIsBlockedSorted() {
+        let realmService = RealmService.shared
+        let initialCount = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count
+
+        let phoneCaller0 = PhoneCaller(phoneNumber: 400, label: "rhino", shouldBlock: false, isBlocked: false)
+        realmService.add(phoneCaller0)
+
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+                       initialCount)
+
+        let phoneCaller1 = PhoneCaller(phoneNumber: 401, label: "elephant", shouldBlock: true, isBlocked: false)
+        realmService.add(phoneCaller1)
+
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+                       initialCount + 1)
+
+        let phoneCaller2 = PhoneCaller(phoneNumber: 402, label: "elephant", shouldBlock: false, isBlocked: true)
+        realmService.add(phoneCaller2)
+
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+                       initialCount + 2)
+
+        let phoneCaller3 = PhoneCaller(phoneNumber: 403, label: "elephant", shouldBlock: true, isBlocked: true)
+        realmService.add(phoneCaller3)
+
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+                       initialCount + 3)
+
+        realmService.delete(phoneCaller3)
+
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+                       initialCount + 2)
+
+        realmService.delete(phoneCaller2)
+        realmService.delete(phoneCaller1)
+
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+                       initialCount)
+
+        // clean up last phoneCaller
+        realmService.delete(phoneCaller0)
+    }
 }

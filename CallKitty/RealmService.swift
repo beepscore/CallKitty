@@ -133,6 +133,8 @@ class RealmService {
         }
     }
 
+    // MARK: - get (read)
+
     /// Gets specified PhoneCaller via unique primary key phoneNumber
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
     /// - Returns: phoneCaller or nil
@@ -160,7 +162,16 @@ class RealmService {
         return allPhoneCallersHasChangesSorted
     }
 
-    // MARK: - shouldBlock
+    // MARK: - shouldBlock isBlocked
+
+    /// - Returns: realm Result of all phoneCallers with union shouldBlock true OR isBlock true, sorted by phone number
+    static func getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
+        + " || " + PhoneCaller.PropertyStrings.isBlocked.rawValue + " = true"
+        let allPhoneCallersShouldBlockSorted = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return allPhoneCallersShouldBlockSorted
+    }
 
     /// - Returns: realm Result of all phoneCallers with shouldBlock true, sorted by phone number
     static func getAllPhoneCallersShouldBlockSorted(realm: Realm) -> Results<PhoneCaller> {
