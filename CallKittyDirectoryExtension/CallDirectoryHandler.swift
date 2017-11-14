@@ -94,8 +94,8 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
             let realm = try! Realm()
 
+            // add
             let allPhoneCallersIncrementalAddBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddBlockingSorted(realm: realm)
-
             for phoneCaller in allPhoneCallersIncrementalAddBlockingSorted {
 
                 // update call directory
@@ -109,15 +109,35 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                     phoneCaller.shouldBlock = false
 
                     if phoneCaller.shouldBlock == false
-                    && phoneCaller.shouldIdentify == false
-                    && phoneCaller.shouldDelete == false {
+                        && phoneCaller.shouldIdentify == false
+                        && phoneCaller.shouldDelete == false {
                         phoneCaller.hasChanges = false
                     }
                 }
-
-                // TODO: incremental remove, use hasChanges true and shouldBlock false and isBlocked true
-
             }
+
+            // remove
+            let allPhoneCallersIncrementalRemoveBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveBlockingSorted(realm: realm)
+            for phoneCaller in allPhoneCallersIncrementalRemoveBlockingSorted {
+
+                // update call directory
+                context.removeBlockingEntry(withPhoneNumber: phoneCaller.phoneNumber)
+
+                // update realm
+                // writing to realm inside a loop is less efficient than a batched write,
+                // but has less risk of the realm getting out of sync with call directory
+                try! realm.write() {
+                    phoneCaller.isBlocked = false
+                    phoneCaller.shouldBlock = false
+                    
+                    if phoneCaller.shouldBlock == false
+                        && phoneCaller.shouldIdentify == false
+                        && phoneCaller.shouldDelete == false {
+                        phoneCaller.hasChanges = false
+                    }
+                }
+            }
+
         }
 
         // Record the most-recently loaded set of blocking entries in data store for the next incremental load...
