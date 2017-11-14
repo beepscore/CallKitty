@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CallKit
 
 class AddBlocksVC: UIViewController {
 
@@ -73,13 +74,14 @@ class AddBlocksVC: UIViewController {
 
     @IBAction func addButtonTapped(_ sender: Any) {
         // add in background to avoid blocking UI
-        RealmService.backgroundAddBlockingPhoneCallers(count: numberDesired)
+        RealmService.backgroundAddBlockingPhoneCallers(count: numberDesired) {
+            // completion closure to refresh blocking data
+            // you could refresh data in response to a silent push, when requested by the user or use background fetch.
+            // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
 
-        // TODO: Consider reloadExtension after background add completes
-        // When you have updated blocking data you can refresh your blocking data by calling CXCallDirectory.sharedInstance.reloadExtension from your main app;
-        // you could do this in response to a silent push, when requested by the user or use background fetch.
-        // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
-        // (editor) Instead can CallDirectoryHandler simply observe realm for changes?
+            // TODO: get reference to CXCallDirectory.sharedInstance
+            // CXCallDirectory.sharedInstance.reloadExtension()
+        }
     }
 
     @IBAction func deleteAllButtonTapped(_ sender: Any) {

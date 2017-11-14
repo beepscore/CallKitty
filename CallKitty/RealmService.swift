@@ -82,7 +82,8 @@ class RealmService {
     ///   - count: approximate number of PhoneCallers to add.
     ///   If random generates a duplicate phoneNumber, it will update previous entry
     ///   and number will be less than count
-    static func backgroundAddBlockingPhoneCallers(count: Int) {
+    ///   - completion: closure to run
+    static func backgroundAddBlockingPhoneCallers(count: Int, completion: @escaping () -> Void) {
         DispatchQueue.global().async {
             // Get new realm and table since we are in a new thread.
 
@@ -93,6 +94,7 @@ class RealmService {
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
             let realm = try! Realm()
             RealmService.addBlockingPhoneCallers(count: count, realm: realm)
+            completion()
         }
     }
     
