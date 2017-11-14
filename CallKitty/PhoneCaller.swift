@@ -25,6 +25,7 @@ class PhoneCaller: Object {
         case isBlocked = "isBlocked"
         case shouldIdentify = "shouldIdentify"
         case isIdentified = "isIdentified"
+        case shouldDelete = "shouldDelete"
     }
 
     static let phoneNumberPlaceholder: CXCallDirectoryPhoneNumber = -1
