@@ -185,10 +185,10 @@ class LongTableViewController: UITableViewController {
     /// - Returns: a color representation of phoneCaller state
     static func statusColor(phoneCaller: PhoneCaller) -> UIColor {
         if phoneCaller.shouldDelete {
-            return .red
+            return .lightGray
         }
         if phoneCaller.shouldBlock && phoneCaller.shouldIdentify {
-            return .yellow
+            return .orange
         }
         if phoneCaller.shouldBlock {
             return UIColor.callKittyPaleRed()
@@ -197,7 +197,7 @@ class LongTableViewController: UITableViewController {
             return UIColor.callKittyPaleYellow()
         }
         if phoneCaller.hasChanges {
-            return UIColor.callKittyPaleYellow()
+            return .green
         }
         return .white
     }
