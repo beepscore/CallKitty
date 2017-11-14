@@ -218,27 +218,36 @@ class RealmService {
     /// - Returns: realm Result of all phoneCallers with shouldIdentify true, sorted by phone number
     static func getAllPhoneCallersShouldIdentifySorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
-        let allPhoneCallersShouldIdentifySorted = realm.objects(PhoneCaller.self).filter(filterString)
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersShouldIdentifySorted
+        return phoneCallers
     }
 
     // MARK: - isIdentified
 
+    /// - Returns: realm Result of all phoneCallers with union shouldIdentify true OR isIdentified true, sorted by phone number
+    static func getAllPhoneCallersShouldIdentifyOrIsIdentifiedSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
+            + " || " + PhoneCaller.PropertyStrings.isIdentified.rawValue + " = true"
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return phoneCallers
+    }
+
     /// - Returns: realm Result of all phoneCallers with isIdentified true, sorted by phone number
     static func getAllPhoneCallersIsIdentifiedSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.isIdentified.rawValue + " = true"
-        let allPhoneCallersIsIdentifiedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersIsIdentifiedSorted
+        return phoneCallers
     }
 
     /// Note this method queries realm database, not call directory
     /// If call directory has not been synced to realm, returned result could be misleading
     /// - Returns: count of phoneCallers with isIdentified true
     static func getAllPhoneCallersIsIdentifiedSortedCount(realm: Realm) -> Int {
-        let allPhoneCallersIsIdentifiedSorted = RealmService.getAllPhoneCallersIsIdentifiedSorted(realm: realm)
-        return allPhoneCallersIsIdentifiedSorted.count
+        let phoneCallers = RealmService.getAllPhoneCallersIsIdentifiedSorted(realm: realm)
+        return phoneCallers.count
     }
 
     // MARK: - shouldDelete
