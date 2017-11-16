@@ -56,13 +56,13 @@ class BlockingViewController: UIViewController {
 
         let shouldEnableBlockSwitch = phoneCallerPhoneNumberTextField.text != nil
             && phoneCallerPhoneNumberTextField.text != ""
-        //phoneCallerShouldBlockSwitch.isEnabled = shouldEnableBlockSwitch
+        phoneCallerShouldBlockSwitch.isEnabled = shouldEnableBlockSwitch
 
         let shouldEnableIdentifySwitch = phoneCallerPhoneNumberTextField.text != nil
             && phoneCallerPhoneNumberTextField.text != ""
             && phoneCallerLabelTextField.text != nil
             && phoneCallerLabelTextField.text != ""
-        //phoneCallerShouldIdentifySwitch.isEnabled = shouldEnableIdentifySwitch
+        phoneCallerShouldIdentifySwitch.isEnabled = shouldEnableIdentifySwitch
 
         addUpdateButton.isEnabled = shouldEnableBlockSwitch
         deleteButton.isEnabled = shouldEnableIdentifySwitch
