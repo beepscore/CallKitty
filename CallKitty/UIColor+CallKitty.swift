@@ -10,6 +10,10 @@ import UIKit
 
 extension UIColor {
 
+    static func callKittyPaleGreen() -> UIColor {
+        return UIColor( red: (220/255.0), green: 1.0, blue: CGFloat(220/255.0), alpha: 1.0 )
+    }
+
     static func callKittyPaleRed() -> UIColor {
         return UIColor( red: 1.0, green: (220/255.0), blue: CGFloat(220/255.0), alpha: 1.0 )
     }

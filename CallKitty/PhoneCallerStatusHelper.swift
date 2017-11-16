@@ -39,7 +39,7 @@ class PhoneCallerStatusHelper: NSObject {
             return UIColor.callKittyPaleYellow()
         }
         if phoneCaller.hasChanges {
-            return .green
+            return UIColor.callKittyPaleGreen()
         }
         return .white
     }
