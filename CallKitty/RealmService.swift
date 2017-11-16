@@ -135,6 +135,64 @@ class RealmService {
         }
     }
 
+    /// Add identifying callers on a background thread. Interested objects can observe realm for changes/completion
+    /// - Parameters:
+    ///   - count: approximate number of PhoneCallers to add.
+    ///   If random generates a duplicate phoneNumber, it will update previous entry
+    ///   and number will be less than count
+    ///   - completion: closure to run
+    static func backgroundAddIdentifyingPhoneCallers(count: Int, completion: @escaping () -> Void) {
+        DispatchQueue.global().async {
+            // Get new realm and table since we are in a new thread.
+
+            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
+            // You must construct a new instance for each thread in which a Realm will be accessed.
+            // For dispatch queues, this means that you must construct a new instance
+            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
+            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
+            let realm = try! Realm()
+            RealmService.addIdentifyingPhoneCallers(count: count, realm: realm)
+            completion()
+        }
+    }
+    
+    /// - Parameters:
+    ///   - count: approximate number of PhoneCallers to add as identifying.
+    ///   If random generates a duplicate phoneNumber, it will update previous entry
+    ///   and number will be less than count
+    ///   - realm: Realm context
+    static func addIdentifyingPhoneCallers(count: Int, realm: Realm) {
+        do {
+            let phoneNumberFormatter = PhoneNumberFormatter()
+
+            try realm.write() {
+
+                // for efficiency, "batch" loop inside a single write
+                for _ in 0..<count {
+
+                    let phoneNumber = phoneNumberFormatter.nextRandomPhoneNumber()
+
+                    var phoneCaller: PhoneCaller
+                    let fetchedPhoneCaller = getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
+
+                    if fetchedPhoneCaller != nil {
+                        phoneCaller = fetchedPhoneCaller!
+                        phoneCaller.label = "dog"
+                        phoneCaller.shouldIdentify = true
+
+                    } else {
+                        phoneCaller = PhoneCaller(phoneNumber: phoneNumber,
+                                                  label: "dog",
+                                                  shouldIdentify: true)
+                    }
+                    realm.add(phoneCaller, update: true)
+                }
+            }
+        } catch {
+            RealmService.post(error)
+        }
+    }
+
     // MARK: - get (read)
 
     /// Gets specified PhoneCaller via unique primary key phoneNumber

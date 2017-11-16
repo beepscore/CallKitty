@@ -90,15 +90,14 @@ class AddBlocksVC: UIViewController {
     @IBAction func addIdentifyButtonTapped(_ sender: Any) {
         // add in background to avoid blocking UI
 
-        // TODO: add method
-        //RealmService.backgroundAddIdentifyingPhoneCallers(count: numberDesired) {
+        RealmService.backgroundAddIdentifyingPhoneCallers(count: numberDesired) {
             // completion closure to refresh blocking data
             // you could refresh data in response to a silent push, when requested by the user or use background fetch.
             // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
 
             // TODO: get reference to CXCallDirectory.sharedInstance
             // CXCallDirectory.sharedInstance.reloadExtension()
-        //}
+        }
     }
 
     @IBAction func deleteAllButtonTapped(_ sender: Any) {
