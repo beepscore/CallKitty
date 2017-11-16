@@ -15,6 +15,9 @@ class BlockingViewController: UIViewController {
     @IBOutlet weak var phoneCallerPhoneNumberTextField: UITextField!
     @IBOutlet weak var phoneCallerLabelTextField: UITextField!
     @IBOutlet weak var phoneCallerShouldBlockSwitch: UISwitch!
+    @IBOutlet weak var phoneCallerShouldIdentifySwitch: UISwitch!
+    @IBOutlet weak var addUpdateButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
 
     var phoneCaller: PhoneCaller? = nil
 
@@ -24,15 +27,17 @@ class BlockingViewController: UIViewController {
         // when view loads, tab bar item displays this variable "title"
         title = NSLocalizedString("BLOCKING_VC_TITLE", comment: "BlockingViewController title")
 
-        // In storyboard, may leave text "-" to prevent interface builder view from jumping out of position
-        phoneCallerPhoneNumberTextField.text = ""
-
         searchBar.delegate = self
         phoneCallerPhoneNumberTextField.delegate = self
         phoneCallerLabelTextField.delegate = self
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        view.addGestureRecognizer(tapGestureRecognizer)
+        // In storyboard, may leave text "-" to prevent interface builder view from jumping out of position
+        phoneCallerPhoneNumberTextField.text = ""
+
+        updateUI()
+
+        //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        //view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +51,23 @@ class BlockingViewController: UIViewController {
         phoneCallerShouldBlockSwitch.setOn(true, animated: true)
     }
 
+    func updateUI() {
+        dismissAnyKeyboard()
+
+        let shouldEnableBlockSwitch = phoneCallerPhoneNumberTextField.text != nil
+            && phoneCallerPhoneNumberTextField.text != ""
+        //phoneCallerShouldBlockSwitch.isEnabled = shouldEnableBlockSwitch
+
+        let shouldEnableIdentifySwitch = phoneCallerPhoneNumberTextField.text != nil
+            && phoneCallerPhoneNumberTextField.text != ""
+            && phoneCallerLabelTextField.text != nil
+            && phoneCallerLabelTextField.text != ""
+        //phoneCallerShouldIdentifySwitch.isEnabled = shouldEnableIdentifySwitch
+
+        addUpdateButton.isEnabled = shouldEnableBlockSwitch
+        deleteButton.isEnabled = shouldEnableIdentifySwitch
+    }
+
     /// dismiss any keyboard, whether presented by searchBar or text field
     func dismissAnyKeyboard() {
         searchBar.endEditing(true)
@@ -53,17 +75,35 @@ class BlockingViewController: UIViewController {
         phoneCallerLabelTextField.endEditing(true)
     }
 
-    @IBAction func shouldBlockSwitchChanged(_ sender: UISwitch) {
-        dismissAnyKeyboard()
+    @IBAction func shouldBlockSwitchChanged(_ sender: Any) {
+        updateUI()
+        //dismissAnyKeyboard()
+    }
+
+    @IBAction func shouldBlockSwitchTapped(_ sender: Any) {
+        //updateUI()
+        //dismissAnyKeyboard()
+        print()
+    }
+
+    @IBAction func shouldIdentifySwitchChanged(_ sender: UISwitch) {
+        updateUI()
+        //dismissAnyKeyboard()
+    }
+
+    @IBAction func shouldIdentifySwitchTapped(_ sender: UISwitch) {
+        //updateUI()
+        //dismissAnyKeyboard()
     }
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        dismissAnyKeyboard()
+        //updateUI()
+        //dismissAnyKeyboard()
     }
 
     @IBAction func addUpdateButtonTapped(_ sender: Any) {
 
-        dismissAnyKeyboard()
+        updateUI()
 
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else {
             clearUI()
@@ -79,7 +119,9 @@ class BlockingViewController: UIViewController {
         phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
 
         let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
-        let shouldIdentify = desiredPhoneCallerLabel != ""
+
+        let resolvedShouldIdentify = phoneCallerShouldIdentifySwitch.isOn
+            && (desiredPhoneCallerLabel != "")
 
         if let unwrappedPhoneCaller = phoneCaller {
 
@@ -90,20 +132,19 @@ class BlockingViewController: UIViewController {
                                               hasChanges: true,
                                               shouldBlock: phoneCallerShouldBlockSwitch.isOn,
                                               isBlocked: unwrappedPhoneCaller.isBlocked,
-                                              shouldIdentify: shouldIdentify,
+                                              shouldIdentify: resolvedShouldIdentify,
                                               isIdentified: unwrappedPhoneCaller.isIdentified,
                                               shouldDelete: false,
                                               realm: RealmService.shared.realm)
 
         } else {
             // this is a new PhoneCaller
-
             RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
                                               label: desiredPhoneCallerLabel,
                                               hasChanges: true,
                                               shouldBlock: phoneCallerShouldBlockSwitch.isOn,
                                               isBlocked: false,
-                                              shouldIdentify: shouldIdentify,
+                                              shouldIdentify: resolvedShouldIdentify,
                                               isIdentified: false,
                                               shouldDelete: false,
                                               realm: RealmService.shared.realm)
@@ -114,7 +155,7 @@ class BlockingViewController: UIViewController {
 
     @IBAction func deleteButtonTapped(_ sender: Any) {
 
-        dismissAnyKeyboard()
+        updateUI()
 
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else { return }
         guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else { return }
@@ -147,6 +188,7 @@ extension BlockingViewController: UISearchBarDelegate {
             // show phone number text fields for editing
             phoneCallerPhoneNumberTextField.text = String(describing: unwrappedPhoneCaller.phoneNumber)
             phoneCallerLabelTextField.text = unwrappedPhoneCaller.label
+            updateUI()
         } else {
             clearUI()
         }
@@ -160,6 +202,12 @@ extension BlockingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // dismiss keyboard
         textField.resignFirstResponder()
+        updateUI()
+        return true
+    }
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        updateUI()
         return true
     }
 
