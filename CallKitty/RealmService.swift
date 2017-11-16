@@ -176,7 +176,7 @@ class RealmService {
     }
 
     /// - Returns: realm Result of all phoneCallers for incremental add blocking.
-    /// hasChanges true and shouldBlock true and isBlocked false, sorted by phone number
+    /// sorted by phone number
     static func getAllPhoneCallersIncrementalAddBlockingSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
         + " && " + PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
@@ -187,7 +187,7 @@ class RealmService {
     }
 
     /// - Returns: realm Result of all phoneCallers for incremental remove blocking.
-    /// hasChanges true and shouldBlock false and isBlocked true, sorted by phone number
+    /// sorted by phone number
     static func getAllPhoneCallersIncrementalRemoveBlockingSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
             + " && " + PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = false"
@@ -227,11 +227,22 @@ class RealmService {
     }
 
     /// - Returns: realm Result of all phoneCallers for incremental identification add.
-    /// hasChanges true and shouldIdentify true and isIdentified false, sorted by phone number
+    /// sorted by phone number
     static func getAllPhoneCallersIncrementalAddIdentificationSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
         + " && " + PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
         + " && " + PhoneCaller.PropertyStrings.isIdentified.rawValue + " = false"
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return phoneCallers
+    }
+
+    /// - Returns: realm Result of all phoneCallers for incremental identification remove.
+    /// sorted by phone number
+    static func getAllPhoneCallersIncrementalRemoveIdentificationSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
+        + " && " + PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = false"
+        + " && " + PhoneCaller.PropertyStrings.isIdentified.rawValue + " = true"
         let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
         return phoneCallers
