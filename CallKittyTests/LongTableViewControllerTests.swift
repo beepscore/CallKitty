@@ -21,7 +21,7 @@ class LongTableViewControllerTests: XCTestCase {
             isIdentified: true,
             shouldDelete: true)
 
-        XCTAssertEqual(LongTableViewController.statusString(phoneCaller: phoneCaller), "hc1sb1ib1si1ii1sd1")
+        XCTAssertEqual(LongTableViewController.statusString(phoneCaller: phoneCaller), "hc1 sb1 ib1 si1 ii1 sd1")
     }
 
     func testStatusString() {
@@ -34,7 +34,7 @@ class LongTableViewControllerTests: XCTestCase {
                                       isIdentified: false,
                                       shouldDelete: false)
 
-        XCTAssertEqual(LongTableViewController.statusString(phoneCaller: phoneCaller), "hc1sb1ib0si1ii0sd0")
+        XCTAssertEqual(LongTableViewController.statusString(phoneCaller: phoneCaller), "hc1 sb1 ib0 si1 ii0 sd0")
     }
 
     func testStatusColorAllTrue() {

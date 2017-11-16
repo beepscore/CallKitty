@@ -175,11 +175,11 @@ class LongTableViewController: UITableViewController {
     /// - Returns: a short representation of phoneCaller state
     static func statusString(phoneCaller: PhoneCaller) -> String {
         let flags = "hc" + (phoneCaller.hasChanges ? "1" : "0")
-            + "sb" + (phoneCaller.shouldBlock ? "1" : "0")
-            + "ib" + (phoneCaller.isBlocked ? "1" : "0")
-            + "si" + (phoneCaller.shouldIdentify ? "1" : "0")
-            + "ii" + (phoneCaller.isIdentified ? "1" : "0")
-            + "sd" + (phoneCaller.shouldDelete ? "1" : "0")
+            + " sb" + (phoneCaller.shouldBlock ? "1" : "0")
+            + " ib" + (phoneCaller.isBlocked ? "1" : "0")
+            + " si" + (phoneCaller.shouldIdentify ? "1" : "0")
+            + " ii" + (phoneCaller.isIdentified ? "1" : "0")
+            + " sd" + (phoneCaller.shouldDelete ? "1" : "0")
         return flags
     }
 
