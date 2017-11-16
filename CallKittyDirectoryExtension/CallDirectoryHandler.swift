@@ -137,9 +137,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                     }
                 }
             }
-
         }
-
         // Record the most-recently loaded set of blocking entries in data store for the next incremental load...
     }
 
@@ -187,10 +185,56 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
-        // TODO: incremental add, use hasChanges true and shouldIdentify true and isIdentified false
+        // TODO: may need to check if ok to use background queue here
+        DispatchQueue.global().async {
 
-        // TODO: incremental remove, use hasChanges true and shouldIdentify false and isIdentified true
+            let realm = try! Realm()
 
+            // add
+            let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: realm)
+            for phoneCaller in allPhoneCallersIncrementalAddIdentificationSorted {
+
+                // update call directory
+                context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
+                                               label: phoneCaller.label)
+
+                // update realm
+                // writing to realm inside a loop is less efficient than a batched write,
+                // but has less risk of the realm getting out of sync with call directory
+                try! realm.write() {
+                    phoneCaller.isIdentified = true
+                    phoneCaller.shouldIdentify = false
+
+                    if phoneCaller.shouldBlock == false
+                        && phoneCaller.shouldIdentify == false
+                        && phoneCaller.shouldDelete == false {
+                        phoneCaller.hasChanges = false
+                    }
+                }
+            }
+
+            // remove
+            let allPhoneCallersIncrementalRemoveIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveIdentificationSorted(realm: realm)
+            for phoneCaller in allPhoneCallersIncrementalRemoveIdentificationSorted {
+
+                // update call directory
+                context.removeIdentificationEntry(withPhoneNumber: phoneCaller.phoneNumber)
+
+                // update realm
+                // writing to realm inside a loop is less efficient than a batched write,
+                // but has less risk of the realm getting out of sync with call directory
+                try! realm.write() {
+                    phoneCaller.isIdentified = false
+                    phoneCaller.shouldIdentify = false
+
+                    if phoneCaller.shouldBlock == false
+                        && phoneCaller.shouldIdentify == false
+                        && phoneCaller.shouldDelete == false {
+                        phoneCaller.hasChanges = false
+                    }
+                }
+            }
+        }
         // Record the most-recently loaded set of identification entries in data store for the next incremental load...
     }
 
