@@ -17,7 +17,6 @@
 		DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */; };
 		DE3373521FB2531400F220BB /* CallKittyDirectoryExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE41841D1FB91A0A000918D6 /* UIColor+CallKitty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE41841C1FB91A0A000918D6 /* UIColor+CallKitty.swift */; };
-		DE4334811FBB5C17002BA4C3 /* LongTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4334801FBB5C17002BA4C3 /* LongTableViewControllerTests.swift */; };
 		DE4705781FB3FBFA000FC02D /* PhoneCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4705771FB3FBFA000FC02D /* PhoneCaller.swift */; };
 		DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4705791FB40AD3000FC02D /* PhoneNumberFormatter.swift */; };
 		DE47057C1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE47057B1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift */; };
@@ -129,7 +128,6 @@
 		DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		DE33734F1FB2531400F220BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE41841C1FB91A0A000918D6 /* UIColor+CallKitty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CallKitty.swift"; sourceTree = "<group>"; };
-		DE4334801FBB5C17002BA4C3 /* LongTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTableViewControllerTests.swift; sourceTree = "<group>"; };
 		DE4705771FB3FBFA000FC02D /* PhoneCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCaller.swift; sourceTree = "<group>"; };
 		DE4705791FB40AD3000FC02D /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
 		DE47057B1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatterTests.swift; sourceTree = "<group>"; };
@@ -406,7 +404,6 @@
 				DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */,
 				DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */,
 				DE83C9A01FB218B20078CD01 /* Info.plist */,
-				DE4334801FBB5C17002BA4C3 /* LongTableViewControllerTests.swift */,
 				DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */,
 				DE47057B1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift */,
 				DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */,
@@ -755,7 +752,6 @@
 				DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */,
 				DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */,
 				DE47057C1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift in Sources */,
-				DE4334811FBB5C17002BA4C3 /* LongTableViewControllerTests.swift in Sources */,
 				DEFD18A81FBE4492006A371A /* PhoneCallerStatusHelperTests.swift in Sources */,
 				DE2F4E0D1FB787BA00CAA2D3 /* AddBlocksVCTests.swift in Sources */,
 				DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */,
