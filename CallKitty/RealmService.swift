@@ -175,7 +175,7 @@ class RealmService {
         return allPhoneCallersShouldBlockSorted
     }
 
-    /// - Returns: realm Result of all phoneCallers for incremental add.
+    /// - Returns: realm Result of all phoneCallers for incremental add blocking.
     /// hasChanges true and shouldBlock true and isBlocked false, sorted by phone number
     static func getAllPhoneCallersIncrementalAddBlockingSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
@@ -186,7 +186,7 @@ class RealmService {
         return phoneCallers
     }
 
-    /// - Returns: realm Result of all phoneCallers for incremental add.
+    /// - Returns: realm Result of all phoneCallers for incremental remove blocking.
     /// hasChanges true and shouldBlock false and isBlocked true, sorted by phone number
     static func getAllPhoneCallersIncrementalRemoveBlockingSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
