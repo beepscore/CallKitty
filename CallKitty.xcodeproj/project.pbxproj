@@ -68,6 +68,8 @@
 		DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */; };
 		DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */; };
 		DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */; };
+		DEFD18A61FBE43F8006A371A /* PhoneCallerStatusHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */; };
+		DEFD18A81FBE4492006A371A /* PhoneCallerStatusHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD18A71FBE4492006A371A /* PhoneCallerStatusHelperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,8 @@
 		DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddBlocks.storyboard; sourceTree = "<group>"; };
 		DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTableViewController.swift; sourceTree = "<group>"; };
 		DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyProviderDelegateTests.swift; sourceTree = "<group>"; };
+		DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallerStatusHelper.swift; sourceTree = "<group>"; };
+		DEFD18A71FBE4492006A371A /* PhoneCallerStatusHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallerStatusHelperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +309,7 @@
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
 				DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */,
 				DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */,
+				DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */,
 				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
 				DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */,
 			);
@@ -406,6 +411,7 @@
 				DE47057B1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift */,
 				DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */,
 				DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */,
+				DEFD18A71FBE4492006A371A /* PhoneCallerStatusHelperTests.swift */,
 			);
 			path = CallKittyTests;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				DE842F411FB236C500F9936D /* CallAudio.swift in Sources */,
 				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
 				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
+				DEFD18A61FBE43F8006A371A /* PhoneCallerStatusHelper.swift in Sources */,
 				DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */,
 				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
 				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
@@ -749,6 +756,7 @@
 				DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */,
 				DE47057C1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift in Sources */,
 				DE4334811FBB5C17002BA4C3 /* LongTableViewControllerTests.swift in Sources */,
+				DEFD18A81FBE4492006A371A /* PhoneCallerStatusHelperTests.swift in Sources */,
 				DE2F4E0D1FB787BA00CAA2D3 /* AddBlocksVCTests.swift in Sources */,
 				DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */,
 				DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */,

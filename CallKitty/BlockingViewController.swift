@@ -122,6 +122,7 @@ class BlockingViewController: UIViewController {
                                               shouldDelete: false,
                                               realm: RealmService.shared.realm)
 
+           view.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: unwrappedPhoneCaller)
         } else {
             // this is a new PhoneCaller
             RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
@@ -133,9 +134,8 @@ class BlockingViewController: UIViewController {
                                               isIdentified: false,
                                               shouldDelete: false,
                                               realm: RealmService.shared.realm)
+         view.backgroundColor = UIColor.callKittyPaleYellow()
         }
-        // yellow to indicate hasChanges
-        view.backgroundColor = UIColor.callKittyPaleYellow()
     }
 
     @IBAction func deleteButtonTapped(_ sender: Any) {

@@ -128,10 +128,10 @@ class LongTableViewController: UITableViewController {
 
         cell.textLabel?.text = String(phoneCaller.phoneNumber)
         cell.detailTextLabel?.text = phoneCaller.label
-            + " " + LongTableViewController.statusString(phoneCaller: phoneCaller)
+            + " " + PhoneCallerStatusHelper.statusString(phoneCaller: phoneCaller)
 
         // set background color for diagnostics during development
-        cell.backgroundColor = LongTableViewController.statusColor(phoneCaller: phoneCaller)
+        cell.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: phoneCaller)
 
         return cell
     }
@@ -170,37 +170,6 @@ class LongTableViewController: UITableViewController {
         index += indexPath.row
 
         return index
-    }
-
-    /// - Returns: a short representation of phoneCaller state
-    static func statusString(phoneCaller: PhoneCaller) -> String {
-        let flags = "hc" + (phoneCaller.hasChanges ? "1" : "0")
-            + " sb" + (phoneCaller.shouldBlock ? "1" : "0")
-            + " ib" + (phoneCaller.isBlocked ? "1" : "0")
-            + " si" + (phoneCaller.shouldIdentify ? "1" : "0")
-            + " ii" + (phoneCaller.isIdentified ? "1" : "0")
-            + " sd" + (phoneCaller.shouldDelete ? "1" : "0")
-        return flags
-    }
-
-    /// - Returns: a color representation of phoneCaller state
-    static func statusColor(phoneCaller: PhoneCaller) -> UIColor {
-        if phoneCaller.shouldDelete {
-            return .lightGray
-        }
-        if phoneCaller.shouldBlock && phoneCaller.shouldIdentify {
-            return .orange
-        }
-        if phoneCaller.shouldBlock {
-            return UIColor.callKittyPaleRed()
-        }
-        if phoneCaller.shouldIdentify {
-            return UIColor.callKittyPaleYellow()
-        }
-        if phoneCaller.hasChanges {
-            return .green
-        }
-        return .white
     }
 
 }
