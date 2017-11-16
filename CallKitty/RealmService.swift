@@ -215,22 +215,23 @@ class RealmService {
         return allPhoneCallersIsBlockedSorted.count
     }
 
-    // MARK: - shouldIdentify
-
-    /// - Returns: realm Result of all phoneCallers with shouldIdentify true, sorted by phone number
-    static func getAllPhoneCallersShouldIdentifySorted(realm: Realm) -> Results<PhoneCaller> {
-        let filterString = PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
-        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
-            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return phoneCallers
-    }
-
-    // MARK: - isIdentified
+    // MARK: - identify
 
     /// - Returns: realm Result of all phoneCallers with union shouldIdentify true OR isIdentified true, sorted by phone number
     static func getAllPhoneCallersShouldIdentifyOrIsIdentifiedSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
             + " || " + PhoneCaller.PropertyStrings.isIdentified.rawValue + " = true"
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return phoneCallers
+    }
+
+    /// - Returns: realm Result of all phoneCallers for incremental identification add.
+    /// hasChanges true and shouldIdentify true and isIdentified false, sorted by phone number
+    static func getAllPhoneCallersIncrementalAddIdentificationSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
+        + " && " + PhoneCaller.PropertyStrings.shouldIdentify.rawValue + " = true"
+        + " && " + PhoneCaller.PropertyStrings.isIdentified.rawValue + " = false"
         let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
         return phoneCallers
