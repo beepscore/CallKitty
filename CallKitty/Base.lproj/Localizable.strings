@@ -17,6 +17,7 @@
 // AddBlocksVC
 "ADD_BLOCKS_VC_TITLE" = "Add";
 "ADD_BUTTON_TITLE" = "Add blocked callers";
+"ADD_IDENTIFY_BUTTON_TITLE" = "Add identified callers";
 "DELETE_BUTTON_TITLE" = "Delete ALL callers, blocked or not";
 "SLIDER_TITLE_LABEL_TEXT" = "Number of callers to block";
 

@@ -15,6 +15,7 @@ class AddBlocksVC: UIViewController {
     @IBOutlet private weak var sliderTitleLabel: UILabel!
     @IBOutlet private weak var numberToGenerateLabel: UILabel!
     @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private weak var addIdentifyButton: UIButton!
     @IBOutlet private weak var deleteButton: UIButton!
 
     var numberDesired = 1
@@ -28,6 +29,8 @@ class AddBlocksVC: UIViewController {
         sliderTitleLabel.text = NSLocalizedString("SLIDER_TITLE_LABEL_TEXT", comment: "AddBlocksVC sliderTitleLabel text")
         numberToGenerateLabel.text = String(numberDesired)
         addButton.setTitle(NSLocalizedString("ADD_BUTTON_TITLE", comment: "AddBlocksVC addButton title"),
+                           for: .normal)
+        addIdentifyButton.setTitle(NSLocalizedString("ADD_IDENTIFY_BUTTON_TITLE", comment: "AddBlocksVC addIdentifyButton title"),
                            for: .normal)
         deleteButton.setTitle(NSLocalizedString("DELETE_BUTTON_TITLE", comment: "AddBlocksVC delete button title"),
                            for: .normal)
@@ -82,6 +85,20 @@ class AddBlocksVC: UIViewController {
             // TODO: get reference to CXCallDirectory.sharedInstance
             // CXCallDirectory.sharedInstance.reloadExtension()
         }
+    }
+
+    @IBAction func addIdentifyButtonTapped(_ sender: Any) {
+        // add in background to avoid blocking UI
+
+        // TODO: add method
+        //RealmService.backgroundAddIdentifyingPhoneCallers(count: numberDesired) {
+            // completion closure to refresh blocking data
+            // you could refresh data in response to a silent push, when requested by the user or use background fetch.
+            // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
+
+            // TODO: get reference to CXCallDirectory.sharedInstance
+            // CXCallDirectory.sharedInstance.reloadExtension()
+        //}
     }
 
     @IBAction func deleteAllButtonTapped(_ sender: Any) {

@@ -46,17 +46,24 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOF-NT-nnA">
-                                <rect key="frame" x="130" y="219" width="114" height="30"/>
+                                <rect key="frame" x="130.5" y="219" width="114" height="30"/>
                                 <state key="normal" title="add shouldBlock"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="Iga-3r-g3b" eventType="touchUpInside" id="FW3-LM-KwK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-tP-0oU">
-                                <rect key="frame" x="132" y="265" width="110" height="30"/>
+                                <rect key="frame" x="132.5" y="343" width="110" height="30"/>
                                 <state key="normal" title="shouldDelete all"/>
                                 <connections>
                                     <action selector="deleteAllButtonTapped:" destination="Iga-3r-g3b" eventType="touchUpInside" id="sp8-vt-hHG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CV-8J-Ily">
+                                <rect key="frame" x="123.5" y="281" width="128" height="30"/>
+                                <state key="normal" title="add shouldIdentify"/>
+                                <connections>
+                                    <action selector="addIdentifyButtonTapped:" destination="Iga-3r-g3b" eventType="touchUpInside" id="v4t-hc-gSr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,7 +74,9 @@
                             <constraint firstItem="FEM-gw-tdk" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="KUC-cR-is4"/>
                             <constraint firstItem="DOF-NT-nnA" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="VFG-9R-xay"/>
                             <constraint firstItem="FEM-gw-tdk" firstAttribute="top" secondItem="pPT-M5-mNg" secondAttribute="top" constant="64" id="eIb-HJ-VEM"/>
-                            <constraint firstItem="kaa-tP-0oU" firstAttribute="top" secondItem="DOF-NT-nnA" secondAttribute="bottom" constant="16" id="fdy-Tu-jvH"/>
+                            <constraint firstItem="7CV-8J-Ily" firstAttribute="top" secondItem="DOF-NT-nnA" secondAttribute="bottom" constant="32" id="ex7-2H-uYU"/>
+                            <constraint firstItem="kaa-tP-0oU" firstAttribute="top" secondItem="7CV-8J-Ily" secondAttribute="bottom" constant="32" id="lGQ-N3-IoO"/>
+                            <constraint firstItem="7CV-8J-Ily" firstAttribute="centerX" secondItem="Of4-j4-ePV" secondAttribute="centerX" id="q4C-MS-PGv"/>
                             <constraint firstItem="pPT-M5-mNg" firstAttribute="trailing" secondItem="FEM-gw-tdk" secondAttribute="trailing" id="rKi-hW-c1H"/>
                             <constraint firstItem="DOF-NT-nnA" firstAttribute="top" secondItem="FEM-gw-tdk" secondAttribute="bottom" constant="32" id="rha-tU-DSO"/>
                         </constraints>
@@ -77,6 +86,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="DOF-NT-nnA" id="5SD-Y3-oDe"/>
+                        <outlet property="addIdentifyButton" destination="7CV-8J-Ily" id="rR9-Cr-yz2"/>
                         <outlet property="deleteButton" destination="kaa-tP-0oU" id="l20-PP-6lG"/>
                         <outlet property="numberToGenerateLabel" destination="rXc-Lb-hAF" id="xzk-1o-oMQ"/>
                         <outlet property="slider" destination="DuV-Yf-qgj" id="IfR-8m-pRb"/>
