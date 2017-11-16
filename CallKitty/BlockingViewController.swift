@@ -48,7 +48,6 @@ class BlockingViewController: UIViewController {
     func clearUI() {
         phoneCallerPhoneNumberTextField.text = ""
         phoneCallerLabelTextField.text = ""
-        phoneCallerShouldBlockSwitch.setOn(true, animated: true)
     }
 
     func updateUI() {
