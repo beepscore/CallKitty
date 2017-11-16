@@ -36,8 +36,8 @@ class BlockingViewController: UIViewController {
 
         updateUI()
 
-        //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
-        //view.addGestureRecognizer(tapGestureRecognizer)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,28 +76,14 @@ class BlockingViewController: UIViewController {
 
     @IBAction func shouldBlockSwitchChanged(_ sender: Any) {
         updateUI()
-        //dismissAnyKeyboard()
-    }
-
-    @IBAction func shouldBlockSwitchTapped(_ sender: Any) {
-        //updateUI()
-        //dismissAnyKeyboard()
-        print()
     }
 
     @IBAction func shouldIdentifySwitchChanged(_ sender: UISwitch) {
         updateUI()
-        //dismissAnyKeyboard()
-    }
-
-    @IBAction func shouldIdentifySwitchTapped(_ sender: UISwitch) {
-        //updateUI()
-        //dismissAnyKeyboard()
     }
 
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        //updateUI()
-        //dismissAnyKeyboard()
+        updateUI()
     }
 
     @IBAction func addUpdateButtonTapped(_ sender: Any) {
