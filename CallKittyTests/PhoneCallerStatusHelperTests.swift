@@ -73,7 +73,7 @@ class PhoneCallerStatusHelperTests: XCTestCase {
                                       isIdentified: false,
                                       shouldDelete: false)
 
-        XCTAssertEqual(PhoneCallerStatusHelper.statusColor(phoneCaller: phoneCaller), UIColor.callKittyPaleYellow())
+        XCTAssertEqual(PhoneCallerStatusHelper.statusColor(phoneCaller: phoneCaller), UIColor.callKittyPaleGreen())
     }
 
     func testStatusColorShouldBlockShouldIdentify() {
@@ -86,7 +86,7 @@ class PhoneCallerStatusHelperTests: XCTestCase {
                                       isIdentified: false,
                                       shouldDelete: false)
 
-        XCTAssertEqual(PhoneCallerStatusHelper.statusColor(phoneCaller: phoneCaller), .orange)
+        XCTAssertEqual(PhoneCallerStatusHelper.statusColor(phoneCaller: phoneCaller), UIColor.callKittyPaleOrange())
     }
 
     func testStatusColorAllFalse() {

@@ -30,17 +30,24 @@ class PhoneCallerStatusHelper: NSObject {
             return .lightGray
         }
         if phoneCaller.shouldBlock && phoneCaller.shouldIdentify {
-            return .orange
+            return UIColor.callKittyPaleOrange()
         }
         if phoneCaller.shouldBlock {
             return UIColor.callKittyPaleRed()
         }
         if phoneCaller.shouldIdentify {
-            return UIColor.callKittyPaleYellow()
-        }
-        if phoneCaller.hasChanges {
             return UIColor.callKittyPaleGreen()
         }
+        if phoneCaller.isBlocked && phoneCaller.isIdentified {
+            return UIColor.callKittyMediumOrange()
+        }
+        if phoneCaller.isBlocked {
+            return UIColor.callKittyMediumRed()
+        }
+        if phoneCaller.isIdentified {
+            return UIColor.callKittyMediumGreen()
+        }
+
         return .white
     }
 
