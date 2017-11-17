@@ -30,6 +30,48 @@ class RealmService {
 
     // MARK: - PhoneCaller specific methods, use primary key phoneNumber
 
+    /// Add or update callers on a background thread. Interested objects can observe realm for changes/completion
+    /// If phoneCaller for unique primary key PhoneNumber already exists, update it.
+    /// If phoneCaller doesn't already exist, add it with supplied properties
+    /// for additional parameter documentation see PhoneCaller
+    /// https://academy.realm.io/posts/realm-primary-keys-tutorial/
+    ///
+    /// - Parameters:
+    ///   - phoneNumber: a CallKit CXCallDirectoryPhoneNumber, unique primary key
+    ///   - label: label for new PhoneCaller
+    ///   - completion: closure to run
+    static func backgroundAddUpdatePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber,
+                                               label: String = PhoneCaller.labelPlaceholder,
+                                               hasChanges: Bool = true,
+                                               shouldBlock: Bool = false,
+                                               isBlocked: Bool = false,
+                                               shouldIdentify: Bool = false,
+                                               isIdentified: Bool = false,
+                                               shouldDelete: Bool = false,
+                                               completion: @escaping () -> Void) {
+        DispatchQueue.global().async {
+            // Get new realm and table since we are in a new thread.
+
+            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
+            // You must construct a new instance for each thread in which a Realm will be accessed.
+            // For dispatch queues, this means that you must construct a new instance
+            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
+            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
+            let realm = try! Realm()
+            RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
+                                              label: label,
+                                              hasChanges: hasChanges,
+                                              shouldBlock: shouldBlock,
+                                              isBlocked: isBlocked,
+                                              shouldIdentify: shouldIdentify,
+                                              isIdentified: isIdentified,
+                                              shouldDelete: shouldDelete,
+                                              realm: realm)
+
+            completion()
+        }
+    }
+
     /// If phoneCaller for unique primary key PhoneNumber already exists, update it.
     /// If phoneCaller doesn't already exist, add it with supplied properties
     /// for additional parameter documentation see PhoneCaller
