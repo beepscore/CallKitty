@@ -84,6 +84,7 @@ class AddBlocksVC: UIViewController {
 
             // TODO: get reference to CXCallDirectory.sharedInstance
             // CXCallDirectory.sharedInstance.reloadExtension()
+            // or call CallDirectoryHandler.beginRequest which in turn calls completeRequest
         }
     }
 
