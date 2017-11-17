@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -111,10 +110,6 @@
         <scene sceneID="kuv-VO-yx5">
             <objects>
                 <viewController title="Simulate Incoming Call" id="R6a-ZT-ght" userLabel="Simulate Incoming Call Scene" customClass="SimulateIncomingCallViewController" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wEh-yB-6ta"/>
-                        <viewControllerLayoutGuide type="bottom" id="9mg-2H-Xd6"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AOT-VK-Bcl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,14 +159,14 @@
                             <constraint firstItem="Kac-gy-qLu" firstAttribute="leading" secondItem="j2W-ef-izR" secondAttribute="leading" id="WJX-G2-6W0"/>
                             <constraint firstItem="46W-Z1-vp5" firstAttribute="leading" secondItem="hqi-iR-4B4" secondAttribute="leading" id="bpR-Ce-9do"/>
                             <constraint firstItem="zsF-RW-jdg" firstAttribute="leading" secondItem="hqi-iR-4B4" secondAttribute="trailing" constant="8" id="fvu-PM-xU5"/>
-                            <constraint firstItem="j2W-ef-izR" firstAttribute="top" secondItem="wEh-yB-6ta" secondAttribute="bottom" constant="62" id="jys-5d-afp"/>
+                            <constraint firstItem="j2W-ef-izR" firstAttribute="top" secondItem="zXP-TR-rRh" secondAttribute="top" constant="62" id="jys-5d-afp"/>
                             <constraint firstItem="Xkv-q3-wGd" firstAttribute="centerY" secondItem="Kac-gy-qLu" secondAttribute="centerY" id="jzn-Qh-lhF"/>
                             <constraint firstItem="zsF-RW-jdg" firstAttribute="trailing" secondItem="j2W-ef-izR" secondAttribute="trailing" id="ojE-XD-Gv5"/>
                             <constraint firstItem="Xkv-q3-wGd" firstAttribute="trailing" secondItem="j2W-ef-izR" secondAttribute="trailing" id="pbJ-ga-pXb"/>
                             <constraint firstItem="Xkv-q3-wGd" firstAttribute="leading" secondItem="Kac-gy-qLu" secondAttribute="trailing" constant="8" id="xbZ-Q7-4m1"/>
                             <constraint firstItem="hqi-iR-4B4" firstAttribute="leading" secondItem="Kac-gy-qLu" secondAttribute="leading" id="yoD-0S-6eu"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Y4k-2K-g9Q"/>
+                        <viewLayoutGuide key="safeArea" id="zXP-TR-rRh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Simulate Incoming Call" id="6mC-69-q6H">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9M7-g5-FfW">
@@ -241,10 +236,6 @@
         <scene sceneID="mQY-s5-aw7">
             <objects>
                 <viewController id="oeD-0l-BgP" customClass="DialOptionsViewController" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rO2-mL-YjN"/>
-                        <viewControllerLayoutGuide type="bottom" id="UrS-mp-ZG1"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qh8-Ej-3oj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,13 +260,13 @@
                             <constraint firstItem="gdV-ga-RUp" firstAttribute="centerY" secondItem="BVr-Ly-Bwg" secondAttribute="centerY" id="Aff-5V-DQZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pfG-ls-AAP" secondAttribute="trailing" id="DLX-kt-Xzf"/>
                             <constraint firstItem="BVr-Ly-Bwg" firstAttribute="leading" secondItem="pfG-ls-AAP" secondAttribute="leading" id="GaK-wy-csq"/>
-                            <constraint firstItem="pfG-ls-AAP" firstAttribute="top" secondItem="rO2-mL-YjN" secondAttribute="bottom" constant="62" id="Jnu-0A-LQL"/>
+                            <constraint firstItem="pfG-ls-AAP" firstAttribute="top" secondItem="bi8-3i-fdd" secondAttribute="top" constant="62" id="Jnu-0A-LQL"/>
                             <constraint firstItem="BVr-Ly-Bwg" firstAttribute="top" secondItem="pfG-ls-AAP" secondAttribute="bottom" constant="8" id="Lap-nJ-E09"/>
                             <constraint firstItem="pfG-ls-AAP" firstAttribute="leading" secondItem="qh8-Ej-3oj" secondAttribute="leadingMargin" id="R3S-63-Si5"/>
                             <constraint firstItem="gdV-ga-RUp" firstAttribute="trailing" secondItem="pfG-ls-AAP" secondAttribute="trailing" id="cPc-IZ-0n2"/>
                             <constraint firstItem="gdV-ga-RUp" firstAttribute="leading" secondItem="BVr-Ly-Bwg" secondAttribute="trailing" constant="8" id="q1f-dz-RaU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tsl-5r-nPK"/>
+                        <viewLayoutGuide key="safeArea" id="bi8-3i-fdd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dial Call" id="BT0-hQ-mSZ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rhn-ew-ii5">
