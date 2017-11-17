@@ -1,5 +1,5 @@
 //
-//  BlockingViewController.swift
+//  EditVC.swift
 //  CallKitty
 //
 //  Created by Steve Baker on 11/9/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CallKit
 
-class BlockingViewController: UIViewController {
+class EditVC: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var phoneCallerPhoneNumberTextField: UITextField!
@@ -25,7 +25,7 @@ class BlockingViewController: UIViewController {
         super.viewDidLoad()
 
         // when view loads, tab bar item displays this variable "title"
-        title = NSLocalizedString("BLOCKING_VC_TITLE", comment: "BlockingViewController title")
+        title = NSLocalizedString("EDIT_VC_TITLE", comment: "EditVC title")
 
         searchBar.delegate = self
         phoneCallerPhoneNumberTextField.delegate = self
@@ -150,7 +150,7 @@ class BlockingViewController: UIViewController {
 
 }
 
-extension BlockingViewController: UISearchBarDelegate {
+extension EditVC: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
@@ -181,7 +181,7 @@ extension BlockingViewController: UISearchBarDelegate {
 
 }
 
-extension BlockingViewController: UITextFieldDelegate {
+extension EditVC: UITextFieldDelegate {
 
     // called when user taps return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

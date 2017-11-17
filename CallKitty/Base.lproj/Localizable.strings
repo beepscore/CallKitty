@@ -7,7 +7,7 @@
 
 "APPLICATION_NAME" = "CallKitty";
 
-"BLOCKING_VC_TITLE" = "Block";
+"EDIT_VC_TITLE" = "Edit";
 "CALLS_VC_TITLE" = "Calls";
 "DIAL_OPTIONS_VC_TITLE" = "Dial Call";
 "SIMULATE_INCOMING_VC_TITLE" = "Simulate Incoming Call";

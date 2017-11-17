@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,11 +39,11 @@
             </objects>
             <point key="canvasLocation" x="106" y="117"/>
         </scene>
-        <!--Blocking-->
+        <!--Edit-->
         <scene sceneID="v9E-bF-WkN">
             <objects>
-                <viewControllerPlaceholder storyboardName="Blocking" id="Zuj-cS-95Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="block" id="cR1-Xl-uEt"/>
+                <viewControllerPlaceholder storyboardName="Edit" id="Zuj-cS-95Z" userLabel="Edit" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="edit" id="cR1-Xl-uEt"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Mv-6s-R4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

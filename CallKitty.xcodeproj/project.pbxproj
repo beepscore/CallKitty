@@ -56,8 +56,8 @@
 		DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */; };
 		DEA92F5C1FB50BF200A0178C /* RealmServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */; };
 		DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5D1FB50C4300A0178C /* RealmService.swift */; };
-		DEC4A0661FB5637F00E5A290 /* BlockingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */; };
-		DEC4A0681FB5640D00E5A290 /* Blocking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */; };
+		DEC4A0661FB5637F00E5A290 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A0651FB5637F00E5A290 /* EditVC.swift */; };
+		DEC4A0681FB5640D00E5A290 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A0671FB5640D00E5A290 /* Edit.storyboard */; };
 		DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */; };
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
@@ -174,8 +174,8 @@
 		DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCallerTests.swift; sourceTree = "<group>"; };
 		DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceTests.swift; sourceTree = "<group>"; };
 		DEA92F5D1FB50C4300A0178C /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
-		DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingViewController.swift; sourceTree = "<group>"; };
-		DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Blocking.storyboard; sourceTree = "<group>"; };
+		DEC4A0651FB5637F00E5A290 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		DEC4A0671FB5640D00E5A290 /* Edit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
 		DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertibleTests.swift"; sourceTree = "<group>"; };
 		DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyCallTests.swift; sourceTree = "<group>"; };
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */,
-				DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */,
+				DEC4A0671FB5640D00E5A290 /* Edit.storyboard */,
 				DE0B510D1FB58008005A2465 /* Calls.storyboard */,
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
@@ -298,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE066911FB577B400B1C11F /* AddBlocksVC.swift */,
-				DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */,
+				DEC4A0651FB5637F00E5A290 /* EditVC.swift */,
 				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
 				DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */,
@@ -641,7 +641,7 @@
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
 				DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */,
 				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
-				DEC4A0681FB5640D00E5A290 /* Blocking.storyboard in Resources */,
+				DEC4A0681FB5640D00E5A290 /* Edit.storyboard in Resources */,
 				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
 				DE842F431FB239A100F9936D /* Assets.xcassets in Resources */,
@@ -734,7 +734,7 @@
 				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
 				DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
-				DEC4A0661FB5637F00E5A290 /* BlockingViewController.swift in Sources */,
+				DEC4A0661FB5637F00E5A290 /* EditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

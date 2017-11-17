@@ -4,16 +4,15 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Block-->
+        <!--edit-->
         <scene sceneID="hhP-Mf-Cj3">
             <objects>
-                <viewController id="nUi-Xh-OKe" customClass="BlockingViewController" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nUi-Xh-OKe" customClass="EditVC" customModule="CallKitty" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVA-h9-rNR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BP6-9H-l0Q"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Block" image="crook" id="PtP-zs-3CB"/>
+                    <tabBarItem key="tabBarItem" title="edit" image="crook" id="PtP-zs-3CB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addUpdateButton" destination="Zsg-g4-lcS" id="zj9-s4-sKz"/>
