@@ -141,17 +141,18 @@ class LongTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let phoneCaller = results?[indexPath.row] else { return }
 
-            // call addUpdatePhoneCaller with shouldDelete true
+            // call backgroundAddUpdatePhoneCaller with shouldDelete true
             // TODO: is it better to set hasChanges true, false, or don't care?
-            RealmService.addUpdatePhoneCaller(phoneNumber: phoneCaller.phoneNumber,
-                                              label: phoneCaller.label,
-                                              hasChanges: true,
-                                              shouldBlock: phoneCaller.shouldBlock,
-                                              isBlocked: phoneCaller.isBlocked,
-                                              shouldIdentify: phoneCaller.shouldIdentify,
-                                              isIdentified: phoneCaller.isIdentified,
-                                              shouldDelete: true,
-                                              realm: RealmService.shared.realm)
+            RealmService.backgroundAddUpdatePhoneCaller(phoneNumber: phoneCaller.phoneNumber,
+                                                        label: phoneCaller.label,
+                                                        hasChanges: true,
+                                                        shouldBlock: phoneCaller.shouldBlock,
+                                                        isBlocked: phoneCaller.isBlocked,
+                                                        shouldIdentify: phoneCaller.shouldIdentify,
+                                                        isIdentified: phoneCaller.isIdentified,
+                                                        shouldDelete: true) {
+                                                            // completion
+            }
         }
     }
 

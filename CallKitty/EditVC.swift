@@ -112,28 +112,30 @@ class EditVC: UIViewController {
 
             // Note user setting shouldDelete false might overwrite a previously set true.
             // Because user tapped addUpdate button, assume they don't want to delete phoneCaller.
-            RealmService.addUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
-                                              label: desiredPhoneCallerLabel,
-                                              hasChanges: true,
-                                              shouldBlock: phoneCallerShouldBlockSwitch.isOn,
-                                              isBlocked: unwrappedPhoneCaller.isBlocked,
-                                              shouldIdentify: resolvedShouldIdentify,
-                                              isIdentified: unwrappedPhoneCaller.isIdentified,
-                                              shouldDelete: false,
-                                              realm: RealmService.shared.realm)
+            RealmService.backgroundAddUpdatePhoneCaller(phoneNumber: unwrappedPhoneCaller.phoneNumber,
+                                                        label: desiredPhoneCallerLabel,
+                                                        hasChanges: true,
+                                                        shouldBlock: phoneCallerShouldBlockSwitch.isOn,
+                                                        isBlocked: unwrappedPhoneCaller.isBlocked,
+                                                        shouldIdentify: resolvedShouldIdentify,
+                                                        isIdentified: unwrappedPhoneCaller.isIdentified,
+                                                        shouldDelete: false) {
+                                                            // completion
+            }
 
-           view.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: unwrappedPhoneCaller)
+            view.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: unwrappedPhoneCaller)
         } else {
             // this is a new PhoneCaller
-            RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
-                                              label: desiredPhoneCallerLabel,
-                                              hasChanges: true,
-                                              shouldBlock: phoneCallerShouldBlockSwitch.isOn,
-                                              isBlocked: false,
-                                              shouldIdentify: resolvedShouldIdentify,
-                                              isIdentified: false,
-                                              shouldDelete: false,
-                                              realm: RealmService.shared.realm)
+            RealmService.backgroundAddUpdatePhoneCaller(phoneNumber: phoneNumber,
+                                                        label: desiredPhoneCallerLabel,
+                                                        hasChanges: true,
+                                                        shouldBlock: phoneCallerShouldBlockSwitch.isOn,
+                                                        isBlocked: false,
+                                                        shouldIdentify: resolvedShouldIdentify,
+                                                        isIdentified: false,
+                                                        shouldDelete: false) {
+                                                            // completion
+            }
          view.backgroundColor = UIColor.callKittyPaleYellow()
         }
     }
