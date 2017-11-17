@@ -82,9 +82,14 @@ class AddBlocksVC: UIViewController {
             // you could refresh data in response to a silent push, when requested by the user or use background fetch.
             // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
 
-            // TODO: get reference to CXCallDirectory.sharedInstance
+            // beginRequest loads numbers into call directory and updates realm PhoneCaller properties
+            // TODO: Check if numbers are getting added to call directory
+            let context = CXCallDirectoryExtensionContext()
+            // beginRequest calls completeRequest
+            CallDirectoryHandler.shared.beginRequest(with: context)
+
+            // TODO: consider get a reference to a CXCallDirectory singleton and call reloadExtension()
             // CXCallDirectory.sharedInstance.reloadExtension()
-            // or call CallDirectoryHandler.beginRequest which in turn calls completeRequest
         }
     }
 
@@ -97,11 +102,13 @@ class AddBlocksVC: UIViewController {
             // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
 
             // beginRequest loads numbers into call directory and updates realm PhoneCaller properties
-            // TODO: Check if better to use singleton CXCallDirectory.sharedInstance
-            // CXCallDirectory.sharedInstance.reloadExtension()
+            // TODO: Check if numbers are getting added to call directory
             let context = CXCallDirectoryExtensionContext()
-            let handler = CallDirectoryHandler()
-            handler.beginRequest(with: context)
+            // beginRequest calls completeRequest
+            CallDirectoryHandler.shared.beginRequest(with: context)
+
+            // TODO: consider get a reference to a CXCallDirectory singleton and call reloadExtension()
+            // CXCallDirectory.sharedInstance.reloadExtension()
         }
     }
 
