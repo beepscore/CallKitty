@@ -63,6 +63,7 @@
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
 		DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE066911FB577B400B1C11F /* AddBlocksVC.swift */; };
 		DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */; };
+		DEE1D9681FBE82510002D914 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */; };
 		DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */; };
 		DEFC40481FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFC40471FB2B65200A8E983 /* CallKittyProviderDelegateTests.swift */; };
 		DEFD18A61FBE43F8006A371A /* PhoneCallerStatusHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */; };
@@ -710,6 +711,7 @@
 				DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */,
 				DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */,
 				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
+				DEE1D9681FBE82510002D914 /* CallDirectoryHandler.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
 				DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */,
@@ -1003,7 +1005,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CallKitty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1027,7 +1029,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CallKitty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
