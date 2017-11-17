@@ -82,7 +82,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPT-M5-mNg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add" id="GFx-CM-Ofn"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="gear" id="GFx-CM-Ofn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="DOF-NT-nnA" id="5SD-Y3-oDe"/>
@@ -98,4 +98,7 @@
             <point key="canvasLocation" x="98" y="179"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear" width="30" height="30"/>
+    </resources>
 </document>

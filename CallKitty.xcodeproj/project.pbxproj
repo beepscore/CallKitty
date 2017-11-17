@@ -58,8 +58,6 @@
 		DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5D1FB50C4300A0178C /* RealmService.swift */; };
 		DEC4A0661FB5637F00E5A290 /* BlockingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */; };
 		DEC4A0681FB5640D00E5A290 /* Blocking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */; };
-		DEC4A06C1FB5712B00E5A290 /* IdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */; };
-		DEC4A06E1FB571EF00E5A290 /* ID.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A06D1FB571EF00E5A290 /* ID.storyboard */; };
 		DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */; };
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
@@ -177,8 +175,6 @@
 		DEA92F5D1FB50C4300A0178C /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockingViewController.swift; sourceTree = "<group>"; };
 		DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Blocking.storyboard; sourceTree = "<group>"; };
-		DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdViewController.swift; sourceTree = "<group>"; };
-		DEC4A06D1FB571EF00E5A290 /* ID.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ID.storyboard; sourceTree = "<group>"; };
 		DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertibleTests.swift"; sourceTree = "<group>"; };
 		DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyCallTests.swift; sourceTree = "<group>"; };
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
@@ -286,7 +282,6 @@
 				DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */,
 				DEC4A0671FB5640D00E5A290 /* Blocking.storyboard */,
 				DE0B510D1FB58008005A2465 /* Calls.storyboard */,
-				DEC4A06D1FB571EF00E5A290 /* ID.storyboard */,
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
@@ -305,7 +300,6 @@
 				DEC4A0651FB5637F00E5A290 /* BlockingViewController.swift */,
 				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
 				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
-				DEC4A06B1FB5712B00E5A290 /* IdViewController.swift */,
 				DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */,
 				DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */,
 				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
@@ -642,7 +636,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE066941FB578DC00B1C11F /* AddBlocks.storyboard in Resources */,
-				DEC4A06E1FB571EF00E5A290 /* ID.storyboard in Resources */,
 				DE0B510E1FB58008005A2465 /* Calls.storyboard in Resources */,
 				DE83C9941FB218B20078CD01 /* LaunchScreen.storyboard in Resources */,
 				DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */,
@@ -720,7 +713,6 @@
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
 				DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */,
-				DEC4A06C1FB5712B00E5A290 /* IdViewController.swift in Sources */,
 				DE4705781FB3FBFA000FC02D /* PhoneCaller.swift in Sources */,
 				DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */,
 				DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */,
