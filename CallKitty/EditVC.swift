@@ -125,7 +125,6 @@ class EditVC: UIViewController {
                                                             // beginRequest calls completeRequest
                                                             CallDirectoryHandler.shared.beginRequest(with: context)
             }
-
             view.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: unwrappedPhoneCaller)
         } else {
             // this is a new PhoneCaller
@@ -142,7 +141,7 @@ class EditVC: UIViewController {
                                                             // beginRequest calls completeRequest
                                                             CallDirectoryHandler.shared.beginRequest(with: context)
             }
-         view.backgroundColor = UIColor.callKittyPaleYellow()
+            view.backgroundColor = UIColor.callKittyPaleYellow()
         }
     }
 
