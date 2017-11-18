@@ -9,6 +9,7 @@
 
 import UIKit
 import RealmSwift
+import CallKit
 
 class LongTableViewController: UITableViewController {
 
@@ -152,6 +153,9 @@ class LongTableViewController: UITableViewController {
                                                         isIdentified: phoneCaller.isIdentified,
                                                         shouldDelete: true) {
                                                             // completion
+                                                            let context = CXCallDirectoryExtensionContext()
+                                                            // beginRequest calls completeRequest
+                                                            CallDirectoryHandler.shared.beginRequest(with: context)
             }
         }
     }

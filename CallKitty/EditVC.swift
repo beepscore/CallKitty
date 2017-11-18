@@ -121,6 +121,9 @@ class EditVC: UIViewController {
                                                         isIdentified: unwrappedPhoneCaller.isIdentified,
                                                         shouldDelete: false) {
                                                             // completion
+                                                            let context = CXCallDirectoryExtensionContext()
+                                                            // beginRequest calls completeRequest
+                                                            CallDirectoryHandler.shared.beginRequest(with: context)
             }
 
             view.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: unwrappedPhoneCaller)
@@ -135,6 +138,9 @@ class EditVC: UIViewController {
                                                         isIdentified: false,
                                                         shouldDelete: false) {
                                                             // completion
+                                                            let context = CXCallDirectoryExtensionContext()
+                                                            // beginRequest calls completeRequest
+                                                            CallDirectoryHandler.shared.beginRequest(with: context)
             }
          view.backgroundColor = UIColor.callKittyPaleYellow()
         }
