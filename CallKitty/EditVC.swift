@@ -152,8 +152,24 @@ class EditVC: UIViewController {
 
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else { return }
         guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else { return }
+        guard let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber,
+                                                            realm: RealmService.shared.realm) else { return }
 
-        RealmService.backgroundDeletePhoneCaller(phoneNumber: phoneNumber)
+        // call backgroundAddUpdatePhoneCaller with shouldDelete true
+        // TODO: is it better to set hasChanges true, false, or don't care?
+        RealmService.backgroundAddUpdatePhoneCaller(phoneNumber: phoneCaller.phoneNumber,
+                                                    label: phoneCaller.label,
+                                                    hasChanges: true,
+                                                    shouldBlock: phoneCaller.shouldBlock,
+                                                    isBlocked: phoneCaller.isBlocked,
+                                                    shouldIdentify: phoneCaller.shouldIdentify,
+                                                    isIdentified: phoneCaller.isIdentified,
+                                                    shouldDelete: true) {
+                                                        // completion
+                                                        let context = CXCallDirectoryExtensionContext()
+                                                        // beginRequest calls completeRequest
+                                                        CallDirectoryHandler.shared.beginRequest(with: context)
+        }
     }
 
 }
