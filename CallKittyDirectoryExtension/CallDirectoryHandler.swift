@@ -28,13 +28,14 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
         context.delegate = self
 
-        deleteAllShouldDelete(context: context)
-
         // Check whether this is an "incremental" data request. If so, only provide the set of phone number blocking
         // and identification entries which have been added or removed since the last time this extension's data was loaded.
         // But the extension must still be prepared to provide the full set of data at any time, so add all blocking
         // and identification phone numbers if the request is not incremental.
         if context.isIncremental {
+            // Calling removeBlockingEntryWithPhoneNumber: when isIncremental is false is unsupported
+            deleteAllShouldDelete(context: context)
+
             addOrRemoveIncrementalBlockingPhoneNumbers(to: context)
 
             addOrRemoveIncrementalIdentificationPhoneNumbers(to: context)
@@ -47,16 +48,15 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         context.completeRequest()
     }
 
-    // TODO: implement
-    // How long will this take?
-    // wait for this to complete before continuing?
-    // run in a background queue?
     func deleteAllShouldDelete(context: CXCallDirectoryExtensionContext) {
-        // get phoneCallers with shouldDelete true
-        // for phoneCaller in phoneCallers
-        //     context.removeBlockingEntry from directory
-        //     context.removeIdentificationEntry from directory
-        //     delete from realm
+        let phoneCallers = RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realmService.realm)
+        for phoneCaller in phoneCallers {
+            context.removeBlockingEntry(withPhoneNumber: phoneCaller.phoneNumber)
+            context.removeIdentificationEntry(withPhoneNumber: phoneCaller.phoneNumber)
+            // TODO: backgroundDeletePhoneCaller threw error realm accessed from wrong thread
+            let _ = RealmService.deletePhoneCaller(phoneNumber: phoneCaller.phoneNumber,
+                                                   realm: realmService.realm)
+        }
     }
 
     // MARK: - blocking
