@@ -259,15 +259,6 @@
 			name = PhoneCaller;
 			sourceTree = "<group>";
 		};
-		DE7AF8EF1FB21F7300C2D29C /* App */ = {
-			isa = PBXGroup;
-			children = (
-				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
-				DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */,
-			);
-			name = App;
-			sourceTree = "<group>";
-		};
 		DE7AF8F21FB2204E00C2D29C /* Call Management */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,36 +268,13 @@
 			name = "Call Management";
 			sourceTree = "<group>";
 		};
-		DE7AF8F31FB2207A00C2D29C /* UI */ = {
+		DE7AF8F31FB2207A00C2D29C /* AddBlocks */ = {
 			isa = PBXGroup;
 			children = (
 				DEE066931FB578DC00B1C11F /* AddBlocks.storyboard */,
-				DEC4A0671FB5640D00E5A290 /* Edit.storyboard */,
-				DE0B510D1FB58008005A2465 /* Calls.storyboard */,
-				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
-				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
-				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
-				DE7AF8F41FB220B400C2D29C /* View Controllers */,
-				DE842F341FB22EAF00F9936D /* Views */,
-				DE842F421FB239A100F9936D /* Assets.xcassets */,
-				DE842F3D1FB234F300F9936D /* Sounds */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		DE7AF8F41FB220B400C2D29C /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
 				DEE066911FB577B400B1C11F /* AddBlocksVC.swift */,
-				DEC4A0651FB5637F00E5A290 /* EditVC.swift */,
-				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
-				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
-				DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */,
-				DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */,
-				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
-				DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */,
 			);
-			name = "View Controllers";
+			name = AddBlocks;
 			sourceTree = "<group>";
 		};
 		DE7AF8F51FB2210C00C2D29C /* Supporting Files */ = {
@@ -378,15 +346,24 @@
 		DE83C9881FB218B20078CD01 /* CallKitty */ = {
 			isa = PBXGroup;
 			children = (
-				DE7AF8EF1FB21F7300C2D29C /* App */,
-				DE7AF8F31FB2207A00C2D29C /* UI */,
-				DE7AF8F21FB2204E00C2D29C /* Call Management */,
-				DE4705761FB3FB57000FC02D /* PhoneCaller */,
-				DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */,
+				DE7AF8F31FB2207A00C2D29C /* AddBlocks */,
 				DE7AF9041FB2237D00C2D29C /* Audio */,
+				DEE9FB191FBFAF350028FD6A /* Calls */,
+				DE7AF8F21FB2204E00C2D29C /* Call Management */,
 				DE842F371FB22F1600F9936D /* Data Formatters */,
+				DEE9FB181FBFAF020028FD6A /* Edit */,
 				DE842F1E1FB228B500F9936D /* Extensions */,
+				DE4705761FB3FB57000FC02D /* PhoneCaller */,
+				DE842F3D1FB234F300F9936D /* Sounds */,
+				DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */,
+				DE842F341FB22EAF00F9936D /* Summary */,
 				DE7AF8F51FB2210C00C2D29C /* Supporting Files */,
+				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
+				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
+				DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */,
+				DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */,
+				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
+				DE842F421FB239A100F9936D /* Assets.xcassets */,
 			);
 			path = CallKitty;
 			sourceTree = "<group>";
@@ -441,12 +418,14 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
-		DE842F341FB22EAF00F9936D /* Views */ = {
+		DE842F341FB22EAF00F9936D /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */,
+				DEEABD6B1FB64E3700767C24 /* LongTableViewController.swift */,
+				DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */,
+				DE1CA99E1FB547D700B711EE /* Summary.storyboard */,
 			);
-			name = Views;
+			name = Summary;
 			sourceTree = "<group>";
 		};
 		DE842F371FB22F1600F9936D /* Data Formatters */ = {
@@ -464,6 +443,27 @@
 				DE842F3E1FB2354B00F9936D /* Ringtone.aif */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		DEE9FB181FBFAF020028FD6A /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				DEC4A0671FB5640D00E5A290 /* Edit.storyboard */,
+				DEC4A0651FB5637F00E5A290 /* EditVC.swift */,
+			);
+			name = Edit;
+			sourceTree = "<group>";
+		};
+		DEE9FB191FBFAF350028FD6A /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F351FB22EE600F9936D /* CallSummaryTableViewCell.swift */,
+				DE0B510D1FB58008005A2465 /* Calls.storyboard */,
+				DE842F2E1FB22E3500F9936D /* CallsViewController.swift */,
+				DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */,
+				DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */,
+			);
+			name = Calls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
