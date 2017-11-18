@@ -87,9 +87,6 @@ class AddBlocksVC: UIViewController {
             let context = CXCallDirectoryExtensionContext()
             // beginRequest calls completeRequest
             CallDirectoryHandler.shared.beginRequest(with: context)
-
-            // TODO: consider get a reference to a CXCallDirectory singleton and call reloadExtension()
-            // CXCallDirectory.sharedInstance.reloadExtension()
         }
     }
 
@@ -106,9 +103,6 @@ class AddBlocksVC: UIViewController {
             let context = CXCallDirectoryExtensionContext()
             // beginRequest calls completeRequest
             CallDirectoryHandler.shared.beginRequest(with: context)
-
-            // TODO: consider get a reference to a CXCallDirectory singleton and call reloadExtension()
-            // CXCallDirectory.sharedInstance.reloadExtension()
         }
     }
 
@@ -118,10 +112,6 @@ class AddBlocksVC: UIViewController {
         RealmService.backgroundAllPhoneCallersShouldDelete()
 
         // TODO: Consider reloadExtension after background delete completes
-        // When you have updated blocking data you can refresh your blocking data by calling CXCallDirectory.sharedInstance.reloadExtension from your main app;
-        // you could do this in response to a silent push, when requested by the user or use background fetch.
-        // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
-        // (editor) Instead can CallDirectoryHandler simply observe realm for changes?
     }
 
 }
