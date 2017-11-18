@@ -67,9 +67,7 @@ class RealmService {
                                               isIdentified: isIdentified,
                                               shouldDelete: shouldDelete,
                                               realm: realm)
-            DispatchQueue.main.async {
-                completion()
-            }
+            completion()
         }
     }
 
