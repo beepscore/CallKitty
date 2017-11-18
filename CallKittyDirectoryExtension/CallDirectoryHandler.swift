@@ -45,15 +45,6 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
             addAllIdentificationPhoneNumbers(to: context)
         }
 
-        // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
-        CXCallDirectoryManager.sharedInstance.reloadExtension (
-            withIdentifier: "com.beepscore.CallKitty.CallKittyDirectoryExtension",
-            completionHandler: {(error) -> Void in
-                if let error = error {
-                    print("reloadExtension", error.localizedDescription)
-                }
-        })
-
         context.completeRequest()
     }
 

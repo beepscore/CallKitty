@@ -13,6 +13,7 @@
 
 import UIKit
 import PushKit
+import CallKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
@@ -33,6 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
         pushRegistry.desiredPushTypes = [.voIP]
 
         providerDelegate = ProviderDelegate(callManager: callManager)
+
+        // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
+        CXCallDirectoryManager.sharedInstance.reloadExtension (
+            withIdentifier: "com.beepscore.CallKitty.CallKittyDirectoryExtension",
+            completionHandler: {(error) -> Void in
+                if let error = error {
+                    print("reloadExtension", error.localizedDescription)
+                }
+        })
 
         return true
     }
