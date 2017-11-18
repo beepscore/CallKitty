@@ -78,15 +78,7 @@ class AddBlocksVC: UIViewController {
     @IBAction func addButtonTapped(_ sender: Any) {
         // add in background to avoid blocking UI
         RealmService.backgroundAddBlockingPhoneCallers(count: numberDesired) {
-            // completion closure to refresh blocking data
-            // you could refresh data in response to a silent push, when requested by the user or use background fetch.
-            // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
-
-            // beginRequest loads numbers into call directory and updates realm PhoneCaller properties
-            // TODO: Check if numbers are getting added to call directory
-            let context = CXCallDirectoryExtensionContext()
-            // beginRequest calls completeRequest
-            CallDirectoryHandler.shared.beginRequest(with: context)
+            // completion closure
         }
     }
 
@@ -94,15 +86,7 @@ class AddBlocksVC: UIViewController {
         // add in background to avoid blocking UI
 
         RealmService.backgroundAddIdentifyingPhoneCallers(count: numberDesired) {
-            // completion closure to refresh blocking data
-            // you could refresh data in response to a silent push, when requested by the user or use background fetch.
-            // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
-
-            // beginRequest loads numbers into call directory and updates realm PhoneCaller properties
-            // TODO: Check if numbers are getting added to call directory
-            let context = CXCallDirectoryExtensionContext()
-            // beginRequest calls completeRequest
-            CallDirectoryHandler.shared.beginRequest(with: context)
+            // completion closure
         }
     }
 
@@ -110,8 +94,6 @@ class AddBlocksVC: UIViewController {
         // use background method to avoid blocking UI
 
         RealmService.backgroundAllPhoneCallersShouldDelete()
-
-        // TODO: Consider reloadExtension after background delete completes
     }
 
 }
