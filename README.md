@@ -41,6 +41,13 @@ Enable CallKitty
 
 If app alerts allow microphone tap OK.
 
+###  beginRequest
+Don't call it, let iOS call it?
+https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
+
+CXCallDirectoryExtensionContext objects are not initialized directly, but are instead passed as arguments to the CXCallDirectoryProvider instance method beginRequest(with:).
+
+
 ### manually test blocked call
 simulate incoming call from 1_408_555_5555
 
@@ -99,3 +106,18 @@ Try Carthage.
     *** Building scheme "RealmSwift" in Realm.xcworkspace
 
 created Cartfile.resolved
+
+## Appendix CXErrorCodeCallDirectoryManagerError
+
+typedef enum CXErrorCodeCallDirectoryManagerError : NSInteger {
+CXErrorCodeCallDirectoryManagerErrorUnknown = 0,
+CXErrorCodeCallDirectoryManagerErrorNoExtensionFound = 1,
+CXErrorCodeCallDirectoryManagerErrorLoadingInterrupted = 2,
+CXErrorCodeCallDirectoryManagerErrorEntriesOutOfOrder = 3,
+CXErrorCodeCallDirectoryManagerErrorDuplicateEntries = 4,
+CXErrorCodeCallDirectoryManagerErrorMaximumEntriesExceeded = 5,
+CXErrorCodeCallDirectoryManagerErrorExtensionDisabled = 6,
+CXErrorCodeCallDirectoryManagerErrorCurrentlyLoading = 7,
+CXErrorCodeCallDirectoryManagerErrorUnexpectedIncrementalRemoval = 8
+} CXErrorCodeCallDirectoryManagerError;
+
