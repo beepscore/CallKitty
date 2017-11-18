@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CallKit
 @testable import CallKitty
 
 class RealmServiceTests: XCTestCase {
@@ -207,5 +208,40 @@ class RealmServiceTests: XCTestCase {
 
         // clean up last phoneCaller
         realmService.delete(phoneCaller0)
+    }
+
+    func testGetAllPhoneCallersShouldDeleteSorted() {
+
+        let realmService = RealmService.shared
+        let realm = realmService.realm
+
+        let initialCount = RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count
+        let phoneNumber: CXCallDirectoryPhoneNumber = 500
+
+        RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
+                                          label: "dog",
+                                          hasChanges: true,
+                                          shouldBlock: false,
+                                          isBlocked: false,
+                                          shouldIdentify: true,
+                                          isIdentified: false,
+                                          shouldDelete: false,
+                                          realm: realm)
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count, initialCount)
+
+        RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
+                                          label: "dog",
+                                          hasChanges: true,
+                                          shouldBlock: false,
+                                          isBlocked: false,
+                                          shouldIdentify: true,
+                                          isIdentified: false,
+                                          shouldDelete: true,
+                                          realm: realm)
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count, initialCount + 1)
+
+        let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
+        realmService.delete(phoneCaller!)
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count, initialCount)
     }
 }

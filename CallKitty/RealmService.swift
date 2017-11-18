@@ -259,9 +259,9 @@ class RealmService {
     /// - Returns: realm Result of all phoneCallers with hasChanges true, sorted by phone number
     static func getAllPhoneCallersHasChangesSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.hasChanges.rawValue + " = true"
-        let allPhoneCallersHasChangesSorted = realm.objects(PhoneCaller.self).filter(filterString)
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersHasChangesSorted
+        return phoneCallers
     }
 
     // MARK: - shouldBlock isBlocked
@@ -270,9 +270,9 @@ class RealmService {
     static func getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.shouldBlock.rawValue + " = true"
         + " || " + PhoneCaller.PropertyStrings.isBlocked.rawValue + " = true"
-        let allPhoneCallersShouldBlockSorted = realm.objects(PhoneCaller.self).filter(filterString)
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersShouldBlockSorted
+        return phoneCallers
     }
 
     /// - Returns: realm Result of all phoneCallers for incremental add blocking.
@@ -302,17 +302,17 @@ class RealmService {
     /// - Returns: realm Result of all phoneCallers with isBlocked true, sorted by phone number
     static func getAllPhoneCallersIsBlockedSorted(realm: Realm) -> Results<PhoneCaller> {
         let filterString = PhoneCaller.PropertyStrings.isBlocked.rawValue + " = true"
-        let allPhoneCallersIsBlockedSorted = realm.objects(PhoneCaller.self).filter(filterString)
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
-        return allPhoneCallersIsBlockedSorted
+        return phoneCallers
     }
 
     /// Note this method queries realm database, not call directory
     /// If call directory has not been synced to realm, returned result could be misleading
     /// - Returns: count of phoneCallers with isBlocked true
     static func getAllPhoneCallersIsBlockedSortedCount(realm: Realm) -> Int {
-        let allPhoneCallersIsBlockedSorted = RealmService.getAllPhoneCallersIsBlockedSorted(realm: realm)
-        return allPhoneCallersIsBlockedSorted.count
+        let phoneCallers = RealmService.getAllPhoneCallersIsBlockedSorted(realm: realm)
+        return phoneCallers.count
     }
 
     // MARK: - identify
@@ -365,6 +365,14 @@ class RealmService {
     }
 
     // MARK: - shouldDelete
+
+    /// - Returns: realm Result of all phoneCallers with shouldDelete true, sorted by phone number
+    static func getAllPhoneCallersShouldDeleteSorted(realm: Realm) -> Results<PhoneCaller> {
+        let filterString = PhoneCaller.PropertyStrings.shouldDelete.rawValue + " = true"
+        let phoneCallers = realm.objects(PhoneCaller.self).filter(filterString)
+            .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        return phoneCallers
+    }
 
     /// For all phone callers, set shouldDelete true
     /// https://stackoverflow.com/questions/26185679/how-can-i-easily-delete-all-objects-in-a-realm
