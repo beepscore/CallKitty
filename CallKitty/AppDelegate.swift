@@ -35,14 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
 
         providerDelegate = ProviderDelegate(callManager: callManager)
 
+        // comment out this call. When running target CallKittyDirectoryExtension, it threw error at startup.
+        // reloadExtension The operation couldn’t be completed. (com.apple.CallKit.error.calldirectorymanager error 2.)
+        // CXErrorCodeCallDirectoryManagerErrorLoadingInterrupted = 2
         // https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
-        CXCallDirectoryManager.sharedInstance.reloadExtension (
-            withIdentifier: "com.beepscore.CallKitty.CallKittyDirectoryExtension",
-            completionHandler: {(error) -> Void in
-                if let error = error {
-                    print("reloadExtension", error.localizedDescription)
-                }
-        })
+//        CXCallDirectoryManager.sharedInstance.reloadExtension (
+//            withIdentifier: "com.beepscore.CallKitty.CallKittyDirectoryExtension",
+//            completionHandler: {(error) -> Void in
+//                if let error = error {
+//                    print("reloadExtension", error.localizedDescription)
+//                }
+//        })
 
         return true
     }
