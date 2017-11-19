@@ -29,12 +29,25 @@ https://www.youtube.com/watch?v=hC6dLLbfUXc
 CallKit requires an iPhone, doesn't work on simulator.
 
 ## CXProvider
-App uses to let system know about "out of band" notifications.
-Not user actions but external events such as an incoming call coming to the app.
+App uses to report to system know about "out of band" notifications.
+Not user actions but external events such as
+    - an incoming call coming to the app
+    - an outgoing call connected
+    - a call ended on remote side
+
+CXProvider uses CXCallUpdate to communicate to system.
+System uses CXAction to communicate user actions to CXProvider.
+
 In CallKitty, ProviderDelegate has a CXProvider.
 
 ## CXCallController
-App uses to let system know about local user actions such as a request to start a call.
+App uses to make requests to system. Handles local user actions such as
+    - request to start a call
+    - request to answer a call
+    - request to end a call
+
+CXCallController uses CXTransaction containing CXAction(s) to communicate to system.
+
 In CallKitty, CallKittyCallManager has a CXCallController.
 
 ## CXCallDirectoryProvider
