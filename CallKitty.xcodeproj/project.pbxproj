@@ -244,6 +244,7 @@
 			children = (
 				DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */,
 				DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */,
+				DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */,
 			);
 			name = "Call Management";
 			sourceTree = "<group>";
@@ -330,7 +331,6 @@
 				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */,
-				DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */,
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
 				DE842F421FB239A100F9936D /* Assets.xcassets */,
 			);
