@@ -25,7 +25,6 @@
 		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
 		DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */; };
 		DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */; };
-		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE813CE51FB7F2F900952BE2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7231FB3F6760054E29D /* RealmSwift.framework */; };
 		DE813CE61FB7F30100952BE2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
 		DE813CE71FB7F33F00952BE2 /* PhoneCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4705771FB3FBFA000FC02D /* PhoneCaller.swift */; };
@@ -36,9 +35,6 @@
 		DE83C9AA1FB218B20078CD01 /* CallKittyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */; };
 		DE842F201FB2290000F9936D /* Array+CallKitty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F1F1FB2290000F9936D /* Array+CallKitty.swift */; };
 		DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F211FB2292200F9936D /* UIFont+CallKitty.swift */; };
-		DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2A1FB22B4800F9936D /* CAXException.cpp */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F2E1FB22E3500F9936D /* CallsViewController.swift */; };
 		DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */; };
 		DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */; };
@@ -46,7 +42,7 @@
 		DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */; };
 		DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3A1FB2301300F9936D /* Localizable.strings */; };
 		DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3E1FB2354B00F9936D /* Ringtone.aif */; };
-		DE842F411FB236C500F9936D /* CallAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F401FB236C500F9936D /* CallAudio.swift */; };
+		DE842F411FB236C500F9936D /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F401FB236C500F9936D /* Audio.swift */; };
 		DE842F431FB239A100F9936D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE842F421FB239A100F9936D /* Assets.xcassets */; };
 		DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */; };
 		DEA92F5C1FB50BF200A0178C /* RealmServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */; };
@@ -120,8 +116,6 @@
 		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCallManager.swift; sourceTree = "<group>"; };
 		DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCall.swift; sourceTree = "<group>"; };
-		DE7AF9051FB2243F00C2D29C /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
-		DE7AF9071FB2246700C2D29C /* AudioController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioController.mm; sourceTree = "<group>"; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,13 +129,6 @@
 		DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallKitty-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE842F1F1FB2290000F9936D /* Array+CallKitty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+CallKitty.swift"; sourceTree = "<group>"; };
 		DE842F211FB2292200F9936D /* UIFont+CallKitty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CallKitty.swift"; sourceTree = "<group>"; };
-		DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
-		DE842F251FB22B1C00F9936D /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
-		DE842F271FB22B4800F9936D /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
-		DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
-		DE842F291FB22B4800F9936D /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
-		DE842F2A1FB22B4800F9936D /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
-		DE842F2B1FB22B4800F9936D /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
 		DE842F2E1FB22E3500F9936D /* CallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
 		DE842F301FB22E5B00F9936D /* DialOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialOptionsViewController.swift; sourceTree = "<group>"; };
 		DE842F321FB22E7400F9936D /* SimulateIncomingCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulateIncomingCallViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +136,7 @@
 		DE842F381FB22F4400F9936D /* CallDurationFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallDurationFormatter.swift; sourceTree = "<group>"; };
 		DE842F3B1FB2301300F9936D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DE842F3E1FB2354B00F9936D /* Ringtone.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.aif; sourceTree = "<group>"; };
-		DE842F401FB236C500F9936D /* CallAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CallAudio.swift; path = CallKitty/CallAudio.swift; sourceTree = SOURCE_ROOT; };
+		DE842F401FB236C500F9936D /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = CallKitty/Audio.swift; sourceTree = SOURCE_ROOT; };
 		DE842F421FB239A100F9936D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCallerTests.swift; sourceTree = "<group>"; };
 		DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceTests.swift; sourceTree = "<group>"; };
@@ -260,17 +247,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DE7AF9041FB2237D00C2D29C /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				DE842F401FB236C500F9936D /* CallAudio.swift */,
-				DE7AF9051FB2243F00C2D29C /* AudioController.h */,
-				DE7AF9071FB2246700C2D29C /* AudioController.mm */,
-				DE842F231FB22AC000F9936D /* Utility */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
 		DE83C97D1FB218B20078CD01 = {
 			isa = PBXGroup;
 			children = (
@@ -299,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7AF8F31FB2207A00C2D29C /* AddBlocks */,
-				DE7AF9041FB2237D00C2D29C /* Audio */,
+				DEC209391FC17C750040B915 /* Audio */,
 				DEE9FB191FBFAF350028FD6A /* Calls */,
 				DE7AF8F21FB2204E00C2D29C /* Call Management */,
 				DE842F371FB22F1600F9936D /* Data Formatters */,
@@ -353,20 +329,6 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		DE842F231FB22AC000F9936D /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				DE842F251FB22B1C00F9936D /* CADebugMacros.h */,
-				DE842F241FB22B1C00F9936D /* CADebugMacros.cpp */,
-				DE842F2B1FB22B4800F9936D /* CAMath.h */,
-				DE842F291FB22B4800F9936D /* CAStreamBasicDescription.h */,
-				DE842F281FB22B4800F9936D /* CAStreamBasicDescription.cpp */,
-				DE842F271FB22B4800F9936D /* CAXException.h */,
-				DE842F2A1FB22B4800F9936D /* CAXException.cpp */,
-			);
-			name = Utility;
-			sourceTree = "<group>";
-		};
 		DE842F341FB22EAF00F9936D /* Summary */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +354,14 @@
 				DE842F3E1FB2354B00F9936D /* Ringtone.aif */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		DEC209391FC17C750040B915 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				DE842F401FB236C500F9936D /* Audio.swift */,
+			);
+			name = Audio;
 			sourceTree = "<group>";
 		};
 		DEE9FB181FBFAF020028FD6A /* Edit */ = {
@@ -626,20 +596,16 @@
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
 				DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */,
 				DE4705781FB3FBFA000FC02D /* PhoneCaller.swift in Sources */,
-				DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */,
 				DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */,
 				DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */,
-				DE842F261FB22B1C00F9936D /* CADebugMacros.cpp in Sources */,
 				DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */,
 				DE41841D1FB91A0A000918D6 /* UIColor+CallKitty.swift in Sources */,
 				DE842F201FB2290000F9936D /* Array+CallKitty.swift in Sources */,
-				DE842F411FB236C500F9936D /* CallAudio.swift in Sources */,
+				DE842F411FB236C500F9936D /* Audio.swift in Sources */,
 				DEFD18A61FBE43F8006A371A /* PhoneCallerStatusHelper.swift in Sources */,
 				DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */,
 				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
-				DE842F2D1FB22B4800F9936D /* CAXException.cpp in Sources */,
 				DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */,
-				DE842F2C1FB22B4800F9936D /* CAStreamBasicDescription.cpp in Sources */,
 				DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
 				DEC4A0661FB5637F00E5A290 /* EditVC.swift in Sources */,

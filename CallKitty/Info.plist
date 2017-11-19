@@ -22,12 +22,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>$(PRODUCT_NAME) uses the Microphone for call audio</string>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>INStartAudioCallIntent</string>
-	</array>
 	<key>SBIconVisibilityDefaultVisible</key>
 	<true/>
 	<key>SBIconVisibilitySetByAppPreference</key>
