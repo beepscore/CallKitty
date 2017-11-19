@@ -50,31 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
         return true
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        guard let handle = url.startCallHandle else {
-            print("Could not determine start call handle from URL: \(url)")
-            return false
-        }
-
-        callManager.startCall(handle: handle)
-        return true
-    }
-
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        guard let handle = userActivity.startCallHandle else {
-            print("Could not determine start call handle from user activity: \(userActivity)")
-            return false
-        }
-
-        guard let video = userActivity.video else {
-            print("Could not determine video from user activity: \(userActivity)")
-            return false
-        }
-
-        callManager.startCall(handle: handle, video: video)
-        return true
-    }
-
     // MARK: - PKPushRegistryDelegate
 
     func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {

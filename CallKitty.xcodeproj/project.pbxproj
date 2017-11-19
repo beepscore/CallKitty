@@ -25,9 +25,6 @@
 		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
 		DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */; };
 		DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */; };
-		DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */; };
-		DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */; };
-		DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */; };
 		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE813CE51FB7F2F900952BE2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7231FB3F6760054E29D /* RealmSwift.framework */; };
 		DE813CE61FB7F30100952BE2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
@@ -56,7 +53,6 @@
 		DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5D1FB50C4300A0178C /* RealmService.swift */; };
 		DEC4A0661FB5637F00E5A290 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A0651FB5637F00E5A290 /* EditVC.swift */; };
 		DEC4A0681FB5640D00E5A290 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A0671FB5640D00E5A290 /* Edit.storyboard */; };
-		DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */; };
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
 		DEC941B21FB298CF009802B7 /* CallDirectoryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */; };
 		DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE066911FB577B400B1C11F /* AddBlocksVC.swift */; };
@@ -124,9 +120,6 @@
 		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCallManager.swift; sourceTree = "<group>"; };
 		DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCall.swift; sourceTree = "<group>"; };
-		DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCallConvertible.swift; sourceTree = "<group>"; };
-		DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertible.swift"; sourceTree = "<group>"; };
-		DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+StartCallConvertible.swift"; sourceTree = "<group>"; };
 		DE7AF9051FB2243F00C2D29C /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		DE7AF9071FB2246700C2D29C /* AudioController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioController.mm; sourceTree = "<group>"; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,7 +156,6 @@
 		DEA92F5D1FB50C4300A0178C /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		DEC4A0651FB5637F00E5A290 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		DEC4A0671FB5640D00E5A290 /* Edit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
-		DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StartCallConvertibleTests.swift"; sourceTree = "<group>"; };
 		DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyCallTests.swift; sourceTree = "<group>"; };
 		DEC941B11FB298CF009802B7 /* CallDirectoryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandlerTests.swift; sourceTree = "<group>"; };
 		DEE066911FB577B400B1C11F /* AddBlocksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlocksVC.swift; sourceTree = "<group>"; };
@@ -268,16 +260,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */ = {
-			isa = PBXGroup;
-			children = (
-				DE7AF8FB1FB2228600C2D29C /* StartCallConvertible.swift */,
-				DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */,
-				DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */,
-			);
-			name = "Start Call Handling";
-			sourceTree = "<group>";
-		};
 		DE7AF9041FB2237D00C2D29C /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +307,6 @@
 				DE842F1E1FB228B500F9936D /* Extensions */,
 				DE4705761FB3FB57000FC02D /* PhoneCaller */,
 				DE842F3D1FB234F300F9936D /* Sounds */,
-				DE7AF8FA1FB2224C00C2D29C /* Start Call Handling */,
 				DE842F341FB22EAF00F9936D /* Summary */,
 				DE7AF8F51FB2210C00C2D29C /* Supporting Files */,
 				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
@@ -349,7 +330,6 @@
 				DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */,
 				DE47057B1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift */,
 				DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */,
-				DEC941AD1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift */,
 			);
 			path = CallKittyTests;
 			sourceTree = "<group>";
@@ -641,7 +621,6 @@
 				DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */,
 				DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */,
 				DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */,
-				DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */,
 				DEE1D9681FBE82510002D914 /* CallDirectoryHandler.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
@@ -655,8 +634,6 @@
 				DE41841D1FB91A0A000918D6 /* UIColor+CallKitty.swift in Sources */,
 				DE842F201FB2290000F9936D /* Array+CallKitty.swift in Sources */,
 				DE842F411FB236C500F9936D /* CallAudio.swift in Sources */,
-				DE7AF8FC1FB2228600C2D29C /* StartCallConvertible.swift in Sources */,
-				DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */,
 				DEFD18A61FBE43F8006A371A /* PhoneCallerStatusHelper.swift in Sources */,
 				DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */,
 				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
@@ -680,7 +657,6 @@
 				DEFD18A81FBE4492006A371A /* PhoneCallerStatusHelperTests.swift in Sources */,
 				DE2F4E0D1FB787BA00CAA2D3 /* AddBlocksVCTests.swift in Sources */,
 				DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */,
-				DEC941AE1FB28E92009802B7 /* URL+StartCallConvertibleTests.swift in Sources */,
 				DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
