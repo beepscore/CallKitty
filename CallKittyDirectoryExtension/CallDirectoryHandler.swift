@@ -253,7 +253,7 @@ extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
         // the user in Settings instead of via the app itself.
 
         // TODO: consider if we want to pass error info to the containing app
-        print(error.localizedDescription)
+        print("CallDirectoryHandler requestFailed", error.localizedDescription)
     }
 
 }
