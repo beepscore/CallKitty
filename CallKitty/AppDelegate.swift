@@ -16,22 +16,19 @@ import PushKit
 import CallKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     class var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
 
     var window: UIWindow?
-    let pushRegistry = PKPushRegistry(queue: DispatchQueue.main)
     let callManager = CallKittyCallManager()
     var providerDelegate: ProviderDelegate?
 
     // MARK: - UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        pushRegistry.delegate = self
-        pushRegistry.desiredPushTypes = [.voIP]
 
         providerDelegate = ProviderDelegate(callManager: callManager)
 
@@ -48,27 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
 //        })
 
         return true
-    }
-
-    // MARK: - PKPushRegistryDelegate
-
-    func pushRegistry(_ registry: PKPushRegistry, didUpdate credentials: PKPushCredentials, for type: PKPushType) {
-        /*
-         Store push credentials on server for the active user.
-         For sample app purposes, do nothing since everything is being done locally.
-         */
-    }
-
-    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType) {
-        guard type == .voIP else { return }
-
-        if let uuidString = payload.dictionaryPayload["UUID"] as? String,
-            let handle = payload.dictionaryPayload["handle"] as? String,
-            let hasVideo = payload.dictionaryPayload["hasVideo"] as? Bool,
-            let uuid = UUID(uuidString: uuidString)
-        {
-            displayIncomingCall(uuid: uuid, handle: handle, hasVideo: hasVideo)
-        }
     }
 
     /// Display the incoming call to the user
