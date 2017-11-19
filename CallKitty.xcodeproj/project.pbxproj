@@ -126,7 +126,6 @@
 		DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallKittyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9A91FB218B20078CD01 /* CallKittyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallKittyUITests.swift; sourceTree = "<group>"; };
 		DE83C9AB1FB218B20078CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallKitty-Bridging-Header.h"; sourceTree = "<group>"; };
 		DE842F1F1FB2290000F9936D /* Array+CallKitty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+CallKitty.swift"; sourceTree = "<group>"; };
 		DE842F211FB2292200F9936D /* UIFont+CallKitty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CallKitty.swift"; sourceTree = "<group>"; };
 		DE842F2E1FB22E3500F9936D /* CallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +239,6 @@
 		DE7AF8F51FB2210C00C2D29C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DE842F1D1FB227BD00F9936D /* CallKitty-Bridging-Header.h */,
 				DE83C9951FB218B20078CD01 /* Info.plist */,
 				DE842F3A1FB2301300F9936D /* Localizable.strings */,
 			);
@@ -847,7 +845,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CallKitty/CallKitty-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -871,7 +868,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CallKitty/CallKitty-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
