@@ -29,8 +29,6 @@
 		DE7AF8FE1FB2229D00C2D29C /* URL+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FD1FB2229D00C2D29C /* URL+StartCallConvertible.swift */; };
 		DE7AF9001FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */; };
 		DE7AF9081FB2246700C2D29C /* AudioController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF9071FB2246700C2D29C /* AudioController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		DE7B961A1FB23DD5009D7CD2 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */; };
-		DE7B96311FB23DD5009D7CD2 /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DE813CE51FB7F2F900952BE2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7231FB3F6760054E29D /* RealmSwift.framework */; };
 		DE813CE61FB7F30100952BE2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
 		DE813CE71FB7F33F00952BE2 /* PhoneCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4705771FB3FBFA000FC02D /* PhoneCaller.swift */; };
@@ -78,13 +76,6 @@
 			remoteGlobalIDString = DE33734A1FB2531400F220BB;
 			remoteInfo = CallKittyDirectoryExtension;
 		};
-		DE7B962F1FB23DD5009D7CD2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE7B96161FB23DD5009D7CD2;
-			remoteInfo = IntentsExtension;
-		};
 		DE83C99B1FB218B20078CD01 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE83C97E1FB218B20078CD01 /* Project object */;
@@ -109,7 +100,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				DE3373521FB2531400F220BB /* CallKittyDirectoryExtension.appex in Embed App Extensions */,
-				DE7B96311FB23DD5009D7CD2 /* IntentsExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +129,6 @@
 		DE7AF8FF1FB222BA00C2D29C /* NSUserActivity+StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+StartCallConvertible.swift"; sourceTree = "<group>"; };
 		DE7AF9051FB2243F00C2D29C /* AudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
 		DE7AF9071FB2246700C2D29C /* AudioController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioController.mm; sourceTree = "<group>"; };
-		DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		DE7B961B1FB23DD5009D7CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE83C9861FB218B20078CD01 /* CallKitty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallKitty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE83C9891FB218B20078CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE83C98E1FB218B20078CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,13 +181,6 @@
 			files = (
 				DE813CE61FB7F30100952BE2 /* Realm.framework in Frameworks */,
 				DE813CE51FB7F2F900952BE2 /* RealmSwift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE7B96141FB23DD5009D7CD2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,15 +288,6 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		DE7B96181FB23DD5009D7CD2 /* IntentsExtension */ = {
-			isa = PBXGroup;
-			children = (
-				DE7B96191FB23DD5009D7CD2 /* IntentHandler.swift */,
-				DE7B961B1FB23DD5009D7CD2 /* Info.plist */,
-			);
-			path = IntentsExtension;
-			sourceTree = "<group>";
-		};
 		DE83C97D1FB218B20078CD01 = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +295,6 @@
 				DE83C9881FB218B20078CD01 /* CallKitty */,
 				DE83C99D1FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A81FB218B20078CD01 /* CallKittyUITests */,
-				DE7B96181FB23DD5009D7CD2 /* IntentsExtension */,
 				DE33734C1FB2531400F220BB /* CallKittyDirectoryExtension */,
 				DE83C9871FB218B20078CD01 /* Products */,
 				DE22F7201FB3F66C0054E29D /* Frameworks */,
@@ -337,7 +307,6 @@
 				DE83C9861FB218B20078CD01 /* CallKitty.app */,
 				DE83C99A1FB218B20078CD01 /* CallKittyTests.xctest */,
 				DE83C9A51FB218B20078CD01 /* CallKittyUITests.xctest */,
-				DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */,
 				DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */,
 			);
 			name = Products;
@@ -486,23 +455,6 @@
 			productReference = DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		DE7B96161FB23DD5009D7CD2 /* IntentsExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE7B96351FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtension" */;
-			buildPhases = (
-				DE7B96131FB23DD5009D7CD2 /* Sources */,
-				DE7B96141FB23DD5009D7CD2 /* Frameworks */,
-				DE7B96151FB23DD5009D7CD2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IntentsExtension;
-			productName = IntentsExtension;
-			productReference = DE7B96171FB23DD5009D7CD2 /* IntentsExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		DE83C9851FB218B20078CD01 /* CallKitty */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE83C9AE1FB218B20078CD01 /* Build configuration list for PBXNativeTarget "CallKitty" */;
@@ -516,7 +468,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				DE7B96301FB23DD5009D7CD2 /* PBXTargetDependency */,
 				DE3373511FB2531400F220BB /* PBXTargetDependency */,
 			);
 			name = CallKitty;
@@ -574,10 +525,6 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					DE7B96161FB23DD5009D7CD2 = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-					};
 					DE83C9851FB218B20078CD01 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
@@ -611,7 +558,6 @@
 				DE83C9851FB218B20078CD01 /* CallKitty */,
 				DE83C9991FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A41FB218B20078CD01 /* CallKittyUITests */,
-				DE7B96161FB23DD5009D7CD2 /* IntentsExtension */,
 				DE33734A1FB2531400F220BB /* CallKittyDirectoryExtension */,
 			);
 		};
@@ -619,13 +565,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		DE3373491FB2531400F220BB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE7B96151FB23DD5009D7CD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -691,14 +630,6 @@
 				DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */,
 				DE813CE71FB7F33F00952BE2 /* PhoneCaller.swift in Sources */,
 				DE061B541FB7F2340033B914 /* RealmService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE7B96131FB23DD5009D7CD2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE7B961A1FB23DD5009D7CD2 /* IntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,11 +700,6 @@
 			isa = PBXTargetDependency;
 			target = DE33734A1FB2531400F220BB /* CallKittyDirectoryExtension */;
 			targetProxy = DE3373501FB2531400F220BB /* PBXContainerItemProxy */;
-		};
-		DE7B96301FB23DD5009D7CD2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE7B96161FB23DD5009D7CD2 /* IntentsExtension */;
-			targetProxy = DE7B962F1FB23DD5009D7CD2 /* PBXContainerItemProxy */;
 		};
 		DE83C99C1FB218B20078CD01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -848,36 +774,6 @@
 				INFOPLIST_FILE = CallKittyDirectoryExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.CallKittyDirectoryExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DE7B96361FB23DD5009D7CD2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2LXK9FK3W;
-				INFOPLIST_FILE = IntentsExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.IntentsExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DE7B96371FB23DD5009D7CD2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2LXK9FK3W;
-				INFOPLIST_FILE = IntentsExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.beepscore.CallKitty.IntentsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1121,15 +1017,6 @@
 			buildConfigurations = (
 				DE3373531FB2531400F220BB /* Debug */,
 				DE3373541FB2531400F220BB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE7B96351FB23DD5009D7CD2 /* Build configuration list for PBXNativeTarget "IntentsExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE7B96361FB23DD5009D7CD2 /* Debug */,
-				DE7B96371FB23DD5009D7CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
