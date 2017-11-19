@@ -33,18 +33,6 @@ class PhoneNumberFormatter {
         return phoneNumberDigitsPrefix
     }
 
-    /// a random uniform distribution of integers
-    /// randomDistribution.nextInt() returns the next random integer
-    let randomDistribution10 = GKRandomDistribution(randomSource: GKARC4RandomSource(),
-                                                  lowestValue: 0,
-                                                  highestValue: 9)
-
-    /// - returns: string from the next random digit from a random uniform distribution of integers
-    func nextRandomDigitString() -> String {
-        let nextInt = randomDistribution10.nextInt()
-        return String(nextInt)
-    }
-
     // TODO: Consider generate all phone numbers as US typical with length 7, 10, 11 digits and valid US area codes.
     // TODO: consider using Formatter, ValueTransformer or NSDataDetector to validate world phone numbers
     /// - returns: phone number as US typical with length 11 digits starting with country code 1
@@ -85,4 +73,17 @@ class PhoneNumberFormatter {
         }
         return digitString
     }
+
+    /// - returns: string from the next random digit from a random uniform distribution of integers
+    func nextRandomDigitString() -> String {
+        let nextInt = randomDistribution10.nextInt()
+        return String(nextInt)
+    }
+
+    /// a random uniform distribution of integers
+    /// randomDistribution.nextInt() returns the next random integer
+    let randomDistribution10 = GKRandomDistribution(randomSource: GKARC4RandomSource(),
+                                                    lowestValue: 0,
+                                                    highestValue: 9)
+
 }
