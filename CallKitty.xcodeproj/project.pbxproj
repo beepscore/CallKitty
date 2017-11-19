@@ -253,8 +253,8 @@
 				DE83C99D1FB218B20078CD01 /* CallKittyTests */,
 				DE83C9A81FB218B20078CD01 /* CallKittyUITests */,
 				DE33734C1FB2531400F220BB /* CallKittyDirectoryExtension */,
-				DE83C9871FB218B20078CD01 /* Products */,
 				DE22F7201FB3F66C0054E29D /* Frameworks */,
+				DE83C9871FB218B20078CD01 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
