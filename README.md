@@ -50,6 +50,20 @@ CXCallController uses CXTransaction containing CXAction(s) to communicate to sys
 
 In CallKitty, CallKittyCallManager has a CXCallController.
 
+## incoming call flow
+- network VOIP phone call comes to app
+- app CXProvider sends CXCallUpdate to system
+- system publishes event, others can observe including system Phone.app UI
+- if user answers call, Phone.app UI sends answer action to system
+- system sends CXAnswerCallAction to app CXProvider.
+- app answers call on network
+
+## end call flow
+- in app UI, user requests to end call
+- app CXCallController sends CXTransaction(CXEndCallAction) to system
+- system checks request
+- if system approves request, system sends CXEndCallAction back to app CXProvider
+
 ## CXCallDirectoryProvider
 "The principal object for a Call Directory app extension for a host app."
 In CallKitty, CallDirectoryHandler subclasses CXCallDirectoryProvider
