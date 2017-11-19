@@ -37,7 +37,11 @@ In CallKitty, ProviderDelegate has a CXProvider.
 App uses to let system know about local user actions such as a request to start a call.
 In CallKitty, CallKittyCallManager has a CXCallController.
 
-## Call directory doesn't expose blocked list, app must maintain its own database
+## CXCallDirectoryProvider
+"The principal object for a Call Directory app extension for a host app."
+In CallKitty, CallDirectoryHandler subclasses CXCallDirectoryProvider
+
+### Call directory doesn't expose blocked list, app must maintain its own database
 https://stackoverflow.com/questions/43125835/callkit-where-are-numbers-loaded-for-blocking-or-id-stored?rq=1
 
 ## How to use CallKittyDirectoryExtension
@@ -58,10 +62,10 @@ CXCallDirectoryExtensionContext objects are not initialized directly, but are in
 
 
 ### manually test blocked call
-simulate incoming call from 1_408_555_5555
+simulate incoming call from a blocked phone number e.g. 1_408_555_5555
 
 ### manually test caller id
-simulate incoming call from 1_877_555_5555
+simulate incoming call from an identified phone number e.g. 1_877_555_5555
 
 ## Appendix Record info about using Realm framework for iOS.
 
