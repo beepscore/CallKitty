@@ -28,6 +28,15 @@ https://www.youtube.com/watch?v=hC6dLLbfUXc
 # Results
 CallKit requires an iPhone, doesn't work on simulator.
 
+## CXProvider
+App uses to let system know about "out of band" notifications.
+Not user actions but external events such as an incoming call coming to the app.
+In CallKitty, ProviderDelegate has a CXProvider.
+
+## CXCallController
+App uses to let system know about local user actions such as a request to start a call.
+In CallKitty, CallKittyCallManager has a CXCallController.
+
 ## Call directory doesn't expose blocked list, app must maintain its own database
 https://stackoverflow.com/questions/43125835/callkit-where-are-numbers-loaded-for-blocking-or-id-stored?rq=1
 
