@@ -19,6 +19,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
         context.delegate = self
 
+        // used during development to clear a call directory
+        // removeAllBlockingAndIdentificationEntries(with: context)
+
         // Check whether this is an "incremental" data request. If so, only provide the set of phone number blocking
         // and identification entries which have been added or removed since the last time this extension's data was loaded.
         // But the extension must still be prepared to provide the full set of data at any time, so add all blocking
@@ -37,6 +40,14 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         }
 
         context.completeRequest()
+    }
+
+    /// used during development to clear a call directory
+    /// typically run infrequently and then commented out
+    func removeAllBlockingAndIdentificationEntries(with context: CXCallDirectoryExtensionContext) {
+        context.removeAllBlockingEntries()
+        context.removeAllIdentificationEntries()
+        print("removeAllBlockingAndIdentificationEntries")
     }
 
     func deleteAllShouldDelete(context: CXCallDirectoryExtensionContext) {
