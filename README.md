@@ -115,6 +115,12 @@ In production, the app and/or the app extension could talk with an external real
 If both the app and the app extension talk with the same realm server, then they can access the same database.
 
 ### References
+App extension programming guide / Handling common scenarios / Sharing data with your containing app
+https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html
+"Even though an app extension bundle is nested within its containing app’s bundle,
+the running app extension and containing app have no direct access to each other’s containers.
+You can, however, enable data sharing."
+
 https://academy.realm.io/posts/tutorial-sharing-data-between-watchkit-and-your-app/
 http://tackmobile.com/blog/App-Groups-and-iMessage-Extensions-for-iOS-10.html
 
