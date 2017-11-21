@@ -21,7 +21,19 @@ class RealmService {
     static let shared = RealmService()
 
     // default realm is a file in app documents directory
-    var realm = try! Realm()
+    var realm = try! Realm(configuration: RealmService.configuration())
+
+    static func configuration() -> Realm.Configuration {
+        // https://realm.io/docs/swift/latest/#realms
+        // https://stackoverflow.com/questions/34429566/realm-rlmrealm-has-no-member-setdefaultrealmpath#34431836
+        var config = Realm.Configuration()
+
+        let containerDirectory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.beepscore.CallKitty")!
+        let realmPath = containerDirectory.appendingPathComponent("db.realm")
+        config.fileURL = realmPath
+
+        return config
+    }
 
     static let realmErrorNotificationName = NSNotification.Name("RealmError")
 
@@ -57,7 +69,7 @@ class RealmService {
             // For dispatch queues, this means that you must construct a new instance
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
+            let bgRealm = try! Realm(configuration: RealmService.configuration())
             RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
                                               label: label,
                                               hasChanges: hasChanges,
@@ -134,7 +146,7 @@ class RealmService {
             // For dispatch queues, this means that you must construct a new instance
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
+            let bgRealm = try! Realm(configuration: RealmService.configuration())
             RealmService.addBlockingPhoneCallers(count: count, realm: bgRealm)
             bgRealm.refresh()
             completion()
@@ -193,7 +205,7 @@ class RealmService {
             // For dispatch queues, this means that you must construct a new instance
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
+            let bgRealm = try! Realm(configuration: RealmService.configuration())
             RealmService.addIdentifyingPhoneCallers(count: count, realm: bgRealm)
             bgRealm.refresh()
             completion()
@@ -387,7 +399,7 @@ class RealmService {
             // For dispatch queues, this means that you must construct a new instance
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let realm = try! Realm()
+            let realm = try! Realm(configuration: RealmService.configuration())
             let phoneCallers = RealmService.getAllPhoneCallers(realm: realm)
 
             try! realm.write {
@@ -406,7 +418,7 @@ class RealmService {
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
     static func backgroundDeletePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber) {
         DispatchQueue(label: "background").async {
-            let realm = try! Realm()
+            let realm = try! Realm(configuration: RealmService.configuration())
             let _ = RealmService.deletePhoneCaller(phoneNumber: phoneNumber, realm: realm)
         }
     }
@@ -439,7 +451,7 @@ class RealmService {
             // For dispatch queues, this means that you must construct a new instance
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let realm = try! Realm()
+            let realm = try! Realm(configuration: RealmService.configuration())
             try! realm.write {
                 realm.deleteAll()
             }
