@@ -28,7 +28,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // and identification phone numbers if the request is not incremental.
         if context.isIncremental {
             // Calling removeBlockingEntryWithPhoneNumber: when isIncremental is false is unsupported
-            deleteAllShouldDelete(context: context)
+            // deleteAllShouldDelete(context: context)
 
             addOrRemoveIncrementalBlockingPhoneNumbers(to: context)
 
@@ -69,11 +69,11 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
         // TODO: may need to check if ok to use background queue here
-        DispatchQueue.global().async {
+        DispatchQueue(label: "background").async {
 
-            let realm = try! Realm()
+            let bgRrealm = try! Realm()
 
-            let allPhoneCallersShouldBlockOrIsBlockedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm)
+            let allPhoneCallersShouldBlockOrIsBlockedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: bgRrealm)
 
             for phoneCaller in allPhoneCallersShouldBlockOrIsBlockedSorted {
 
@@ -83,7 +83,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 // update realm
                 // writing to realm inside a loop is less efficient than a batched write,
                 // but has less risk of the realm getting out of sync with call directory
-                try! realm.write() {
+                try! bgRrealm.write() {
                     phoneCaller.isBlocked = true
                     phoneCaller.shouldBlock = false
 
@@ -103,12 +103,12 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
         // TODO: may need to check if ok to use background queue here
-        DispatchQueue.global().async {
+        DispatchQueue(label: "background").async {
 
-            let realm = try! Realm()
+            let bgRrealm = try! Realm()
 
             // add
-            let allPhoneCallersIncrementalAddBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddBlockingSorted(realm: realm)
+            let allPhoneCallersIncrementalAddBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddBlockingSorted(realm: bgRrealm)
             for phoneCaller in allPhoneCallersIncrementalAddBlockingSorted {
 
                 // update call directory
@@ -117,7 +117,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 // update realm
                 // writing to realm inside a loop is less efficient than a batched write,
                 // but has less risk of the realm getting out of sync with call directory
-                try! realm.write() {
+                try! bgRrealm.write() {
                     phoneCaller.isBlocked = true
                     phoneCaller.shouldBlock = false
 
@@ -130,7 +130,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
             }
 
             // remove
-            let allPhoneCallersIncrementalRemoveBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveBlockingSorted(realm: realm)
+            let allPhoneCallersIncrementalRemoveBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveBlockingSorted(realm: bgRrealm)
             for phoneCaller in allPhoneCallersIncrementalRemoveBlockingSorted {
 
                 // update call directory
@@ -139,7 +139,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 // update realm
                 // writing to realm inside a loop is less efficient than a batched write,
                 // but has less risk of the realm getting out of sync with call directory
-                try! realm.write() {
+                try! bgRrealm.write() {
                     phoneCaller.isBlocked = false
                     phoneCaller.shouldBlock = false
                     
@@ -164,11 +164,11 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // Numbers must be provided in numerically ascending order.
 
         // TODO: may need to check if ok to use background queue here
-        DispatchQueue.global().async {
+        DispatchQueue(label: "background").async {
 
-            let realm = try! Realm()
+            let bgRrealm = try! Realm()
 
-            let allPhoneCallersShouldIdentifyOrIsIdentifiedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldIdentifyOrIsIdentifiedSorted(realm: realm)
+            let allPhoneCallersShouldIdentifyOrIsIdentifiedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldIdentifyOrIsIdentifiedSorted(realm: bgRrealm)
 
             for phoneCaller in allPhoneCallersShouldIdentifyOrIsIdentifiedSorted {
 
@@ -179,7 +179,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 // update realm
                 // writing to realm inside a loop is less efficient than a batched write,
                 // but has less risk of the realm getting out of sync with call directory
-                try! realm.write() {
+                try! bgRrealm.write() {
                     phoneCaller.isIdentified = true
                     phoneCaller.shouldIdentify = false
 
@@ -199,12 +199,18 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
         // TODO: may need to check if ok to use background queue here
-        DispatchQueue.global().async {
+        DispatchQueue(label: "background").async {
 
-            let realm = try! Realm()
+            let bgRealm = try! Realm()
+            bgRealm.refresh()
 
             // add
-            let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: realm)
+            let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: bgRealm)
+            print("allPhoneCallersIncrementalAddIdentificationSorted \(allPhoneCallersIncrementalAddIdentificationSorted)")
+            print("allPhoneCallersIncrementalAddIdentificationSorted.count \(allPhoneCallersIncrementalAddIdentificationSorted.count)")
+            // FIXME: allPhoneCallersShouldIdentifyOrIsIdentifiedSorted count is incorrectly zero.
+            // May be due to incorrect sync of realms on main queue and background queue.
+
             for phoneCaller in allPhoneCallersIncrementalAddIdentificationSorted {
 
                 // update call directory
@@ -214,7 +220,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 // update realm
                 // writing to realm inside a loop is less efficient than a batched write,
                 // but has less risk of the realm getting out of sync with call directory
-                try! realm.write() {
+                try! bgRealm.write() {
                     phoneCaller.isIdentified = true
                     phoneCaller.shouldIdentify = false
 
@@ -227,7 +233,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
             }
 
             // remove
-            let allPhoneCallersIncrementalRemoveIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveIdentificationSorted(realm: realm)
+            let allPhoneCallersIncrementalRemoveIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveIdentificationSorted(realm: bgRealm)
             for phoneCaller in allPhoneCallersIncrementalRemoveIdentificationSorted {
 
                 // update call directory
@@ -236,7 +242,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 // update realm
                 // writing to realm inside a loop is less efficient than a batched write,
                 // but has less risk of the realm getting out of sync with call directory
-                try! realm.write() {
+                try! bgRealm.write() {
                     phoneCaller.isIdentified = false
                     phoneCaller.shouldIdentify = false
 
