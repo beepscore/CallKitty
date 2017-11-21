@@ -198,11 +198,23 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
 
+        // for debugging
+        //let realm = RealmService.shared.realm
+        let realm = try! Realm()
+        realm.refresh()
+        let allPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: realm)
+        print("allPhoneCallers \(allPhoneCallers)")
+        print("allPhoneCallers.count \(allPhoneCallers.count)")
+
         // TODO: may need to check if ok to use background queue here
         DispatchQueue(label: "background").async {
 
             let bgRealm = try! Realm()
             bgRealm.refresh()
+
+            // for debugging
+            let bgAllPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: bgRealm)
+            print("bgAllPhoneCallers \(bgAllPhoneCallers.count)")
 
             // add
             let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: bgRealm)
