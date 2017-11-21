@@ -104,7 +104,6 @@
 		DE1CA9A01FB5483F00B711EE /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		DE22F7211FB3F66D0054E29D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		DE22F7231FB3F6760054E29D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		DE2BBC9B1FC3FB7300DF6F46 /* CallKitty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallKitty.entitlements; sourceTree = "<group>"; };
 		DE2F4E0C1FB787BA00CAA2D3 /* AddBlocksVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBlocksVCTests.swift; sourceTree = "<group>"; };
 		DE33734B1FB2531400F220BB /* CallKittyDirectoryExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallKittyDirectoryExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE33734D1FB2531400F220BB /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
@@ -274,7 +273,6 @@
 		DE83C9881FB218B20078CD01 /* CallKitty */ = {
 			isa = PBXGroup;
 			children = (
-				DE2BBC9B1FC3FB7300DF6F46 /* CallKitty.entitlements */,
 				DE7AF8F31FB2207A00C2D29C /* AddBlocks */,
 				DEC209391FC17C750040B915 /* Audio */,
 				DEE9FB191FBFAF350028FD6A /* Calls */,
@@ -481,11 +479,6 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
 					};
 					DE83C9991FB218B20078CD01 = {
 						CreatedOnToolsVersion = 9.1;
@@ -843,7 +836,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = CallKitty/CallKitty.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -867,7 +859,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = CallKitty/CallKitty.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
 				FRAMEWORK_SEARCH_PATHS = (
