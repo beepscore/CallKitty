@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         providerDelegate = ProviderDelegate(callManager: callManager)
 
         CallDirectoryManagerUtils.getEnabledStatusForExtension()
-        CallDirectoryManagerUtils.reloadExtension()
+        // CallDirectoryManagerUtils.reloadExtension()
 
         return true
     }
