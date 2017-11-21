@@ -32,34 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         providerDelegate = ProviderDelegate(callManager: callManager)
 
-        CXCallDirectoryManager.sharedInstance
-            .getEnabledStatusForExtension(withIdentifier: "com.beepscore.CallKitty.CallKittyDirectoryExtension",
-                                          completionHandler: {(enabledStatus, error)  -> Void in
-                                            if let error = error {
-                                                print("getEnabledStatusForExtension", error.localizedDescription)
-                                            }
-                                            var statusString = ""
-                                            switch enabledStatus {
-                                            case .unknown:
-                                                statusString = "unknown"
-                                            case .disabled:
-                                                statusString = "disabled"
-                                            case .enabled:
-                                                statusString = "enabled"
-                                            }
-                                            print("getEnabledStatusForExtension", statusString)
-            })
-
-        CXCallDirectoryManager.sharedInstance.reloadExtension (
-            withIdentifier: "com.beepscore.CallKitty.CallKittyDirectoryExtension",
-            completionHandler: {(error) -> Void in
-                if let error = error {
-                    print("reloadExtension", error.localizedDescription)
-                    // reloadExtension The operation couldn’t be completed. (com.apple.CallKit.error.calldirectorymanager error 6.)
-                    //CXErrorCodeCallDirectoryManagerErrorExtensionDisabled = 6
-                    // if get error 6, check Settings / Phone / Call blocking and identification / CallKitty switch on
-                }
-        })
+        CallDirectoryManagerUtils.getEnabledStatusForExtension()
+        CallDirectoryManagerUtils.reloadExtension()
 
         return true
     }

@@ -146,18 +146,3 @@ Try Carthage.
     *** Building scheme "RealmSwift" in Realm.xcworkspace
 
 created Cartfile.resolved
-
-## Appendix CXErrorCodeCallDirectoryManagerError
-
-typedef enum CXErrorCodeCallDirectoryManagerError : NSInteger {
-CXErrorCodeCallDirectoryManagerErrorUnknown = 0,
-CXErrorCodeCallDirectoryManagerErrorNoExtensionFound = 1,
-CXErrorCodeCallDirectoryManagerErrorLoadingInterrupted = 2,
-CXErrorCodeCallDirectoryManagerErrorEntriesOutOfOrder = 3,
-CXErrorCodeCallDirectoryManagerErrorDuplicateEntries = 4,
-CXErrorCodeCallDirectoryManagerErrorMaximumEntriesExceeded = 5,
-CXErrorCodeCallDirectoryManagerErrorExtensionDisabled = 6,
-CXErrorCodeCallDirectoryManagerErrorCurrentlyLoading = 7,
-CXErrorCodeCallDirectoryManagerErrorUnexpectedIncrementalRemoval = 8
-} CXErrorCodeCallDirectoryManagerError;
-

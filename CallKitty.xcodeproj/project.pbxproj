@@ -44,6 +44,7 @@
 		DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */ = {isa = PBXBuildFile; fileRef = DE842F3E1FB2354B00F9936D /* Ringtone.aif */; };
 		DE842F411FB236C500F9936D /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE842F401FB236C500F9936D /* Audio.swift */; };
 		DE842F431FB239A100F9936D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE842F421FB239A100F9936D /* Assets.xcassets */; };
+		DEA313C91FC3B04600A4A924 /* CallDirectoryManagerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA313C81FC3B04600A4A924 /* CallDirectoryManagerUtils.swift */; };
 		DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */; };
 		DEA92F5C1FB50BF200A0178C /* RealmServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */; };
 		DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5D1FB50C4300A0178C /* RealmService.swift */; };
@@ -136,6 +137,7 @@
 		DE842F3E1FB2354B00F9936D /* Ringtone.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ringtone.aif; sourceTree = "<group>"; };
 		DE842F401FB236C500F9936D /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audio.swift; path = CallKitty/Audio.swift; sourceTree = SOURCE_ROOT; };
 		DE842F421FB239A100F9936D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEA313C81FC3B04600A4A924 /* CallDirectoryManagerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryManagerUtils.swift; sourceTree = "<group>"; };
 		DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCallerTests.swift; sourceTree = "<group>"; };
 		DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmServiceTests.swift; sourceTree = "<group>"; };
 		DEA92F5D1FB50C4300A0178C /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				DE842F341FB22EAF00F9936D /* Summary */,
 				DE7AF8F51FB2210C00C2D29C /* Supporting Files */,
 				DE83C9891FB218B20078CD01 /* AppDelegate.swift */,
+				DEA313C81FC3B04600A4A924 /* CallDirectoryManagerUtils.swift */,
 				DE83C9921FB218B20078CD01 /* LaunchScreen.storyboard */,
 				DEFD18A51FBE43F8006A371A /* PhoneCallerStatusHelper.swift */,
 				DE83C98D1FB218B20078CD01 /* Main.storyboard */,
@@ -603,6 +606,7 @@
 				DE842F331FB22E7400F9936D /* SimulateIncomingCallViewController.swift in Sources */,
 				DE1CA9A11FB5483F00B711EE /* SummaryViewController.swift in Sources */,
 				DEEABD6C1FB64E3700767C24 /* LongTableViewController.swift in Sources */,
+				DEA313C91FC3B04600A4A924 /* CallDirectoryManagerUtils.swift in Sources */,
 				DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */,
 				DEC4A0661FB5637F00E5A290 /* EditVC.swift in Sources */,
 			);
