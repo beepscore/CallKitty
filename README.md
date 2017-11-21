@@ -81,6 +81,10 @@ Enable CallKitty
 
 If app alerts allow microphone tap OK.
 
+### CallDirectoryHandler
+To hit breakpoints in CallDirectoryHandler, run scheme CallKittyDirectoryExtension and choose app CallKitty.
+App may need to call reloadExtension.
+
 ###  beginRequest
 Don't call it, let iOS call it?
 https://stackoverflow.com/questions/43951781/callkit-extension-begin-request
