@@ -449,7 +449,7 @@ class RealmService {
     /// Caution: if object with this primary key exists, throws error.
     /// For object of type PhoneCaller, generally prefer method addUpdatePhoneCaller()
     /// - Parameter object: a generic type that subclasses Realm class Object
-    func add<T: Object>(_ object: T) {
+    static func add<T: Object>(_ object: T, realm: Realm) {
         do {
             try realm.write() {
                 realm.add(object)
@@ -465,7 +465,7 @@ class RealmService {
     /// - Parameters:
     ///   - object: object to update
     ///   - dictionary: contains keys corresponding to object properties
-    func update<T: Object>(_ object: T, with dictionary: [String: Any?]) {
+    static func update<T: Object>(_ object: T, dictionary: [String: Any?], realm: Realm) {
         do {
             // for improved performance when doing multiple changes,
             // call write once and "batch" any changes inside it.
@@ -481,7 +481,7 @@ class RealmService {
         }
     }
 
-    func delete<T: Object>(_ object: T) {
+    static func delete<T: Object>(_ object: T, realm: Realm) {
         do {
             try realm.write() {
                 realm.delete(object)

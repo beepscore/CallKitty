@@ -8,6 +8,7 @@
 
 import XCTest
 import CallKit
+import RealmSwift
 @testable import CallKitty
 
 class RealmServiceTests: XCTestCase {
@@ -91,8 +92,8 @@ class RealmServiceTests: XCTestCase {
 
     func testReadAddUpdateDelete() {
 
-        let realmService = RealmService.shared
-        let phoneCallers = realmService.realm.objects(PhoneCaller.self)
+        let realm = try! Realm()
+        let phoneCallers = realm.objects(PhoneCaller.self)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
 
         let initialCount = phoneCallers.count
@@ -103,117 +104,120 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(phoneCaller.label, "dog")
         XCTAssertFalse(phoneCaller.shouldBlock)
 
-        realmService.add(phoneCaller)
+        RealmService.add(phoneCaller, realm: realm)
         XCTAssertEqual(phoneCallers.count, initialCount + 1)
 
         // use enum PhoneCaller.PropertyStrings to reduce risk of misspelling a "stringly typed" key
         // can't change phoneNumber because it is a primary key
-        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.label.rawValue : "cat",
-                                                PhoneCaller.PropertyStrings.shouldBlock.rawValue : true])
+        RealmService.update(phoneCaller,
+                            dictionary: [PhoneCaller.PropertyStrings.label.rawValue : "cat",
+                                                PhoneCaller.PropertyStrings.shouldBlock.rawValue : true],
+                            realm: realm)
 
         XCTAssertEqual(phoneCaller.phoneNumber, 300)
         XCTAssertEqual(phoneCaller.label, "cat")
         XCTAssertTrue(phoneCaller.shouldBlock)
 
-        realmService.delete(phoneCaller)
+        RealmService.delete(phoneCaller, realm: realm)
         XCTAssertEqual(phoneCallers.count, initialCount)
     }
 
     func testIsBlockedCount() {
-        let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm)
+        let realm = try! Realm()
+        let initialCount = RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realm)
 
         // normally a newly instantiated caller will have isBlocked false until it is added to call directory
         // for this unit test, set it true
         let phoneCaller = PhoneCaller(phoneNumber: 301, label: "dog", isBlocked: true)
 
-        realmService.add(phoneCaller)
+        RealmService.add(phoneCaller, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realm),
                        initialCount + 1)
 
-        realmService.update(phoneCaller, with: [PhoneCaller.PropertyStrings.isBlocked.rawValue : false])
+        RealmService.update(phoneCaller,
+                            dictionary: [PhoneCaller.PropertyStrings.isBlocked.rawValue : false],
+                            realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm),
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realm),
                        initialCount)
 
         // clean up
-        realmService.delete(phoneCaller)
+        RealmService.delete(phoneCaller, realm: realm)
     }
 
     func testIsIdentifiedCount() {
-        let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm)
+        let realm = try! Realm()
+        let initialCount = RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realm)
 
         // normally a newly instantiated caller will have isIdentified false until it is added to call directory
         // for this unit test, set it true
         let phoneCaller0 = PhoneCaller(phoneNumber: 302, label: "dog", shouldBlock: true, isIdentified: true)
-        realmService.add(phoneCaller0)
-        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm), initialCount + 1)
+        RealmService.add(phoneCaller0, realm: realm)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realm), initialCount + 1)
 
         let phoneCaller1 = PhoneCaller(phoneNumber: 303, isIdentified: false)
-        realmService.add(phoneCaller1)
-        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm),
+        RealmService.add(phoneCaller1, realm: realm)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realm),
                        initialCount + 1)
 
-        realmService.update(phoneCaller0,
-                            with: [PhoneCaller.PropertyStrings.isIdentified.rawValue: false])
+        RealmService.update(phoneCaller0,
+                            dictionary: [PhoneCaller.PropertyStrings.isIdentified.rawValue: false],
+                            realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm),
-                       initialCount)
+        XCTAssertEqual(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realm), initialCount)
 
         // clean up
-        realmService.delete(phoneCaller0)
-        realmService.delete(phoneCaller1)
+        RealmService.delete(phoneCaller0, realm: realm)
+        RealmService.delete(phoneCaller1, realm: realm)
     }
 
     func testGetAllPhoneCallersShouldBlockOrIsBlockedSorted() {
-        let realmService = RealmService.shared
-        let initialCount = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count
+        let realm = try! Realm()
+        let initialCount = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count
 
         let phoneCaller0 = PhoneCaller(phoneNumber: 400, label: "rhino", shouldBlock: false, isBlocked: false)
-        realmService.add(phoneCaller0)
+        RealmService.add(phoneCaller0, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count,
                        initialCount)
 
         let phoneCaller1 = PhoneCaller(phoneNumber: 401, label: "elephant", shouldBlock: true, isBlocked: false)
-        realmService.add(phoneCaller1)
+        RealmService.add(phoneCaller1, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count,
                        initialCount + 1)
 
         let phoneCaller2 = PhoneCaller(phoneNumber: 402, label: "elephant", shouldBlock: false, isBlocked: true)
-        realmService.add(phoneCaller2)
+        RealmService.add(phoneCaller2, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count,
                        initialCount + 2)
 
         let phoneCaller3 = PhoneCaller(phoneNumber: 403, label: "elephant", shouldBlock: true, isBlocked: true)
-        realmService.add(phoneCaller3)
+        RealmService.add(phoneCaller3, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count,
                        initialCount + 3)
 
-        realmService.delete(phoneCaller3)
+        RealmService.delete(phoneCaller3, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count,
                        initialCount + 2)
 
-        realmService.delete(phoneCaller2)
-        realmService.delete(phoneCaller1)
+        RealmService.delete(phoneCaller2, realm: realm)
+        RealmService.delete(phoneCaller1, realm: realm)
 
-        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realmService.realm).count,
+        XCTAssertEqual(RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count,
                        initialCount)
 
         // clean up last phoneCaller
-        realmService.delete(phoneCaller0)
+        RealmService.delete(phoneCaller0, realm: realm)
     }
 
     func testGetAllPhoneCallersShouldDeleteSorted() {
 
-        let realmService = RealmService.shared
-        let realm = realmService.realm
+        let realm = try! Realm()
 
         let initialCount = RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count
         let phoneNumber: CXCallDirectoryPhoneNumber = 500
@@ -241,7 +245,7 @@ class RealmServiceTests: XCTestCase {
         XCTAssertEqual(RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count, initialCount + 1)
 
         let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
-        realmService.delete(phoneCaller!)
+        RealmService.delete(phoneCaller!, realm: realm)
         XCTAssertEqual(RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count, initialCount)
     }
 }
