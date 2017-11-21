@@ -71,7 +71,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // TODO: may need to check if ok to use background queue here
         DispatchQueue(label: "background").async {
 
-            let bgRrealm = try! Realm(configuration: RealmService.configuration())
+            let bgRrealm = try! Realm()
 
             let allPhoneCallersShouldBlockOrIsBlockedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: bgRrealm)
 
@@ -105,7 +105,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // TODO: may need to check if ok to use background queue here
         DispatchQueue(label: "background").async {
 
-            let bgRrealm = try! Realm(configuration: RealmService.configuration())
+            let bgRrealm = try! Realm()
 
             // add
             let allPhoneCallersIncrementalAddBlockingSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddBlockingSorted(realm: bgRrealm)
@@ -166,7 +166,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // TODO: may need to check if ok to use background queue here
         DispatchQueue(label: "background").async {
 
-            let bgRrealm = try! Realm(configuration: RealmService.configuration())
+            let bgRrealm = try! Realm()
 
             let allPhoneCallersShouldIdentifyOrIsIdentifiedSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersShouldIdentifyOrIsIdentifiedSorted(realm: bgRrealm)
 
@@ -200,7 +200,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 
         // for debugging
         //let realm = RealmService.shared.realm
-        let realm = try! Realm(configuration: RealmService.configuration())
+        let realm = try! Realm()
         realm.refresh()
         let allPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: realm)
         print("allPhoneCallers \(allPhoneCallers)")
@@ -209,7 +209,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // TODO: may need to check if ok to use background queue here
         DispatchQueue(label: "background").async {
 
-            let bgRealm = try! Realm(configuration: RealmService.configuration())
+            let bgRealm = try! Realm()
             bgRealm.refresh()
 
             // for debugging

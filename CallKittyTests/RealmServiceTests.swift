@@ -92,7 +92,7 @@ class RealmServiceTests: XCTestCase {
 
     func testReadAddUpdateDelete() {
 
-        let realm = try! Realm(configuration: RealmService.configuration())
+        let realm = try! Realm()
         let phoneCallers = realm.objects(PhoneCaller.self)
             .sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
 
@@ -123,7 +123,7 @@ class RealmServiceTests: XCTestCase {
     }
 
     func testIsBlockedCount() {
-        let realm = try! Realm(configuration: RealmService.configuration())
+        let realm = try! Realm()
         let initialCount = RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realm)
 
         // normally a newly instantiated caller will have isBlocked false until it is added to call directory
@@ -147,7 +147,7 @@ class RealmServiceTests: XCTestCase {
     }
 
     func testIsIdentifiedCount() {
-        let realm = try! Realm(configuration: RealmService.configuration())
+        let realm = try! Realm()
         let initialCount = RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realm)
 
         // normally a newly instantiated caller will have isIdentified false until it is added to call directory
@@ -173,7 +173,7 @@ class RealmServiceTests: XCTestCase {
     }
 
     func testGetAllPhoneCallersShouldBlockOrIsBlockedSorted() {
-        let realm = try! Realm(configuration: RealmService.configuration())
+        let realm = try! Realm()
         let initialCount = RealmService.getAllPhoneCallersShouldBlockOrIsBlockedSorted(realm: realm).count
 
         let phoneCaller0 = PhoneCaller(phoneNumber: 400, label: "rhino", shouldBlock: false, isBlocked: false)
@@ -217,7 +217,7 @@ class RealmServiceTests: XCTestCase {
 
     func testGetAllPhoneCallersShouldDeleteSorted() {
 
-        let realm = try! Realm(configuration: RealmService.configuration())
+        let realm = try! Realm()
 
         let initialCount = RealmService.getAllPhoneCallersShouldDeleteSorted(realm: realm).count
         let phoneNumber: CXCallDirectoryPhoneNumber = 500

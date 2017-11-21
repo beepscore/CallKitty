@@ -8,7 +8,6 @@
 
 import UIKit
 import CallKit
-import RealmSwift
 
 class EditVC: UIViewController {
 
@@ -21,8 +20,6 @@ class EditVC: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
 
     var phoneCaller: PhoneCaller? = nil
-
-    let realm = try! Realm(configuration: RealmService.configuration())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +101,7 @@ class EditVC: UIViewController {
             return
         }
 
-        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
+        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
 
         let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
 
@@ -151,7 +148,7 @@ class EditVC: UIViewController {
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else { return }
         guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else { return }
         guard let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber,
-                                                            realm: realm) else { return }
+                                                            realm: RealmService.shared.realm) else { return }
 
         // call backgroundAddUpdatePhoneCaller with shouldDelete true
         // TODO: is it better to set hasChanges true, false, or don't care?
@@ -186,7 +183,7 @@ extension EditVC: UISearchBarDelegate {
             return
         }
 
-        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: realm)
+        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
 
         if let unwrappedPhoneCaller = phoneCaller {
             // show phone number text fields for editing
