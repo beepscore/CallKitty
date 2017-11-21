@@ -50,8 +50,9 @@ class CallDirectoryManagerUtils {
         CXCallDirectoryManager.sharedInstance.reloadExtension (
             withIdentifier: extensionIdentifier,
             completionHandler: {(error) -> Void in
+                print("reloadExtension")
                 if let error = error {
-                    print("reloadExtension", error.localizedDescription)
+                    print(error.localizedDescription)
                     // reloadExtension The operation couldn’t be completed. (com.apple.CallKit.error.calldirectorymanager error 6.)
                     //CXErrorCodeCallDirectoryManagerErrorExtensionDisabled = 6
                     // if get error 6, check Settings / Phone / Call blocking and identification / CallKitty switch on
