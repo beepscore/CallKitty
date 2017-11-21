@@ -98,7 +98,27 @@ simulate incoming call from a blocked phone number e.g. 1_408_555_5555
 ### manually test caller id
 simulate incoming call from an identified phone number e.g. 1_877_555_5555
 
-## Appendix Record info about using Realm framework for iOS.
+## Appendix Sharing realm info between app and Call Directory extension
+
+In this prototype I used a realm in a local file.
+I think the Call Directory Extension realm can't see the CallKitty app realm database file.
+
+To try to fix this, in the app I made an app group and used it to make a storage directory.
+In target CallKitty / Capabilities / App Groups I added group.com.beepscore.CallKitty. (git commit f1cf015)
+
+Then in RealmService I added configuration() to set file url and used it when instantiating a realm. (git commit 8aa5446)
+However target CallKittyDirectoryExtension got nil when it attempted to use the file path.
+
+Also Xcode build failed when I tried adding the app group to the extension.
+
+In production, the app and/or the app extension could talk with an external realm platform server.
+If both the app and the app extension talk with the same realm server, then they can access the same database.
+
+### References
+https://academy.realm.io/posts/tutorial-sharing-data-between-watchkit-and-your-app/
+http://tackmobile.com/blog/App-Groups-and-iMessage-Extensions-for-iOS-10.html
+
+## Appendix Record info about adding Realm framework for iOS to project.
 
 ### References
 
