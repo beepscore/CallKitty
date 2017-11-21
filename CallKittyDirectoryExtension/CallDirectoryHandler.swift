@@ -193,87 +193,109 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         }
     }
 
+//    private func addOrRemoveIncrementalIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
+//        // Retrieve any changes to the set of phone numbers to identify (and their identification labels) from data store.
+//        // For optimal performance and memory usage when there are many phone numbers,
+//        // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
+//
+//        // for debugging
+//        //let realm = RealmService.shared.realm
+//        let realm = try! Realm()
+//        realm.refresh()
+//        let allPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: realm)
+//        print("allPhoneCallers \(allPhoneCallers)")
+//        print("allPhoneCallers.count \(allPhoneCallers.count)")
+//
+//        // TODO: may need to check if ok to use background queue here
+//        DispatchQueue(label: "background").async {
+//
+//            let bgRealm = try! Realm()
+//            bgRealm.refresh()
+//
+//            // for debugging
+//            let bgAllPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: bgRealm)
+//            print("bgAllPhoneCallers \(bgAllPhoneCallers.count)")
+//
+//            // add
+//            let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: bgRealm)
+//            print("allPhoneCallersIncrementalAddIdentificationSorted \(allPhoneCallersIncrementalAddIdentificationSorted)")
+//            print("allPhoneCallersIncrementalAddIdentificationSorted.count \(allPhoneCallersIncrementalAddIdentificationSorted.count)")
+//
+//
+//            ////////////////////////////////////////////////////////////
+//            // FIXME: allPhoneCallersShouldIdentifyOrIsIdentifiedSorted count is incorrectly zero.
+//            // May be due to incorrect sharing between app and extension.
+//            // May be due to incorrect sync of realms on main queue and background queue.
+//            // https://stackoverflow.com/questions/41815427/using-realm-in-ios-today-extension
+//            // https://github.com/realm/realm-cocoa/issues/3022
+//            ////////////////////////////////////////////////////////////
+//
+//
+//            for phoneCaller in allPhoneCallersIncrementalAddIdentificationSorted {
+//
+//                // update call directory
+//                context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
+//                                               label: phoneCaller.label)
+//
+//                // update realm
+//                // writing to realm inside a loop is less efficient than a batched write,
+//                // but has less risk of the realm getting out of sync with call directory
+//                try! bgRealm.write() {
+//                    phoneCaller.isIdentified = true
+//                    phoneCaller.shouldIdentify = false
+//
+//                    if phoneCaller.shouldBlock == false
+//                        && phoneCaller.shouldIdentify == false
+//                        && phoneCaller.shouldDelete == false {
+//                        phoneCaller.hasChanges = false
+//                    }
+//                }
+//            }
+//
+//            // remove
+//            let allPhoneCallersIncrementalRemoveIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveIdentificationSorted(realm: bgRealm)
+//            for phoneCaller in allPhoneCallersIncrementalRemoveIdentificationSorted {
+//
+//                // update call directory
+//                context.removeIdentificationEntry(withPhoneNumber: phoneCaller.phoneNumber)
+//
+//                // update realm
+//                // writing to realm inside a loop is less efficient than a batched write,
+//                // but has less risk of the realm getting out of sync with call directory
+//                try! bgRealm.write() {
+//                    phoneCaller.isIdentified = false
+//                    phoneCaller.shouldIdentify = false
+//
+//                    if phoneCaller.shouldBlock == false
+//                        && phoneCaller.shouldIdentify == false
+//                        && phoneCaller.shouldDelete == false {
+//                        phoneCaller.hasChanges = false
+//                    }
+//                }
+//            }
+//        }
+//        // Record the most-recently loaded set of identification entries in data store for the next incremental load...
+//    }
+
+    // Check identification by temporarily bypassing realm. Use hardcoded phone numbers.
+    // Note much of the app UI still uses realm database, realm doesn't necessarily use these phone numbers.
+    // Reference Hotline.app
     private func addOrRemoveIncrementalIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) {
-        // Retrieve any changes to the set of phone numbers to identify (and their identification labels) from data store.
-        // For optimal performance and memory usage when there are many phone numbers,
+        // Retrieve any changes to the set of phone numbers to identify (and their identification labels) from data store. For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
+        let phoneNumbersToAdd: [CXCallDirectoryPhoneNumber] = [ 1_408_555_5678 ]
+        let labelsToAdd = [ "New local business" ]
 
-        // for debugging
-        //let realm = RealmService.shared.realm
-        let realm = try! Realm()
-        realm.refresh()
-        let allPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: realm)
-        print("allPhoneCallers \(allPhoneCallers)")
-        print("allPhoneCallers.count \(allPhoneCallers.count)")
-
-        // TODO: may need to check if ok to use background queue here
-        DispatchQueue(label: "background").async {
-
-            let bgRealm = try! Realm()
-            bgRealm.refresh()
-
-            // for debugging
-            let bgAllPhoneCallers: Results<PhoneCaller> = RealmService.getAllPhoneCallers(realm: bgRealm)
-            print("bgAllPhoneCallers \(bgAllPhoneCallers.count)")
-
-            // add
-            let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: bgRealm)
-            print("allPhoneCallersIncrementalAddIdentificationSorted \(allPhoneCallersIncrementalAddIdentificationSorted)")
-            print("allPhoneCallersIncrementalAddIdentificationSorted.count \(allPhoneCallersIncrementalAddIdentificationSorted.count)")
-
-
-            ////////////////////////////////////////////////////////////
-            // FIXME: allPhoneCallersShouldIdentifyOrIsIdentifiedSorted count is incorrectly zero.
-            // May be due to incorrect sharing between app and extension.
-            // May be due to incorrect sync of realms on main queue and background queue.
-            // https://stackoverflow.com/questions/41815427/using-realm-in-ios-today-extension
-            // https://github.com/realm/realm-cocoa/issues/3022
-            ////////////////////////////////////////////////////////////
-
-
-            for phoneCaller in allPhoneCallersIncrementalAddIdentificationSorted {
-
-                // update call directory
-                context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneCaller.phoneNumber,
-                                               label: phoneCaller.label)
-
-                // update realm
-                // writing to realm inside a loop is less efficient than a batched write,
-                // but has less risk of the realm getting out of sync with call directory
-                try! bgRealm.write() {
-                    phoneCaller.isIdentified = true
-                    phoneCaller.shouldIdentify = false
-
-                    if phoneCaller.shouldBlock == false
-                        && phoneCaller.shouldIdentify == false
-                        && phoneCaller.shouldDelete == false {
-                        phoneCaller.hasChanges = false
-                    }
-                }
-            }
-
-            // remove
-            let allPhoneCallersIncrementalRemoveIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalRemoveIdentificationSorted(realm: bgRealm)
-            for phoneCaller in allPhoneCallersIncrementalRemoveIdentificationSorted {
-
-                // update call directory
-                context.removeIdentificationEntry(withPhoneNumber: phoneCaller.phoneNumber)
-
-                // update realm
-                // writing to realm inside a loop is less efficient than a batched write,
-                // but has less risk of the realm getting out of sync with call directory
-                try! bgRealm.write() {
-                    phoneCaller.isIdentified = false
-                    phoneCaller.shouldIdentify = false
-
-                    if phoneCaller.shouldBlock == false
-                        && phoneCaller.shouldIdentify == false
-                        && phoneCaller.shouldDelete == false {
-                        phoneCaller.hasChanges = false
-                    }
-                }
-            }
+        for (phoneNumber, label) in zip(phoneNumbersToAdd, labelsToAdd) {
+            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
         }
+
+        let phoneNumbersToRemove: [CXCallDirectoryPhoneNumber] = [ 1_888_555_5555 ]
+
+        for phoneNumber in phoneNumbersToRemove {
+            context.removeIdentificationEntry(withPhoneNumber: phoneNumber)
+        }
+
         // Record the most-recently loaded set of identification entries in data store for the next incremental load...
     }
 
