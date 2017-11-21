@@ -220,8 +220,16 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
             let allPhoneCallersIncrementalAddIdentificationSorted: Results<PhoneCaller> = RealmService.getAllPhoneCallersIncrementalAddIdentificationSorted(realm: bgRealm)
             print("allPhoneCallersIncrementalAddIdentificationSorted \(allPhoneCallersIncrementalAddIdentificationSorted)")
             print("allPhoneCallersIncrementalAddIdentificationSorted.count \(allPhoneCallersIncrementalAddIdentificationSorted.count)")
+
+
+            ////////////////////////////////////////////////////////////
             // FIXME: allPhoneCallersShouldIdentifyOrIsIdentifiedSorted count is incorrectly zero.
+            // May be due to incorrect sharing between app and extension.
             // May be due to incorrect sync of realms on main queue and background queue.
+            // https://stackoverflow.com/questions/41815427/using-realm-in-ios-today-extension
+            // https://github.com/realm/realm-cocoa/issues/3022
+            ////////////////////////////////////////////////////////////
+
 
             for phoneCaller in allPhoneCallersIncrementalAddIdentificationSorted {
 
