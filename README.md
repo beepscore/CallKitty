@@ -7,6 +7,10 @@ Use CallKit to create a skeleton for a VoIP app.
 Apple WWDC 2016 Session 230
 https://developer.apple.com/videos/play/wwdc2016/230/
 
+## App Extension Best Practices
+Apple WWDC 2015 Session 224
+https://developer.apple.com/videos/play/wwdc2015/224/
+
 ## Speakerbox: Using CallKit to create a VoIP app
 Apple sample code
 https://developer.apple.com/library/content/samplecode/Speakerbox/Introduction/Intro.html
