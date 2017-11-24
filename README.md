@@ -109,6 +109,10 @@ In target CallKitty / Capabilities / App Groups I added group.com.beepscore.Call
 Then in RealmService I added configuration() to set file url and used it when instantiating a realm. (git commit 8aa5446)
 However target CallKittyDirectoryExtension got nil when it attempted to use the file path.
 
+Apple App extension programming guide says app and extension can use app group to share things like user defaults.
+This may not perform well with a large amount of data, but might be useful as a way to pass small amounts of data
+such as number of blocked phone numbers or user entered phone numbers for incremental block or identify.
+
 Also Xcode build failed when I tried adding the app group to the extension.
 
 In production, the app and/or the app extension could talk with an external realm platform server.
