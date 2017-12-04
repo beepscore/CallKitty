@@ -44,7 +44,7 @@ class SummaryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        // avoid warning ~view not in hierarchy
+        // avoid warning ~view not in hierarchy. Wait until viewDidAppear before attempt to present alert.
         // https://stackoverflow.com/questions/26022756/warning-attempt-to-present-on-whose-view-is-not-in-the-window-hierarchy-s#26023209
         if username == "" && password == "" {
             // TODO: consider improve conditional check if logged in
