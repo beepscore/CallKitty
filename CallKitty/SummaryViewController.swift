@@ -62,7 +62,8 @@ class SummaryViewController: UIViewController {
     // MARK: -
 
     func observeResults() {
-        results = realmService.realm.objects(PhoneCaller.self)
+        guard let aRealm = RealmService.aRealm() else { return }
+        results = aRealm.objects(PhoneCaller.self)
 
         // Set results notification block
         // block is called every time the realm collection changes
@@ -132,34 +133,13 @@ class SummaryViewController: UIViewController {
                                                password: RealmService.shared.password,
                                                register: false),
                        server: Constants.syncAuthURL) { user, error in
-                        guard let user = user else {
+                        guard let _ = user else {
                             fatalError(String(describing: error))
                         }
 
                         DispatchQueue.main.async {
-                            // Open Realm
-                            let configuration = Realm.Configuration(
-                                syncConfiguration: SyncConfiguration(user: user,
-                                                                     realmURL: Constants.syncServerURL!)
-                            )
-                            //self.realm = try! Realm(configuration: configuration)
-                            RealmService.shared.realm = try! Realm(configuration: configuration)
-
-                            // FIXME:
-                            
-                            // Show initial tasks
-                            func updateList() {
-//                                if self.items.realm == nil, let list = self.realm.objects(TaskList.self).first {
-//                                    self.items = list.items
-//                                }
-//                                self.tableView.reloadData()
-                            }
-                            updateList()
-
-                            // Notify us when Realm changes
-                            //self.notificationToken = self.realm.observe { _,_ in
-                            //    updateList()
-                            //}
+                            // TODO: consider use a capture list to reduce risk of retain cycle
+                            self.observeResults()
                         }
         }
     }
