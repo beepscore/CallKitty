@@ -145,6 +145,8 @@ class SummaryViewController: UIViewController {
                             //self.realm = try! Realm(configuration: configuration)
                             RealmService.shared.realm = try! Realm(configuration: configuration)
 
+                            // FIXME:
+                            
                             // Show initial tasks
                             func updateList() {
 //                                if self.items.realm == nil, let list = self.realm.objects(TaskList.self).first {
@@ -155,9 +157,9 @@ class SummaryViewController: UIViewController {
                             updateList()
 
                             // Notify us when Realm changes
-                            self.notificationToken = self.realm.observe { _,_ in
-                                updateList()
-                            }
+                            //self.notificationToken = self.realm.observe { _,_ in
+                            //    updateList()
+                            //}
                         }
         }
     }
