@@ -29,6 +29,19 @@ class RealmService {
     var username = ""
     var password = ""
 
+    // realm for use on whichever thread this method was called from
+    static func aRealm() -> Realm? {
+        // SyncUser on realm object server
+        guard let currentUser = SyncUser.current else { return nil }
+
+        let configuration = Realm.Configuration(
+            syncConfiguration: SyncConfiguration(user: currentUser,
+                realmURL: Constants.syncServerURL!)
+            )
+        let configuredRealm = try! Realm(configuration: configuration)
+        return configuredRealm
+    }
+
     // TODO: make background versions for more methods, for use with large or remote data
     // e.g. similar to backgroundAddBlockingPhoneCallers
 
@@ -61,7 +74,14 @@ class RealmService {
             // For dispatch queues, this means that you must construct a new instance
             // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
             // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
+            // local realm
+            // let bgRealm = try! Realm()
+
+            guard let bgRealm = RealmService.aRealm() else {
+                // don't attempt to run completion
+                return
+            }
+
             RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
                                               label: label,
                                               hasChanges: hasChanges,
