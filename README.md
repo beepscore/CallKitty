@@ -126,6 +126,11 @@ Also Xcode build failed when I tried adding the app group to the extension.
 In production, the app and/or the app extension could talk with an external realm platform server.
 If both the app and the app extension talk with the same realm server, then they can access the same database.
 
+Also can use multiple realms.
+For example, could have a realm for blocked and identified callers common to all users.
+Could have another realm or realms per user, for blocked and identified callers they added.
+https://stackoverflow.com/questions/42863366/downsides-to-multiple-realm-files-databases
+
 ### References
 App extension programming guide / Handling common scenarios / Sharing data with your containing app
 https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html
