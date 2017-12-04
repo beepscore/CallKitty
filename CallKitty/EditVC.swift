@@ -101,7 +101,8 @@ class EditVC: UIViewController {
             return
         }
 
-        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
+        guard let aRealm = RealmService.aRealm() else { return }
+        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: aRealm)
 
         let desiredPhoneCallerLabel = phoneCallerLabelTextField.text != nil ? phoneCallerLabelTextField.text! : ""
 
@@ -147,8 +148,9 @@ class EditVC: UIViewController {
 
         guard let phoneNumberText = phoneCallerPhoneNumberTextField.text else { return }
         guard let phoneNumber = CXCallDirectoryPhoneNumber(phoneNumberText) else { return }
-        guard let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber,
-                                                            realm: RealmService.shared.realm) else { return }
+        guard let aRealm = RealmService.aRealm(),
+            let phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber,
+                                                          realm: aRealm) else { return }
 
         // call backgroundAddUpdatePhoneCaller with shouldDelete true
         // TODO: is it better to set hasChanges true, false, or don't care?
@@ -183,7 +185,8 @@ extension EditVC: UISearchBarDelegate {
             return
         }
 
-        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: RealmService.shared.realm)
+        guard let aRealm = RealmService.aRealm() else { return }
+        phoneCaller = RealmService.getPhoneCaller(phoneNumber: phoneNumber, realm: aRealm)
 
         if let unwrappedPhoneCaller = phoneCaller {
             // show phone number text fields for editing
