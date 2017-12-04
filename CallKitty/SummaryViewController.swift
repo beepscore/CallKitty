@@ -123,10 +123,13 @@ class SummaryViewController: UIViewController {
     }
 
     func setupRealm() {
-        // Log in existing user with username and password
 
-        //SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false),
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: true),
+        // if username account doesn't exist, must call with register true
+        //SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: true),
+
+        // if username account exists, must call with register false
+        // Log in existing user with username and password
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false),
                        server: Constants.syncAuthURL) { user, error in
                         guard let user = user else {
                             fatalError(String(describing: error))
