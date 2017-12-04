@@ -11,9 +11,16 @@ import RealmSwift
 
 class SummaryViewController: UIViewController {
 
+    // TODO: consider store in keychain
+    var username = ""
+    var password = ""
+
     let realmService = RealmService.shared
-    var results: Results<PhoneCaller>?
+    // notificationToken to observe changes from the Realm
     var notificationToken: NotificationToken?
+    var realm: Realm!
+
+    var results: Results<PhoneCaller>?
 
     @IBOutlet private weak var blockingCountLabel: UILabel!
     @IBOutlet private weak var identifyingCountLabel: UILabel!
@@ -32,6 +39,17 @@ class SummaryViewController: UIViewController {
         // call observeResults here instead of in viewDidLoad, because viewWillDisappear stops observing
         observeResults()
         updateUI()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // avoid warning ~view not in hierarchy
+        // https://stackoverflow.com/questions/26022756/warning-attempt-to-present-on-whose-view-is-not-in-the-window-hierarchy-s#26023209
+        if username == "" && password == "" {
+            // TODO: consider improve conditional check if logged in
+            getUsernameAndPasswordAndSetupRealm()
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,6 +90,75 @@ class SummaryViewController: UIViewController {
     func updateUI() {
         blockingCountLabel.text = String(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm))
         identifyingCountLabel.text = String(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm))
+    }
+
+    // MARK: - connect to realm object server
+    // TODO: consider refactor move parts to RealmService
+
+    func getUsernameAndPasswordAndSetupRealm() {
+        let alertController = UIAlertController(title: "Login", message: "", preferredStyle: .alert)
+
+        var usernameTextField: UITextField!
+        var passwordTextField: UITextField!
+
+        alertController.addTextField { textField in
+            usernameTextField = textField
+            textField.placeholder = "User Name"
+        }
+
+        alertController.addTextField { textField in
+            passwordTextField = textField
+            textField.placeholder = "Password"
+        }
+
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ _ in
+            // nil coalescing operator
+            self.username = usernameTextField.text ?? ""
+            self.password = passwordTextField.text ?? ""
+
+            self.setupRealm()
+        }))
+
+        present(alertController, animated: true, completion: nil)
+    }
+
+    func setupRealm() {
+        // Log in existing user with username and password
+
+        //SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false),
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: true),
+                       server: Constants.syncAuthURL) { user, error in
+                        guard let user = user else {
+                            fatalError(String(describing: error))
+                        }
+
+                        DispatchQueue.main.async {
+                            // Open Realm
+                            let configuration = Realm.Configuration(
+                                syncConfiguration: SyncConfiguration(user: user,
+                                                                     realmURL: Constants.syncServerURL!)
+                            )
+                            self.realm = try! Realm(configuration: configuration)
+
+                            // Show initial tasks
+                            func updateList() {
+//                                if self.items.realm == nil, let list = self.realm.objects(TaskList.self).first {
+//                                    self.items = list.items
+//                                }
+//                                self.tableView.reloadData()
+                            }
+                            updateList()
+
+                            // Notify us when Realm changes
+                            self.notificationToken = self.realm.observe { _,_ in
+                                updateList()
+                            }
+                        }
+        }
+    }
+
+    deinit {
+        notificationToken?.invalidate()
     }
 
 }
