@@ -48,7 +48,8 @@ class LongTableViewController: UITableViewController {
     // MARK: -
 
     func observeResults() {
-        results = realmService.realm.objects(PhoneCaller.self).sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
+        guard let aRealm = RealmService.aRealm() else { return }
+        results = aRealm.objects(PhoneCaller.self).sorted(byKeyPath: PhoneCaller.PropertyStrings.phoneNumber.rawValue)
 
         // Set results notification block
         // block is called every time the realm collection changes
