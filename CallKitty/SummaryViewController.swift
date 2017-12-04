@@ -11,10 +11,6 @@ import RealmSwift
 
 class SummaryViewController: UIViewController {
 
-    // TODO: consider store in keychain
-    var username = ""
-    var password = ""
-
     let realmService = RealmService.shared
     // notificationToken to observe changes from the Realm
     var notificationToken: NotificationToken?
@@ -46,7 +42,7 @@ class SummaryViewController: UIViewController {
 
         // avoid warning ~view not in hierarchy. Wait until viewDidAppear before attempt to present alert.
         // https://stackoverflow.com/questions/26022756/warning-attempt-to-present-on-whose-view-is-not-in-the-window-hierarchy-s#26023209
-        if username == "" && password == "" {
+        if RealmService.shared.username == "" && RealmService.shared.password == "" {
             // TODO: consider improve conditional check if logged in
             getUsernameAndPasswordAndSetupRealm()
         }
@@ -113,8 +109,8 @@ class SummaryViewController: UIViewController {
 
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ _ in
             // nil coalescing operator
-            self.username = usernameTextField.text ?? ""
-            self.password = passwordTextField.text ?? ""
+            RealmService.shared.username = usernameTextField.text ?? ""
+            RealmService.shared.password = passwordTextField.text ?? ""
 
             self.setupRealm()
         }))
@@ -125,12 +121,16 @@ class SummaryViewController: UIViewController {
     func setupRealm() {
 
         // if username account doesn't exist, must call with register true
-        //SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: true),
+//        SyncUser.logIn(with: .usernamePassword(username: RealmService.shared.username,
+//                                               password: RealmService.shared.password,
+//                                               register: true),
 
         // if username account exists, must call with register false
         // Log in existing user with username and password
         // TODO: Reference Realm sample code RealmTasks iOS login() to improve this code
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false),
+        SyncUser.logIn(with: .usernamePassword(username: RealmService.shared.username,
+                                               password: RealmService.shared.password,
+                                               register: false),
                        server: Constants.syncAuthURL) { user, error in
                         guard let user = user else {
                             fatalError(String(describing: error))
@@ -142,7 +142,8 @@ class SummaryViewController: UIViewController {
                                 syncConfiguration: SyncConfiguration(user: user,
                                                                      realmURL: Constants.syncServerURL!)
                             )
-                            self.realm = try! Realm(configuration: configuration)
+                            //self.realm = try! Realm(configuration: configuration)
+                            RealmService.shared.realm = try! Realm(configuration: configuration)
 
                             // Show initial tasks
                             func updateList() {

@@ -25,6 +25,10 @@ class RealmService {
 
     static let realmErrorNotificationName = NSNotification.Name("RealmError")
 
+    // TODO: consider store in keychain
+    var username = ""
+    var password = ""
+
     // TODO: make background versions for more methods, for use with large or remote data
     // e.g. similar to backgroundAddBlockingPhoneCallers
 
