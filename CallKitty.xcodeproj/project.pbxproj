@@ -26,7 +26,6 @@
 		DE5FD7931FD5C01700AEF9A1 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5FD78E1FD5C01700AEF9A1 /* Shared.xcassets */; };
 		DE5FD7941FD5C01700AEF9A1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD78F1FD5C01700AEF9A1 /* Models.swift */; };
 		DE5FD7951FD5C01700AEF9A1 /* LocalIPAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */; };
-		DE5FD7961FD5C01700AEF9A1 /* SharedFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD7911FD5C01700AEF9A1 /* SharedFunctionality.swift */; };
 		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
 		DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */; };
 		DE7AF8F91FB221FF00C2D29C /* CallKittyCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F81FB221FF00C2D29C /* CallKittyCall.swift */; };
@@ -53,6 +52,8 @@
 		DEA396AC1FB420A0007E01BA /* PhoneCallerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA396AB1FB420A0007E01BA /* PhoneCallerTests.swift */; };
 		DEA92F5C1FB50BF200A0178C /* RealmServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5B1FB50BF200A0178C /* RealmServiceTests.swift */; };
 		DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA92F5D1FB50C4300A0178C /* RealmService.swift */; };
+		DEAD53FB1FD5DC940055D181 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD78D1FD5C01700AEF9A1 /* Constants.swift */; };
+		DEAD53FC1FD5DC9C0055D181 /* LocalIPAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */; };
 		DEC4A0661FB5637F00E5A290 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4A0651FB5637F00E5A290 /* EditVC.swift */; };
 		DEC4A0681FB5640D00E5A290 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC4A0671FB5640D00E5A290 /* Edit.storyboard */; };
 		DEC941B01FB29671009802B7 /* CallKittyCallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC941AF1FB29671009802B7 /* CallKittyCallTests.swift */; };
@@ -121,7 +122,6 @@
 		DE5FD78E1FD5C01700AEF9A1 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
 		DE5FD78F1FD5C01700AEF9A1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalIPAddress.swift; sourceTree = "<group>"; };
-		DE5FD7911FD5C01700AEF9A1 /* SharedFunctionality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedFunctionality.swift; sourceTree = "<group>"; };
 		DE7AF8E81FB21BE100C2D29C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKittyCallManager.swift; sourceTree = "<group>"; };
@@ -235,7 +235,6 @@
 				DE5FD78E1FD5C01700AEF9A1 /* Shared.xcassets */,
 				DE5FD78F1FD5C01700AEF9A1 /* Models.swift */,
 				DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */,
-				DE5FD7911FD5C01700AEF9A1 /* SharedFunctionality.swift */,
 			);
 			path = "RealmTasks Shared";
 			sourceTree = "<group>";
@@ -600,10 +599,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAD53FB1FD5DC940055D181 /* Constants.swift in Sources */,
 				DE813CE81FB7F36000952BE2 /* PhoneNumberFormatter.swift in Sources */,
 				DE33734E1FB2531400F220BB /* CallDirectoryHandler.swift in Sources */,
 				DE813CE71FB7F33F00952BE2 /* PhoneCaller.swift in Sources */,
 				DE061B541FB7F2340033B914 /* RealmService.swift in Sources */,
+				DEAD53FC1FD5DC9C0055D181 /* LocalIPAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +622,6 @@
 				DE5FD7921FD5C01700AEF9A1 /* Constants.swift in Sources */,
 				DE842F311FB22E5B00F9936D /* DialOptionsViewController.swift in Sources */,
 				DE4705781FB3FBFA000FC02D /* PhoneCaller.swift in Sources */,
-				DE5FD7961FD5C01700AEF9A1 /* SharedFunctionality.swift in Sources */,
 				DE842F2F1FB22E3500F9936D /* CallsViewController.swift in Sources */,
 				DE842F361FB22EE600F9936D /* CallSummaryTableViewCell.swift in Sources */,
 				DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */,
