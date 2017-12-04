@@ -140,10 +140,11 @@ class SummaryViewController: UIViewController {
                         DispatchQueue.main.async {
                             // TODO: consider use a capture list to reduce risk of retain cycle
                             self.observeResults()
+                            CallDirectoryManagerUtils.reloadExtension()
                         }
         }
     }
-
+    
     deinit {
         notificationToken?.invalidate()
     }
