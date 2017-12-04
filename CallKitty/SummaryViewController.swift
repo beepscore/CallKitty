@@ -129,6 +129,7 @@ class SummaryViewController: UIViewController {
 
         // if username account exists, must call with register false
         // Log in existing user with username and password
+        // TODO: Reference Realm sample code RealmTasks iOS login() to improve this code
         SyncUser.logIn(with: .usernamePassword(username: username, password: password, register: false),
                        server: Constants.syncAuthURL) { user, error in
                         guard let user = user else {
