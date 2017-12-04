@@ -450,10 +450,10 @@ class RealmService {
     static func backgroundDeleteAllObjects() {
         DispatchQueue(label: "background").async {
             // Get new realm and table since we are in a new thread.
-            guard let aRealm = RealmService.aRealm() else { return }
+            guard let bgRealm = RealmService.aRealm() else { return }
 
-            try! aRealm.write {
-                aRealm.deleteAll()
+            try! bgRealm.write {
+                bgRealm.deleteAll()
             }
         }
     }
