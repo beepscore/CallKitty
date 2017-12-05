@@ -12,8 +12,6 @@ import RealmSwift
 
 class CallDirectoryHandler: CXCallDirectoryProvider {
 
-    let realmService = RealmService.shared
-
     // MARK: -
 
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
