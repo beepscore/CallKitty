@@ -490,7 +490,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Beepscore LLC";
 				TargetAttributes = {
 					DE33734A1FB2531400F220BB = {
@@ -714,7 +714,6 @@
 		DE3373531FB2531400F220BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -734,7 +733,6 @@
 		DE3373541FB2531400F220BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2LXK9FK3W;
 				FRAMEWORK_SEARCH_PATHS = (
