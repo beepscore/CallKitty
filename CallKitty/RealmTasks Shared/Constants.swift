@@ -29,6 +29,4 @@ struct Constants {
 
     static let syncServerURL = URL(string: "realm://\(syncHost):9080/~/\(syncRealmPath)")
     static let syncAuthURL = URL(string: "http://\(syncHost):9080")!
-
-    static let appID = Bundle.main.bundleIdentifier!
 }
