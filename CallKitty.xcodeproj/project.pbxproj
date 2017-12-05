@@ -23,8 +23,6 @@
 		DE47057D1FB40FFF000FC02D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7231FB3F6760054E29D /* RealmSwift.framework */; };
 		DE47057E1FB41003000FC02D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE22F7211FB3F66D0054E29D /* Realm.framework */; };
 		DE5FD7921FD5C01700AEF9A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD78D1FD5C01700AEF9A1 /* Constants.swift */; };
-		DE5FD7931FD5C01700AEF9A1 /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5FD78E1FD5C01700AEF9A1 /* Shared.xcassets */; };
-		DE5FD7941FD5C01700AEF9A1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD78F1FD5C01700AEF9A1 /* Models.swift */; };
 		DE5FD7951FD5C01700AEF9A1 /* LocalIPAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */; };
 		DE7AF8F11FB2201A00C2D29C /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */; };
 		DE7AF8F71FB221F400C2D29C /* CallKittyCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7AF8F61FB221F400C2D29C /* CallKittyCallManager.swift */; };
@@ -119,8 +117,6 @@
 		DE4705791FB40AD3000FC02D /* PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatter.swift; sourceTree = "<group>"; };
 		DE47057B1FB40DF8000FC02D /* PhoneNumberFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormatterTests.swift; sourceTree = "<group>"; };
 		DE5FD78D1FD5C01700AEF9A1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		DE5FD78E1FD5C01700AEF9A1 /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shared.xcassets; sourceTree = "<group>"; };
-		DE5FD78F1FD5C01700AEF9A1 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalIPAddress.swift; sourceTree = "<group>"; };
 		DE7AF8E81FB21BE100C2D29C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE7AF8F01FB2201A00C2D29C /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
@@ -232,8 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				DE5FD78D1FD5C01700AEF9A1 /* Constants.swift */,
-				DE5FD78E1FD5C01700AEF9A1 /* Shared.xcassets */,
-				DE5FD78F1FD5C01700AEF9A1 /* Models.swift */,
 				DE5FD7901FD5C01700AEF9A1 /* LocalIPAddress.swift */,
 			);
 			path = "RealmTasks Shared";
@@ -553,7 +547,6 @@
 				DE1CA99F1FB547D700B711EE /* Summary.storyboard in Resources */,
 				DE842F3F1FB2355900F9936D /* Ringtone.aif in Resources */,
 				DEC4A0681FB5640D00E5A290 /* Edit.storyboard in Resources */,
-				DE5FD7931FD5C01700AEF9A1 /* Shared.xcassets in Resources */,
 				DE842F3C1FB2301300F9936D /* Localizable.strings in Resources */,
 				DE83C98F1FB218B20078CD01 /* Main.storyboard in Resources */,
 				DE842F431FB239A100F9936D /* Assets.xcassets in Resources */,
@@ -615,7 +608,6 @@
 				DEE066921FB577B400B1C11F /* AddBlocksVC.swift in Sources */,
 				DE842F221FB2292300F9936D /* UIFont+CallKitty.swift in Sources */,
 				DEA92F5E1FB50C4300A0178C /* RealmService.swift in Sources */,
-				DE5FD7941FD5C01700AEF9A1 /* Models.swift in Sources */,
 				DE47057A1FB40AD3000FC02D /* PhoneNumberFormatter.swift in Sources */,
 				DE83C98A1FB218B20078CD01 /* AppDelegate.swift in Sources */,
 				DE842F391FB22F4400F9936D /* CallDurationFormatter.swift in Sources */,
