@@ -122,7 +122,7 @@ class EditVC: UIViewController {
                                                         isIdentified: unwrappedPhoneCaller.isIdentified,
                                                         shouldDelete: false) {
                                                             // completion
-                                                            CallDirectoryManagerUtils.reloadExtension()
+                                                            // CallDirectoryManagerUtils.reloadExtension()
             }
             view.backgroundColor = PhoneCallerStatusHelper.statusColor(phoneCaller: unwrappedPhoneCaller)
         } else {
@@ -136,7 +136,7 @@ class EditVC: UIViewController {
                                                         isIdentified: false,
                                                         shouldDelete: false) {
                                                             // completion
-                                                            CallDirectoryManagerUtils.reloadExtension()
+                                                            // CallDirectoryManagerUtils.reloadExtension()
             }
             view.backgroundColor = UIColor.callKittyPaleYellow()
         }

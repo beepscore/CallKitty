@@ -102,7 +102,7 @@ final class CallsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        CallDirectoryManagerUtils.reloadExtension()
+        // CallDirectoryManagerUtils.reloadExtension()
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleCallsChangedNotification(notification:)), name: CallKittyCallManager.CallsChangedNotification, object: nil)
 
