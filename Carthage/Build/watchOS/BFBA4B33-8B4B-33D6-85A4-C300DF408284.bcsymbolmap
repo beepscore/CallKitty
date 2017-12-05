@@ -1,5 +1,5 @@
 BCSymbolMap Version: 2.0
-Apple LLVM version 9.0.0 (clang-900.0.38)
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
 Realm/ObjectStore/src/binding_callback_thread_observer.cpp
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa
 __ZNK5realm19CollectionChangeSet5emptyEv
@@ -2663,7 +2663,7 @@ ___block_descriptor_tmp.172
 ___block_descriptor_tmp.176
 ___block_descriptor_tmp.181
 ___block_descriptor_tmp.186
-___block_descriptor_tmp.196
+___block_descriptor_tmp.194
 ___block_literal_global
 ___block_descriptor_tmp.199
 ___block_descriptor_tmp.205
@@ -2714,8 +2714,8 @@ ___block_descriptor_tmp.293
 ___block_descriptor_tmp.295
 ___block_literal_global.296
 ___block_descriptor_tmp.299
-___block_descriptor_tmp.305
-___block_literal_global.306
+___block_descriptor_tmp.303
+___block_literal_global.304
 ___block_descriptor_tmp.312
 ___block_descriptor_tmp.318
 ___block_descriptor_tmp.327
@@ -2769,7 +2769,7 @@ RLMTimestampForNSDate
 isnan<double>
 __libcpp_isnan<double>
 __inline_isnand
-/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.1.sdk/usr/include/math.h
+/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/usr/include/math.h
 ___ZN12_GLOBAL__N_110makeSetterIU8__strongP6NSDateS3_EEP11objc_objectP11RLMProperty_block_invoke_2
 ___ZN12_GLOBAL__N_110makeSetterIU8__strongP6NSDateS3_EEP11objc_objectP11RLMProperty_block_invoke
 translateError<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMAccessor.mm:80:20)>
@@ -3347,7 +3347,7 @@ ___block_descriptor_tmp.75
 ___block_descriptor_tmp.80
 ___block_descriptor_tmp.85
 ___block_descriptor_tmp.92
-___block_descriptor_tmp.138
+___block_descriptor_tmp.135
 ___block_descriptor_tmp.173
 l_OBJC_PROTOCOL_$_NSObject
 l_OBJC_LABEL_PROTOCOL_$_NSObject
@@ -3370,7 +3370,7 @@ __47-[RLMArray aggregateProperty:operation:method:]_block_invoke
 canAggregate
 __28-[RLMArray removeAllObjects]_block_invoke
 NSMakeRange
-/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
 __52-[RLMArray exchangeObjectAtIndex:withObjectAtIndex:]_block_invoke
 changeArray<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMArray.mm:319:8)>
 __38-[RLMArray moveObjectAtIndex:toIndex:]_block_invoke
@@ -4346,7 +4346,7 @@ rawTypeShouldBeTreatedAsComputedProperty
 typeFromProtocolString
 RLMValidateSwiftPropertyName
 islower
-/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.1.sdk/usr/include/ctype.h
+/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/usr/include/ctype.h
 __istype
 isascii
 RLMPropertyTypeIsComputed
@@ -6436,7 +6436,7 @@ RLMAddSkipBackupAttributeToItemAtPath
 translateSharedGroupOpenException
 path
 kind
-operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealm.mm:430:33)>
+operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealm.mm:430:33), void>
 function<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealm.mm:430:33), void>
 __compressed_pair<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealm.mm:430:33) &&>
 __libcpp_compressed_pair_imp<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealm.mm:430:33) &&, 0>
@@ -6558,7 +6558,7 @@ __compressed_pair<const (lambda at /Users/stevebaker/Documents/projects/iOSProje
 __libcpp_compressed_pair_imp<const (lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53) &, std::__1::allocator<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53)> &&, 0, 0>
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration_Private.h
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.h
-operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53)>
+operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53), void>
 function<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53), void>
 __compressed_pair<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53) &&>
 __libcpp_compressed_pair_imp<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMRealmConfiguration.mm:291:53) &&, 0>
@@ -6900,7 +6900,7 @@ swap<std::__1::__function::__base<void (std::__1::shared_ptr<realm::SyncSession>
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncConfiguration_Private.h
 make_unique<realm::SyncConfig, realm::SyncConfig>
 function<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncConfiguration.mm:154:28), void>
-operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncConfiguration.mm:168:28)>
+operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncConfiguration.mm:168:28), void>
 function<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncConfiguration.mm:168:28), void>
 isValidRealmURL
 make_unique<realm::SyncConfig, realm::SyncConfig &>
@@ -6925,7 +6925,6 @@ _OBJC_IVAR_$_RLMSyncCredentials._userInfo
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncCredentials.m
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncCredentials.h
 +[RLMSyncManager sharedManager]
-___31+[RLMSyncManager sharedManager]_block_invoke
 -[RLMSyncManager initWithCustomRootDirectory:]
 -[RLMSyncManager appID]
 -[RLMSyncManager logLevel]
@@ -6934,8 +6933,8 @@ ___31+[RLMSyncManager sharedManager]_block_invoke
 ___29-[RLMSyncManager _fireError:]_block_invoke
 -[RLMSyncManager _fireErrorWithCode:message:isFatal:session:userInfo:errorClass:]
 ___81-[RLMSyncManager _fireErrorWithCode:message:isFatal:session:userInfo:errorClass:]_block_invoke
-___copy_helper_block_.37
-___destroy_helper_block_.38
+___copy_helper_block_.33
+___destroy_helper_block_.34
 -[RLMSyncManager _allUsers]
 +[RLMSyncManager resetForTesting]
 -[RLMSyncManager errorHandler]
@@ -6952,12 +6951,11 @@ __ZN12_GLOBAL__N_115CocoaSyncLogger6do_logEN5realm4util6Logger5LevelENSt3__112ba
 __ZThn4_N12_GLOBAL__N_115CocoaSyncLoggerD1Ev
 __ZThn4_N12_GLOBAL__N_115CocoaSyncLoggerD0Ev
 __ZThn4_N12_GLOBAL__N_115CocoaSyncLogger6do_logEN5realm4util6Logger5LevelENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE
+__ZNSt3__117__call_once_proxyINS_5tupleIJOZ31+[RLMSyncManager sharedManager]E3$_0EEEEEvPv
 __GLOBAL__sub_I_RLMSyncManager.mm
 __ZL15s_sharedManager
-__ZL11s_onceToken
 _OBJC_IVAR_$_RLMSyncManager._appID
-___block_descriptor_tmp.25
-___block_descriptor_tmp.39
+___block_descriptor_tmp.35
 _OBJC_IVAR_$_RLMSyncManager._errorHandler
 _OBJC_IVAR_$_RLMSyncManager._sessionCompletionNotifier
 __ZTVN12_GLOBAL__N_122CocoaSyncLoggerFactoryE
@@ -6969,6 +6967,9 @@ __ZTSN12_GLOBAL__N_115CocoaSyncLoggerE
 __ZTIN12_GLOBAL__N_115CocoaSyncLoggerE
 /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm
 _GLOBAL__sub_I_RLMSyncManager.mm
+__call_once_proxy<std::__1::tuple<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26) &&> >
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/mutex
+__invoke<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26)>
 destroy<std::__1::shared_ptr<realm::SyncUser> >
 __destroy<std::__1::shared_ptr<realm::SyncUser> >
 _ZThn4_N12_GLOBAL__N_115CocoaSyncLogger6do_logEN5realm4util6Logger5LevelENSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE
@@ -6991,9 +6992,13 @@ __81-[RLMSyncManager _fireErrorWithCode:message:isFatal:session:userInfo:errorCl
 __29-[RLMSyncManager _fireError:]_block_invoke
 levelForSyncLogLevel
 logLevelForLevel
-__31+[RLMSyncManager sharedManager]_block_invoke
-_dispatch_once
-/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.1.sdk/usr/include/dispatch/once.h
+call_once<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26)>
+__call_once_param
+tuple<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26), false, false>
+__tuple_impl<0, (lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26) &&, (lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26)>
+__tuple_leaf<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncManager.mm:93:26), void>
+__libcpp_acquire_load<unsigned long>
+once_flag
 -[RLMSyncPermission initWithRealmPath:identity:accessLevel:]
 -[RLMSyncPermission initWithRealmPath:username:accessLevel:]
 -[RLMSyncPermission initWithPermission:]
@@ -7093,6 +7098,8 @@ _ZZ49-[RLMSyncPermissionResults addNotificationBlock:]EN3$_4C1EOS_
 _ZZ49-[RLMSyncPermissionResults addNotificationBlock:]EN3$_4C2EOS_
 translateRLMResultsErrors<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncPermissionResults.mm:151:38)>
 keypath_is_valid
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/usr/include/dispatch/once.h
 translateRLMResultsErrors<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncPermissionResults.mm:135:38)>
 translateRLMResultsErrors<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncPermissionResults.mm:127:38)>
 translateRLMResultsErrors<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/RLMSyncPermissionResults.mm:79:38)>
@@ -7850,7 +7857,6 @@ free_lock_info
 core/include/realm/util/interprocess_mutex.hpp
 swap<realm::util::InterprocessMutex::LockInfo *>
 __call_once_proxy<std::__1::tuple<void (&)()> >
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/mutex
 __invoke<void (&)()>
 get<0, void (&)()>
 initialize_statics
@@ -7871,11 +7877,9 @@ unmap
 ~InterprocessMutex
 InterprocessMutex
 call_once<void (&)()>
-__call_once_param
 tuple<true, false>
 __tuple_impl<0, void (&)(), void (&)()>
 __tuple_leaf<void (&)(), void>
-__libcpp_acquire_load<unsigned long>
 Map
 MapBase
 File
@@ -7963,7 +7967,7 @@ compact
 open_with_config
 is_nonupgradable_history
 make_unique<realm::SharedGroup, realm::Replication &, realm::SharedGroupOptions &>
-operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/shared_realm.cpp:178:40)>
+operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/shared_realm.cpp:178:40), void>
 function<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/shared_realm.cpp:178:40), void>
 __compressed_pair<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/shared_realm.cpp:178:40) &&>
 __libcpp_compressed_pair_imp<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/shared_realm.cpp:178:40) &&, 0>
@@ -8297,7 +8301,7 @@ get_users
 all_unmarked_users
 SyncMetadataManager
 operator=<std::__1::vector<char, std::__1::allocator<char> >, void>
-operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/sync/impl/sync_metadata.cpp:106:33)>
+operator=<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/sync/impl/sync_metadata.cpp:106:33), void>
 function<(lambda at /Users/stevebaker/Documents/projects/iOSProjects/MiscProjects/CallKit/CallKitty/Carthage/Checkouts/realm-cocoa/Realm/ObjectStore/src/sync/impl/sync_metadata.cpp:106:33), void>
 make_schema
 __ZN12_GLOBAL__N_132make_handler_extracting_propertyENSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS0_8functionIFvN5realm4util8OptionalIS6_EESt13exception_ptrEEE
@@ -9393,7 +9397,7 @@ copy_n<char *, unsigned long, char *>
 what
 ~BufferSizeOverflow
 int_multiply_with_overflow_detect<unsigned long, int>
-int_less_than<int, unsigned long>
+int_less_than<unsigned long, unsigned long>
 less
 reserve_extra
 BufferSizeOverflow
