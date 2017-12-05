@@ -27,8 +27,6 @@ struct Constants {
 
     static let syncRealmPath = "realmcallers"
     static let defaultListName = "My Callers"
-    // manually added 1 to defaultListID from sample project
-    static let defaultListID = "80EB1620-165B-4600-A1B1-D97032FDD9A1"
 
     static let syncServerURL = URL(string: "realm://\(syncHost):9080/~/\(syncRealmPath)")
     static let syncAuthURL = URL(string: "http://\(syncHost):9080")!
