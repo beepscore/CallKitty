@@ -25,6 +25,34 @@ class RealmService {
 
     static let realmErrorNotificationName = NSNotification.Name("RealmError")
 
+    // TODO: consider store in keychain
+    var username = ""
+    var password = ""
+
+    // realm for use on whichever thread this method was called from
+    static func aRealm() -> Realm? {
+
+        // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
+        // You must construct a new instance for each thread in which a Realm will be accessed.
+        // For dispatch queues, this means that you must construct a new instance
+        // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
+        // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
+
+        // to return a local realm
+        // let realm = try! Realm()
+        // return realm
+
+        // to return a realm on a realm object server
+        guard let currentUser = SyncUser.current else { return nil }
+
+        let configuration = Realm.Configuration(
+            syncConfiguration: SyncConfiguration(user: currentUser,
+                realmURL: Constants.syncServerURL!)
+            )
+        let configuredRealm = try! Realm(configuration: configuration)
+        return configuredRealm
+    }
+
     // TODO: make background versions for more methods, for use with large or remote data
     // e.g. similar to backgroundAddBlockingPhoneCallers
 
@@ -51,13 +79,11 @@ class RealmService {
                                                completion: @escaping () -> Void) {
         DispatchQueue(label: "background").async {
             // Get new realm and table since we are in a new thread.
+            guard let bgRealm = RealmService.aRealm() else {
+                // don't attempt to run completion
+                return
+            }
 
-            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
-            // You must construct a new instance for each thread in which a Realm will be accessed.
-            // For dispatch queues, this means that you must construct a new instance
-            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
-            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
             RealmService.addUpdatePhoneCaller(phoneNumber: phoneNumber,
                                               label: label,
                                               hasChanges: hasChanges,
@@ -128,13 +154,11 @@ class RealmService {
     static func backgroundAddBlockingPhoneCallers(count: Int, completion: @escaping () -> Void) {
         DispatchQueue(label: "background").async {
             // Get new realm and table since we are in a new thread.
+            guard let bgRealm = RealmService.aRealm() else {
+                // don't attempt to run completion
+                return
+            }
 
-            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
-            // You must construct a new instance for each thread in which a Realm will be accessed.
-            // For dispatch queues, this means that you must construct a new instance
-            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
-            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
             RealmService.addBlockingPhoneCallers(count: count, realm: bgRealm)
             bgRealm.refresh()
             completion()
@@ -187,13 +211,11 @@ class RealmService {
     static func backgroundAddIdentifyingPhoneCallers(count: Int, completion: @escaping () -> Void) {
         DispatchQueue(label: "background").async {
             // Get new realm and table since we are in a new thread.
+            guard let bgRealm = RealmService.aRealm() else {
+                // don't attempt to run completion
+                return
+            }
 
-            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
-            // You must construct a new instance for each thread in which a Realm will be accessed.
-            // For dispatch queues, this means that you must construct a new instance
-            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
-            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let bgRealm = try! Realm()
             RealmService.addIdentifyingPhoneCallers(count: count, realm: bgRealm)
             bgRealm.refresh()
             completion()
@@ -381,16 +403,10 @@ class RealmService {
     static func backgroundAllPhoneCallersShouldDelete() {
         DispatchQueue(label: "background").async {
             // Get new realm and table since we are in a new thread.
+            guard let bgRealm = RealmService.aRealm() else { return }
+            let phoneCallers = RealmService.getAllPhoneCallers(realm: bgRealm)
 
-            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
-            // You must construct a new instance for each thread in which a Realm will be accessed.
-            // For dispatch queues, this means that you must construct a new instance
-            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
-            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let realm = try! Realm()
-            let phoneCallers = RealmService.getAllPhoneCallers(realm: realm)
-
-            try! realm.write {
+            try! bgRealm.write {
 
                 for phoneCaller in phoneCallers {
                     phoneCaller.shouldDelete = true
@@ -406,8 +422,9 @@ class RealmService {
     /// - Parameter phoneNumber: a CallKit CXCallDirectoryPhoneNumber
     static func backgroundDeletePhoneCaller(phoneNumber: CXCallDirectoryPhoneNumber) {
         DispatchQueue(label: "background").async {
-            let realm = try! Realm()
-            let _ = RealmService.deletePhoneCaller(phoneNumber: phoneNumber, realm: realm)
+
+            guard let bgRealm = RealmService.aRealm() else { return }
+            let _ = RealmService.deletePhoneCaller(phoneNumber: phoneNumber, realm: bgRealm)
         }
     }
 
@@ -433,15 +450,10 @@ class RealmService {
     static func backgroundDeleteAllObjects() {
         DispatchQueue(label: "background").async {
             // Get new realm and table since we are in a new thread.
+            guard let bgRealm = RealmService.aRealm() else { return }
 
-            // Realm instances are not thread safe and cannot be shared across threads or dispatch queues.
-            // You must construct a new instance for each thread in which a Realm will be accessed.
-            // For dispatch queues, this means that you must construct a new instance
-            // in each block which is dispatched, as a queue is not guaranteed to run all of its blocks on the same thread.
-            // https://realm.io/docs/swift/latest/api/Classes/Realm.html#/s:FC10RealmSwift5Realm3addFTCS_6Object6updateSb_T_
-            let realm = try! Realm()
-            try! realm.write {
-                realm.deleteAll()
+            try! bgRealm.write {
+                bgRealm.deleteAll()
             }
         }
     }

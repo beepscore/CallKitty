@@ -12,8 +12,11 @@ import RealmSwift
 class SummaryViewController: UIViewController {
 
     let realmService = RealmService.shared
-    var results: Results<PhoneCaller>?
+    // notificationToken to observe changes from the Realm
     var notificationToken: NotificationToken?
+    var realm: Realm!
+
+    var results: Results<PhoneCaller>?
 
     @IBOutlet private weak var blockingCountLabel: UILabel!
     @IBOutlet private weak var identifyingCountLabel: UILabel!
@@ -34,6 +37,17 @@ class SummaryViewController: UIViewController {
         updateUI()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // avoid warning ~view not in hierarchy. Wait until viewDidAppear before attempt to present alert.
+        // https://stackoverflow.com/questions/26022756/warning-attempt-to-present-on-whose-view-is-not-in-the-window-hierarchy-s#26023209
+        if RealmService.shared.username == "" && RealmService.shared.password == "" {
+            // TODO: consider improve conditional check if logged in
+            getUsernameAndPasswordAndSetupRealm()
+        }
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // stop update notifications. stop was renamed to invalidate
@@ -48,7 +62,8 @@ class SummaryViewController: UIViewController {
     // MARK: -
 
     func observeResults() {
-        results = realmService.realm.objects(PhoneCaller.self)
+        guard let aRealm = RealmService.aRealm() else { return }
+        results = aRealm.objects(PhoneCaller.self)
 
         // Set results notification block
         // block is called every time the realm collection changes
@@ -72,6 +87,66 @@ class SummaryViewController: UIViewController {
     func updateUI() {
         blockingCountLabel.text = String(RealmService.getAllPhoneCallersIsBlockedSortedCount(realm: realmService.realm))
         identifyingCountLabel.text = String(RealmService.getAllPhoneCallersIsIdentifiedSortedCount(realm: realmService.realm))
+    }
+
+    // MARK: - connect to realm object server
+    // TODO: consider refactor move parts to RealmService
+
+    func getUsernameAndPasswordAndSetupRealm() {
+        let alertController = UIAlertController(title: "Login", message: "", preferredStyle: .alert)
+
+        var usernameTextField: UITextField!
+        var passwordTextField: UITextField!
+
+        alertController.addTextField { textField in
+            usernameTextField = textField
+            textField.placeholder = "User Name"
+        }
+
+        alertController.addTextField { textField in
+            passwordTextField = textField
+            textField.placeholder = "Password"
+        }
+
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ _ in
+            // nil coalescing operator
+            RealmService.shared.username = usernameTextField.text ?? ""
+            RealmService.shared.password = passwordTextField.text ?? ""
+
+            self.setupRealm()
+        }))
+
+        present(alertController, animated: true, completion: nil)
+    }
+
+    func setupRealm() {
+
+        // if username account doesn't exist, must call with register true
+//        SyncUser.logIn(with: .usernamePassword(username: RealmService.shared.username,
+//                                               password: RealmService.shared.password,
+//                                               register: true),
+
+        // if username account exists, must call with register false
+        // Log in existing user with username and password
+        // TODO: Reference Realm sample code RealmTasks iOS login() to improve this code
+        SyncUser.logIn(with: .usernamePassword(username: RealmService.shared.username,
+                                               password: RealmService.shared.password,
+                                               register: false),
+                       server: Constants.syncAuthURL) { user, error in
+                        guard let _ = user else {
+                            fatalError(String(describing: error))
+                        }
+
+                        DispatchQueue.main.async {
+                            // TODO: consider use a capture list to reduce risk of retain cycle
+                            self.observeResults()
+                            CallDirectoryManagerUtils.reloadExtension()
+                        }
+        }
+    }
+    
+    deinit {
+        notificationToken?.invalidate()
     }
 
 }
