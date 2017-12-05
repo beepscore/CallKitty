@@ -144,7 +144,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
                 try! bgRealm.write() {
                     phoneCaller.isBlocked = false
                     phoneCaller.shouldBlock = false
-                    
+
                     if phoneCaller.shouldBlock == false
                         && phoneCaller.shouldIdentify == false
                         && phoneCaller.shouldDelete == false {
