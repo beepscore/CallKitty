@@ -108,7 +108,7 @@ simulate incoming call from an identified phone number e.g. 1_877_555_5555
 
 ## Appendix Sharing realm info between app and Call Directory extension
 
-In this prototype I used a realm in a local file.
+In this prototype I used a realm in a local file (git tag realm-local).
 I think the Call Directory Extension realm can't see the CallKitty app realm database file.
 
 To try to fix this, in the app I made an app group and used it to make a storage directory.
@@ -125,6 +125,9 @@ Also Xcode build failed when I tried adding the app group to the extension.
 
 In production, the app and/or the app extension could talk with an external realm platform server.
 If both the app and the app extension talk with the same realm server, then they can access the same database.
+
+### branch dev
+The app and the app extension talk with a realm object server.
 
 Also can use multiple realms.
 For example, could have a realm for blocked and identified callers common to all users.
