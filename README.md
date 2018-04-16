@@ -1,5 +1,6 @@
 # Purpose
-Use CallKit to create a skeleton for a VoIP app.
+Use Swift iOS CallKit and Realm.
+Attempts to share realm info between app and Call Directory extension did not work well.
 
 # References
 
